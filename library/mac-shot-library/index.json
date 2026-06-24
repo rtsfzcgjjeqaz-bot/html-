@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "branch": "library/mac-approved-shots",
+  "description": "Mac locally preview-approved Shot library for Windows review and adaptation. Not auto-imported by production runtime.",
+  "allowedStatuses": [
+    "draft",
+    "preview_ready",
+    "visually_approved",
+    "github_published",
+    "windows_reviewed",
+    "runtime_integrated",
+    "rejected"
+  ],
+  "shots": []
+}
