@@ -1,0 +1,191 @@
+{
+  "runtimeShotId": "shot_51",
+  "shot_id": "shot_51",
+  "sourceShotId": "mac_shot_08",
+  "sourceLibrary": "mac-ai-recommendation-cursor-panel-v1",
+  "sourceBranch": "origin/transfer/mac-motion-library-v1",
+  "sourceChoreographyId": "aiRecommendationCursorPanelReveal",
+  "packageId": "mac-ai-recommendation-cursor-panel-v1",
+  "adaptationStatus": "adapted-for-windows-runtime",
+  "choreography_id": "aiRecommendationCursorPanelReveal",
+  "source_scene_type": "aiRecommendation",
+  "scene_type": "INFO",
+  "action_breakdown": "# Shot 51 AI Recommendation - Runtime Certification Asset\n\n## Source traceability\n\n- Runtime shot ID: `shot_51`\n- Source shot ID: `mac_shot_08`\n- Source library: `mac-ai-recommendation-cursor-panel-v1`\n- Source branch: `origin/transfer/mac-motion-library-v1`\n- Source choreography: `aiRecommendationCursorPanelReveal`\n- Adaptation status: `adapted-for-windows-runtime`\n- Reference timing: 31.53s-36.20s in the Mac certification package\n- Duration: 4.67s\n- Certification status: runtime-adapted; approved=true; allowedInFactory=true\n\n## Visual hierarchy\n\n1. Background workspace: soft AI-product context with gentle depth and a readable but subdued surface.\n2. Cursor trigger: a small intentional cursor move that implies the user asked for a recommendation.\n3. AI pill: compact label that introduces the decision surface.\n4. Recommendation panel: the main semantic object, containing the selected recommendation and its evidence rows.\n5. Reason rows: supporting evidence blocks that cascade inside the panel and stay inside safe bounds.\n6. Final settle: the composition holds still enough for review and reuse.\n\n## Timing\n\n- 0%-100% / `aiBackdropFloat`: ambient background drift with subtle scale and opacity stabilization.\n- 18%-74% / `cursorTriggerPanel`: short, intentional cursor travel toward the decision area.\n- 42%-78% / `aiPillPop`: compact AI label appears before the panel fully lands.\n- 56%-84% / `aiCardSlideIn`: the recommendation panel slides in with restrained blur removal.\n- 72%-94% / `aiRecommendationRowsReveal`: evidence rows cascade inside the panel.\n- 86%-100% / `aiRecommendationSettle`: final hold for readability.\n\n## Reusable atomic motions\n\n`aiBackdropFloat`, `cursorTriggerPanel`, `aiPillPop`, `aiCardSlideIn`, `aiRecommendationRowsReveal`, `aiRecommendationSettle`.\n\n## Exclude from library\n\nOriginal product text, source-brand colors, exact source cursor route, and any unlabeled decorative bubbles.\n\n## Choreography timeline\n\n| Track | Motion | Target | Percent | Role | Library decision |\n| --- | --- | --- | --- | --- | --- |\n| 1 | aiBackdropFloat | aiBackdrop | 0-100 | depth-establish | candidate |\n| 2 | cursorTriggerPanel | recommendationCursor | 18-74 | context-entry | candidate |\n| 3 | aiPillPop | aiPill | 42-78 | ai-label-entry | candidate |\n| 4 | aiCardSlideIn | recommendationPanel | 56-84 | panel-entry | candidate |\n| 5 | aiRecommendationRowsReveal | recommendationRows | 72-94 | evidence-build | candidate |\n| 6 | aiRecommendationSettle | fullComposition | 86-100 | readability-hold | candidate |\n\n## QA notes\n\n- Safe area: planned pass; panel and rows are designed to remain inside safe bounds.\n- Typography: planned pass; titles and rows are generic and line-clamped.\n- Semantic shape: planned pass; cursor, pill, panel, and evidence rows map to aiRecommendation semantics.\n- Current approval: true.\n- Current factory access: true.\n\n## Reference-only decoration to exclude\n\n- No source logo, no source brand text, no source exact recommendation copy.\n- Decorative trails, oversized glows, and random floating particles should stay out of the formal library.\n",
+  "atomic_motions": [
+    "aiBackdropFloat",
+    "cursorTriggerPanel",
+    "aiPillPop",
+    "aiCardSlideIn",
+    "aiRecommendationRowsReveal",
+    "aiRecommendationSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_51",
+    "choreographyId": "aiRecommendationCursorPanelReveal",
+    "sceneType": "aiRecommendation",
+    "approved": true,
+    "allowedInFactory": true,
+    "durationFrames": {
+      "min": 132,
+      "preferred": 140,
+      "max": 150
+    },
+    "animationTracks": [
+      {
+        "trackId": "track-aiBackdropFloat",
+        "motionId": "aiBackdropFloat",
+        "target": "aiBackdrop",
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "role": "depth-establish",
+        "purpose": "Create the soft AI workspace atmosphere."
+      },
+      {
+        "trackId": "track-cursorTriggerPanel",
+        "motionId": "cursorTriggerPanel",
+        "target": "recommendationCursor",
+        "layer": "context",
+        "startPercent": 18,
+        "endPercent": 74,
+        "role": "context-entry",
+        "purpose": "Move the cursor deliberately toward the recommendation trigger."
+      },
+      {
+        "trackId": "track-aiPillPop",
+        "motionId": "aiPillPop",
+        "target": "aiPill",
+        "layer": "semantic",
+        "startPercent": 42,
+        "endPercent": 78,
+        "role": "message-hierarchy",
+        "purpose": "Introduce a compact AI label before the panel finishes landing.",
+        "semanticTarget": "aiRecommendation.pill"
+      },
+      {
+        "trackId": "track-aiCardSlideIn",
+        "motionId": "aiCardSlideIn",
+        "target": "recommendationPanel",
+        "layer": "semantic",
+        "startPercent": 56,
+        "endPercent": 84,
+        "role": "primary-evidence-entry",
+        "purpose": "Slide the recommendation panel into the main reading position.",
+        "semanticTarget": "aiRecommendation.panel"
+      },
+      {
+        "trackId": "track-aiRecommendationRowsReveal",
+        "motionId": "aiRecommendationRowsReveal",
+        "target": "recommendationRows",
+        "layer": "semantic",
+        "startPercent": 72,
+        "endPercent": 94,
+        "role": "supporting-value-proof",
+        "purpose": "Cascade evidence rows inside the recommendation panel.",
+        "semanticTarget": "aiRecommendation.rows"
+      },
+      {
+        "trackId": "track-aiRecommendationSettle",
+        "motionId": "aiRecommendationSettle",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 86,
+        "endPercent": 100,
+        "role": "readability-hold",
+        "purpose": "Settle the full AI recommendation composition for review."
+      }
+    ]
+  },
+  "duration": 4.67,
+  "duration_frames": {
+    "min": 132,
+    "preferred": 140,
+    "max": 150
+  },
+  "motion_tags": [
+    "aiRecommendation",
+    "aiRecommendationCursorPanelReveal",
+    "cursor",
+    "panel",
+    "decision",
+    "recommendation"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "aiRecommendationCursorPanelReveal",
+    "animation_tracks": [
+      {
+        "trackId": "track-aiBackdropFloat",
+        "motionId": "aiBackdropFloat",
+        "target": "aiBackdrop",
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "role": "depth-establish",
+        "purpose": "Create the soft AI workspace atmosphere."
+      },
+      {
+        "trackId": "track-cursorTriggerPanel",
+        "motionId": "cursorTriggerPanel",
+        "target": "recommendationCursor",
+        "layer": "context",
+        "startPercent": 18,
+        "endPercent": 74,
+        "role": "context-entry",
+        "purpose": "Move the cursor deliberately toward the recommendation trigger."
+      },
+      {
+        "trackId": "track-aiPillPop",
+        "motionId": "aiPillPop",
+        "target": "aiPill",
+        "layer": "semantic",
+        "startPercent": 42,
+        "endPercent": 78,
+        "role": "message-hierarchy",
+        "purpose": "Introduce a compact AI label before the panel finishes landing.",
+        "semanticTarget": "aiRecommendation.pill"
+      },
+      {
+        "trackId": "track-aiCardSlideIn",
+        "motionId": "aiCardSlideIn",
+        "target": "recommendationPanel",
+        "layer": "semantic",
+        "startPercent": 56,
+        "endPercent": 84,
+        "role": "primary-evidence-entry",
+        "purpose": "Slide the recommendation panel into the main reading position.",
+        "semanticTarget": "aiRecommendation.panel"
+      },
+      {
+        "trackId": "track-aiRecommendationRowsReveal",
+        "motionId": "aiRecommendationRowsReveal",
+        "target": "recommendationRows",
+        "layer": "semantic",
+        "startPercent": 72,
+        "endPercent": 94,
+        "role": "supporting-value-proof",
+        "purpose": "Cascade evidence rows inside the recommendation panel.",
+        "semanticTarget": "aiRecommendation.rows"
+      },
+      {
+        "trackId": "track-aiRecommendationSettle",
+        "motionId": "aiRecommendationSettle",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 86,
+        "endPercent": 100,
+        "role": "readability-hold",
+        "purpose": "Settle the full AI recommendation composition for review."
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_51"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

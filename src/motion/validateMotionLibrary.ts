@@ -1,110 +1,101 @@
-import fs from "fs";
-import path from "path";
+import assetsIndex from "../../assets/index/assets.json";
+import shotRegistry from "../../assets/index/shot-registry.json";
+import { getShot, getShotPath } from "../../assets/index/asset-resolver";
 import { choreographyRegistry } from "./choreographyRegistry";
 
-type CatalogIndex = {
-  entries?: Array<{
-    choreographyId?: string;
-    approved?: boolean;
-    allowedInFactory?: boolean;
-    entryPath?: string;
-  }>;
+type ShotIndex = Record<string, string>;
+type AssetsIndex = typeof assetsIndex & {
+  shots?: Record<string, string>;
 };
 
-type LibraryEntry = {
-  choreographyId?: string;
-  approved?: boolean;
-  allowedInFactory?: boolean;
-  atomicMotions?: string[];
-  animationTracks?: Array<{ motionId?: string }>;
-};
-
-const repoRoot = process.cwd();
-const codexRoot = path.resolve(repoRoot, "..");
-const catalogRoot = path.join(codexRoot, "references", "motion-library", "catalog");
-const indexPath = path.join(catalogRoot, "index.json");
-
-function readJson<T>(filePath: string): T {
-  return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
-}
+type ShotAsset = ReturnType<typeof getShot>;
 
 function fail(message: string, errors: string[]) {
   errors.push(message);
 }
 
-function resolveCatalogPath(entryPath: string) {
-  return path.isAbsolute(entryPath) ? entryPath : path.join(codexRoot, entryPath);
-}
-
 export function validateMotionLibrary() {
   const errors: string[] = [];
   const warnings: string[] = [];
+  const index = assetsIndex as AssetsIndex;
+  const registry = shotRegistry as ShotIndex;
+  const registryShotIds = Object.keys(registry);
+  const assetShotIds = Object.keys(index.shots ?? {});
+  const registeredChoreographies = new Map(choreographyRegistry.map((entry) => [entry.choreographyId, entry]));
+  const shotsByChoreography = new Map<string, ShotAsset[]>();
 
-  if (!fs.existsSync(indexPath)) {
-    fail(`Missing catalog index: ${indexPath}`, errors);
-    return { passed: false, errors, warnings };
+  if (!registryShotIds.length) {
+    fail("Shot registry is empty in assets/index/shot-registry.json.", errors);
   }
 
-  const catalog = readJson<CatalogIndex>(indexPath);
-  const entries = catalog.entries ?? [];
-  const registryById = new Map(choreographyRegistry.map((entry) => [entry.choreographyId, entry]));
+  for (const shotId of registryShotIds) {
+    const registeredPath = registry[shotId];
+    const indexedPath = index.shots?.[shotId];
+    if (!registeredPath) {
+      fail(`Shot registry entry missing path for ${shotId}.`, errors);
+      continue;
+    }
+    if (indexedPath !== registeredPath) {
+      fail(`Shot registry mismatch for ${shotId}: assets.json=${indexedPath} shot-registry.json=${registeredPath}`, errors);
+    }
 
-  for (const catalogEntry of entries) {
-    if (!catalogEntry.choreographyId) {
-      fail("Catalog entry is missing choreographyId.", errors);
+    const resolvedShot = getShot(shotId);
+    const runtimeShotPath = getShotPath(shotId);
+    if (runtimeShotPath !== registeredPath) {
+      fail(`Shot path mismatch for ${shotId}: asset-resolver=${runtimeShotPath} shot-registry.json=${registeredPath}`, errors);
+    }
+    if (resolvedShot.shot_id !== shotId) {
+      fail(`Shot id mismatch for ${shotId}: loaded ${resolvedShot.shot_id}.`, errors);
+    }
+
+    const choreographyId = resolvedShot.choreography_id ?? resolvedShot.choreography?.choreographyId;
+    if (!choreographyId) {
+      warnings.push(`Shot ${shotId} has no choreography_id.`);
       continue;
     }
 
-    const registryEntry = registryById.get(catalogEntry.choreographyId);
-    if (!registryEntry) {
-      fail(`Catalog choreography is not registered in src/motion/choreographyRegistry.ts: ${catalogEntry.choreographyId}`, errors);
+    const choreographyEntry = registeredChoreographies.get(choreographyId);
+    if (!choreographyEntry) {
+      fail(`Shot ${shotId} references unregistered choreography ${choreographyId}.`, errors);
       continue;
     }
 
-    if (catalogEntry.approved !== registryEntry.approved) {
-      fail(`approved mismatch for ${catalogEntry.choreographyId}: catalog=${catalogEntry.approved}, registry=${registryEntry.approved}`, errors);
-    }
-    if (catalogEntry.allowedInFactory !== registryEntry.allowedInFactory) {
-      fail(`allowedInFactory mismatch for ${catalogEntry.choreographyId}: catalog=${catalogEntry.allowedInFactory}, registry=${registryEntry.allowedInFactory}`, errors);
-    }
-    if (!catalogEntry.entryPath) {
-      fail(`Catalog entryPath missing for ${catalogEntry.choreographyId}`, errors);
-      continue;
-    }
-
-    const entryPath = resolveCatalogPath(catalogEntry.entryPath);
-    if (!fs.existsSync(entryPath)) {
-      fail(`Library entry file missing: ${entryPath}`, errors);
-      continue;
-    }
-
-    const libraryEntry = readJson<LibraryEntry>(entryPath);
-    if (libraryEntry.choreographyId !== registryEntry.choreographyId) {
-      fail(`Library entry choreographyId mismatch in ${entryPath}`, errors);
-    }
-    if (libraryEntry.approved !== registryEntry.approved) {
-      fail(`Library entry approved mismatch for ${registryEntry.choreographyId}`, errors);
-    }
-    if (libraryEntry.allowedInFactory !== registryEntry.allowedInFactory) {
-      fail(`Library entry allowedInFactory mismatch for ${registryEntry.choreographyId}`, errors);
+    const shotIsCertified = Boolean(resolvedShot.approval?.approved && resolvedShot.approval?.allowed_in_factory);
+    if (shotIsCertified) {
+      if (!choreographyEntry.approved || !choreographyEntry.allowedInFactory) {
+        fail(`Shot ${shotId} is certified but choreography ${choreographyId} is not approved for factory use.`, errors);
+      }
+      const sourceSceneType = resolvedShot.source_scene_type ?? resolvedShot.choreography?.sceneType;
+      if (sourceSceneType && choreographyEntry.sceneType !== sourceSceneType) {
+        fail(`Shot ${shotId} source_scene_type ${sourceSceneType} does not match choreography sceneType ${choreographyEntry.sceneType}.`, errors);
+      }
+      const missingMotions = resolvedShot.atomic_motions.filter((motionId) => !choreographyEntry.atomicMotions.includes(motionId));
+      if (missingMotions.length) {
+        fail(`Shot ${shotId} contains atomic motions not registered for ${choreographyId}: ${missingMotions.join(", ")}`, errors);
+      }
+      const durationFrames = resolvedShot.duration_frames?.preferred ?? resolvedShot.choreography?.durationFrames?.preferred;
+      if (typeof durationFrames === "number") {
+        if (durationFrames < choreographyEntry.durationFrames.min || durationFrames > choreographyEntry.durationFrames.max) {
+          fail(`Shot ${shotId} preferred duration ${durationFrames} is outside choreography bounds for ${choreographyId}.`, errors);
+        }
+      }
     }
 
-    const libraryMotions = libraryEntry.atomicMotions ?? [];
-    const missingMotions = registryEntry.atomicMotions.filter((motionId) => !libraryMotions.includes(motionId));
-    if (missingMotions.length) {
-      fail(`Library entry is missing registry atomic motions for ${registryEntry.choreographyId}: ${missingMotions.join(", ")}`, errors);
-    }
-
-    const invalidTracks = (libraryEntry.animationTracks ?? []).filter((track) => !track.motionId || !registryEntry.atomicMotions.includes(track.motionId));
-    if (invalidTracks.length) {
-      fail(`Library entry contains animationTracks with unregistered motionId for ${registryEntry.choreographyId}`, errors);
-    }
+    const existing = shotsByChoreography.get(choreographyId) ?? [];
+    existing.push(resolvedShot);
+    shotsByChoreography.set(choreographyId, existing);
   }
 
-  const certifiedIds = entries.map((entry) => entry.choreographyId).filter(Boolean);
+  const shotIndexMismatch = assetShotIds
+    .filter((shotId) => registry[shotId] !== index.shots?.[shotId] || !registry[shotId])
+    .join(", ");
+  if (shotIndexMismatch) {
+    fail(`Shot registry / assets index mismatch for: ${shotIndexMismatch}`, errors);
+  }
+
   for (const registryEntry of choreographyRegistry.filter((entry) => entry.approved && entry.allowedInFactory)) {
-    if (!certifiedIds.includes(registryEntry.choreographyId)) {
-      warnings.push(`Approved factory choreography is not in catalog index: ${registryEntry.choreographyId}`);
+    if (!shotsByChoreography.has(registryEntry.choreographyId)) {
+      warnings.push(`Approved factory choreography has no certified shot asset yet: ${registryEntry.choreographyId}`);
     }
   }
 

@@ -1,6 +1,14 @@
 import React from "react";
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import {
+  aiBackdropFloat,
+  aiCardSlideIn,
+  aiPillPop,
+  aiRecommendationRowsReveal,
+  aiRecommendationSettle,
+  cursorTriggerPanel,
+} from "../../motion/atomic/aiRecommendationCursorPanelReveal";
+import {
   backgroundParallax,
   cameraPushIn,
   featureCardReveal,
@@ -91,6 +99,12 @@ type MotionComposerProps = {
 };
 
 const motionFns: Record<string, (input: MotionInput, index?: number) => MotionStyle> = {
+  aiBackdropFloat,
+  cursorTriggerPanel,
+  aiPillPop,
+  aiCardSlideIn,
+  aiRecommendationRowsReveal,
+  aiRecommendationSettle,
   backgroundParallax,
   cameraPushIn,
   websiteTiltIn,

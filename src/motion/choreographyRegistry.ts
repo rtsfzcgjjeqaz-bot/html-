@@ -1,6 +1,7 @@
 import { dashboardGridOrbit } from "./choreographies/dashboardGridOrbit";
 import { coverHookImpact } from "./choreographies/coverHookImpact";
 import { finalCtaCardsConverge } from "./choreographies/finalCtaCardsConverge";
+import { aiRecommendationCursorPanelReveal } from "./choreographies/aiRecommendationCursorPanelReveal";
 import { priceInsightSnap } from "./choreographies/priceInsightSnap";
 import { searchTypingThenRows } from "./choreographies/searchTypingThenRows";
 import { splitCompareCards } from "./choreographies/splitCompareCards";
@@ -32,6 +33,30 @@ export const choreographyRegistry: ChoreographyRegistryEntry[] = [
     durationFrames: {
       min: 120,
       preferred: 135,
+      max: 150,
+    },
+  },
+  {
+    choreographyId: "aiRecommendationCursorPanelReveal",
+    sceneType: "aiRecommendation",
+    approved: true,
+    allowedInFactory: true,
+    compatibleProfiles: ["ai-tool-promo", "saas-product-promo", "default-promo"],
+    compatibleNarratives: ["pain_attack", "comparison", "aesthetic", "curiosity", "trust", "desire", "urgency"],
+    compatibleLayouts: ["aiRecommendation", "recommendationPanel", "decisionPanel", "aiDecisionPanel"],
+    visualStyle: ["clean", "ai", "panel", "cursor", "light"],
+    riskLevel: "low",
+    atomicMotions: [
+      "aiBackdropFloat",
+      "cursorTriggerPanel",
+      "aiPillPop",
+      "aiCardSlideIn",
+      "aiRecommendationRowsReveal",
+      "aiRecommendationSettle",
+    ],
+    durationFrames: {
+      min: 132,
+      preferred: 140,
       max: 150,
     },
   },
@@ -234,6 +259,7 @@ export const choreographyRegistry: ChoreographyRegistryEntry[] = [
 
 const trackDefinitionsByChoreographyId = {
   websiteHeroAngledPushIn: websiteHeroAngledPushIn.animationTracks,
+  aiRecommendationCursorPanelReveal: aiRecommendationCursorPanelReveal.animationTracks,
   searchTypingThenRows: searchTypingThenRows.animationTracks,
   splitCompareCards: splitCompareCards.animationTracks,
   dashboardGridOrbit: dashboardGridOrbit.animationTracks,

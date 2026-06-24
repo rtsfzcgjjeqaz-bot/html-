@@ -17,6 +17,8 @@ type SceneRendererProps = {
     dataFocus?: string[];
     assets?: { image?: string[] };
     screenshot?: { publicPath?: string; src?: string };
+    componentProps?: Record<string, unknown>;
+    selectedShotId?: string;
   };
   sceneIndex: number;
 };
@@ -44,6 +46,16 @@ function sceneLines(scene: SceneRendererProps["scene"]) {
 function sceneCards(scene: SceneRendererProps["scene"]) {
   const raw = scene.dataFocus?.length ? scene.dataFocus : ["Fast setup", "Clear proof", "Ready CTA"];
   return raw.map((item) => cleanLine(item, 22)).filter(Boolean).slice(0, 3);
+}
+
+function aiRecommendationRows(scene: SceneRendererProps["scene"]) {
+  const secondaryLines = scene.textOverlay?.slice(1) ?? [];
+  const raw = scene.dataFocus?.length
+    ? scene.dataFocus
+    : secondaryLines.length
+      ? secondaryLines
+      : ["Evidence-driven signal", "Cursor-led trigger", "Readable decision panel"];
+  return raw.map((item) => cleanLine(item, 34)).filter(Boolean).slice(0, 3);
 }
 
 const BrowserSurface: React.FC<{ src?: string }> = ({ src }) => (
@@ -175,6 +187,217 @@ const WebsiteHeroAngledPushInScene: React.FC<SceneRendererProps & { animationTra
             </div>
           </MotionComposer>
         ))}
+      </MotionComposer>
+    </AbsoluteFill>
+  );
+};
+
+const AIRecommendationCursorPanelRevealScene: React.FC<
+  SceneRendererProps & { animationTracks: ChoreographyAnimationTrack[]; choreographyId: string }
+> = ({ scene, sceneIndex, animationTracks, choreographyId }) => {
+  const lines = sceneLines(scene);
+  const rows = aiRecommendationRows(scene);
+  const title = lines[0] ?? "Turn context into a structured recommendation.";
+  const subtitle = lines[1] ?? "The cursor lands first, then the panel and evidence rows arrive.";
+  const traceLabel = String(scene.selectedShotId ?? "shot_51");
+
+  return (
+    <AbsoluteFill
+      style={{
+        background:
+          "radial-gradient(circle at 74% 24%, rgba(47,128,237,0.24), transparent 28%), radial-gradient(circle at 22% 78%, rgba(34,160,107,0.12), transparent 30%), linear-gradient(135deg, #F8FBFF 0%, #EEF4FF 52%, #F7F1E8 100%)",
+        color: colors.textPrimary,
+        overflow: "hidden",
+        fontFamily: '"Aptos Display", "Microsoft YaHei UI", sans-serif',
+      }}
+    >
+      <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["aiBackdrop"]} style={{ position: "absolute", inset: -140 }}>
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            opacity: 0.16,
+            backgroundImage:
+              "linear-gradient(rgba(15,23,42,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,.12) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            transform: "rotateX(62deg) scale(1.2)",
+          }}
+        />
+      </MotionComposer>
+
+      <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["fullComposition"]} style={{ position: "absolute", inset: 0 }}>
+        <div style={{ position: "absolute", left: 120, top: 110, width: 710 }}>
+          <SafeText role="caption" tone="accent" maxLines={1} maxWidth={360} style={{ textTransform: "uppercase", letterSpacing: 1.5 }}>
+            AI Recommendation / {String(scene.id ?? sceneIndex + 1).padStart(2, "0")}
+          </SafeText>
+          <div style={{ height: 18 }} />
+          <SafeText role="hero" tone="primary" maxLines={2} maxWidth={630}>
+            {title}
+          </SafeText>
+          <div style={{ marginTop: 18 }}>
+            <SafeText role="body" tone="secondary" maxLines={2} maxWidth={560}>
+              {subtitle}
+            </SafeText>
+          </div>
+        </div>
+
+        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["recommendationCursor"]} style={{ position: "absolute", left: 930, top: 330 }}>
+          <div
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 999,
+              background: "linear-gradient(180deg, #2F80ED, #1D4ED8)",
+              boxShadow: "0 14px 36px rgba(47,128,237,0.28), 0 0 0 10px rgba(47,128,237,0.10)",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                right: -10,
+                bottom: -10,
+                width: 18,
+                height: 18,
+                borderRadius: 999,
+                border: "3px solid rgba(255,255,255,0.95)",
+                background: "rgba(255,255,255,0.18)",
+              }}
+            />
+          </div>
+        </MotionComposer>
+
+        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["aiPill"]} style={{ position: "absolute", right: 320, top: 238 }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "12px 18px",
+              borderRadius: 999,
+              background: "rgba(255,255,255,0.95)",
+              border: "1px solid rgba(47,128,237,0.16)",
+              boxShadow: "0 18px 42px rgba(20,32,48,0.10)",
+              color: colors.accentBlue,
+              fontSize: 16,
+              fontWeight: 900,
+              letterSpacing: 0.2,
+            }}
+          >
+            <span style={{ width: 10, height: 10, borderRadius: 999, background: colors.accentBlue }} />
+            AI decision
+          </div>
+        </MotionComposer>
+
+        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["recommendationPanel"]} style={{ position: "absolute", right: 122, top: 168 }}>
+          <div
+            style={{
+              width: 640,
+              minHeight: 560,
+              borderRadius: 34,
+              padding: 34,
+              background: "rgba(255,255,255,0.95)",
+              border: "1px solid rgba(15,23,42,0.09)",
+              boxShadow: "0 38px 100px rgba(20,32,48,0.18)",
+              overflow: "hidden",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 18,
+                paddingBottom: 20,
+                borderBottom: "1px solid rgba(15,23,42,0.08)",
+              }}
+            >
+              <div>
+                <div style={{ color: colors.textSecondary, fontSize: 15, fontWeight: 850, textTransform: "uppercase", letterSpacing: 1.2 }}>
+                  Recommendation panel
+                </div>
+                <div style={{ marginTop: 8, color: colors.textPrimary, fontSize: 26, fontWeight: 900 }}>Context to action</div>
+              </div>
+              <div
+                style={{
+                  width: 140,
+                  height: 72,
+                  borderRadius: 22,
+                  background: "linear-gradient(135deg, rgba(47,128,237,0.12), rgba(34,160,107,0.10))",
+                  border: "1px solid rgba(15,23,42,0.06)",
+                }}
+              />
+            </div>
+            <div style={{ marginTop: 24 }}>
+              <SafeText role="title" tone="primary" maxLines={2} maxWidth={520}>
+                {title}
+              </SafeText>
+              <div style={{ marginTop: 14 }}>
+                <SafeText role="body" tone="secondary" maxLines={2} maxWidth={500}>
+                  {subtitle}
+                </SafeText>
+              </div>
+            </div>
+            <div style={{ marginTop: 28, display: "grid", gap: 12 }}>
+              {rows.map((row, index) => (
+                <MotionComposer
+                  key={`${row}-${index}`}
+                  choreographyId={choreographyId}
+                  animationTracks={animationTracks}
+                  targetIds={["recommendationRows"]}
+                  featureIndex={index}
+                >
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "20px 1fr",
+                      gap: 14,
+                      alignItems: "center",
+                      padding: "16px 18px",
+                      borderRadius: 22,
+                      background: index === 0 ? "rgba(47,128,237,0.10)" : "rgba(15,23,42,0.04)",
+                      border: "1px solid rgba(15,23,42,0.08)",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 20,
+                        borderRadius: 999,
+                        background: index === 0 ? colors.accentBlue : "rgba(15,23,42,0.22)",
+                      }}
+                    />
+                    <div>
+                      <div style={{ color: colors.textPrimary, fontSize: 17, fontWeight: 850 }}>{row}</div>
+                      <div style={{ marginTop: 4, color: colors.textSecondary, fontSize: 14, fontWeight: 650 }}>
+                        Readable evidence row
+                      </div>
+                    </div>
+                  </div>
+                </MotionComposer>
+              ))}
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                left: 34,
+                right: 34,
+                bottom: 28,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 18,
+                color: colors.textSecondary,
+                fontSize: 14,
+                fontWeight: 700,
+              }}
+            >
+              <span>Cursor-led panel landing</span>
+              <span>{traceLabel}</span>
+            </div>
+          </div>
+        </MotionComposer>
       </MotionComposer>
     </AbsoluteFill>
   );
@@ -788,6 +1011,16 @@ export const SceneRenderer: React.FC<SceneRendererProps> = ({ scene, sceneIndex 
 
   if (scene.choreographyId === "websiteHeroAngledPushIn") {
     return <WebsiteHeroAngledPushInScene scene={scene} sceneIndex={sceneIndex} choreographyId={scene.choreographyId} animationTracks={animationTracks} />;
+  }
+  if (scene.choreographyId === "aiRecommendationCursorPanelReveal") {
+    return (
+      <AIRecommendationCursorPanelRevealScene
+        scene={scene}
+        sceneIndex={sceneIndex}
+        choreographyId={scene.choreographyId}
+        animationTracks={animationTracks}
+      />
+    );
   }
   if (scene.choreographyId === "searchTypingThenRows") {
     return <SearchTypingThenRowsScene scene={scene} sceneIndex={sceneIndex} choreographyId={scene.choreographyId} animationTracks={animationTracks} />;
