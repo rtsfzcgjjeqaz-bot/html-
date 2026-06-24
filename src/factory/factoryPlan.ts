@@ -13,6 +13,7 @@ import { renderMotionPreview } from "../motion/preview";
 import { ensureRunDirs, type FactoryState, padIndex, videoIdFor, writeFactoryState } from "./factoryState";
 import { runPreviewGate } from "./previewGate";
 import { generatePreviewFrames, renderPreviewFromStructure } from "./sequentialRenderer";
+import { planResolvedScenesWithShots } from "./shotPlanner";
 import { planVideoVariant } from "./videoVariantPlanner";
 
 export type FactoryPlanArgs = {
@@ -112,13 +113,21 @@ export async function planFactoryRun(args: FactoryPlanArgs) {
     const videoId = videoIdFor(i);
     const strategy = planStrategies[i - 1];
     const storyboard = baseStoryboards[(i - 1) % baseStoryboards.length];
-    const scenes = planVideoVariant(storyboard.scenes, strategy, {
+    const plannedScenes = planVideoVariant(storyboard.scenes, strategy, {
       profile: args.profile,
       mode: args.mode,
       includeChoreographies: args.includeChoreographies,
       excludeChoreographies: args.excludeChoreographies,
       fps: 30,
     });
+    const shotPlan = planResolvedScenesWithShots(plannedScenes, {
+      fps: 30,
+      profile: args.profile,
+      narrativeId: strategy.type,
+      allowedChoreographyIds: args.mode === "restricted" ? args.includeChoreographies : undefined,
+      excludedChoreographyIds: args.excludeChoreographies,
+    });
+    const scenes = shotPlan.scenes;
     const structurePath = path.join(runDir, "structures", `${videoId}.structure.json`);
     const qaPath = path.join(runDir, "qa", `${videoId}.qa.json`);
     const previewPath = path.join(runDir, "previews", `${videoId}.preview.mp4`);
@@ -148,6 +157,11 @@ export async function planFactoryRun(args: FactoryPlanArgs) {
         mode: args.mode,
         includeChoreographies: args.includeChoreographies,
         excludeChoreographies: args.excludeChoreographies,
+      },
+      shotRuntime: {
+        selectedShots: shotPlan.debug.filter((scene) => scene.selectedShotId),
+        resolver: "assets/index/asset-resolver.ts",
+        registry: "assets/index/shot-registry.json",
       },
     };
 
