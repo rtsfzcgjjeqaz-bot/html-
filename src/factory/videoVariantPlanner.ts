@@ -1,7 +1,8 @@
 import type { BatchStrategy } from "../ai/generateBatchStrategies";
 import type { StoryboardScene } from "../ai/generateStoryboard";
 import { selectChoreography } from "../motion/choreographySelector";
-import type { FactoryMode, StyleProfileId } from "../motion/choreographyTypes";
+import type { ChoreographyAnimationTrack, FactoryMode, StyleProfileId } from "../motion/choreographyTypes";
+import type { VisualTemplate } from "../templates/visualTemplates";
 
 export type VideoVariantPlannerOptions = {
   profile: StyleProfileId;
@@ -14,12 +15,17 @@ export type VideoVariantPlannerOptions = {
 export type PlannedScene = StoryboardScene & {
   sceneType: string;
   choreographyId?: string;
-  animationTracks?: unknown[];
+  animationTracks?: ChoreographyAnimationTrack[];
   motionIds?: string[];
   cameraPathId?: string;
   layoutId?: string;
   transitionId?: string;
   choreographyBlockedReason?: unknown;
+  visualTemplate?: VisualTemplate;
+  dataFocus?: string[];
+  assets?: StoryboardScene["assets"] & {
+    appIcons?: Array<{ appName: string; src: string; alt?: string }>;
+  };
 };
 
 const sceneTypes = ["websiteHero", "appGrid", "searchDemo", "resultComparison", "aiRecommendation", "priceInsight", "finalCTA"];
