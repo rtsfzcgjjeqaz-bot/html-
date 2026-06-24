@@ -1,0 +1,181 @@
+{
+  "shot_id": "shot_25",
+  "choreography_id": "searchTypingThenRows",
+  "source_scene_type": "searchDemo",
+  "scene_type": "INFO",
+  "action_breakdown": "# Shot 25 SearchDemo ?????????\r\n\r\n?????? Shot 25?queueIndex=1?????????????????choreography ??? Preview???? queueIndex=2???? approved???? factory?\r\n\r\n- ?????`references/extracted-shots/shot_25_searchDemo_0.0-5.7.mp4`\r\n- ???????0.00s-5.72s\r\n- ????5.72s\r\n- sceneType?`searchDemo`\r\n- ?? choreography?`searchTypingThenRows`\r\n- ?????`approved: false`?`allowedInFactory: false`\r\n\r\n## ??????\r\n\r\n1. ?????????????????????????????????\r\n2. ?????????????????????????\r\n3. Query ?????????????????????????????????????\r\n4. Submit / action ????????????? pulse????????\r\n5. Result rows ????????????????????????/??/???\r\n6. ?????????? hold?????????\r\n\r\n## ???????????????\r\n\r\n| ?? | ???? | ?? | ?? | ???? | ?? |\r\n| --- | --- | --- | --- | --- | --- |\r\n| ?? drift | 0.00s | ????????? | ???? | 4.80s | ??????????????? |\r\n| ??? | 0.38s | ???????? | ?????? 0.96s | 1.34s | ?? `searchBarReveal`??????? |\r\n| Query ?? | 1.34s | ??????? | ???? 0.96s | 2.30s | ?? `queryTypeReveal`????????? |\r\n| Submit pulse | 2.21s | ???? pulse | ???? 0.58s | 2.78s | ?? `submitPulse`?????? |\r\n| ??? | 2.64s | ??????? | ????? 1.39s | 4.03s | ?? `resultRowsReveal`???????? |\r\n| Soft settle | 4.03s | ??????/??? | ?? | 4.80s | ?? `searchFocusSettle`????????? |\r\n\r\n## ???????\r\n\r\n- `searchBackdropDrift`????????????\r\n- `searchBarReveal`??????????????/??/???????\r\n- `queryTypeReveal`?query ????????????????\r\n- `submitPulse`??????????????????????\r\n- `resultRowsReveal`????????????????????????\r\n- `searchFocusSettle`????? hold??? PPT ????\r\n\r\n## ????????????\r\n\r\n- ????????????????????????\r\n- ???????????????????????\r\n- ?????????????\r\n- ????????????? 3-5 ???????????\r\n\r\n## Choreography ???\r\n\r\n| Track | ??? | ???? | Target | Layer | Role |\r\n| --- | --- | --- | --- | --- | --- |\r\n| `searchBackdropDrift` | 0%-100% | 0.00-4.80s | `searchBackdrop` | background | depth-establish |\r\n| `searchBarReveal` | 8%-28% | 0.38-1.34s | `searchBar` | search | primary-control-entry |\r\n| `queryTypeReveal` | 28%-48% | 1.34-2.30s | `queryText` | search | input-intent |\r\n| `submitPulse` | 46%-58% | 2.21-2.78s | `submitButton` | semantic | action-confirmation |\r\n| `resultRowsReveal` | 55%-84% | 2.64-4.03s | `resultRows` | results | result-build |\r\n| `searchFocusSettle` | 84%-100% | 4.03-4.80s | `fullComposition` | camera | readability-hold |\r\n\r\n## ??????\r\n\r\n`searchTypingThenRows` ???????`approved: false`?`allowedInFactory: false`????? review ?????????\r\n",
+  "atomic_motions": [
+    "searchBackdropDrift",
+    "searchBarReveal",
+    "queryTypeReveal",
+    "submitPulse",
+    "resultRowsReveal",
+    "searchFocusSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_25",
+    "choreographyId": "searchTypingThenRows",
+    "sceneType": "searchDemo",
+    "durationSeconds": 4.8,
+    "approved": true,
+    "allowedInFactory": true,
+    "candidateForFactoryTemplate": true,
+    "libraryStatus": "certified",
+    "animationTracks": [
+      {
+        "trackId": "track-searchBackdropDrift",
+        "motionId": "searchBackdropDrift",
+        "target": "searchBackdrop",
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "role": "depth-establish",
+        "purpose": "Create a restrained gradient drift behind the search interface."
+      },
+      {
+        "trackId": "track-searchBarReveal",
+        "motionId": "searchBarReveal",
+        "target": "searchBar",
+        "layer": "search",
+        "startPercent": 8,
+        "endPercent": 28,
+        "role": "primary-control-entry",
+        "purpose": "Bring the universal search control into focus.",
+        "semanticTarget": "search.primaryInput"
+      },
+      {
+        "trackId": "track-queryTypeReveal",
+        "motionId": "queryTypeReveal",
+        "target": "queryText",
+        "layer": "search",
+        "startPercent": 28,
+        "endPercent": 48,
+        "role": "input-intent",
+        "purpose": "Reveal a replaceable query string.",
+        "semanticTarget": "search.query"
+      },
+      {
+        "trackId": "track-submitPulse",
+        "motionId": "submitPulse",
+        "target": "submitButton",
+        "layer": "semantic",
+        "startPercent": 46,
+        "endPercent": 58,
+        "role": "action-confirmation",
+        "purpose": "Confirm the search action.",
+        "semanticTarget": "search.submit"
+      },
+      {
+        "trackId": "track-resultRowsReveal",
+        "motionId": "resultRowsReveal",
+        "target": "resultRows",
+        "layer": "results",
+        "startPercent": 55,
+        "endPercent": 84,
+        "role": "result-build",
+        "purpose": "Cascade generic result rows.",
+        "semanticTarget": "search.results"
+      },
+      {
+        "trackId": "track-searchFocusSettle",
+        "motionId": "searchFocusSettle",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 84,
+        "endPercent": 100,
+        "role": "readability-hold",
+        "purpose": "Settle the composition for review."
+      }
+    ]
+  },
+  "duration": 4,
+  "duration_frames": {
+    "preferred": 120
+  },
+  "motion_tags": [
+    "searchDemo",
+    "searchTypingThenRows",
+    "search",
+    "typing",
+    "results"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "searchTypingThenRows",
+    "animation_tracks": [
+      {
+        "trackId": "track-searchBackdropDrift",
+        "motionId": "searchBackdropDrift",
+        "target": "searchBackdrop",
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "role": "depth-establish",
+        "purpose": "Create a restrained gradient drift behind the search interface."
+      },
+      {
+        "trackId": "track-searchBarReveal",
+        "motionId": "searchBarReveal",
+        "target": "searchBar",
+        "layer": "search",
+        "startPercent": 8,
+        "endPercent": 28,
+        "role": "primary-control-entry",
+        "purpose": "Bring the universal search control into focus.",
+        "semanticTarget": "search.primaryInput"
+      },
+      {
+        "trackId": "track-queryTypeReveal",
+        "motionId": "queryTypeReveal",
+        "target": "queryText",
+        "layer": "search",
+        "startPercent": 28,
+        "endPercent": 48,
+        "role": "input-intent",
+        "purpose": "Reveal a replaceable query string.",
+        "semanticTarget": "search.query"
+      },
+      {
+        "trackId": "track-submitPulse",
+        "motionId": "submitPulse",
+        "target": "submitButton",
+        "layer": "semantic",
+        "startPercent": 46,
+        "endPercent": 58,
+        "role": "action-confirmation",
+        "purpose": "Confirm the search action.",
+        "semanticTarget": "search.submit"
+      },
+      {
+        "trackId": "track-resultRowsReveal",
+        "motionId": "resultRowsReveal",
+        "target": "resultRows",
+        "layer": "results",
+        "startPercent": 55,
+        "endPercent": 84,
+        "role": "result-build",
+        "purpose": "Cascade generic result rows.",
+        "semanticTarget": "search.results"
+      },
+      {
+        "trackId": "track-searchFocusSettle",
+        "motionId": "searchFocusSettle",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 84,
+        "endPercent": 100,
+        "role": "readability-hold",
+        "purpose": "Settle the composition for review."
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_25"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

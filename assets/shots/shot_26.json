@@ -1,0 +1,282 @@
+{
+  "shot_id": "shot_26",
+  "choreography_id": "websiteHeroAngledPushIn",
+  "source_scene_type": "websiteHero",
+  "scene_type": "INFO",
+  "action_breakdown": "# Shot 26 Action Breakdown\n\nScope: only Shot 26 (`websiteHero`, 5.7-10.2s from the reference analysis). This is a brand-free motion reconstruction for review, not a factory template.\n\n- `approved`: false\n- `allowedInFactory`: false\n- Source behavior abstracted: browser/page hero window slides into view, main headline reveals, supporting text follows, feature/icon chips cascade, browser content rows stagger in.\n- Source content excluded: original brand, logo, exact text, website screenshots, colors, and layout-specific copy.\n\n## Timeline\n\n| Time | Layer | Action | Notes |\n| --- | --- | --- | --- |\n| 0.00-0.45s | background | Soft gradient and perspective grid settle | Establishes depth without copying source visuals. |\n| 0.20-0.75s | label | Template label fades and rises | Acts as a replaceable eyebrow. |\n| 0.45-1.35s | browser | Browser frame slides from right/bottom, scales 0.88 to 1.0, rotates into position | Main `browserWindowSlide` atom. |\n| 0.75-1.50s | headline | Large hero headline rises from 54px offset | Main `heroTextReveal` atom. |\n| 1.05-1.80s | browser content | Hero block inside browser fades/rises | Keeps the browser from feeling like a static screenshot. |\n| 1.15-1.80s | subcopy | Supporting copy follows headline | Delayed hierarchy reveal. |\n| 1.25-2.14s | browser rows | Four content rows stagger from right | Secondary page-detail build. |\n| 1.80-2.93s | feature chips | Three cards cascade with slight overshoot | Main `iconCascade` atom. |\n| 0.00-4.50s | camera | Slow global settle and parallax | Choreography glue; prevents PPT-style static composition. |\n| 0.00-4.50s | scan | Light scan moves across browser | Optional accent, should remain subtle. |\n\n## Reuse Boundaries\n\n- Suitable for any website/app landing page if the browser content is generated from props.\n- Requires safe-area clamps for headline, subcopy, browser frame, and icon chips.\n- Should not use screenshots or text from the source reference.\n- Decorative scan and grid are optional; core value is the browser-window + hierarchy + cascade choreography.\n",
+  "atomic_motions": [
+    "backgroundParallax",
+    "cameraPushIn",
+    "websiteTiltIn",
+    "titleReveal",
+    "highlightBoxReveal",
+    "featureCardReveal",
+    "softSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_26",
+    "name": "websiteHero_browserWalkthrough_choreography",
+    "sceneType": "websiteHero",
+    "durationSeconds": 4.5,
+    "fps": 30,
+    "approved": true,
+    "allowedInFactory": true,
+    "candidateForFactoryTemplate": true,
+    "description": "A generic website hero shot: browser frame lands first, headline hierarchy reveals, browser content builds, then feature cards cascade as supporting proof.",
+    "composition": {
+      "width": 1920,
+      "height": 1080,
+      "safeArea": {
+        "x": 96,
+        "y": 58
+      },
+      "primaryFocus": "browser frame plus left-side hero message",
+      "secondaryFocus": "three replaceable feature chips"
+    },
+    "sequence": [
+      {
+        "time": "0.00-0.45",
+        "beat": "depthEstablish",
+        "atoms": [
+          "globalParallaxSettle"
+        ],
+        "intent": "Create spatial depth before the primary browser frame arrives."
+      },
+      {
+        "time": "0.45-1.35",
+        "beat": "evidenceFrameEntrance",
+        "atoms": [
+          "browserWindowSlide"
+        ],
+        "intent": "Make the website/browser the core evidence object."
+      },
+      {
+        "time": "0.75-1.80",
+        "beat": "messageHierarchy",
+        "atoms": [
+          "heroTextReveal"
+        ],
+        "intent": "Reveal eyebrow, headline, and subcopy in priority order."
+      },
+      {
+        "time": "1.05-2.14",
+        "beat": "pageContentBuild",
+        "atoms": [
+          "browserContentBuild",
+          "subtleBrowserScan"
+        ],
+        "intent": "Turn the browser from a static mockup into an active page walkthrough."
+      },
+      {
+        "time": "1.80-2.93",
+        "beat": "benefitCascade",
+        "atoms": [
+          "iconCascade"
+        ],
+        "intent": "Add three benefit markers after the main frame is legible."
+      },
+      {
+        "time": "2.93-4.50",
+        "beat": "readableHold",
+        "atoms": [
+          "globalParallaxSettle",
+          "subtleBrowserScan"
+        ],
+        "intent": "Hold the composition long enough for review without adding new semantic content."
+      }
+    ],
+    "risks": [
+      "Long headlines can overflow left safe area if not measured and scaled.",
+      "Too many feature chips can create random floating decoration.",
+      "Browser content rows must be generated from real product/story data, not meaningless placeholders.",
+      "Scan accent should be optional and low opacity."
+    ],
+    "factoryReadinessChecklist": [
+      "Add prop schema for headline, subcopy, browser rows, and feature chips.",
+      "Add text measurement or max-line enforcement.",
+      "Add mobile/social crop variants before factory access.",
+      "Human review required before changing approved or allowedInFactory."
+    ],
+    "libraryStatus": "certified",
+    "animationTracks": [
+      {
+        "trackId": "track-backgroundParallax",
+        "motionId": "backgroundParallax",
+        "target": "ambientDepthGrid",
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 15,
+        "role": "depth-establish",
+        "purpose": "Bring the background grid and soft atmosphere into a stable parallax field."
+      },
+      {
+        "trackId": "track-cameraPushIn",
+        "motionId": "cameraPushIn",
+        "target": "cameraRig",
+        "layer": "camera",
+        "startPercent": 0,
+        "endPercent": 100,
+        "role": "camera-glue",
+        "purpose": "Bind the shot with a slow push-in."
+      },
+      {
+        "trackId": "track-websiteTiltIn",
+        "motionId": "websiteTiltIn",
+        "target": "websiteFrame",
+        "layer": "website",
+        "startPercent": 5,
+        "endPercent": 38,
+        "role": "primary-evidence-entry",
+        "purpose": "Introduce the generic website interface as the main visual evidence."
+      },
+      {
+        "trackId": "track-titleReveal",
+        "motionId": "titleReveal",
+        "target": "heroTitle",
+        "layer": "title",
+        "startPercent": 18,
+        "endPercent": 45,
+        "role": "message-hierarchy",
+        "purpose": "Reveal the replaceable title after the website frame starts settling."
+      },
+      {
+        "trackId": "track-highlightBoxReveal",
+        "motionId": "highlightBoxReveal",
+        "target": "primaryHighlightBox",
+        "layer": "semantic",
+        "startPercent": 40,
+        "endPercent": 62,
+        "role": "semantic-emphasis",
+        "purpose": "Call out the most important website region.",
+        "semanticTarget": "website.primaryConversionArea"
+      },
+      {
+        "trackId": "track-featureCardReveal",
+        "motionId": "featureCardReveal",
+        "target": "valueCards",
+        "layer": "semantic",
+        "startPercent": 55,
+        "endPercent": 85,
+        "role": "supporting-value-proof",
+        "purpose": "Cascade reusable value cards after the primary website area is readable.",
+        "semanticTarget": "valueProposition.cards"
+      },
+      {
+        "trackId": "track-softSettle",
+        "motionId": "softSettle",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 85,
+        "endPercent": 100,
+        "role": "readability-hold",
+        "purpose": "Settle the full layout for final readability."
+      }
+    ],
+    "durationFrames": {
+      "min": 120,
+      "preferred": 135,
+      "max": 150
+    }
+  },
+  "duration": 4.5,
+  "duration_frames": {
+    "min": 120,
+    "preferred": 135,
+    "max": 150
+  },
+  "motion_tags": [
+    "websiteHero",
+    "websiteHeroAngledPushIn",
+    "website",
+    "hero",
+    "product",
+    "slide"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "websiteHeroAngledPushIn",
+    "animation_tracks": [
+      {
+        "trackId": "track-backgroundParallax",
+        "motionId": "backgroundParallax",
+        "target": "ambientDepthGrid",
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 15,
+        "role": "depth-establish",
+        "purpose": "Bring the background grid and soft atmosphere into a stable parallax field."
+      },
+      {
+        "trackId": "track-cameraPushIn",
+        "motionId": "cameraPushIn",
+        "target": "cameraRig",
+        "layer": "camera",
+        "startPercent": 0,
+        "endPercent": 100,
+        "role": "camera-glue",
+        "purpose": "Bind the shot with a slow push-in."
+      },
+      {
+        "trackId": "track-websiteTiltIn",
+        "motionId": "websiteTiltIn",
+        "target": "websiteFrame",
+        "layer": "website",
+        "startPercent": 5,
+        "endPercent": 38,
+        "role": "primary-evidence-entry",
+        "purpose": "Introduce the generic website interface as the main visual evidence."
+      },
+      {
+        "trackId": "track-titleReveal",
+        "motionId": "titleReveal",
+        "target": "heroTitle",
+        "layer": "title",
+        "startPercent": 18,
+        "endPercent": 45,
+        "role": "message-hierarchy",
+        "purpose": "Reveal the replaceable title after the website frame starts settling."
+      },
+      {
+        "trackId": "track-highlightBoxReveal",
+        "motionId": "highlightBoxReveal",
+        "target": "primaryHighlightBox",
+        "layer": "semantic",
+        "startPercent": 40,
+        "endPercent": 62,
+        "role": "semantic-emphasis",
+        "purpose": "Call out the most important website region.",
+        "semanticTarget": "website.primaryConversionArea"
+      },
+      {
+        "trackId": "track-featureCardReveal",
+        "motionId": "featureCardReveal",
+        "target": "valueCards",
+        "layer": "semantic",
+        "startPercent": 55,
+        "endPercent": 85,
+        "role": "supporting-value-proof",
+        "purpose": "Cascade reusable value cards after the primary website area is readable.",
+        "semanticTarget": "valueProposition.cards"
+      },
+      {
+        "trackId": "track-softSettle",
+        "motionId": "softSettle",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 85,
+        "endPercent": 100,
+        "role": "readability-hold",
+        "purpose": "Settle the full layout for final readability."
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_26"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

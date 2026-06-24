@@ -1,0 +1,185 @@
+{
+  "shot_id": "shot_30",
+  "choreography_id": "finalCtaCardsConverge",
+  "source_scene_type": "finalCTA",
+  "scene_type": "CTA",
+  "action_breakdown": "# Shot 30 finalCTA - Single-Shot Certification Asset\n\n## Source timing\n\n- Shot ID: shot_30\n- Scene type: finalCTA\n- Reference clip: C:\\Users\\Administrator\\.codex\\references\\extracted-shots\\shot_30_finalCTA_26.6-30.0.mp4\n- Actual start time in source video: 26.640s\n- Actual end time in source video: 30.000s\n- Duration: 3.360s\n- Certification status: candidate only; approved=false; allowedInFactory=false\n\n## Visual hierarchy\n\n1. Background layer: clean final stage with soft radial depth, not source brand colors.\n2. CTA card group: 2-3 cards converge toward center, forming a final decision area.\n3. Main CTA button: central conversion action; must stay readable and safe.\n4. Supporting proof chips: small trust/value chips around the CTA.\n5. Final settle: short hold for end-card readability.\n\n## Timing\n\n- 0%-100% / ctaBackdropGlow: soft final-card depth drift.\n- 6%-36% / ctaCardsConverge: cards enter from left/right/bottom and converge.\n- 28%-56% / finalTitleReveal: final headline reveals upward.\n- 48%-72% / primaryButtonPop: CTA button pops once, no repeated bounce.\n- 62%-84% / proofChipsOrbitIn: proof chips arc into stable positions.\n- 84%-100% / finalCtaSettle: final readability hold.\n\n## Reusable atomic motions\n\n- ctaBackdropGlow\n- ctaCardsConverge\n- finalTitleReveal\n- primaryButtonPop\n- proofChipsOrbitIn\n- finalCtaSettle\n\n## Exclude from library\n\n- Source brand, exact copy, logos, source icons, and decorative elements with no CTA semantics.\n- Repeated shaking, flashing, or confetti effects.\n\n## Choreography timeline\n\n| Track | Motion | Target | Percent | Role |\n| --- | --- | --- | --- | --- |\n| 1 | ctaBackdropGlow | ctaBackdrop | 0-100 | depth-establish |\n| 2 | ctaCardsConverge | ctaCards | 6-36 | final-card-build |\n| 3 | finalTitleReveal | finalTitle | 28-56 | message-hierarchy |\n| 4 | primaryButtonPop | primaryButton | 48-72 | conversion-emphasis |\n| 5 | proofChipsOrbitIn | proofChips | 62-84 | supporting-proof |\n| 6 | finalCtaSettle | fullComposition | 84-100 | readability-hold |\n\n## QA notes\n\n- Safe area: planned pass.\n- Typography: planned pass.\n- Semantic shape: planned pass.\n- Current approval: false.\n- Current factory access: false.\r\n",
+  "atomic_motions": [
+    "ctaBackdropGlow",
+    "ctaCardsConverge",
+    "finalTitleReveal",
+    "primaryButtonPop",
+    "proofChipsOrbitIn",
+    "finalCtaSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_30",
+    "choreographyId": "finalCtaCardsConverge",
+    "sceneType": "finalCTA",
+    "approved": true,
+    "allowedInFactory": true,
+    "durationFrames": {
+      "min": 110,
+      "preferred": 132,
+      "max": 150
+    },
+    "animationTracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-ctaBackdropGlow",
+        "purpose": "Create a clean final CTA stage.",
+        "target": "ctaBackdrop",
+        "role": "depth-establish",
+        "motionId": "ctaBackdropGlow"
+      },
+      {
+        "purpose": "Converge supporting cards toward the CTA.",
+        "layer": "semantic",
+        "endPercent": 36,
+        "role": "final-card-build",
+        "trackId": "track-ctaCardsConverge",
+        "motionId": "ctaCardsConverge",
+        "startPercent": 6,
+        "target": "ctaCards",
+        "semanticTarget": "finalCTA.cards"
+      },
+      {
+        "purpose": "Reveal the final CTA headline.",
+        "layer": "title",
+        "endPercent": 56,
+        "role": "message-hierarchy",
+        "trackId": "track-finalTitleReveal",
+        "motionId": "finalTitleReveal",
+        "startPercent": 28,
+        "target": "finalTitle",
+        "semanticTarget": "finalCTA.title"
+      },
+      {
+        "purpose": "Pop the primary CTA button once.",
+        "layer": "cta",
+        "endPercent": 72,
+        "role": "conversion-emphasis",
+        "trackId": "track-primaryButtonPop",
+        "motionId": "primaryButtonPop",
+        "startPercent": 48,
+        "target": "primaryButton",
+        "semanticTarget": "finalCTA.primaryButton"
+      },
+      {
+        "purpose": "Bring proof chips into stable positions.",
+        "layer": "semantic",
+        "endPercent": 84,
+        "role": "supporting-proof",
+        "trackId": "track-proofChipsOrbitIn",
+        "motionId": "proofChipsOrbitIn",
+        "startPercent": 62,
+        "target": "proofChips",
+        "semanticTarget": "finalCTA.proofChips"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 84,
+        "endPercent": 100,
+        "trackId": "track-finalCtaSettle",
+        "purpose": "Hold the final CTA for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "finalCtaSettle"
+      }
+    ]
+  },
+  "duration": 4.4,
+  "duration_frames": {
+    "min": 110,
+    "preferred": 132,
+    "max": 150
+  },
+  "motion_tags": [
+    "finalCTA",
+    "finalCtaCardsConverge",
+    "cta",
+    "conversion",
+    "endcard"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "finalCtaCardsConverge",
+    "animation_tracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-ctaBackdropGlow",
+        "purpose": "Create a clean final CTA stage.",
+        "target": "ctaBackdrop",
+        "role": "depth-establish",
+        "motionId": "ctaBackdropGlow"
+      },
+      {
+        "purpose": "Converge supporting cards toward the CTA.",
+        "layer": "semantic",
+        "endPercent": 36,
+        "role": "final-card-build",
+        "trackId": "track-ctaCardsConverge",
+        "motionId": "ctaCardsConverge",
+        "startPercent": 6,
+        "target": "ctaCards",
+        "semanticTarget": "finalCTA.cards"
+      },
+      {
+        "purpose": "Reveal the final CTA headline.",
+        "layer": "title",
+        "endPercent": 56,
+        "role": "message-hierarchy",
+        "trackId": "track-finalTitleReveal",
+        "motionId": "finalTitleReveal",
+        "startPercent": 28,
+        "target": "finalTitle",
+        "semanticTarget": "finalCTA.title"
+      },
+      {
+        "purpose": "Pop the primary CTA button once.",
+        "layer": "cta",
+        "endPercent": 72,
+        "role": "conversion-emphasis",
+        "trackId": "track-primaryButtonPop",
+        "motionId": "primaryButtonPop",
+        "startPercent": 48,
+        "target": "primaryButton",
+        "semanticTarget": "finalCTA.primaryButton"
+      },
+      {
+        "purpose": "Bring proof chips into stable positions.",
+        "layer": "semantic",
+        "endPercent": 84,
+        "role": "supporting-proof",
+        "trackId": "track-proofChipsOrbitIn",
+        "motionId": "proofChipsOrbitIn",
+        "startPercent": 62,
+        "target": "proofChips",
+        "semanticTarget": "finalCTA.proofChips"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 84,
+        "endPercent": 100,
+        "trackId": "track-finalCtaSettle",
+        "purpose": "Hold the final CTA for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "finalCtaSettle"
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_30"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

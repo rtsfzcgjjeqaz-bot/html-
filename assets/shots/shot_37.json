@@ -1,0 +1,186 @@
+{
+  "shot_id": "shot_37",
+  "choreography_id": "websiteHeroCenterStage",
+  "source_scene_type": "websiteHero",
+  "scene_type": "INFO",
+  "action_breakdown": "# Shot 37 websiteHero - Single-Shot Certification Asset\n\n## Source timing\n\n- Shot ID: shot_37\n- Scene type: websiteHero\n- Reference clip: C:\\Users\\Administrator\\.codex\\references\\extracted-shots\\shot_37_websiteHero_11.0-12.8.mp4\n- Actual start time in source video: 10.958s\n- Actual end time in source video: 12.792s\n- Duration: 1.834s\n- Certification status: candidate only; approved=false; allowedInFactory=false\n\n## Visual hierarchy\n\n1. Background layer: bright desk-like environment with very shallow parallax. Reusable version becomes a clean product-stage gradient and soft surface shadows, not the physical desk props.\n2. Main website/laptop layer: centered laptop/browser surface, nearly front-facing. This is the dominant websiteHero object and differs from the already-certified angled push-in by being flatter and faster.\n3. Browser content layer: generic hero media, headline bars, nav rail, and CTA placeholder. No source UI, brand, logo, or page text is reused.\n4. Title/label layer: small product/website label or pill that clarifies context without covering the laptop.\n5. CTA/value emphasis: one restrained spotlight or CTA chip near the lower hero area.\n6. Camera hold: short readable settle, because the source shot is brief.\n\n## Element timing, direction, speed, settle\n\n- 0%-100% / heroDeskBackdropDrift: background drifts subtly left-to-right with very mild scale. Low speed, continuous.\n- 4%-32% / laptopFrameRise: laptop frame rises from slight lower position with scale 0.94 to 1.0. Fast but non-bouncy; settles by 32%.\n- 20%-48% / browserContentWipe: internal website sections wipe upward and fade in. Medium speed; should not feel like a slide deck.\n- 34%-60% / titlePillReveal: context pill reveals from upper-left with small y-offset. Settles by 60%.\n- 52%-78% / ctaSpotlightPulse: single CTA/value spotlight appears near the hero area with one controlled pulse.\n- 78%-100% / heroHoldSettle: final composition holds with micro push-in for readability.\n\n## Reusable atomic motions\n\n- heroDeskBackdropDrift: soft website/product stage parallax.\n- laptopFrameRise: centered laptop/browser rise and scale-in.\n- browserContentWipe: generic website hero content reveal.\n- titlePillReveal: small semantic label reveal.\n- ctaSpotlightPulse: one-time CTA/value emphasis.\n- heroHoldSettle: short final readability hold.\n\n## Reference-only decoration to exclude\n\n- Desk props, laptop brand silhouette details, exact source website content, source images, logo, and text labels are excluded.\n- Avoid duplicating Shot 26's angled 3D push-in; this candidate should remain front-facing and compact.\n- Avoid long camera orbit or repeated glow pulses because the shot is meant to be a quick bridge hero.\n\n## Choreography timeline\n\n| Track | Motion | Target | Percent | Role | Library decision |\n| --- | --- | --- | --- | --- | --- |\n| 1 | heroDeskBackdropDrift | heroDeskBackdrop | 0-100 | depth-establish | candidate |\n| 2 | laptopFrameRise | laptopFrame | 4-32 | primary-website-entry | candidate |\n| 3 | browserContentWipe | browserContent | 20-48 | website-content-reveal | candidate |\n| 4 | titlePillReveal | titlePill | 34-60 | semantic-context | candidate |\n| 5 | ctaSpotlightPulse | ctaSpotlight | 52-78 | conversion-emphasis | candidate |\n| 6 | heroHoldSettle | fullComposition | 78-100 | readability-hold | candidate |\n\n## QA notes\n\n- Safe area: planned pass; centered laptop and labels remain inside margins.\n- Typography: planned pass; generic placeholder text only.\n- Semantic shape: planned pass; label, browser content, CTA, and centered hero have clear websiteHero roles.\n- Current approval: false.\n- Current factory access: false.\r\n",
+  "atomic_motions": [
+    "heroDeskBackdropDrift",
+    "laptopFrameRise",
+    "browserContentWipe",
+    "titlePillReveal",
+    "ctaSpotlightPulse",
+    "heroHoldSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_37",
+    "choreographyId": "websiteHeroCenterStage",
+    "sceneType": "websiteHero",
+    "approved": true,
+    "allowedInFactory": true,
+    "durationFrames": {
+      "min": 110,
+      "preferred": 126,
+      "max": 145
+    },
+    "animationTracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-heroDeskBackdropDrift",
+        "purpose": "Create a restrained centered website-hero stage.",
+        "target": "heroDeskBackdrop",
+        "role": "depth-establish",
+        "motionId": "heroDeskBackdropDrift"
+      },
+      {
+        "purpose": "Lift a centered laptop/browser frame into view.",
+        "layer": "website",
+        "endPercent": 32,
+        "role": "primary-website-entry",
+        "trackId": "track-laptopFrameRise",
+        "motionId": "laptopFrameRise",
+        "startPercent": 4,
+        "target": "laptopFrame",
+        "semanticTarget": "website.centerFrame"
+      },
+      {
+        "purpose": "Reveal generic browser content without source UI.",
+        "layer": "website",
+        "endPercent": 48,
+        "role": "website-content-reveal",
+        "trackId": "track-browserContentWipe",
+        "motionId": "browserContentWipe",
+        "startPercent": 20,
+        "target": "browserContent",
+        "semanticTarget": "website.heroContent"
+      },
+      {
+        "purpose": "Reveal a compact context label outside the laptop.",
+        "layer": "title",
+        "endPercent": 60,
+        "role": "semantic-context",
+        "trackId": "track-titlePillReveal",
+        "motionId": "titlePillReveal",
+        "startPercent": 34,
+        "target": "titlePill",
+        "semanticTarget": "website.contextLabel"
+      },
+      {
+        "purpose": "Apply one restrained CTA/value spotlight pulse.",
+        "layer": "semantic",
+        "endPercent": 78,
+        "role": "conversion-emphasis",
+        "trackId": "track-ctaSpotlightPulse",
+        "motionId": "ctaSpotlightPulse",
+        "startPercent": 52,
+        "target": "ctaSpotlight",
+        "semanticTarget": "website.cta"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 78,
+        "endPercent": 100,
+        "trackId": "track-heroHoldSettle",
+        "purpose": "Hold the centered website hero for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "heroHoldSettle"
+      }
+    ]
+  },
+  "duration": 4.2,
+  "duration_frames": {
+    "min": 110,
+    "preferred": 126,
+    "max": 145
+  },
+  "motion_tags": [
+    "websiteHero",
+    "websiteHeroCenterStage",
+    "website",
+    "hero",
+    "product",
+    "slide"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "websiteHeroCenterStage",
+    "animation_tracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-heroDeskBackdropDrift",
+        "purpose": "Create a restrained centered website-hero stage.",
+        "target": "heroDeskBackdrop",
+        "role": "depth-establish",
+        "motionId": "heroDeskBackdropDrift"
+      },
+      {
+        "purpose": "Lift a centered laptop/browser frame into view.",
+        "layer": "website",
+        "endPercent": 32,
+        "role": "primary-website-entry",
+        "trackId": "track-laptopFrameRise",
+        "motionId": "laptopFrameRise",
+        "startPercent": 4,
+        "target": "laptopFrame",
+        "semanticTarget": "website.centerFrame"
+      },
+      {
+        "purpose": "Reveal generic browser content without source UI.",
+        "layer": "website",
+        "endPercent": 48,
+        "role": "website-content-reveal",
+        "trackId": "track-browserContentWipe",
+        "motionId": "browserContentWipe",
+        "startPercent": 20,
+        "target": "browserContent",
+        "semanticTarget": "website.heroContent"
+      },
+      {
+        "purpose": "Reveal a compact context label outside the laptop.",
+        "layer": "title",
+        "endPercent": 60,
+        "role": "semantic-context",
+        "trackId": "track-titlePillReveal",
+        "motionId": "titlePillReveal",
+        "startPercent": 34,
+        "target": "titlePill",
+        "semanticTarget": "website.contextLabel"
+      },
+      {
+        "purpose": "Apply one restrained CTA/value spotlight pulse.",
+        "layer": "semantic",
+        "endPercent": 78,
+        "role": "conversion-emphasis",
+        "trackId": "track-ctaSpotlightPulse",
+        "motionId": "ctaSpotlightPulse",
+        "startPercent": 52,
+        "target": "ctaSpotlight",
+        "semanticTarget": "website.cta"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 78,
+        "endPercent": 100,
+        "trackId": "track-heroHoldSettle",
+        "purpose": "Hold the centered website hero for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "heroHoldSettle"
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_37"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

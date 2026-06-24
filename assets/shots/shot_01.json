@@ -1,0 +1,186 @@
+{
+  "shot_id": "shot_01",
+  "choreography_id": "coverHookImpact",
+  "source_scene_type": "coverHook",
+  "scene_type": "HOOK",
+  "action_breakdown": "# Shot 01 coverHook - Single-Shot Certification Asset\n\n## Source timing\n\n- Shot ID: shot_01\n- Scene type: coverHook\n- Reference clip: C:\\Users\\Administrator\\.codex\\references\\extracted-shots\\shot_01_coverHook_0.0-2.2.mp4\n- Actual start time: 0.000s\n- Actual end time: 2.233s\n- Duration: 2.233s\n- Certification status: candidate only; approved=false; allowedInFactory=false\n\n## Visual hierarchy\n\n1. Background: bold opener gradient/depth field.\n2. Hook title: primary headline, highest hierarchy.\n3. Product/feature slab: compact abstract panel supporting the hook.\n4. Accent streaks/chips: semantic attention guides only, not decorative noise.\n5. Final hold: title and panel settle for immediate readability.\n\n## Timing\n\n- 0%-100% / hookBackdropSurge: energized background push.\n- 4%-28% / hookTitleSmashIn: title enters quickly with controlled overshoot.\n- 18%-44% / productSlabRise: support panel rises into view.\n- 36%-62% / accentChipsSnap: 2-3 chips snap around the hook.\n- 58%-82% / hookUnderlineSweep: underline/proof sweep highlights the key phrase.\n- 82%-100% / coverHookSettle: readable final hold.\n\n## Reusable atomic motions\n\nhookBackdropSurge, hookTitleSmashIn, productSlabRise, accentChipsSnap, hookUnderlineSweep, coverHookSettle.\n\n## Exclude from library\n\nOriginal brand/title/product copy, excessive glitch, random decorations, fast unreadable text.\r\n",
+  "atomic_motions": [
+    "hookBackdropSurge",
+    "hookTitleSmashIn",
+    "productSlabRise",
+    "accentChipsSnap",
+    "hookUnderlineSweep",
+    "coverHookSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_01",
+    "choreographyId": "coverHookImpact",
+    "sceneType": "coverHook",
+    "approved": true,
+    "allowedInFactory": true,
+    "durationFrames": {
+      "min": 100,
+      "preferred": 126,
+      "max": 145
+    },
+    "animationTracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-hookBackdropSurge",
+        "purpose": "Create energetic opener depth.",
+        "target": "hookBackdrop",
+        "role": "depth-establish",
+        "motionId": "hookBackdropSurge"
+      },
+      {
+        "purpose": "Reveal the hook title with controlled impact.",
+        "layer": "title",
+        "endPercent": 28,
+        "role": "hook-message-entry",
+        "trackId": "track-hookTitleSmashIn",
+        "motionId": "hookTitleSmashIn",
+        "startPercent": 4,
+        "target": "hookTitle",
+        "semanticTarget": "coverHook.title"
+      },
+      {
+        "purpose": "Lift a generic product slab into support position.",
+        "layer": "website",
+        "endPercent": 44,
+        "role": "supporting-product-entry",
+        "trackId": "track-productSlabRise",
+        "motionId": "productSlabRise",
+        "startPercent": 18,
+        "target": "productSlab",
+        "semanticTarget": "coverHook.productSlab"
+      },
+      {
+        "purpose": "Snap meaningful chips around the hook.",
+        "layer": "semantic",
+        "endPercent": 62,
+        "role": "semantic-accents",
+        "trackId": "track-accentChipsSnap",
+        "motionId": "accentChipsSnap",
+        "startPercent": 36,
+        "target": "accentChips",
+        "semanticTarget": "coverHook.chips"
+      },
+      {
+        "purpose": "Sweep an underline through the key phrase.",
+        "layer": "semantic",
+        "endPercent": 82,
+        "role": "semantic-emphasis",
+        "trackId": "track-hookUnderlineSweep",
+        "motionId": "hookUnderlineSweep",
+        "startPercent": 58,
+        "target": "hookUnderline",
+        "semanticTarget": "coverHook.underline"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 82,
+        "endPercent": 100,
+        "trackId": "track-coverHookSettle",
+        "purpose": "Settle the opener for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "coverHookSettle"
+      }
+    ]
+  },
+  "duration": 4.2,
+  "duration_frames": {
+    "min": 100,
+    "preferred": 126,
+    "max": 145
+  },
+  "motion_tags": [
+    "coverHook",
+    "coverHookImpact",
+    "dynamic",
+    "attention",
+    "hero",
+    "slide"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "coverHookImpact",
+    "animation_tracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-hookBackdropSurge",
+        "purpose": "Create energetic opener depth.",
+        "target": "hookBackdrop",
+        "role": "depth-establish",
+        "motionId": "hookBackdropSurge"
+      },
+      {
+        "purpose": "Reveal the hook title with controlled impact.",
+        "layer": "title",
+        "endPercent": 28,
+        "role": "hook-message-entry",
+        "trackId": "track-hookTitleSmashIn",
+        "motionId": "hookTitleSmashIn",
+        "startPercent": 4,
+        "target": "hookTitle",
+        "semanticTarget": "coverHook.title"
+      },
+      {
+        "purpose": "Lift a generic product slab into support position.",
+        "layer": "website",
+        "endPercent": 44,
+        "role": "supporting-product-entry",
+        "trackId": "track-productSlabRise",
+        "motionId": "productSlabRise",
+        "startPercent": 18,
+        "target": "productSlab",
+        "semanticTarget": "coverHook.productSlab"
+      },
+      {
+        "purpose": "Snap meaningful chips around the hook.",
+        "layer": "semantic",
+        "endPercent": 62,
+        "role": "semantic-accents",
+        "trackId": "track-accentChipsSnap",
+        "motionId": "accentChipsSnap",
+        "startPercent": 36,
+        "target": "accentChips",
+        "semanticTarget": "coverHook.chips"
+      },
+      {
+        "purpose": "Sweep an underline through the key phrase.",
+        "layer": "semantic",
+        "endPercent": 82,
+        "role": "semantic-emphasis",
+        "trackId": "track-hookUnderlineSweep",
+        "motionId": "hookUnderlineSweep",
+        "startPercent": 58,
+        "target": "hookUnderline",
+        "semanticTarget": "coverHook.underline"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 82,
+        "endPercent": 100,
+        "trackId": "track-coverHookSettle",
+        "purpose": "Settle the opener for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "coverHookSettle"
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_01"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

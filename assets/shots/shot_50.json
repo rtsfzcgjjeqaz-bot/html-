@@ -1,0 +1,210 @@
+{
+  "shot_id": "shot_50",
+  "choreography_id": "priceInsightSnap",
+  "source_scene_type": "priceInsight",
+  "scene_type": "INFO",
+  "action_breakdown": "# Shot 50 priceInsight - Single-Shot Certification Asset\n\n## Source timing\n\n- Shot ID: shot_50\n- Scene type: priceInsight\n- Reference clip: C:\\Users\\Administrator\\.codex\\references\\extracted-shots\\shot_50_priceInsight_47.0-49.0.mp4\n- Actual start time in source video: 47.042s\n- Actual end time in source video: 49.000s\n- Duration: 1.958s\n- Certification status: candidate only; approved=false; allowedInFactory=false\n\n## Visual hierarchy\n\n1. Background layer: soft desk/product environment with pastel lighting. In the reusable version this becomes an abstract commerce-stage gradient plus restrained depth shapes, not a copied desk, prop, logo, or product scene.\n2. Main device/product surface: a centered tablet/browser frame. It anchors the shot and provides the commercial context for a pricing or offer insight.\n3. Price insight badge: a compact sticker/card near the left-lower portion of the device. This is the semantic focus and must stay inside safe area.\n4. Insight table/card: a small floating panel over the interface that implies comparison, plan details, or pricing evidence without reproducing source content.\n5. Secondary proof chips: optional small emoji-like or status chips above the interface. These are decorative in the reference and should only be retained if they carry semantic proof.\n\n## Element timing, direction, speed, settle\n\n- 0%-100% / commerceBackdropDrift: background moves very slowly left-up with a mild scale increase. Speed is low and continuous; it should not distract from the price badge.\n- 5%-34% / deviceShelfPush: main device enters from slight lower-right with scale 0.92 to 1.0 and a tiny rotateY correction. It settles by 34%.\n- 18%-46% / priceBadgePop: price badge pops from lower-left toward its final anchor with scale 0.72 to 1.0. Fast elastic pop; must settle by 46% to avoid cheap sticker bounce.\n- 34%-66% / insightPanelSlide: insight panel slides from right with slight upward motion and blur removal. Medium speed; settles by 66%.\n- 52%-78% / valueRowsReveal: table rows/mini bars reveal downward in a stagger. This provides readable data motion without copying source data.\n- 68%-88% / savingsEmphasisPulse: price/savings highlight receives one restrained emphasis pulse. No repeated flashing.\n- 86%-100% / priceInsightSettle: whole composition holds with a tiny push-in and opacity stabilization for readability.\n\n## Reusable atomic motions\n\n- commerceBackdropDrift: soft commercial background parallax.\n- deviceShelfPush: centered product/browser surface push-in.\n- priceBadgePop: semantic price badge entrance.\n- insightPanelSlide: evidence card/table slide-in.\n- valueRowsReveal: staggered data rows reveal.\n- savingsEmphasisPulse: one-time price/savings emphasis.\n- priceInsightSettle: final readability settle.\n\n## Reference-only decoration to exclude\n\n- Physical desk props, brand-specific tablet screen, emojis, flowers, balloons, and source page content are not reusable library assets.\n- Any exact price, product image, logo, or text from the reference must not enter the formal library.\n- Repeated bouncy sticker motion should be avoided because it can become PPT-like and reduce trust.\n\n## Choreography timeline\n\n| Track | Motion | Target | Percent | Role | Library decision |\n| --- | --- | --- | --- | --- | --- |\n| 1 | commerceBackdropDrift | commerceBackdrop | 0-100 | depth-establish | candidate |\n| 2 | deviceShelfPush | productSurface | 5-34 | primary-commerce-context | candidate |\n| 3 | priceBadgePop | priceBadge | 18-46 | semantic-price-hook | candidate |\n| 4 | insightPanelSlide | insightPanel | 34-66 | evidence-panel-entry | candidate |\n| 5 | valueRowsReveal | valueRows | 52-78 | data-proof-build | candidate |\n| 6 | savingsEmphasisPulse | savingsHighlight | 68-88 | price-emphasis | candidate |\n| 7 | priceInsightSettle | fullComposition | 86-100 | readability-hold | candidate |\n\n## QA notes\n\n- Safe area: planned pass; price badge and insight panel remain inside 960x540 safe margins.\n- Typography: planned pass; generic labels only, no source copy.\n- Semantic shape: planned pass; badge, panel, rows, and emphasis all map to priceInsight semantics.\n- Current approval: false.\n- Current factory access: false.\r\n",
+  "atomic_motions": [
+    "commerceBackdropDrift",
+    "deviceShelfPush",
+    "priceBadgePop",
+    "insightPanelSlide",
+    "valueRowsReveal",
+    "savingsEmphasisPulse",
+    "priceInsightSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_50",
+    "choreographyId": "priceInsightSnap",
+    "sceneType": "priceInsight",
+    "approved": true,
+    "allowedInFactory": true,
+    "durationFrames": {
+      "min": 110,
+      "preferred": 132,
+      "max": 150
+    },
+    "animationTracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-commerceBackdropDrift",
+        "purpose": "Create a soft commerce-stage parallax background.",
+        "target": "commerceBackdrop",
+        "role": "depth-establish",
+        "motionId": "commerceBackdropDrift"
+      },
+      {
+        "purpose": "Push the product or website surface into a stable reading position.",
+        "layer": "device",
+        "endPercent": 34,
+        "role": "primary-commerce-context",
+        "trackId": "track-deviceShelfPush",
+        "motionId": "deviceShelfPush",
+        "startPercent": 5,
+        "target": "productSurface",
+        "semanticTarget": "commerce.productSurface"
+      },
+      {
+        "purpose": "Pop the price or savings badge as the primary insight.",
+        "layer": "price",
+        "endPercent": 46,
+        "role": "semantic-price-hook",
+        "trackId": "track-priceBadgePop",
+        "motionId": "priceBadgePop",
+        "startPercent": 18,
+        "target": "priceBadge",
+        "semanticTarget": "price.badge"
+      },
+      {
+        "purpose": "Slide an evidence panel into view without copying source content.",
+        "layer": "semantic",
+        "endPercent": 66,
+        "role": "evidence-panel-entry",
+        "trackId": "track-insightPanelSlide",
+        "motionId": "insightPanelSlide",
+        "startPercent": 34,
+        "target": "insightPanel",
+        "semanticTarget": "price.evidencePanel"
+      },
+      {
+        "purpose": "Reveal generic rows that support the price insight.",
+        "layer": "semantic",
+        "endPercent": 78,
+        "role": "data-proof-build",
+        "trackId": "track-valueRowsReveal",
+        "motionId": "valueRowsReveal",
+        "startPercent": 52,
+        "target": "valueRows",
+        "semanticTarget": "price.valueRows"
+      },
+      {
+        "purpose": "Apply one restrained emphasis pulse to the final savings claim.",
+        "layer": "price",
+        "endPercent": 88,
+        "role": "price-emphasis",
+        "trackId": "track-savingsEmphasisPulse",
+        "motionId": "savingsEmphasisPulse",
+        "startPercent": 68,
+        "target": "savingsHighlight",
+        "semanticTarget": "price.savingsHighlight"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 86,
+        "endPercent": 100,
+        "trackId": "track-priceInsightSettle",
+        "purpose": "Settle the complete price insight for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "priceInsightSettle"
+      }
+    ]
+  },
+  "duration": 4.4,
+  "duration_frames": {
+    "min": 110,
+    "preferred": 132,
+    "max": 150
+  },
+  "motion_tags": [
+    "priceInsight",
+    "priceInsightSnap",
+    "price",
+    "commerce",
+    "insight",
+    "zoom",
+    "slide"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "priceInsightSnap",
+    "animation_tracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-commerceBackdropDrift",
+        "purpose": "Create a soft commerce-stage parallax background.",
+        "target": "commerceBackdrop",
+        "role": "depth-establish",
+        "motionId": "commerceBackdropDrift"
+      },
+      {
+        "purpose": "Push the product or website surface into a stable reading position.",
+        "layer": "device",
+        "endPercent": 34,
+        "role": "primary-commerce-context",
+        "trackId": "track-deviceShelfPush",
+        "motionId": "deviceShelfPush",
+        "startPercent": 5,
+        "target": "productSurface",
+        "semanticTarget": "commerce.productSurface"
+      },
+      {
+        "purpose": "Pop the price or savings badge as the primary insight.",
+        "layer": "price",
+        "endPercent": 46,
+        "role": "semantic-price-hook",
+        "trackId": "track-priceBadgePop",
+        "motionId": "priceBadgePop",
+        "startPercent": 18,
+        "target": "priceBadge",
+        "semanticTarget": "price.badge"
+      },
+      {
+        "purpose": "Slide an evidence panel into view without copying source content.",
+        "layer": "semantic",
+        "endPercent": 66,
+        "role": "evidence-panel-entry",
+        "trackId": "track-insightPanelSlide",
+        "motionId": "insightPanelSlide",
+        "startPercent": 34,
+        "target": "insightPanel",
+        "semanticTarget": "price.evidencePanel"
+      },
+      {
+        "purpose": "Reveal generic rows that support the price insight.",
+        "layer": "semantic",
+        "endPercent": 78,
+        "role": "data-proof-build",
+        "trackId": "track-valueRowsReveal",
+        "motionId": "valueRowsReveal",
+        "startPercent": 52,
+        "target": "valueRows",
+        "semanticTarget": "price.valueRows"
+      },
+      {
+        "purpose": "Apply one restrained emphasis pulse to the final savings claim.",
+        "layer": "price",
+        "endPercent": 88,
+        "role": "price-emphasis",
+        "trackId": "track-savingsEmphasisPulse",
+        "motionId": "savingsEmphasisPulse",
+        "startPercent": 68,
+        "target": "savingsHighlight",
+        "semanticTarget": "price.savingsHighlight"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 86,
+        "endPercent": 100,
+        "trackId": "track-priceInsightSettle",
+        "purpose": "Settle the complete price insight for readability.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "priceInsightSettle"
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_50"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

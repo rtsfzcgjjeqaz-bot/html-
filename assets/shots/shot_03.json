@@ -1,0 +1,208 @@
+{
+  "shot_id": "shot_03",
+  "choreography_id": "stepFlowRail",
+  "source_scene_type": "stepFlow",
+  "scene_type": "INFO",
+  "action_breakdown": "# Shot 03 stepFlow - Single-Shot Certification Asset\n\n## Source timing\n\n- Shot ID: shot_03\n- Scene type: stepFlow\n- Reference clip: C:\\Users\\Administrator\\.codex\\references\\extracted-shots\\shot_03_stepFlow_5.2-14.9.mp4\n- Actual start time in source video: 5.200s\n- Actual end time in source video: 14.934s\n- Duration: 9.734s\n- Certification status: candidate only; approved=false; allowedInFactory=false\n\n## Visual hierarchy\n\n1. Background layer: bright white/pale workflow surface with shallow depth. Reusable version keeps the clean operating surface but removes brand-specific UI.\n2. Main flow line: horizontal process rail connecting multiple steps. This is the structural anchor of the shot.\n3. Step cards: 3-5 compact task cards arranged along the rail. Each card represents a generic workflow stage.\n4. Active step focus: one highlighted step/card receives focus and a semantic glow. It should guide attention rather than decorate.\n5. Tool/icon layer: a brief capability icon or module card rises near the active step to imply automation.\n6. Progress/metric layer: final compact progress meter or status card confirms the flow outcome.\n\n## Element timing, direction, speed, settle\n\n- 0%-100% / stepBackdropDrift: background drifts very gently with shallow scale. Continuous and low speed.\n- 5%-30% / processLineDraw: process rail draws left-to-right. It should finish early to frame later actions.\n- 18%-56% / stepCardsCascade: step cards enter in sequence from slight below and left. Medium speed with clean deceleration.\n- 38%-68% / activeStepFocus: active step lifts slightly and receives one semantic focus outline. No repeated blinking.\n- 52%-78% / toolIconLift: module/tool icon rises from lower-right near the focused step. Quick but restrained.\n- 66%-88% / progressMeterReveal: progress card and meter reveal in place, implying measurable flow state.\n- 86%-100% / stepFlowSettle: whole composition settles for readability.\n\n## Reusable atomic motions\n\n- stepBackdropDrift: soft process-stage parallax.\n- processLineDraw: directional flow rail draw.\n- stepCardsCascade: staged step/task cards reveal.\n- activeStepFocus: semantic focus lift and outline.\n- toolIconLift: capability/icon module rise.\n- progressMeterReveal: metric/progress confirmation reveal.\n- stepFlowSettle: final readability hold.\n\n## Reference-only decoration to exclude\n\n- Source product name, exact Chinese copy, application-specific icons, task labels, screenshots, and percentage values are excluded.\n- Physical props or decorative confetti are not part of the reusable motion.\n- Avoid tiny UI labels that become unreadable and avoid scattered floating cards with no flow connection.\n\n## Choreography timeline\n\n| Track | Motion | Target | Percent | Role | Library decision |\n| --- | --- | --- | --- | --- | --- |\n| 1 | stepBackdropDrift | stepBackdrop | 0-100 | depth-establish | candidate |\n| 2 | processLineDraw | processRail | 5-30 | flow-structure | candidate |\n| 3 | stepCardsCascade | stepCards | 18-56 | step-sequence-build | candidate |\n| 4 | activeStepFocus | activeStep | 38-68 | semantic-step-focus | candidate |\n| 5 | toolIconLift | toolModule | 52-78 | capability-proof | candidate |\n| 6 | progressMeterReveal | progressMeter | 66-88 | outcome-proof | candidate |\n| 7 | stepFlowSettle | fullComposition | 86-100 | readability-hold | candidate |\n\n## QA notes\n\n- Safe area: planned pass; rail, cards, icon, and progress meter remain inside 960x540 safe margins.\n- Typography: planned pass; generic labels only, no source copy.\n- Semantic shape: planned pass; each semantic element maps to a process/step/outcome role.\n- Current approval: false.\n- Current factory access: false.\r\n",
+  "atomic_motions": [
+    "stepBackdropDrift",
+    "processLineDraw",
+    "stepCardsCascade",
+    "activeStepFocus",
+    "toolIconLift",
+    "progressMeterReveal",
+    "stepFlowSettle"
+  ],
+  "choreography": {
+    "shotId": "shot_03",
+    "choreographyId": "stepFlowRail",
+    "sceneType": "stepFlow",
+    "approved": true,
+    "allowedInFactory": true,
+    "durationFrames": {
+      "min": 120,
+      "preferred": 144,
+      "max": 170
+    },
+    "animationTracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-stepBackdropDrift",
+        "purpose": "Create a restrained workflow-stage background.",
+        "target": "stepBackdrop",
+        "role": "depth-establish",
+        "motionId": "stepBackdropDrift"
+      },
+      {
+        "purpose": "Draw the process rail left-to-right.",
+        "layer": "flow",
+        "endPercent": 30,
+        "role": "flow-structure",
+        "trackId": "track-processLineDraw",
+        "motionId": "processLineDraw",
+        "startPercent": 5,
+        "target": "processRail",
+        "semanticTarget": "stepFlow.rail"
+      },
+      {
+        "purpose": "Cascade reusable step cards along the rail.",
+        "layer": "flow",
+        "endPercent": 56,
+        "role": "step-sequence-build",
+        "trackId": "track-stepCardsCascade",
+        "motionId": "stepCardsCascade",
+        "startPercent": 18,
+        "target": "stepCards",
+        "semanticTarget": "stepFlow.cards"
+      },
+      {
+        "purpose": "Lift and focus the active workflow step.",
+        "layer": "semantic",
+        "endPercent": 68,
+        "role": "semantic-step-focus",
+        "trackId": "track-activeStepFocus",
+        "motionId": "activeStepFocus",
+        "startPercent": 38,
+        "target": "activeStep",
+        "semanticTarget": "stepFlow.activeStep"
+      },
+      {
+        "purpose": "Lift a generic capability module near the active step.",
+        "layer": "icon",
+        "endPercent": 78,
+        "role": "capability-proof",
+        "trackId": "track-toolIconLift",
+        "motionId": "toolIconLift",
+        "startPercent": 52,
+        "target": "toolModule",
+        "semanticTarget": "stepFlow.toolModule"
+      },
+      {
+        "purpose": "Reveal a compact progress or status proof card.",
+        "layer": "progress",
+        "endPercent": 88,
+        "role": "outcome-proof",
+        "trackId": "track-progressMeterReveal",
+        "motionId": "progressMeterReveal",
+        "startPercent": 66,
+        "target": "progressMeter",
+        "semanticTarget": "stepFlow.progress"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 86,
+        "endPercent": 100,
+        "trackId": "track-stepFlowSettle",
+        "purpose": "Settle the workflow scene for review.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "stepFlowSettle"
+      }
+    ]
+  },
+  "duration": 4.8,
+  "duration_frames": {
+    "min": 120,
+    "preferred": 144,
+    "max": 170
+  },
+  "motion_tags": [
+    "stepFlow",
+    "stepFlowRail",
+    "workflow",
+    "steps",
+    "process"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "stepFlowRail",
+    "animation_tracks": [
+      {
+        "layer": "background",
+        "startPercent": 0,
+        "endPercent": 100,
+        "trackId": "track-stepBackdropDrift",
+        "purpose": "Create a restrained workflow-stage background.",
+        "target": "stepBackdrop",
+        "role": "depth-establish",
+        "motionId": "stepBackdropDrift"
+      },
+      {
+        "purpose": "Draw the process rail left-to-right.",
+        "layer": "flow",
+        "endPercent": 30,
+        "role": "flow-structure",
+        "trackId": "track-processLineDraw",
+        "motionId": "processLineDraw",
+        "startPercent": 5,
+        "target": "processRail",
+        "semanticTarget": "stepFlow.rail"
+      },
+      {
+        "purpose": "Cascade reusable step cards along the rail.",
+        "layer": "flow",
+        "endPercent": 56,
+        "role": "step-sequence-build",
+        "trackId": "track-stepCardsCascade",
+        "motionId": "stepCardsCascade",
+        "startPercent": 18,
+        "target": "stepCards",
+        "semanticTarget": "stepFlow.cards"
+      },
+      {
+        "purpose": "Lift and focus the active workflow step.",
+        "layer": "semantic",
+        "endPercent": 68,
+        "role": "semantic-step-focus",
+        "trackId": "track-activeStepFocus",
+        "motionId": "activeStepFocus",
+        "startPercent": 38,
+        "target": "activeStep",
+        "semanticTarget": "stepFlow.activeStep"
+      },
+      {
+        "purpose": "Lift a generic capability module near the active step.",
+        "layer": "icon",
+        "endPercent": 78,
+        "role": "capability-proof",
+        "trackId": "track-toolIconLift",
+        "motionId": "toolIconLift",
+        "startPercent": 52,
+        "target": "toolModule",
+        "semanticTarget": "stepFlow.toolModule"
+      },
+      {
+        "purpose": "Reveal a compact progress or status proof card.",
+        "layer": "progress",
+        "endPercent": 88,
+        "role": "outcome-proof",
+        "trackId": "track-progressMeterReveal",
+        "motionId": "progressMeterReveal",
+        "startPercent": 66,
+        "target": "progressMeter",
+        "semanticTarget": "stepFlow.progress"
+      },
+      {
+        "layer": "camera",
+        "startPercent": 86,
+        "endPercent": 100,
+        "trackId": "track-stepFlowSettle",
+        "purpose": "Settle the workflow scene for review.",
+        "target": "fullComposition",
+        "role": "readability-hold",
+        "motionId": "stepFlowSettle"
+      }
+    ]
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_03"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}
