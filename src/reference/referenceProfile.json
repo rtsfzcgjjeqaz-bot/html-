@@ -1,0 +1,17 @@
+﻿{
+  "sourcePath": "C:\\Users\\Administrator\\Downloads\\mvp3（已加bgm）.mp4",
+  "exists": true,
+  "durationSeconds": 30,
+  "fps": 30,
+  "targetSceneCount": 6,
+  "averageShotSeconds": 5,
+  "rhythm": "cinematic",
+  "motionDensity": "high",
+  "requiredTraits": [
+    "safe typography",
+    "2.5D depth",
+    "primary visual per scene",
+    "beat-aware transitions",
+    "non-PPT motion"
+  ]
+}

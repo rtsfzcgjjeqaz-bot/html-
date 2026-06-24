@@ -1,0 +1,2910 @@
+{
+  "project": {
+    "url": "http://app-card-price.tnt-pub.com/",
+    "timestamp": "2026-06-23T03:37:49.297Z"
+  },
+  "director": {
+    "brand": "SubPrice AI - 全球AI订阅价格对比平台，38个地区实时更新",
+    "industry": "price intelligence",
+    "audience": "website visitors ready to evaluate the offer",
+    "emotionGoal": "trust",
+    "strategies": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  "analysis": {
+    "brandPositioning": "SubPrice AI - 全球AI订阅价格对比平台，38个地区实时更新 helps users understand the offer faster.",
+    "coreValue": "Global subscription price intelligence for AI tools",
+    "usp": "Global subscription price reference",
+    "painPoints": [
+      "Users need to understand value quickly",
+      "Key details can be hard to compare",
+      "Decision confidence is often low"
+    ],
+    "emotionalTrigger": "trust",
+    "productName": "SubPrice AI",
+    "oneLineValue": "Global subscription price intelligence for AI tools",
+    "adAngles": [
+      "Problem to solution",
+      "Proof from real website data"
+    ],
+    "coreSellingPoints": [
+      "找到全球最低的订阅价格",
+      "全球价格比较",
+      "AI 决策助手",
+      "降价提醒"
+    ],
+    "targetUsers": [
+      "Website visitors",
+      "Decision makers",
+      "Buyers comparing options"
+    ],
+    "conversionPoints": [
+      "SPSubPriceAI",
+      "首页",
+      "应用",
+      "排行榜"
+    ],
+    "dataHighlights": [],
+    "visualEvidence": [
+      "Homepage",
+      "Feature area",
+      "Pricing or data area",
+      "Comparison area"
+    ]
+  },
+  "strategies": [
+    {
+      "id": "info_explosion",
+      "layoutPhilosophy": "multi-stream information UI",
+      "cameraGrammar": "impact zoom with snap refocus",
+      "motionGrammar": "burst collision resolve",
+      "narrativeLogic": "many signals to clarity",
+      "visualTone": "bright editorial data burst",
+      "templateOffset": 0
+    },
+    {
+      "id": "apple_minimal",
+      "layoutPhilosophy": "single focal static system",
+      "cameraGrammar": "slow push with negative space",
+      "motionGrammar": "quiet precision reveal",
+      "narrativeLogic": "one insight per scene",
+      "visualTone": "premium white minimal",
+      "templateOffset": 1
+    },
+    {
+      "id": "global_map",
+      "layoutPhilosophy": "spatial geography system",
+      "cameraGrammar": "regional pan and route flyover",
+      "motionGrammar": "pin arc pulse",
+      "narrativeLogic": "world to decision",
+      "visualTone": "clean cartographic intelligence",
+      "templateOffset": 2
+    },
+    {
+      "id": "ai_decision",
+      "layoutPhilosophy": "input analysis output pipeline",
+      "cameraGrammar": "node to node tracking",
+      "motionGrammar": "scan classify lock",
+      "narrativeLogic": "input to recommendation",
+      "visualTone": "calm AI console",
+      "templateOffset": 3
+    },
+    {
+      "id": "price_shock",
+      "layoutPhilosophy": "contrast-first disruption frame",
+      "cameraGrammar": "jump cut with hard reframing",
+      "motionGrammar": "snap contrast cut",
+      "narrativeLogic": "baseline disruption reveal",
+      "visualTone": "balanced contrast",
+      "templateOffset": 4
+    },
+    {
+      "id": "dashboard",
+      "layoutPhilosophy": "rigid enterprise grid",
+      "cameraGrammar": "orthographic panel build",
+      "motionGrammar": "module load synchronize",
+      "narrativeLogic": "system loading to overview",
+      "visualTone": "enterprise glass dashboard",
+      "templateOffset": 5
+    },
+    {
+      "id": "parallax_space",
+      "layoutPhilosophy": "depth based spatial layers",
+      "cameraGrammar": "slow orbit through layers",
+      "motionGrammar": "foreground midground drift",
+      "narrativeLogic": "entry depth orbit reveal",
+      "visualTone": "soft 2.5D space",
+      "templateOffset": 0
+    },
+    {
+      "id": "narrative_case",
+      "layoutPhilosophy": "sequential case story",
+      "cameraGrammar": "guided scene-to-scene dolly",
+      "motionGrammar": "case card unfold",
+      "narrativeLogic": "problem discovery resolution",
+      "visualTone": "editorial case film",
+      "templateOffset": 1
+    },
+    {
+      "id": "realtime_feed",
+      "layoutPhilosophy": "continuous streaming updates",
+      "cameraGrammar": "feed follow with anomaly pause",
+      "motionGrammar": "ticker stream highlight",
+      "narrativeLogic": "stream anomaly insight",
+      "visualTone": "clean realtime operations",
+      "templateOffset": 2
+    },
+    {
+      "id": "walkthrough",
+      "layoutPhilosophy": "step-by-step UI onboarding",
+      "cameraGrammar": "cursorless guided push",
+      "motionGrammar": "step trace confirm",
+      "narrativeLogic": "onboarding progression",
+      "visualTone": "friendly product tour",
+      "templateOffset": 3
+    }
+  ],
+  "selectedStrategy": "apple_minimal",
+  "assets": {
+    "images": [
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\home.png",
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\features.png",
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\pricing.png",
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\compare.png"
+    ],
+    "screenshots": [
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\home.png",
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\features.png",
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\pricing.png",
+      "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\compare.png"
+    ],
+    "website": {
+      "title": "SubPrice AI",
+      "description": "Global subscription price intelligence for AI tools",
+      "keyPoints": [
+        "Global subscription price reference",
+        "AI decision assistant",
+        "Country price reference"
+      ],
+      "appIcons": [
+        {
+          "appName": "ChatGPT",
+          "src": "generated/icons/chatgpt.jpg",
+          "alt": "ChatGPT"
+        },
+        {
+          "appName": "Claude",
+          "src": "generated/icons/claude.jpg",
+          "alt": "Claude"
+        },
+        {
+          "appName": "Gemini",
+          "src": "generated/icons/gemini.jpg",
+          "alt": "Gemini"
+        },
+        {
+          "appName": "YouTube",
+          "src": "generated/icons/youtube.jpg",
+          "alt": "YouTube"
+        },
+        {
+          "appName": "Spotify",
+          "src": "generated/icons/spotify.jpg",
+          "alt": "Spotify"
+        },
+        {
+          "appName": "Netflix",
+          "src": "generated/icons/netflix.jpg",
+          "alt": "Netflix"
+        },
+        {
+          "appName": "Notion",
+          "src": "generated/icons/notion.jpg",
+          "alt": "Notion"
+        },
+        {
+          "appName": "Duolingo",
+          "src": "generated/icons/duolingo.jpg",
+          "alt": "Duolingo"
+        }
+      ],
+      "prices": [],
+      "metrics": []
+    }
+  },
+  "renderConfig": {
+    "aspectRatio": "16:9",
+    "duration": 30
+  },
+  "bgmKeywords": [
+    "premium product ad",
+    "clean technology",
+    "confident pulse"
+  ],
+  "cover": {
+    "title": "SubPrice AI",
+    "visual": "C:\\Users\\Administrator\\.codex\\app-card-price-promo\\outputs\\screenshots\\home.png"
+  },
+  "videoId": "video_02",
+  "contentHash": "ce14a6f2dda67ccd",
+  "lockedContent": {
+    "contentHash": "ce14a6f2dda67ccd",
+    "productName": "SubPrice AI",
+    "coreValue": "Global subscription price intelligence for AI tools",
+    "usp": "Global subscription price reference",
+    "appList": [
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "YouTube",
+      "Spotify",
+      "Netflix"
+    ],
+    "appIcons": [
+      {
+        "appName": "ChatGPT",
+        "src": "generated/icons/chatgpt.jpg",
+        "alt": "ChatGPT"
+      },
+      {
+        "appName": "Claude",
+        "src": "generated/icons/claude.jpg",
+        "alt": "Claude"
+      },
+      {
+        "appName": "Gemini",
+        "src": "generated/icons/gemini.jpg",
+        "alt": "Gemini"
+      },
+      {
+        "appName": "YouTube",
+        "src": "generated/icons/youtube.jpg",
+        "alt": "YouTube"
+      },
+      {
+        "appName": "Spotify",
+        "src": "generated/icons/spotify.jpg",
+        "alt": "Spotify"
+      },
+      {
+        "appName": "Netflix",
+        "src": "generated/icons/netflix.jpg",
+        "alt": "Netflix"
+      }
+    ],
+    "countryData": [
+      "Japan",
+      "Turkey",
+      "India",
+      "Brazil",
+      "Argentina"
+    ],
+    "pricingData": [
+      "global price reference",
+      "subscription cost",
+      "Low / Average / High"
+    ],
+    "aiDecisionLogic": [
+      "collect app price signals",
+      "compare country data",
+      "check risk context",
+      "recommend a buying route"
+    ],
+    "scenes": [
+      {
+        "id": 1,
+        "purpose": "hook",
+        "message": "One subscription, many regional costs.",
+        "dataRefs": [
+          "appList",
+          "countryData"
+        ]
+      },
+      {
+        "id": 2,
+        "purpose": "scope",
+        "message": "Real app icons anchor the dataset.",
+        "dataRefs": [
+          "appList"
+        ]
+      },
+      {
+        "id": 3,
+        "purpose": "flow",
+        "message": "Search once. Trace every signal.",
+        "dataRefs": [
+          "aiDecisionLogic"
+        ]
+      },
+      {
+        "id": 4,
+        "purpose": "comparison",
+        "message": "Country context reveals the pattern.",
+        "dataRefs": [
+          "countryData",
+          "pricingData"
+        ]
+      },
+      {
+        "id": 5,
+        "purpose": "decision",
+        "message": "AI weighs price, region, and risk.",
+        "dataRefs": [
+          "aiDecisionLogic",
+          "pricingData"
+        ]
+      },
+      {
+        "id": 6,
+        "purpose": "summary",
+        "message": "One view compresses every signal.",
+        "dataRefs": [
+          "pricingData",
+          "countryData",
+          "aiDecisionLogic"
+        ]
+      },
+      {
+        "id": 7,
+        "purpose": "scope",
+        "message": "Services stay linked to routes.",
+        "dataRefs": [
+          "appList",
+          "aiDecisionLogic"
+        ]
+      },
+      {
+        "id": 8,
+        "purpose": "summary",
+        "message": "SubPrice AI turns price data into decisions.",
+        "dataRefs": [
+          "aiDecisionLogic",
+          "countryData",
+          "pricingData"
+        ]
+      }
+    ]
+  },
+  "expressionSystemId": "apple_minimal",
+  "expressionSystem": {
+    "id": "apple_minimal",
+    "layoutPhilosophy": "single focal static system",
+    "cameraGrammar": "slow push with negative space",
+    "motionGrammar": "quiet precision reveal",
+    "narrativeLogic": "one insight per scene",
+    "visualTone": "premium white minimal",
+    "templateOffset": 1
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "duration": 4,
+      "hookType": "pattern_interrupt",
+      "camera": {
+        "shot": "wide",
+        "motion": "push_in"
+      },
+      "content": {
+        "id": 1,
+        "purpose": "hook",
+        "message": "One subscription, many regional costs.",
+        "dataRefs": [
+          "appList",
+          "countryData"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "websiteHero",
+        "layoutId": "apple_minimal_websiteHero_layout_1",
+        "motionId": "apple_minimal_tile_cascade_1",
+        "cameraPathId": "apple_minimal_jump_cut_1",
+        "transitionId": "apple_minimal_shock_snap_safe_1",
+        "depthPresetId": "foreground_cards",
+        "animationPlan": {
+          "entrance": "softMaskReveal",
+          "dataMotion": "singleMetricLift",
+          "emphasis": "quietUnderline",
+          "exit": "fadeToWhiteSoft"
+        }
+      },
+      "visualTemplate": "websiteHero",
+      "layoutId": "apple_minimal_websiteHero_layout_1",
+      "motionId": "apple_minimal_tile_cascade_1",
+      "cameraPathId": "push_in_1",
+      "transitionId": "apple_minimal_shock_snap_safe_1",
+      "depthPresetId": "foreground_cards",
+      "animationPlan": {
+        "entrance": "softMaskReveal",
+        "dataMotion": "singleMetricLift",
+        "emphasis": "quietUnderline",
+        "exit": "fadeToWhiteSoft"
+      },
+      "animationEvents": [
+        "websiteFrameReveal",
+        "proofCardLift",
+        "valueLock",
+        "stageSettle"
+      ],
+      "semanticMotion": {
+        "template": "websiteHero",
+        "bindings": [
+          "websiteScreenshot",
+          "priceSignal"
+        ],
+        "events": [
+          "websiteFrameReveal",
+          "proofCardLift",
+          "valueLock",
+          "stageSettle"
+        ]
+      },
+      "visualIntent": "apple_minimal: hook",
+      "textOverlay": [
+        "One subscription, many regional costs.",
+        "6 services tracked"
+      ],
+      "textRoles": [
+        "hero",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 220,
+          "y": 230,
+          "width": 610,
+          "height": 270
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 900,
+        "y": 150,
+        "width": 760,
+        "height": 620
+      },
+      "cardRegions": [],
+      "chartRegions": [],
+      "screenshotRegions": [
+        {
+          "x": 900,
+          "y": 150,
+          "width": 760,
+          "height": 620
+        }
+      ],
+      "shapeRegions": [],
+      "semanticShapes": [],
+      "screenshotPolicy": "websiteHeroOnly",
+      "assets": {
+        "image": [
+          "generated/screenshots/home.png"
+        ],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "YouTube",
+        "Spotify"
+      ],
+      "audioCue": "apple_minimal / hook",
+      "cameraIntent": {
+        "sceneIndex": 0,
+        "intent": "hero_proof",
+        "activeCamera": true,
+        "cameraPath": "push_in",
+        "reason": "prove the website product first"
+      }
+    },
+    {
+      "id": 2,
+      "duration": 3.7,
+      "hookType": "emotional",
+      "camera": {
+        "shot": "close",
+        "motion": "dolly_left"
+      },
+      "content": {
+        "id": 2,
+        "purpose": "scope",
+        "message": "Real app icons anchor the dataset.",
+        "dataRefs": [
+          "appList"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "searchFlow",
+        "layoutId": "apple_minimal_searchFlow_layout_2",
+        "motionId": "apple_minimal_step_trace_2",
+        "cameraPathId": "apple_minimal_slow_center_2",
+        "transitionId": "apple_minimal_minimal_fade_2",
+        "depthPresetId": "website_stage",
+        "animationPlan": {
+          "entrance": "mapPinDrop",
+          "dataMotion": "routeArcDraw",
+          "emphasis": "regionPulse",
+          "exit": "mapZoomOut"
+        }
+      },
+      "visualTemplate": "searchFlow",
+      "layoutId": "apple_minimal_searchFlow_layout_2",
+      "motionId": "apple_minimal_step_trace_2",
+      "cameraPathId": "dolly_left_2",
+      "transitionId": "apple_minimal_minimal_fade_2",
+      "depthPresetId": "website_stage",
+      "animationPlan": {
+        "entrance": "mapPinDrop",
+        "dataMotion": "routeArcDraw",
+        "emphasis": "regionPulse",
+        "exit": "mapZoomOut"
+      },
+      "animationEvents": [
+        "stepBuild",
+        "queryTrace",
+        "routeConfirm",
+        "stepLock"
+      ],
+      "semanticMotion": {
+        "template": "searchFlow",
+        "bindings": [
+          "stepFlow",
+          "aiDecision"
+        ],
+        "events": [
+          "stepBuild",
+          "queryTrace",
+          "routeConfirm",
+          "stepLock"
+        ]
+      },
+      "visualIntent": "apple_minimal: scope",
+      "textOverlay": [
+        "Real app icons anchor the dataset.",
+        "App icons stay authentic"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 280,
+          "y": 220,
+          "width": 760,
+          "height": 190
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 220,
+        "y": 500,
+        "width": 1360,
+        "height": 260
+      },
+      "cardRegions": [
+        {
+          "x": 220,
+          "y": 500,
+          "width": 1360,
+          "height": 260
+        }
+      ],
+      "chartRegions": [],
+      "screenshotRegions": [],
+      "shapeRegions": [
+        {
+          "x": 250,
+          "y": 250,
+          "width": 300,
+          "height": 150
+        }
+      ],
+      "semanticShapes": [
+        {
+          "semanticRole": "highlightBox",
+          "targetRegion": {
+            "x": 250,
+            "y": 250,
+            "width": 300,
+            "height": 150
+          }
+        }
+      ],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "YouTube",
+        "Spotify"
+      ],
+      "audioCue": "apple_minimal / scope",
+      "cameraIntent": {
+        "sceneIndex": 1,
+        "intent": "data_reveal",
+        "activeCamera": true,
+        "cameraPath": "dolly_left",
+        "reason": "follow the comparison/search flow"
+      }
+    },
+    {
+      "id": 3,
+      "duration": 3.7,
+      "hookType": "curiosity",
+      "camera": {
+        "shot": "medium",
+        "motion": "dolly_left"
+      },
+      "content": {
+        "id": 3,
+        "purpose": "flow",
+        "message": "Search once. Trace every signal.",
+        "dataRefs": [
+          "aiDecisionLogic"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "comparisonPanel",
+        "layoutId": "apple_minimal_comparisonPanel_layout_3",
+        "motionId": "apple_minimal_data_sweep_3",
+        "cameraPathId": "apple_minimal_push_in_3",
+        "transitionId": "apple_minimal_soft_cut_3",
+        "depthPresetId": "data_layers",
+        "animationPlan": {
+          "entrance": "scanLineClassify",
+          "dataMotion": "logicNodePulse",
+          "emphasis": "confidenceLock",
+          "exit": "nodeCollapse"
+        }
+      },
+      "visualTemplate": "comparisonPanel",
+      "layoutId": "apple_minimal_comparisonPanel_layout_3",
+      "motionId": "apple_minimal_data_sweep_3",
+      "cameraPathId": "dolly_left_3",
+      "transitionId": "apple_minimal_soft_cut_3",
+      "depthPresetId": "data_layers",
+      "animationPlan": {
+        "entrance": "scanLineClassify",
+        "dataMotion": "logicNodePulse",
+        "emphasis": "confidenceLock",
+        "exit": "nodeCollapse"
+      },
+      "animationEvents": [
+        "barGrow",
+        "countrySort",
+        "deltaHighlight",
+        "comparisonLock"
+      ],
+      "semanticMotion": {
+        "template": "comparisonPanel",
+        "bindings": [
+          "countryData",
+          "priceSignal",
+          "chart"
+        ],
+        "events": [
+          "barGrow",
+          "countrySort",
+          "deltaHighlight",
+          "comparisonLock"
+        ]
+      },
+      "visualIntent": "apple_minimal: flow",
+      "textOverlay": [
+        "Search once. Trace every signal.",
+        "Search starts the signal chain"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 1100,
+          "y": 270,
+          "width": 590,
+          "height": 300
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 190,
+        "y": 150,
+        "width": 840,
+        "height": 720
+      },
+      "cardRegions": [],
+      "chartRegions": [
+        {
+          "x": 190,
+          "y": 150,
+          "width": 840,
+          "height": 720
+        }
+      ],
+      "screenshotRegions": [],
+      "shapeRegions": [],
+      "semanticShapes": [],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "collect app price signals",
+        "compare country data",
+        "check risk context",
+        "recommend a buying route"
+      ],
+      "audioCue": "apple_minimal / flow",
+      "cameraIntent": {
+        "sceneIndex": 2,
+        "intent": "data_reveal",
+        "activeCamera": true,
+        "cameraPath": "dolly_left",
+        "reason": "follow the comparison/search flow"
+      }
+    },
+    {
+      "id": 4,
+      "duration": 3.7,
+      "hookType": "pattern_interrupt",
+      "camera": {
+        "shot": "wide",
+        "motion": "slow_center"
+      },
+      "content": {
+        "id": 4,
+        "purpose": "comparison",
+        "message": "Country context reveals the pattern.",
+        "dataRefs": [
+          "countryData",
+          "pricingData"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "recommendationPanel",
+        "layoutId": "apple_minimal_recommendationPanel_layout_4",
+        "motionId": "apple_minimal_decision_lock_4",
+        "cameraPathId": "apple_minimal_dolly_left_4",
+        "transitionId": "apple_minimal_panel_wipe_4",
+        "depthPresetId": "flat_process",
+        "animationPlan": {
+          "entrance": "shockSnapIn",
+          "dataMotion": "contrastBarJump",
+          "emphasis": "priceDeltaPop",
+          "exit": "hardCutSafe"
+        }
+      },
+      "visualTemplate": "recommendationPanel",
+      "layoutId": "apple_minimal_recommendationPanel_layout_4",
+      "motionId": "apple_minimal_decision_lock_4",
+      "cameraPathId": "stable_component_4",
+      "transitionId": "apple_minimal_panel_wipe_4",
+      "depthPresetId": "flat_process",
+      "animationPlan": {
+        "entrance": "shockSnapIn",
+        "dataMotion": "contrastBarJump",
+        "emphasis": "priceDeltaPop",
+        "exit": "hardCutSafe"
+      },
+      "animationEvents": [
+        "decisionScan",
+        "confidenceFill",
+        "routeLock",
+        "recommendationSettle"
+      ],
+      "semanticMotion": {
+        "template": "recommendationPanel",
+        "bindings": [
+          "aiDecision",
+          "priceSignal"
+        ],
+        "events": [
+          "decisionScan",
+          "confidenceFill",
+          "routeLock",
+          "recommendationSettle"
+        ]
+      },
+      "visualIntent": "apple_minimal: comparison",
+      "textOverlay": [
+        "Country context reveals the pattern.",
+        "5 regions compared"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 240,
+          "y": 245,
+          "width": 560,
+          "height": 280
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 900,
+        "y": 150,
+        "width": 740,
+        "height": 720
+      },
+      "cardRegions": [
+        {
+          "x": 900,
+          "y": 150,
+          "width": 740,
+          "height": 720
+        }
+      ],
+      "chartRegions": [],
+      "screenshotRegions": [],
+      "shapeRegions": [],
+      "semanticShapes": [],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "Japan",
+        "Turkey",
+        "India",
+        "Brazil",
+        "Argentina"
+      ],
+      "audioCue": "apple_minimal / comparison",
+      "cameraIntent": {
+        "sceneIndex": 3,
+        "intent": "stable_component",
+        "activeCamera": false,
+        "cameraPath": "slow_center",
+        "reason": "keep stable framing and let semantic components move"
+      }
+    },
+    {
+      "id": 5,
+      "duration": 3.7,
+      "hookType": "emotional",
+      "camera": {
+        "shot": "close",
+        "motion": "pull_back"
+      },
+      "content": {
+        "id": 5,
+        "purpose": "decision",
+        "message": "AI weighs price, region, and risk.",
+        "dataRefs": [
+          "aiDecisionLogic",
+          "pricingData"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "dynamicChart",
+        "layoutId": "apple_minimal_dynamicChart_layout_5",
+        "motionId": "apple_minimal_system_pullback_5",
+        "cameraPathId": "apple_minimal_tilt_up_5",
+        "transitionId": "apple_minimal_data_snap_5",
+        "depthPresetId": "summary_space",
+        "animationPlan": {
+          "entrance": "panelLoadIn",
+          "dataMotion": "dashboardCountUp",
+          "emphasis": "moduleGlow",
+          "exit": "gridResolve"
+        }
+      },
+      "visualTemplate": "dynamicChart",
+      "layoutId": "apple_minimal_dynamicChart_layout_5",
+      "motionId": "apple_minimal_system_pullback_5",
+      "cameraPathId": "pull_back_5",
+      "transitionId": "apple_minimal_data_snap_5",
+      "depthPresetId": "summary_space",
+      "animationPlan": {
+        "entrance": "panelLoadIn",
+        "dataMotion": "dashboardCountUp",
+        "emphasis": "moduleGlow",
+        "exit": "gridResolve"
+      },
+      "animationEvents": [
+        "chartSweep",
+        "axisResolve",
+        "summaryPullback",
+        "systemSettle"
+      ],
+      "semanticMotion": {
+        "template": "dynamicChart",
+        "bindings": [
+          "chart",
+          "countryData",
+          "priceSignal"
+        ],
+        "events": [
+          "chartSweep",
+          "axisResolve",
+          "summaryPullback",
+          "systemSettle"
+        ]
+      },
+      "visualIntent": "apple_minimal: decision",
+      "textOverlay": [
+        "AI weighs price, region, and risk.",
+        "AI ranks price and risk"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 240,
+          "y": 250,
+          "width": 620,
+          "height": 270
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 920,
+        "y": 260,
+        "width": 700,
+        "height": 460
+      },
+      "cardRegions": [
+        {
+          "x": 180,
+          "y": 140,
+          "width": 1560,
+          "height": 760
+        }
+      ],
+      "chartRegions": [
+        {
+          "x": 920,
+          "y": 260,
+          "width": 700,
+          "height": 460
+        }
+      ],
+      "screenshotRegions": [],
+      "shapeRegions": [
+        {
+          "x": 920,
+          "y": 245,
+          "width": 330,
+          "height": 130
+        }
+      ],
+      "semanticShapes": [
+        {
+          "semanticRole": "highlightBox",
+          "targetRegion": {
+            "x": 920,
+            "y": 245,
+            "width": 330,
+            "height": 130
+          }
+        }
+      ],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "collect app price signals",
+        "compare country data",
+        "check risk context",
+        "recommend a buying route",
+        "global price reference"
+      ],
+      "audioCue": "apple_minimal / decision",
+      "cameraIntent": {
+        "sceneIndex": 4,
+        "intent": "decision_pullback",
+        "activeCamera": true,
+        "cameraPath": "pull_back",
+        "reason": "reveal the whole system view"
+      }
+    },
+    {
+      "id": 6,
+      "duration": 3.7,
+      "hookType": "curiosity",
+      "camera": {
+        "shot": "medium",
+        "motion": "pull_back"
+      },
+      "content": {
+        "id": 6,
+        "purpose": "summary",
+        "message": "One view compresses every signal.",
+        "dataRefs": [
+          "pricingData",
+          "countryData",
+          "aiDecisionLogic"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "iconRail",
+        "layoutId": "apple_minimal_iconRail_layout_6",
+        "motionId": "apple_minimal_map_orbit_6",
+        "cameraPathId": "apple_minimal_slide_right_6",
+        "transitionId": "apple_minimal_focus_shift_6",
+        "depthPresetId": "foreground_cards",
+        "animationPlan": {
+          "entrance": "depthFloatIn",
+          "dataMotion": "parallaxLayerShift",
+          "emphasis": "depthRackFocus",
+          "exit": "spacePullback"
+        }
+      },
+      "visualTemplate": "iconRail",
+      "layoutId": "apple_minimal_iconRail_layout_6",
+      "motionId": "apple_minimal_map_orbit_6",
+      "cameraPathId": "pull_back_6",
+      "transitionId": "apple_minimal_focus_shift_6",
+      "depthPresetId": "foreground_cards",
+      "animationPlan": {
+        "entrance": "depthFloatIn",
+        "dataMotion": "parallaxLayerShift",
+        "emphasis": "depthRackFocus",
+        "exit": "spacePullback"
+      },
+      "animationEvents": [
+        "iconRailEnter",
+        "iconFocus",
+        "brandSettle",
+        "railLock"
+      ],
+      "semanticMotion": {
+        "template": "iconRail",
+        "bindings": [
+          "appIcon"
+        ],
+        "events": [
+          "iconRailEnter",
+          "iconFocus",
+          "brandSettle",
+          "railLock"
+        ]
+      },
+      "visualIntent": "apple_minimal: summary",
+      "textOverlay": [
+        "One view compresses every signal.",
+        "Signals collapse into one view"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 230,
+          "y": 265,
+          "width": 600,
+          "height": 280
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 890,
+        "y": 155,
+        "width": 780,
+        "height": 700
+      },
+      "cardRegions": [
+        {
+          "x": 890,
+          "y": 155,
+          "width": 780,
+          "height": 700
+        }
+      ],
+      "chartRegions": [],
+      "screenshotRegions": [],
+      "shapeRegions": [],
+      "semanticShapes": [],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "global price reference",
+        "subscription cost",
+        "Low / Average / High",
+        "Japan",
+        "Turkey"
+      ],
+      "audioCue": "apple_minimal / summary",
+      "cameraIntent": {
+        "sceneIndex": 5,
+        "intent": "decision_pullback",
+        "activeCamera": true,
+        "cameraPath": "pull_back",
+        "reason": "reveal the whole system view"
+      }
+    },
+    {
+      "id": 7,
+      "duration": 3.7,
+      "hookType": "pattern_interrupt",
+      "camera": {
+        "shot": "wide",
+        "motion": "slow_center"
+      },
+      "content": {
+        "id": 7,
+        "purpose": "scope",
+        "message": "Services stay linked to routes.",
+        "dataRefs": [
+          "appList",
+          "aiDecisionLogic"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "signalBoard",
+        "layoutId": "apple_minimal_signalBoard_layout_7",
+        "motionId": "apple_minimal_feed_stream_7",
+        "cameraPathId": "apple_minimal_arc_7",
+        "transitionId": "apple_minimal_system_lock_7",
+        "depthPresetId": "website_stage",
+        "animationPlan": {
+          "entrance": "caseUnfold",
+          "dataMotion": "storyBeatSlide",
+          "emphasis": "problemMarker",
+          "exit": "pageTurn"
+        }
+      },
+      "visualTemplate": "signalBoard",
+      "layoutId": "apple_minimal_signalBoard_layout_7",
+      "motionId": "apple_minimal_feed_stream_7",
+      "cameraPathId": "stable_component_7",
+      "transitionId": "apple_minimal_system_lock_7",
+      "depthPresetId": "website_stage",
+      "animationPlan": {
+        "entrance": "caseUnfold",
+        "dataMotion": "storyBeatSlide",
+        "emphasis": "problemMarker",
+        "exit": "pageTurn"
+      },
+      "animationEvents": [
+        "signalCardsBuild",
+        "signalCompare",
+        "systemLock",
+        "boardSettle"
+      ],
+      "semanticMotion": {
+        "template": "signalBoard",
+        "bindings": [
+          "priceSignal",
+          "countryData",
+          "aiDecision"
+        ],
+        "events": [
+          "signalCardsBuild",
+          "signalCompare",
+          "systemLock",
+          "boardSettle"
+        ]
+      },
+      "visualIntent": "apple_minimal: scope",
+      "textOverlay": [
+        "Services stay linked to routes.",
+        "Services remain linked to routes"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 560,
+          "y": 210,
+          "width": 800,
+          "height": 180
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 200,
+        "y": 430,
+        "width": 1520,
+        "height": 410
+      },
+      "cardRegions": [
+        {
+          "x": 200,
+          "y": 430,
+          "width": 1520,
+          "height": 410
+        }
+      ],
+      "chartRegions": [],
+      "screenshotRegions": [],
+      "shapeRegions": [],
+      "semanticShapes": [],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "YouTube",
+        "Spotify"
+      ],
+      "audioCue": "apple_minimal / scope",
+      "cameraIntent": {
+        "sceneIndex": 6,
+        "intent": "stable_component",
+        "activeCamera": false,
+        "cameraPath": "slow_center",
+        "reason": "keep stable framing and let semantic components move"
+      }
+    },
+    {
+      "id": 8,
+      "duration": 4,
+      "hookType": "emotional",
+      "camera": {
+        "shot": "close",
+        "motion": "slow_center"
+      },
+      "content": {
+        "id": 8,
+        "purpose": "summary",
+        "message": "SubPrice AI turns price data into decisions.",
+        "dataRefs": [
+          "aiDecisionLogic",
+          "countryData",
+          "pricingData"
+        ]
+      },
+      "expression": {
+        "visualTemplate": "appGrid",
+        "layoutId": "apple_minimal_appGrid_layout_8",
+        "motionId": "apple_minimal_shock_cut_8",
+        "cameraPathId": "apple_minimal_pull_back_8",
+        "transitionId": "apple_minimal_resolve_8",
+        "depthPresetId": "data_layers",
+        "animationPlan": {
+          "entrance": "feedStreamIn",
+          "dataMotion": "anomalyHighlight",
+          "emphasis": "signalFreeze",
+          "exit": "feedPushAway"
+        }
+      },
+      "visualTemplate": "appGrid",
+      "layoutId": "apple_minimal_appGrid_layout_8",
+      "motionId": "apple_minimal_shock_cut_8",
+      "cameraPathId": "stable_component_8",
+      "transitionId": "apple_minimal_resolve_8",
+      "depthPresetId": "data_layers",
+      "animationPlan": {
+        "entrance": "feedStreamIn",
+        "dataMotion": "anomalyHighlight",
+        "emphasis": "signalFreeze",
+        "exit": "feedPushAway"
+      },
+      "animationEvents": [
+        "iconCascade",
+        "serviceGroupSettle",
+        "labelResolve",
+        "gridLock"
+      ],
+      "semanticMotion": {
+        "template": "appGrid",
+        "bindings": [
+          "appIcon"
+        ],
+        "events": [
+          "iconCascade",
+          "serviceGroupSettle",
+          "labelResolve",
+          "gridLock"
+        ]
+      },
+      "visualIntent": "apple_minimal: summary",
+      "textOverlay": [
+        "SubPrice AI turns price data into decisions.",
+        "Decision-ready price intelligence"
+      ],
+      "textRoles": [
+        "title",
+        "body"
+      ],
+      "textRegions": [
+        {
+          "x": 1060,
+          "y": 260,
+          "width": 560,
+          "height": 280
+        }
+      ],
+      "primaryVisualRegion": {
+        "x": 180,
+        "y": 150,
+        "width": 800,
+        "height": 720
+      },
+      "cardRegions": [
+        {
+          "x": 180,
+          "y": 150,
+          "width": 800,
+          "height": 720
+        }
+      ],
+      "chartRegions": [],
+      "screenshotRegions": [],
+      "shapeRegions": [
+        {
+          "x": 260,
+          "y": 395,
+          "width": 320,
+          "height": 140
+        }
+      ],
+      "semanticShapes": [
+        {
+          "semanticRole": "highlightBox",
+          "targetRegion": {
+            "x": 260,
+            "y": 395,
+            "width": 320,
+            "height": 140
+          }
+        }
+      ],
+      "screenshotPolicy": "none",
+      "assets": {
+        "image": [],
+        "backgroundImage": [],
+        "appIcons": [
+          {
+            "appName": "ChatGPT",
+            "src": "generated/icons/chatgpt.jpg",
+            "alt": "ChatGPT"
+          },
+          {
+            "appName": "Claude",
+            "src": "generated/icons/claude.jpg",
+            "alt": "Claude"
+          },
+          {
+            "appName": "Gemini",
+            "src": "generated/icons/gemini.jpg",
+            "alt": "Gemini"
+          },
+          {
+            "appName": "YouTube",
+            "src": "generated/icons/youtube.jpg",
+            "alt": "YouTube"
+          },
+          {
+            "appName": "Spotify",
+            "src": "generated/icons/spotify.jpg",
+            "alt": "Spotify"
+          },
+          {
+            "appName": "Netflix",
+            "src": "generated/icons/netflix.jpg",
+            "alt": "Netflix"
+          }
+        ]
+      },
+      "dataFocus": [
+        "collect app price signals",
+        "compare country data",
+        "check risk context",
+        "recommend a buying route",
+        "Japan"
+      ],
+      "audioCue": "apple_minimal / summary",
+      "cameraIntent": {
+        "sceneIndex": 7,
+        "intent": "stable_component",
+        "activeCamera": false,
+        "cameraPath": "slow_center",
+        "reason": "keep stable framing and let semantic components move"
+      }
+    }
+  ],
+  "batchVideos": [
+    {
+      "strategyId": "apple_minimal",
+      "scenes": [
+        {
+          "id": 1,
+          "duration": 4,
+          "hookType": "pattern_interrupt",
+          "camera": {
+            "shot": "wide",
+            "motion": "push_in"
+          },
+          "content": {
+            "id": 1,
+            "purpose": "hook",
+            "message": "One subscription, many regional costs.",
+            "dataRefs": [
+              "appList",
+              "countryData"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "websiteHero",
+            "layoutId": "apple_minimal_websiteHero_layout_1",
+            "motionId": "apple_minimal_tile_cascade_1",
+            "cameraPathId": "apple_minimal_jump_cut_1",
+            "transitionId": "apple_minimal_shock_snap_safe_1",
+            "depthPresetId": "foreground_cards",
+            "animationPlan": {
+              "entrance": "softMaskReveal",
+              "dataMotion": "singleMetricLift",
+              "emphasis": "quietUnderline",
+              "exit": "fadeToWhiteSoft"
+            }
+          },
+          "visualTemplate": "websiteHero",
+          "layoutId": "apple_minimal_websiteHero_layout_1",
+          "motionId": "apple_minimal_tile_cascade_1",
+          "cameraPathId": "push_in_1",
+          "transitionId": "apple_minimal_shock_snap_safe_1",
+          "depthPresetId": "foreground_cards",
+          "animationPlan": {
+            "entrance": "softMaskReveal",
+            "dataMotion": "singleMetricLift",
+            "emphasis": "quietUnderline",
+            "exit": "fadeToWhiteSoft"
+          },
+          "animationEvents": [
+            "websiteFrameReveal",
+            "proofCardLift",
+            "valueLock",
+            "stageSettle"
+          ],
+          "semanticMotion": {
+            "template": "websiteHero",
+            "bindings": [
+              "websiteScreenshot",
+              "priceSignal"
+            ],
+            "events": [
+              "websiteFrameReveal",
+              "proofCardLift",
+              "valueLock",
+              "stageSettle"
+            ]
+          },
+          "visualIntent": "apple_minimal: hook",
+          "textOverlay": [
+            "One subscription, many regional costs.",
+            "6 services tracked"
+          ],
+          "textRoles": [
+            "hero",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 220,
+              "y": 230,
+              "width": 610,
+              "height": 270
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 900,
+            "y": 150,
+            "width": 760,
+            "height": 620
+          },
+          "cardRegions": [],
+          "chartRegions": [],
+          "screenshotRegions": [
+            {
+              "x": 900,
+              "y": 150,
+              "width": 760,
+              "height": 620
+            }
+          ],
+          "shapeRegions": [],
+          "semanticShapes": [],
+          "screenshotPolicy": "websiteHeroOnly",
+          "assets": {
+            "image": [
+              "generated/screenshots/home.png"
+            ],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "ChatGPT",
+            "Claude",
+            "Gemini",
+            "YouTube",
+            "Spotify"
+          ],
+          "audioCue": "apple_minimal / hook",
+          "cameraIntent": {
+            "sceneIndex": 0,
+            "intent": "hero_proof",
+            "activeCamera": true,
+            "cameraPath": "push_in",
+            "reason": "prove the website product first"
+          }
+        },
+        {
+          "id": 2,
+          "duration": 3.7,
+          "hookType": "emotional",
+          "camera": {
+            "shot": "close",
+            "motion": "dolly_left"
+          },
+          "content": {
+            "id": 2,
+            "purpose": "scope",
+            "message": "Real app icons anchor the dataset.",
+            "dataRefs": [
+              "appList"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "searchFlow",
+            "layoutId": "apple_minimal_searchFlow_layout_2",
+            "motionId": "apple_minimal_step_trace_2",
+            "cameraPathId": "apple_minimal_slow_center_2",
+            "transitionId": "apple_minimal_minimal_fade_2",
+            "depthPresetId": "website_stage",
+            "animationPlan": {
+              "entrance": "mapPinDrop",
+              "dataMotion": "routeArcDraw",
+              "emphasis": "regionPulse",
+              "exit": "mapZoomOut"
+            }
+          },
+          "visualTemplate": "searchFlow",
+          "layoutId": "apple_minimal_searchFlow_layout_2",
+          "motionId": "apple_minimal_step_trace_2",
+          "cameraPathId": "dolly_left_2",
+          "transitionId": "apple_minimal_minimal_fade_2",
+          "depthPresetId": "website_stage",
+          "animationPlan": {
+            "entrance": "mapPinDrop",
+            "dataMotion": "routeArcDraw",
+            "emphasis": "regionPulse",
+            "exit": "mapZoomOut"
+          },
+          "animationEvents": [
+            "stepBuild",
+            "queryTrace",
+            "routeConfirm",
+            "stepLock"
+          ],
+          "semanticMotion": {
+            "template": "searchFlow",
+            "bindings": [
+              "stepFlow",
+              "aiDecision"
+            ],
+            "events": [
+              "stepBuild",
+              "queryTrace",
+              "routeConfirm",
+              "stepLock"
+            ]
+          },
+          "visualIntent": "apple_minimal: scope",
+          "textOverlay": [
+            "Real app icons anchor the dataset.",
+            "App icons stay authentic"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 280,
+              "y": 220,
+              "width": 760,
+              "height": 190
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 220,
+            "y": 500,
+            "width": 1360,
+            "height": 260
+          },
+          "cardRegions": [
+            {
+              "x": 220,
+              "y": 500,
+              "width": 1360,
+              "height": 260
+            }
+          ],
+          "chartRegions": [],
+          "screenshotRegions": [],
+          "shapeRegions": [
+            {
+              "x": 250,
+              "y": 250,
+              "width": 300,
+              "height": 150
+            }
+          ],
+          "semanticShapes": [
+            {
+              "semanticRole": "highlightBox",
+              "targetRegion": {
+                "x": 250,
+                "y": 250,
+                "width": 300,
+                "height": 150
+              }
+            }
+          ],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "ChatGPT",
+            "Claude",
+            "Gemini",
+            "YouTube",
+            "Spotify"
+          ],
+          "audioCue": "apple_minimal / scope",
+          "cameraIntent": {
+            "sceneIndex": 1,
+            "intent": "data_reveal",
+            "activeCamera": true,
+            "cameraPath": "dolly_left",
+            "reason": "follow the comparison/search flow"
+          }
+        },
+        {
+          "id": 3,
+          "duration": 3.7,
+          "hookType": "curiosity",
+          "camera": {
+            "shot": "medium",
+            "motion": "dolly_left"
+          },
+          "content": {
+            "id": 3,
+            "purpose": "flow",
+            "message": "Search once. Trace every signal.",
+            "dataRefs": [
+              "aiDecisionLogic"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "comparisonPanel",
+            "layoutId": "apple_minimal_comparisonPanel_layout_3",
+            "motionId": "apple_minimal_data_sweep_3",
+            "cameraPathId": "apple_minimal_push_in_3",
+            "transitionId": "apple_minimal_soft_cut_3",
+            "depthPresetId": "data_layers",
+            "animationPlan": {
+              "entrance": "scanLineClassify",
+              "dataMotion": "logicNodePulse",
+              "emphasis": "confidenceLock",
+              "exit": "nodeCollapse"
+            }
+          },
+          "visualTemplate": "comparisonPanel",
+          "layoutId": "apple_minimal_comparisonPanel_layout_3",
+          "motionId": "apple_minimal_data_sweep_3",
+          "cameraPathId": "dolly_left_3",
+          "transitionId": "apple_minimal_soft_cut_3",
+          "depthPresetId": "data_layers",
+          "animationPlan": {
+            "entrance": "scanLineClassify",
+            "dataMotion": "logicNodePulse",
+            "emphasis": "confidenceLock",
+            "exit": "nodeCollapse"
+          },
+          "animationEvents": [
+            "barGrow",
+            "countrySort",
+            "deltaHighlight",
+            "comparisonLock"
+          ],
+          "semanticMotion": {
+            "template": "comparisonPanel",
+            "bindings": [
+              "countryData",
+              "priceSignal",
+              "chart"
+            ],
+            "events": [
+              "barGrow",
+              "countrySort",
+              "deltaHighlight",
+              "comparisonLock"
+            ]
+          },
+          "visualIntent": "apple_minimal: flow",
+          "textOverlay": [
+            "Search once. Trace every signal.",
+            "Search starts the signal chain"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 1100,
+              "y": 270,
+              "width": 590,
+              "height": 300
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 190,
+            "y": 150,
+            "width": 840,
+            "height": 720
+          },
+          "cardRegions": [],
+          "chartRegions": [
+            {
+              "x": 190,
+              "y": 150,
+              "width": 840,
+              "height": 720
+            }
+          ],
+          "screenshotRegions": [],
+          "shapeRegions": [],
+          "semanticShapes": [],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "collect app price signals",
+            "compare country data",
+            "check risk context",
+            "recommend a buying route"
+          ],
+          "audioCue": "apple_minimal / flow",
+          "cameraIntent": {
+            "sceneIndex": 2,
+            "intent": "data_reveal",
+            "activeCamera": true,
+            "cameraPath": "dolly_left",
+            "reason": "follow the comparison/search flow"
+          }
+        },
+        {
+          "id": 4,
+          "duration": 3.7,
+          "hookType": "pattern_interrupt",
+          "camera": {
+            "shot": "wide",
+            "motion": "slow_center"
+          },
+          "content": {
+            "id": 4,
+            "purpose": "comparison",
+            "message": "Country context reveals the pattern.",
+            "dataRefs": [
+              "countryData",
+              "pricingData"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "recommendationPanel",
+            "layoutId": "apple_minimal_recommendationPanel_layout_4",
+            "motionId": "apple_minimal_decision_lock_4",
+            "cameraPathId": "apple_minimal_dolly_left_4",
+            "transitionId": "apple_minimal_panel_wipe_4",
+            "depthPresetId": "flat_process",
+            "animationPlan": {
+              "entrance": "shockSnapIn",
+              "dataMotion": "contrastBarJump",
+              "emphasis": "priceDeltaPop",
+              "exit": "hardCutSafe"
+            }
+          },
+          "visualTemplate": "recommendationPanel",
+          "layoutId": "apple_minimal_recommendationPanel_layout_4",
+          "motionId": "apple_minimal_decision_lock_4",
+          "cameraPathId": "stable_component_4",
+          "transitionId": "apple_minimal_panel_wipe_4",
+          "depthPresetId": "flat_process",
+          "animationPlan": {
+            "entrance": "shockSnapIn",
+            "dataMotion": "contrastBarJump",
+            "emphasis": "priceDeltaPop",
+            "exit": "hardCutSafe"
+          },
+          "animationEvents": [
+            "decisionScan",
+            "confidenceFill",
+            "routeLock",
+            "recommendationSettle"
+          ],
+          "semanticMotion": {
+            "template": "recommendationPanel",
+            "bindings": [
+              "aiDecision",
+              "priceSignal"
+            ],
+            "events": [
+              "decisionScan",
+              "confidenceFill",
+              "routeLock",
+              "recommendationSettle"
+            ]
+          },
+          "visualIntent": "apple_minimal: comparison",
+          "textOverlay": [
+            "Country context reveals the pattern.",
+            "5 regions compared"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 240,
+              "y": 245,
+              "width": 560,
+              "height": 280
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 900,
+            "y": 150,
+            "width": 740,
+            "height": 720
+          },
+          "cardRegions": [
+            {
+              "x": 900,
+              "y": 150,
+              "width": 740,
+              "height": 720
+            }
+          ],
+          "chartRegions": [],
+          "screenshotRegions": [],
+          "shapeRegions": [],
+          "semanticShapes": [],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "Japan",
+            "Turkey",
+            "India",
+            "Brazil",
+            "Argentina"
+          ],
+          "audioCue": "apple_minimal / comparison",
+          "cameraIntent": {
+            "sceneIndex": 3,
+            "intent": "stable_component",
+            "activeCamera": false,
+            "cameraPath": "slow_center",
+            "reason": "keep stable framing and let semantic components move"
+          }
+        },
+        {
+          "id": 5,
+          "duration": 3.7,
+          "hookType": "emotional",
+          "camera": {
+            "shot": "close",
+            "motion": "pull_back"
+          },
+          "content": {
+            "id": 5,
+            "purpose": "decision",
+            "message": "AI weighs price, region, and risk.",
+            "dataRefs": [
+              "aiDecisionLogic",
+              "pricingData"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "dynamicChart",
+            "layoutId": "apple_minimal_dynamicChart_layout_5",
+            "motionId": "apple_minimal_system_pullback_5",
+            "cameraPathId": "apple_minimal_tilt_up_5",
+            "transitionId": "apple_minimal_data_snap_5",
+            "depthPresetId": "summary_space",
+            "animationPlan": {
+              "entrance": "panelLoadIn",
+              "dataMotion": "dashboardCountUp",
+              "emphasis": "moduleGlow",
+              "exit": "gridResolve"
+            }
+          },
+          "visualTemplate": "dynamicChart",
+          "layoutId": "apple_minimal_dynamicChart_layout_5",
+          "motionId": "apple_minimal_system_pullback_5",
+          "cameraPathId": "pull_back_5",
+          "transitionId": "apple_minimal_data_snap_5",
+          "depthPresetId": "summary_space",
+          "animationPlan": {
+            "entrance": "panelLoadIn",
+            "dataMotion": "dashboardCountUp",
+            "emphasis": "moduleGlow",
+            "exit": "gridResolve"
+          },
+          "animationEvents": [
+            "chartSweep",
+            "axisResolve",
+            "summaryPullback",
+            "systemSettle"
+          ],
+          "semanticMotion": {
+            "template": "dynamicChart",
+            "bindings": [
+              "chart",
+              "countryData",
+              "priceSignal"
+            ],
+            "events": [
+              "chartSweep",
+              "axisResolve",
+              "summaryPullback",
+              "systemSettle"
+            ]
+          },
+          "visualIntent": "apple_minimal: decision",
+          "textOverlay": [
+            "AI weighs price, region, and risk.",
+            "AI ranks price and risk"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 240,
+              "y": 250,
+              "width": 620,
+              "height": 270
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 920,
+            "y": 260,
+            "width": 700,
+            "height": 460
+          },
+          "cardRegions": [
+            {
+              "x": 180,
+              "y": 140,
+              "width": 1560,
+              "height": 760
+            }
+          ],
+          "chartRegions": [
+            {
+              "x": 920,
+              "y": 260,
+              "width": 700,
+              "height": 460
+            }
+          ],
+          "screenshotRegions": [],
+          "shapeRegions": [
+            {
+              "x": 920,
+              "y": 245,
+              "width": 330,
+              "height": 130
+            }
+          ],
+          "semanticShapes": [
+            {
+              "semanticRole": "highlightBox",
+              "targetRegion": {
+                "x": 920,
+                "y": 245,
+                "width": 330,
+                "height": 130
+              }
+            }
+          ],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "collect app price signals",
+            "compare country data",
+            "check risk context",
+            "recommend a buying route",
+            "global price reference"
+          ],
+          "audioCue": "apple_minimal / decision",
+          "cameraIntent": {
+            "sceneIndex": 4,
+            "intent": "decision_pullback",
+            "activeCamera": true,
+            "cameraPath": "pull_back",
+            "reason": "reveal the whole system view"
+          }
+        },
+        {
+          "id": 6,
+          "duration": 3.7,
+          "hookType": "curiosity",
+          "camera": {
+            "shot": "medium",
+            "motion": "pull_back"
+          },
+          "content": {
+            "id": 6,
+            "purpose": "summary",
+            "message": "One view compresses every signal.",
+            "dataRefs": [
+              "pricingData",
+              "countryData",
+              "aiDecisionLogic"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "iconRail",
+            "layoutId": "apple_minimal_iconRail_layout_6",
+            "motionId": "apple_minimal_map_orbit_6",
+            "cameraPathId": "apple_minimal_slide_right_6",
+            "transitionId": "apple_minimal_focus_shift_6",
+            "depthPresetId": "foreground_cards",
+            "animationPlan": {
+              "entrance": "depthFloatIn",
+              "dataMotion": "parallaxLayerShift",
+              "emphasis": "depthRackFocus",
+              "exit": "spacePullback"
+            }
+          },
+          "visualTemplate": "iconRail",
+          "layoutId": "apple_minimal_iconRail_layout_6",
+          "motionId": "apple_minimal_map_orbit_6",
+          "cameraPathId": "pull_back_6",
+          "transitionId": "apple_minimal_focus_shift_6",
+          "depthPresetId": "foreground_cards",
+          "animationPlan": {
+            "entrance": "depthFloatIn",
+            "dataMotion": "parallaxLayerShift",
+            "emphasis": "depthRackFocus",
+            "exit": "spacePullback"
+          },
+          "animationEvents": [
+            "iconRailEnter",
+            "iconFocus",
+            "brandSettle",
+            "railLock"
+          ],
+          "semanticMotion": {
+            "template": "iconRail",
+            "bindings": [
+              "appIcon"
+            ],
+            "events": [
+              "iconRailEnter",
+              "iconFocus",
+              "brandSettle",
+              "railLock"
+            ]
+          },
+          "visualIntent": "apple_minimal: summary",
+          "textOverlay": [
+            "One view compresses every signal.",
+            "Signals collapse into one view"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 230,
+              "y": 265,
+              "width": 600,
+              "height": 280
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 890,
+            "y": 155,
+            "width": 780,
+            "height": 700
+          },
+          "cardRegions": [
+            {
+              "x": 890,
+              "y": 155,
+              "width": 780,
+              "height": 700
+            }
+          ],
+          "chartRegions": [],
+          "screenshotRegions": [],
+          "shapeRegions": [],
+          "semanticShapes": [],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "global price reference",
+            "subscription cost",
+            "Low / Average / High",
+            "Japan",
+            "Turkey"
+          ],
+          "audioCue": "apple_minimal / summary",
+          "cameraIntent": {
+            "sceneIndex": 5,
+            "intent": "decision_pullback",
+            "activeCamera": true,
+            "cameraPath": "pull_back",
+            "reason": "reveal the whole system view"
+          }
+        },
+        {
+          "id": 7,
+          "duration": 3.7,
+          "hookType": "pattern_interrupt",
+          "camera": {
+            "shot": "wide",
+            "motion": "slow_center"
+          },
+          "content": {
+            "id": 7,
+            "purpose": "scope",
+            "message": "Services stay linked to routes.",
+            "dataRefs": [
+              "appList",
+              "aiDecisionLogic"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "signalBoard",
+            "layoutId": "apple_minimal_signalBoard_layout_7",
+            "motionId": "apple_minimal_feed_stream_7",
+            "cameraPathId": "apple_minimal_arc_7",
+            "transitionId": "apple_minimal_system_lock_7",
+            "depthPresetId": "website_stage",
+            "animationPlan": {
+              "entrance": "caseUnfold",
+              "dataMotion": "storyBeatSlide",
+              "emphasis": "problemMarker",
+              "exit": "pageTurn"
+            }
+          },
+          "visualTemplate": "signalBoard",
+          "layoutId": "apple_minimal_signalBoard_layout_7",
+          "motionId": "apple_minimal_feed_stream_7",
+          "cameraPathId": "stable_component_7",
+          "transitionId": "apple_minimal_system_lock_7",
+          "depthPresetId": "website_stage",
+          "animationPlan": {
+            "entrance": "caseUnfold",
+            "dataMotion": "storyBeatSlide",
+            "emphasis": "problemMarker",
+            "exit": "pageTurn"
+          },
+          "animationEvents": [
+            "signalCardsBuild",
+            "signalCompare",
+            "systemLock",
+            "boardSettle"
+          ],
+          "semanticMotion": {
+            "template": "signalBoard",
+            "bindings": [
+              "priceSignal",
+              "countryData",
+              "aiDecision"
+            ],
+            "events": [
+              "signalCardsBuild",
+              "signalCompare",
+              "systemLock",
+              "boardSettle"
+            ]
+          },
+          "visualIntent": "apple_minimal: scope",
+          "textOverlay": [
+            "Services stay linked to routes.",
+            "Services remain linked to routes"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 560,
+              "y": 210,
+              "width": 800,
+              "height": 180
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 200,
+            "y": 430,
+            "width": 1520,
+            "height": 410
+          },
+          "cardRegions": [
+            {
+              "x": 200,
+              "y": 430,
+              "width": 1520,
+              "height": 410
+            }
+          ],
+          "chartRegions": [],
+          "screenshotRegions": [],
+          "shapeRegions": [],
+          "semanticShapes": [],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "ChatGPT",
+            "Claude",
+            "Gemini",
+            "YouTube",
+            "Spotify"
+          ],
+          "audioCue": "apple_minimal / scope",
+          "cameraIntent": {
+            "sceneIndex": 6,
+            "intent": "stable_component",
+            "activeCamera": false,
+            "cameraPath": "slow_center",
+            "reason": "keep stable framing and let semantic components move"
+          }
+        },
+        {
+          "id": 8,
+          "duration": 4,
+          "hookType": "emotional",
+          "camera": {
+            "shot": "close",
+            "motion": "slow_center"
+          },
+          "content": {
+            "id": 8,
+            "purpose": "summary",
+            "message": "SubPrice AI turns price data into decisions.",
+            "dataRefs": [
+              "aiDecisionLogic",
+              "countryData",
+              "pricingData"
+            ]
+          },
+          "expression": {
+            "visualTemplate": "appGrid",
+            "layoutId": "apple_minimal_appGrid_layout_8",
+            "motionId": "apple_minimal_shock_cut_8",
+            "cameraPathId": "apple_minimal_pull_back_8",
+            "transitionId": "apple_minimal_resolve_8",
+            "depthPresetId": "data_layers",
+            "animationPlan": {
+              "entrance": "feedStreamIn",
+              "dataMotion": "anomalyHighlight",
+              "emphasis": "signalFreeze",
+              "exit": "feedPushAway"
+            }
+          },
+          "visualTemplate": "appGrid",
+          "layoutId": "apple_minimal_appGrid_layout_8",
+          "motionId": "apple_minimal_shock_cut_8",
+          "cameraPathId": "stable_component_8",
+          "transitionId": "apple_minimal_resolve_8",
+          "depthPresetId": "data_layers",
+          "animationPlan": {
+            "entrance": "feedStreamIn",
+            "dataMotion": "anomalyHighlight",
+            "emphasis": "signalFreeze",
+            "exit": "feedPushAway"
+          },
+          "animationEvents": [
+            "iconCascade",
+            "serviceGroupSettle",
+            "labelResolve",
+            "gridLock"
+          ],
+          "semanticMotion": {
+            "template": "appGrid",
+            "bindings": [
+              "appIcon"
+            ],
+            "events": [
+              "iconCascade",
+              "serviceGroupSettle",
+              "labelResolve",
+              "gridLock"
+            ]
+          },
+          "visualIntent": "apple_minimal: summary",
+          "textOverlay": [
+            "SubPrice AI turns price data into decisions.",
+            "Decision-ready price intelligence"
+          ],
+          "textRoles": [
+            "title",
+            "body"
+          ],
+          "textRegions": [
+            {
+              "x": 1060,
+              "y": 260,
+              "width": 560,
+              "height": 280
+            }
+          ],
+          "primaryVisualRegion": {
+            "x": 180,
+            "y": 150,
+            "width": 800,
+            "height": 720
+          },
+          "cardRegions": [
+            {
+              "x": 180,
+              "y": 150,
+              "width": 800,
+              "height": 720
+            }
+          ],
+          "chartRegions": [],
+          "screenshotRegions": [],
+          "shapeRegions": [
+            {
+              "x": 260,
+              "y": 395,
+              "width": 320,
+              "height": 140
+            }
+          ],
+          "semanticShapes": [
+            {
+              "semanticRole": "highlightBox",
+              "targetRegion": {
+                "x": 260,
+                "y": 395,
+                "width": 320,
+                "height": 140
+              }
+            }
+          ],
+          "screenshotPolicy": "none",
+          "assets": {
+            "image": [],
+            "backgroundImage": [],
+            "appIcons": [
+              {
+                "appName": "ChatGPT",
+                "src": "generated/icons/chatgpt.jpg",
+                "alt": "ChatGPT"
+              },
+              {
+                "appName": "Claude",
+                "src": "generated/icons/claude.jpg",
+                "alt": "Claude"
+              },
+              {
+                "appName": "Gemini",
+                "src": "generated/icons/gemini.jpg",
+                "alt": "Gemini"
+              },
+              {
+                "appName": "YouTube",
+                "src": "generated/icons/youtube.jpg",
+                "alt": "YouTube"
+              },
+              {
+                "appName": "Spotify",
+                "src": "generated/icons/spotify.jpg",
+                "alt": "Spotify"
+              },
+              {
+                "appName": "Netflix",
+                "src": "generated/icons/netflix.jpg",
+                "alt": "Netflix"
+              }
+            ]
+          },
+          "dataFocus": [
+            "collect app price signals",
+            "compare country data",
+            "check risk context",
+            "recommend a buying route",
+            "Japan"
+          ],
+          "audioCue": "apple_minimal / summary",
+          "cameraIntent": {
+            "sceneIndex": 7,
+            "intent": "stable_component",
+            "activeCamera": false,
+            "cameraPath": "slow_center",
+            "reason": "keep stable framing and let semantic components move"
+          }
+        }
+      ]
+    }
+  ]
+}

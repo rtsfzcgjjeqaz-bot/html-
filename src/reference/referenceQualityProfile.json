@@ -1,0 +1,35 @@
+﻿{
+  "sourcePath": "C:\\Users\\Administrator\\Desktop\\mvp3（已加bgm）.mp4",
+  "durationSeconds": 30,
+  "fps": 30,
+  "targetSceneCount": 8,
+  "averageShotSeconds": 3.75,
+  "visualDensity": {
+    "minPrimaryVisualArea": 260000,
+    "minOccupiedSafeAreaRatio": 0.34,
+    "maxTextLinesPerScene": 2,
+    "maxTextAreaRatio": 0.26
+  },
+  "camera": {
+    "keySceneIndexes": [0, 2, 5],
+    "maxStrongCameraScenes": 3,
+    "stableSceneMotion": "component_only",
+    "forbidden": ["random_shake", "continuous_drift", "decorative_orbit"]
+  },
+  "motion": {
+    "minSemanticEventsPerScene": 3,
+    "mustBindTo": ["websiteScreenshot", "appIcon", "countryData", "priceSignal", "aiDecision", "chart", "stepFlow"],
+    "forbidden": ["decorativeHud", "floatingLabel", "randomScanLine", "unboundShape", "meaninglessArrow"]
+  },
+  "layout": {
+    "safeArea": { "left": 140, "right": 140, "top": 90, "bottom": 90 },
+    "requireBalancedCenter": true,
+    "allowLargeLowerBlank": false,
+    "requireAlignedCardGrid": true
+  },
+  "content": {
+    "sameDatasetAcrossTen": true,
+    "realIconsRequired": true,
+    "screenshotMaxUsesPerVideo": 1
+  }
+}

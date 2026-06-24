@@ -1,3 +1,2 @@
-export const MyComposition = () => {
-  return null;
-};
+﻿import { AppCardPricePromo } from './AppCardPricePromo';
+export const MyComposition = AppCardPricePromo;

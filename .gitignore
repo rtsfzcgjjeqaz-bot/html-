@@ -5,3 +5,30 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Production freeze generated/local artifacts
+node_modules/
+outputs/
+.env.*
+!.env.example
+Thumbs.db
+*.log
+coverage/
+.cache/
+.remotion/
+temp/
+tmp/
+public/renders/
+public/*preview*.mp4
+public/*final*.mp4
+public/*frame*.png
+public/*check*.png
+public/divergence-*.png
+public/engine-*.mp4
+public/factory-*.png
+public/app-card-price-promo*.mp4
+references/
+public/*cover*.png
+public/variant*.png
+public/scrape/
+build/
