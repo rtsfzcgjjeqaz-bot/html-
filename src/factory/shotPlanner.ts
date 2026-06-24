@@ -10,7 +10,7 @@ export type ResolvedScene = PlannedScene & {
   supportingText: string;
   visualType: string;
   componentProps: Record<string, unknown>;
-  selectedShotId?: "shot_01" | "shot_15";
+  selectedShotId?: "shot_01" | "shot_15" | "shot_51";
   choreographyId?: string;
   motionPresetIds: string[];
   visualAssetRefs: string[];
@@ -50,15 +50,18 @@ type ShotPlannerOptions = {
 };
 
 type RuntimeCandidate = {
-  shotId: "shot_01" | "shot_15";
+  shotId: "shot_01" | "shot_15" | "shot_51";
   sceneType: string;
   visualType: string;
 };
 
-const runtimeCandidates: RuntimeCandidate[] = [
-  { shotId: "shot_01", sceneType: "coverHook", visualType: "coverHook" },
-  { shotId: "shot_15", sceneType: "appGrid", visualType: "dashboardGrid" },
-];
+const openingHookCandidate: RuntimeCandidate = { shotId: "shot_01", sceneType: "coverHook", visualType: "coverHook" };
+const recommendationCandidate: RuntimeCandidate = {
+  shotId: "shot_51",
+  sceneType: "aiRecommendation",
+  visualType: "recommendationPanel",
+};
+const infoCandidate: RuntimeCandidate = { shotId: "shot_15", sceneType: "appGrid", visualType: "dashboardGrid" };
 
 function textParts(scene: PlannedScene) {
   const lines = Array.isArray(scene.textOverlay) ? scene.textOverlay.filter(Boolean) : [];
@@ -166,6 +169,12 @@ function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandida
   const enabled = !fallbackReason && Boolean(choreographyId) && animationTracks.length >= 4;
   const visualDispatch = enabled ? "SceneRenderer" : "SceneFallback";
   const motionComposer = enabled ? "enabled" : "fallback";
+  const sceneLabel =
+    candidate.shotId === "shot_01"
+      ? "opening hook"
+      : candidate.shotId === "shot_51"
+        ? "ai recommendation"
+        : "information reinforcement";
 
   return {
     ...base,
@@ -187,6 +196,13 @@ function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandida
       shotPath,
       choreographyId,
       motionTags: shot.motion_tags,
+      runtimeShotId: shot.runtimeShotId ?? candidate.shotId,
+      sourceShotId: shot.sourceShotId,
+      sourceLibrary: shot.sourceLibrary,
+      sourceBranch: shot.sourceBranch,
+      sourceChoreographyId: shot.sourceChoreographyId,
+      adaptationStatus: shot.adaptationStatus,
+      packageId: shot.packageId,
     },
     shotRuntimeDebug: {
       shotPath,
@@ -194,7 +210,7 @@ function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandida
       visualDispatch,
       motionComposer,
       notes: [
-        `selected ${candidate.shotId} for ${index === 0 ? "opening hook" : "information reinforcement"}`,
+        `selected ${candidate.shotId} for ${sceneLabel}`,
         fallbackReason ?? `resolved ${choreographyId} with ${animationTracks.length} animation tracks`,
       ],
     },
@@ -212,11 +228,24 @@ function findInfoSceneIndex(scenes: PlannedScene[]) {
   return preferredIndex >= 0 ? preferredIndex : Math.min(1, scenes.length - 1);
 }
 
+function findRecommendationSceneIndex(scenes: PlannedScene[]) {
+  const preferredIndex = scenes.findIndex((scene, index) => {
+    if (index === 0) return false;
+    const text = [scene.sceneType, scene.visualTemplate, scene.visualIntent, ...(scene.textOverlay ?? []), ...(scene.dataFocus ?? [])]
+      .join(" ")
+      .toLowerCase();
+    return /airecommendation|recommendation|decision/.test(text);
+  });
+  return preferredIndex >= 0 ? preferredIndex : -1;
+}
+
 export function planResolvedScenesWithShots(scenes: PlannedScene[], options: ShotPlannerOptions): ShotPlannerResult {
   const infoSceneIndex = scenes.length > 1 ? findInfoSceneIndex(scenes) : -1;
+  const recommendationSceneIndex = scenes.length > 1 ? findRecommendationSceneIndex(scenes) : -1;
   const resolvedScenes = scenes.map((scene, index) => {
-    if (index === 0) return applyShot(scene, index, runtimeCandidates[0], options);
-    if (index === infoSceneIndex) return applyShot(scene, index, runtimeCandidates[1], options);
+    if (index === 0) return applyShot(scene, index, openingHookCandidate, options);
+    if (index === recommendationSceneIndex) return applyShot(scene, index, recommendationCandidate, options);
+    if (index === infoSceneIndex) return applyShot(scene, index, infoCandidate, options);
     return toResolvedFallback(scene, index, options.fps);
   });
 
