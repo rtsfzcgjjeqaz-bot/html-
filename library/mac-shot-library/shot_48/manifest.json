@@ -1,0 +1,44 @@
+{
+  "shotId": "shot_48",
+  "choreographyId": "connectedWorkflowStepCards",
+  "purpose": "Two-card connected workflow step scene for dependency, approval, and impact-assessment explanations.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/connectedWorkflowStepCards.tsx",
+    "runtime/catalog-entry/connected-workflow-step-cards.library-entry.ts",
+    "runtime/shot/shot48-atomic-motions.ts",
+    "runtime/shot/shot48-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "sourceStep",
+      "dependentStep"
+    ],
+    "optional": [
+      "cardTitles",
+      "cardSubtitles",
+      "statusLabels",
+      "rowLabels",
+      "accentColors",
+      "connectorDirection",
+      "cameraPush"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-26",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_48"
+}

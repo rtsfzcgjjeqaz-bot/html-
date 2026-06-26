@@ -1,0 +1,8 @@
+# Windows Adaptation Notes
+
+- Review path aliases before importing into production runtime.
+- Confirm Remotion 4.0.477 compatibility.
+- Keep preview media and source reference videos local; do not import them into runtime.
+- Validate Chinese and English text wrapping inside both card bounds.
+- Confirm connector direction remains semantic for localized layouts.
+- This package is published as an approved Mac shot library item, not as automatic runtime integration.
