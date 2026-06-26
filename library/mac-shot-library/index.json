@@ -96,6 +96,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_44"
+    },
+    {
+      "shotId": "shot_46",
+      "choreographyId": "darkProductEngineCover",
+      "purpose": "Dark 3D product-engine cover hook for SaaS, AI platform, and workflow opener moments.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-26",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_46"
     }
   ],
   "updatedAt": "2026-06-26"
