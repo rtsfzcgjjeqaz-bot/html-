@@ -48,6 +48,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_38"
+    },
+    {
+      "shotId": "shot_39",
+      "choreographyId": "mobilePromptComposerFlow",
+      "purpose": "Mobile prompt composer flow for AI search and image-to-text creation demos.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-26",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_39"
     }
   ],
   "updatedAt": "2026-06-26"

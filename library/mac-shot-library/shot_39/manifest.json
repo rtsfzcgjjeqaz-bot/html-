@@ -1,0 +1,40 @@
+{
+  "shotId": "shot_39",
+  "choreographyId": "mobilePromptComposerFlow",
+  "purpose": "Mobile prompt composer flow for AI search and image-to-text creation demos.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/mobilePromptComposerFlow.tsx",
+    "runtime/catalog-entry/mobile-prompt-composer-flow.library-entry.ts",
+    "runtime/shot/shot39-atomic-motions.ts",
+    "runtime/shot/shot39-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [],
+    "optional": [
+      "promptText",
+      "placeholderText",
+      "attachedMediaLabel",
+      "toolLabels",
+      "sendLabel",
+      "accentColor"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-26",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_39"
+}
