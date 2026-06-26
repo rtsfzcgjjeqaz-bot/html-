@@ -1,0 +1,39 @@
+{
+  "shotId": "shot_40",
+  "choreographyId": "mobileGeneratedResultCardPop",
+  "purpose": "Mobile generated-result card pop for short AI response and recommendation follow-up moments.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/mobileGeneratedResultCardPop.tsx",
+    "runtime/catalog-entry/mobile-generated-result-card-pop.library-entry.ts",
+    "runtime/shot/shot40-atomic-motions.ts",
+    "runtime/shot/shot40-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [],
+    "optional": [
+      "mediaDescriptor",
+      "resultLines",
+      "feedbackLabels",
+      "composerPlaceholder",
+      "accentColor"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-26",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_40"
+}
