@@ -1,0 +1,45 @@
+{
+  "shotId": "shot_50",
+  "choreographyId": "modularDashboardGridBuild",
+  "purpose": "Bright modular dashboard grid reveal for SaaS app-builder, analytics, and productivity product videos.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/modularDashboardGridBuild.tsx",
+    "runtime/catalog-entry/modular-dashboard-grid-build.library-entry.ts",
+    "runtime/shot/shot50-atomic-motions.ts",
+    "runtime/shot/shot50-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "headline",
+      "dashboardModules",
+      "metrics",
+      "heatmapCells"
+    ],
+    "optional": [
+      "browserTitle",
+      "sidebarLabels",
+      "gaugeValue",
+      "moduleCards",
+      "accentColors",
+      "cameraPush"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-26",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_50"
+}
