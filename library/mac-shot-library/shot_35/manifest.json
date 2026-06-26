@@ -1,0 +1,38 @@
+{
+  "shotId": "shot_35",
+  "choreographyId": "websiteHeroAngledProductSurface",
+  "purpose": "Website hero angled product surface reveal for SaaS or AI product introductions.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/websiteHeroAngledProductSurface.tsx",
+    "runtime/catalog-entry/website-hero-angled-product-surface.library-entry.ts",
+    "runtime/shot/shot35-atomic-motions.ts",
+    "runtime/shot/shot35-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [],
+    "optional": [
+      "productName",
+      "subtitle",
+      "contentRows",
+      "accentColor"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-26",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_35"
+}

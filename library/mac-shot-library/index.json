@@ -12,5 +12,18 @@
     "runtime_integrated",
     "rejected"
   ],
-  "shots": []
+  "shots": [
+    {
+      "shotId": "shot_35",
+      "choreographyId": "websiteHeroAngledProductSurface",
+      "purpose": "Website hero angled product surface reveal for SaaS or AI product introductions.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-26",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_35"
+    }
+  ]
 }
