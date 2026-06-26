@@ -5,6 +5,7 @@ import type { ChoreographyAnimationTrack } from "../../motion/choreographyTypes"
 import { colors } from "../../design/tokens";
 import { MotionComposer, validateAnimationTracks } from "./MotionComposer";
 import { SafeText } from "./SafeText";
+import type { ArticleSceneComponentProps } from "../../article/types";
 
 type SceneRendererProps = {
   scene: {
@@ -37,6 +38,60 @@ const cleanLine = (value = "", max = 48) => {
 };
 
 const fallbackRows = ["Hero message", "Feature proof", "Conversion point", "Customer signal"];
+
+type ArticleSceneBoundProps = ArticleSceneComponentProps & {
+  selectedEvidence?: Array<{ evidenceId: string; evidenceText: string }>;
+};
+
+function articleContent(scene: SceneRendererProps["scene"]): ArticleSceneBoundProps | undefined {
+  const candidate = scene.componentProps?.articleContent;
+  if (!candidate || typeof candidate !== "object") return undefined;
+  return candidate as ArticleSceneBoundProps;
+}
+
+function articleTitle(scene: SceneRendererProps["scene"], fallback: string) {
+  const bound = articleContent(scene);
+  if (bound?.headline) return bound.headline;
+  return cleanLine(fallback, 72);
+}
+
+function articleSupport(scene: SceneRendererProps["scene"], fallback: string) {
+  const bound = articleContent(scene);
+  if (bound?.supportingText) return bound.supportingText;
+  return cleanLine(fallback, 96);
+}
+
+function articleShortLabel(scene: SceneRendererProps["scene"], fallback: string) {
+  const bound = articleContent(scene);
+  if (bound?.shortLabel) return bound.shortLabel;
+  return cleanLine(fallback, 20);
+}
+
+function articleRecommendationItems(scene: SceneRendererProps["scene"]) {
+  const bound = articleContent(scene);
+  const items = bound?.recommendationItems?.length ? bound.recommendationItems : undefined;
+  return (items ?? aiRecommendationRows(scene)).map((item) => (items ? item : cleanLine(item, 34))).slice(0, 3);
+}
+
+function articleStepItems(scene: SceneRendererProps["scene"]) {
+  const bound = articleContent(scene);
+  const items = bound?.stepItems?.length ? bound.stepItems : undefined;
+  return (items ?? []).map((item) => item).slice(0, 3);
+}
+
+function articleEvidenceCaption(scene: SceneRendererProps["scene"], fallback: string) {
+  const bound = articleContent(scene);
+  if (bound?.evidenceText) return bound.evidenceText;
+  return cleanLine(fallback, 42);
+}
+
+function articleEvidenceAt(scene: SceneRendererProps["scene"], index: number) {
+  const bound = articleContent(scene);
+  const selectedEvidence = bound?.selectedEvidence?.length ? bound.selectedEvidence : undefined;
+  if (!selectedEvidence) return undefined;
+  return selectedEvidence[index % selectedEvidence.length];
+}
+
 
 function sceneLines(scene: SceneRendererProps["scene"]) {
   const raw = scene.textOverlay?.length ? scene.textOverlay : [scene.visualIntent ?? "Show the page. Reveal the value."];
@@ -196,9 +251,12 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
   SceneRendererProps & { animationTracks: ChoreographyAnimationTrack[]; choreographyId: string }
 > = ({ scene, sceneIndex, animationTracks, choreographyId }) => {
   const lines = sceneLines(scene);
-  const rows = aiRecommendationRows(scene);
-  const title = lines[0] ?? "Turn context into a structured recommendation.";
-  const subtitle = lines[1] ?? "The cursor lands first, then the panel and evidence rows arrive.";
+  const bound = articleContent(scene);
+  const rows = articleRecommendationItems(scene);
+  const title = articleTitle(scene, lines[0] ?? "Turn context into a structured recommendation.");
+  const subtitle = articleSupport(scene, lines[1] ?? "The cursor lands first, then the panel and evidence rows arrive.");
+  const panelTitle = cleanLine(bound?.recommendationTitle ?? title, 26);
+  const evidenceCaption = articleEvidenceCaption(scene, "Readable evidence row");
   const traceLabel = String(scene.selectedShotId ?? "shot_51");
 
   return (
@@ -285,7 +343,7 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
             }}
           >
             <span style={{ width: 10, height: 10, borderRadius: 999, background: colors.accentBlue }} />
-            AI decision
+            {articleShortLabel(scene, "AI decision")}
           </div>
         </MotionComposer>
 
@@ -315,9 +373,9 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
             >
               <div>
                 <div style={{ color: colors.textSecondary, fontSize: 15, fontWeight: 850, textTransform: "uppercase", letterSpacing: 1.2 }}>
-                  Recommendation panel
+                  {articleShortLabel(scene, "Recommendation panel")}
                 </div>
-                <div style={{ marginTop: 8, color: colors.textPrimary, fontSize: 26, fontWeight: 900 }}>Context to action</div>
+                <div style={{ marginTop: 8, color: colors.textPrimary, fontSize: 26, fontWeight: 900 }}>{panelTitle}</div>
               </div>
               <div
                 style={{
@@ -348,6 +406,10 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
                   targetIds={["recommendationRows"]}
                   featureIndex={index}
                 >
+                  {(() => {
+                    const evidence = articleEvidenceAt(scene, index);
+                    const rowCaption = cleanLine(evidence?.evidenceText ?? evidenceCaption, 48);
+                    return (
                   <div
                     style={{
                       display: "grid",
@@ -371,10 +433,12 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
                     <div>
                       <div style={{ color: colors.textPrimary, fontSize: 17, fontWeight: 850 }}>{row}</div>
                       <div style={{ marginTop: 4, color: colors.textSecondary, fontSize: 14, fontWeight: 650 }}>
-                        Readable evidence row
+                        {rowCaption}
                       </div>
                     </div>
                   </div>
+                    );
+                  })()}
                 </MotionComposer>
               ))}
             </div>
@@ -393,7 +457,7 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
                 fontWeight: 700,
               }}
             >
-              <span>Cursor-led panel landing</span>
+              <span>{bound?.evidenceId ? `Evidence ${bound.evidenceId}` : "Cursor-led panel landing"}</span>
               <span>{traceLabel}</span>
             </div>
           </div>
@@ -590,7 +654,9 @@ const DashboardGridOrbitScene: React.FC<SceneRendererProps & { animationTracks: 
   choreographyId,
 }) => {
   const lines = sceneLines(scene);
-  const columns = ["Intake", "Plan", "Build", "Review"];
+  const steps = articleStepItems(scene);
+  const columns = steps.length ? steps : ["Intake", "Plan", "Build", "Review"];
+  const callouts = steps.length ? steps : ["Workflow", "Risk", "Owner"];
 
   return (
     <AbsoluteFill
@@ -636,16 +702,23 @@ const DashboardGridOrbitScene: React.FC<SceneRendererProps & { animationTracks: 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20, position: "relative" }}>
               {Array.from({ length: 16 }).map((_, index) => (
                 <MotionComposer key={index} choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["gridCells"]} featureIndex={index}>
+                  {(() => {
+                    const evidence = articleEvidenceAt(scene, index);
+                    const cellTitle = cleanLine(columns[index % columns.length] ?? lines[0] ?? "Step", 18);
+                    const cellCaption = cleanLine(evidence?.evidenceText ?? articleEvidenceCaption(scene, "Traceable evidence"), 28);
+                    return (
                   <div style={{ height: 76, borderRadius: 20, background: index % 5 === 0 ? "rgba(15,118,110,.10)" : "rgba(248,250,252,.95)", border: "1px solid rgba(15,23,42,.08)", padding: "16px 18px" }}>
-                    <div style={{ height: 10, width: `${44 + (index % 4) * 12}%`, borderRadius: 99, background: "#CBD5E1", marginBottom: 12 }} />
-                    <div style={{ height: 10, width: `${32 + (index % 3) * 10}%`, borderRadius: 99, background: index % 5 === 0 ? "#0F766E" : "#E2E8F0" }} />
+                    <div style={{ color: "#0F172A", fontSize: 15, fontWeight: 850, marginBottom: 10, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{cellTitle}</div>
+                    <div style={{ color: index % 5 === 0 ? "#0F766E" : "#64748B", fontSize: 12, fontWeight: 700, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{cellCaption}</div>
                   </div>
+                    );
+                  })()}
                 </MotionComposer>
               ))}
             </div>
           </div>
         </MotionComposer>
-        {["Workflow", "Risk", "Owner"].map((label, index) => (
+        {callouts.slice(0, 3).map((label, index) => (
           <MotionComposer
             key={label}
             choreographyId={choreographyId}

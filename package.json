@@ -9,6 +9,7 @@
     "@remotion/cli": "^4.0.479",
     "@remotion/tailwind-v4": "^4.0.479",
     "axios": "^1.18.0",
+    "cheerio": "^1.2.0",
     "dotenv": "^17.4.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -53,7 +54,9 @@
     "factory:sequential": "tsx src/factory/startSequentialApproval.ts",
     "motion:preview": "tsx src/motion/preview.ts",
     "motion:validate": "tsx src/motion/validateMotionLibrary.ts",
-    "motion:promote-draft": "tsx src/motion/promoteClaudeDraft.ts"
+    "motion:promote-draft": "tsx src/motion/promoteClaudeDraft.ts",
+    "article:preview": "tsx src/article/runArticlePreview.ts",
+    "article:api-inspect": "tsx src/article/inspectApiArticle.ts"
   },
   "sideEffects": [
     "*.css"

@@ -14,6 +14,7 @@ export type ResolvedScene = PlannedScene & {
   choreographyId?: string;
   motionPresetIds: string[];
   visualAssetRefs: string[];
+  selectedEvidenceIds?: string[];
   fallbackReason?: string;
   shotRuntimeDebug?: {
     shotPath?: string;
@@ -62,6 +63,11 @@ const recommendationCandidate: RuntimeCandidate = {
   visualType: "recommendationPanel",
 };
 const infoCandidate: RuntimeCandidate = { shotId: "shot_15", sceneType: "appGrid", visualType: "dashboardGrid" };
+const runtimeCandidates: Record<NonNullable<PlannedScene["preferredRuntimeShotId"]>, RuntimeCandidate> = {
+  shot_01: openingHookCandidate,
+  shot_15: infoCandidate,
+  shot_51: recommendationCandidate,
+};
 
 function textParts(scene: PlannedScene) {
   const lines = Array.isArray(scene.textOverlay) ? scene.textOverlay.filter(Boolean) : [];
@@ -105,9 +111,11 @@ function toResolvedFallback(scene: PlannedScene, index: number, fps: number): Re
       visualIntent: scene.visualIntent,
       dataFocus: scene.dataFocus ?? [],
       textOverlay: scene.textOverlay ?? [],
+      ...(scene.componentProps ?? {}),
     },
     motionPresetIds: scene.motionIds ?? [],
     visualAssetRefs: visualRefs(scene),
+    selectedEvidenceIds: scene.evidenceIds ?? [],
   };
 }
 
@@ -192,6 +200,7 @@ function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandida
     fallbackReason,
     componentProps: {
       ...base.componentProps,
+      ...(scene.componentProps ?? {}),
       shotId: candidate.shotId,
       shotPath,
       choreographyId,
@@ -203,7 +212,9 @@ function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandida
       sourceChoreographyId: shot.sourceChoreographyId,
       adaptationStatus: shot.adaptationStatus,
       packageId: shot.packageId,
+      evidenceIds: scene.evidenceIds ?? [],
     },
+    selectedEvidenceIds: scene.evidenceIds ?? [],
     shotRuntimeDebug: {
       shotPath,
       resolvedVia: "asset-resolver",
@@ -243,6 +254,9 @@ export function planResolvedScenesWithShots(scenes: PlannedScene[], options: Sho
   const infoSceneIndex = scenes.length > 1 ? findInfoSceneIndex(scenes) : -1;
   const recommendationSceneIndex = scenes.length > 1 ? findRecommendationSceneIndex(scenes) : -1;
   const resolvedScenes = scenes.map((scene, index) => {
+    if (scene.preferredRuntimeShotId) {
+      return applyShot(scene, index, runtimeCandidates[scene.preferredRuntimeShotId], options);
+    }
     if (index === 0) return applyShot(scene, index, openingHookCandidate, options);
     if (index === recommendationSceneIndex) return applyShot(scene, index, recommendationCandidate, options);
     if (index === infoSceneIndex) return applyShot(scene, index, infoCandidate, options);

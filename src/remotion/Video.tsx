@@ -1,38 +1,13 @@
 import React from "react";
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame } from "remotion";
-import rawStructure from "../../video-structure.json";
 import type { ResolvedScene } from "../factory/shotPlanner";
+import { pickScenesFromStructure, resolveRuntimeStructure, type RuntimeInputProps } from "./runtimeStructure";
 import { buildBeatMap } from "../timeline/beatMap";
 import { buildTimeline } from "../timeline/storyboard";
 import { Scene } from "./components/Scene";
 import { SceneRenderer } from "./components/SceneRenderer";
 
-type WebsiteAdVideoProps = {
-  withAudio?: boolean;
-  strategyId?: "A" | "B" | "C";
-};
-
-type BatchVideo = {
-  strategyId?: "A" | "B" | "C";
-  scenes?: ResolvedScene[];
-};
-
-type WebsiteStructure = {
-  meta?: { fps?: number };
-  scenes?: ResolvedScene[];
-  batchVideos?: BatchVideo[];
-};
-
-const structure = rawStructure as unknown as WebsiteStructure;
-const fps = structure.meta?.fps ?? 30;
-
-const pickScenes = (strategyId?: "A" | "B" | "C") => {
-  if (strategyId && Array.isArray(structure.batchVideos)) {
-    const batch = structure.batchVideos.find((item) => item.strategyId === strategyId);
-    if (Array.isArray(batch?.scenes)) return batch.scenes;
-  }
-  return Array.isArray(structure.scenes) ? structure.scenes : [];
-};
+type WebsiteAdVideoProps = RuntimeInputProps;
 
 const certifiedToFallbackPrerollFrames = 8;
 
@@ -65,8 +40,11 @@ const PrerolledScene: React.FC<React.PropsWithChildren<{ prerollFrames: number }
   );
 };
 
-export const WebsiteAdVideo: React.FC<WebsiteAdVideoProps> = ({ withAudio = false, strategyId }) => {
-  const scenes = pickScenes(strategyId);
+export const WebsiteAdVideo: React.FC<WebsiteAdVideoProps> = (props) => {
+  const { withAudio = false, strategyId } = props;
+  const structure = resolveRuntimeStructure(props);
+  const fps = structure.meta?.fps ?? 30;
+  const scenes = pickScenesFromStructure(structure, strategyId);
   const timeline = buildTimeline(scenes, fps);
   buildBeatMap(timeline);
 

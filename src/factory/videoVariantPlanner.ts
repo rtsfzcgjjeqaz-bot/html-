@@ -13,6 +13,10 @@ export type VideoVariantPlannerOptions = {
 };
 
 export type PlannedScene = StoryboardScene & {
+  sourceType?: "website" | "article";
+  preferredRuntimeShotId?: "shot_01" | "shot_15" | "shot_51";
+  evidenceIds?: string[];
+  componentProps?: Record<string, unknown>;
   sceneType: string;
   choreographyId?: string;
   animationTracks?: ChoreographyAnimationTrack[];
