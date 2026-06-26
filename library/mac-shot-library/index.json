@@ -72,6 +72,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_40"
+    },
+    {
+      "shotId": "shot_43",
+      "choreographyId": "darkCapabilityCardsBurst",
+      "purpose": "Dark capability cards burst for result comparison and advanced AI feature highlight moments.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-26",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_43"
     }
   ],
   "updatedAt": "2026-06-26"
