@@ -2,23 +2,27 @@ import path from "path";
 import type { StoryboardScene } from "../ai/generateStoryboard";
 import { getShot } from "../../assets/index/asset-resolver";
 import { planResolvedScenesWithShots, type ResolvedScene } from "../factory/shotPlanner";
+import { getRuntimeShotCatalogEntry, type RuntimeShotId } from "../factory/runtimeShotCatalog";
 import type { PlannedScene } from "../factory/videoVariantPlanner";
 import { getDefaultCompositionSpec } from "../remotion/runtimeStructure";
 import {
-  articleVisualPolicy,
   bindPolicyText,
   planArticleVisualPolicy,
-  type ArticlePolicyDebug,
   type ArticlePolicyScenePlan,
   type ArticlePolicyTextBinding,
   type ArticlePolicyWarning,
-  type ArticleVisualIntent,
 } from "./articleVisualPolicy";
+import {
+  buildArticleRuntimeSelectionPlan,
+  type ArticleRuntimeSelectionPlanScene,
+} from "./articleRuntimeAdapter";
+import { buildArticleVisibleCopyPlan } from "./articleVisibleCopyPlan";
 import type {
   ArticleContentBrief,
   ArticleInput,
   ArticleSceneComponentProps,
   ArticleSceneSchedule,
+  ArticleVisibleCopyScenePlan,
   ArticleVideoJob,
   ArticleVideoSpec,
   EvidenceItem,
@@ -42,10 +46,10 @@ const articleVideoSpec: ArticleVideoSpec = {
 
 type ArticlePlannedScene = PlannedScene & {
   sourceType: "article";
-  preferredRuntimeShotId?: "shot_01" | "shot_15" | "shot_51";
+  preferredRuntimeShotId?: RuntimeShotId;
   evidenceIds?: string[];
-  visualIntentKey: ArticleVisualIntent;
-  policyWarnings: ArticlePolicyWarning[];
+  visualIntentKey: ArticleRuntimeSelectionPlanScene["visualIntent"];
+  policyWarnings: string[];
   policyBindings: Pick<ArticlePolicyScenePlan, "headline" | "supportingText" | "recommendationTitle" | "recommendationItems" | "stepItems" | "cta">;
 };
 
@@ -55,26 +59,11 @@ function dedupe<T>(items: T[]) {
 
 function clean(value: string, max = 88) {
   const normalized = value.replace(/\s+/g, " ").trim();
-  return normalized.length > max ? `${normalized.slice(0, max - 3).trim()}...` : normalized;
+  return normalized.length > max ? normalized : normalized;
 }
 
 function cleanSentences(values: string[]) {
   return values.map((value) => value.replace(/\s+/g, " ").trim()).filter(Boolean);
-}
-
-function paragraphEvidence(evidence: EvidenceItem[], kinds: EvidenceItem["kind"][]) {
-  return evidence.filter((item) => kinds.includes(item.kind) && item.videoEligible);
-}
-
-function structuredEvidence(brief: ArticleContentBrief) {
-  return brief.evidence.filter((item) =>
-    item.videoEligible &&
-    (item.valueType === "currency" ||
-      item.valueType === "percentage" ||
-      item.valueType === "date" ||
-      item.valueType === "count" ||
-      item.valueType === "duration"),
-  );
 }
 
 function evidenceById(brief: ArticleContentBrief) {
@@ -97,151 +86,22 @@ function orderedSteps(article: ArticleInput) {
   return cleanSentences(article.sections.flatMap((section) => section.orderedSteps ?? []));
 }
 
-function articleWarningsMessage(warnings: ArticlePolicyWarning[]) {
-  return warnings.map((warning) => warning.message);
+function evidenceRows(brief: ArticleContentBrief, evidenceIds: string[]) {
+  return toSceneEvidence(brief, evidenceIds).map((item) => clean(item.evidenceText, 42)).slice(0, 3);
 }
 
-function recommendationBindings(article: ArticleInput, brief: ArticleContentBrief, evidenceIds: string[]) {
-  const sceneEvidence = toSceneEvidence(brief, evidenceIds);
-  const stepBindings = orderedSteps(article).map((step, index) =>
-    bindPolicyText({
-      value: step,
-      maxCharacters: articleVisualPolicy.textDensity.maxRecommendationItemCharacters,
-      sourceField: `article.sections.orderedSteps[${index}]`,
-      sourceExcerpt: step,
-    }),
-  );
-  const keyPointBindings = brief.keyPoints.map((point, index) =>
-    bindPolicyText({
-      value: point,
-      maxCharacters: articleVisualPolicy.textDensity.maxRecommendationItemCharacters,
-      sourceField: `contentBrief.keyPoints[${index}]`,
-      sourceExcerpt: point,
-    }),
-  );
-  const evidenceBindings = sceneEvidence.map((item) =>
-    bindPolicyText({
-      value: item.evidenceText,
-      maxCharacters: articleVisualPolicy.textDensity.maxRecommendationItemCharacters,
-      sourceField: "contentBrief.evidence.sourceExcerpt",
-      sourceExcerpt: item.evidenceText,
-      sourceEvidenceId: item.evidenceId,
-    }),
-  );
-
-  const byValue = new Map<string, ArticlePolicyTextBinding>();
-  [...stepBindings, ...keyPointBindings, ...evidenceBindings].forEach((binding) => {
-    if (!byValue.has(binding.value)) byValue.set(binding.value, binding);
-  });
-
-  return [...byValue.values()].slice(0, articleVisualPolicy.textDensity.maxRecommendationItems);
+function textValue(binding?: ArticlePolicyTextBinding) {
+  return binding?.value;
 }
 
-function stepBindings(article: ArticleInput, brief: ArticleContentBrief, evidenceIds: string[]) {
-  const sceneEvidence = toSceneEvidence(brief, evidenceIds);
-  const sectionStepBindings = orderedSteps(article).map((step, index) =>
-    bindPolicyText({
-      value: step,
-      maxCharacters: articleVisualPolicy.textDensity.maxStepTitleCharacters,
-      sourceField: `article.sections.orderedSteps[${index}]`,
-      sourceExcerpt: step,
-    }),
-  );
-  const evidenceBindings = sceneEvidence
-    .filter((item) => item.evidenceText.length > 1)
-    .map((item) =>
-      bindPolicyText({
-        value: item.evidenceText,
-        maxCharacters: articleVisualPolicy.textDensity.maxStepTitleCharacters,
-        sourceField: "contentBrief.evidence.sourceExcerpt",
-        sourceExcerpt: item.evidenceText,
-        sourceEvidenceId: item.evidenceId,
-      }),
-    );
-
-  const byValue = new Map<string, ArticlePolicyTextBinding>();
-  [...sectionStepBindings, ...evidenceBindings].forEach((binding) => {
-    if (!byValue.has(binding.value)) byValue.set(binding.value, binding);
-  });
-
-  return [...byValue.values()].slice(0, articleVisualPolicy.textDensity.maxStepItems);
+function warningMessages(scene: ArticlePolicyScenePlan, runtimeScene: ArticleRuntimeSelectionPlanScene) {
+  return [
+    ...scene.warnings.map((warning) => warning.message),
+    ...(runtimeScene.fallbackReason ? [runtimeScene.fallbackReason] : []),
+  ];
 }
 
-function shouldUseStructuredScene(bindings: ArticlePolicyTextBinding[], article: ArticleInput, brief: ArticleContentBrief) {
-  const orderedStepCount = orderedSteps(article).length;
-  if (orderedStepCount < 2) {
-    return { allowed: false, reason: "Article does not contain enough canonical ordered steps." };
-  }
-  if (bindings.length < 2) {
-    return { allowed: false, reason: "No readable structured step items remain after policy fitting." };
-  }
-  const numericEvidenceCount = structuredEvidence(brief).length;
-  const compactedSteps = bindings.filter((binding) => binding.compacted).length;
-  const tinyBindings = bindings.filter((binding) => binding.finalCharacters <= 2).length;
-  if (numericEvidenceCount === 0 && compactedSteps === bindings.length) {
-    return { allowed: false, reason: "Structured scene would compress every step without traceable numeric support." };
-  }
-  if (compactedSteps > 0 || tinyBindings > 0) {
-    return { allowed: false, reason: "Structured scene would force compact or tiny dashboard labels." };
-  }
-  return { allowed: true };
-}
-
-function articleSceneProps(scene: ResolvedScene, article: ArticleInput, brief: ArticleContentBrief): ArticleSceneComponentProps {
-  const selectedEvidence = toSceneEvidence(brief, scene.selectedEvidenceIds ?? []);
-  const firstEvidence = selectedEvidence[0];
-  const warnings =
-    scene.componentProps && typeof scene.componentProps === "object" && "policyWarnings" in scene.componentProps
-      ? ((scene.componentProps.policyWarnings as string[]) ?? [])
-      : [];
-  const base: ArticleSceneComponentProps = {
-    contentSource: "article",
-    articleId: article.articleId,
-    headline: scene.headline,
-    supportingText: scene.supportingText,
-    shortLabel: scene.sceneType === "coverHook" ? clean(article.title, 18) : clean(brief.keyPoints[0] ?? article.title, 18),
-    evidenceId: firstEvidence?.evidenceId,
-    evidenceText: firstEvidence?.evidenceText,
-    ctaText: article.cta?.text,
-    ctaUrl: article.cta?.url,
-    visualIntent: scene.visualIntent,
-    selectedEvidence,
-    headlineSource: scene.sceneType === "coverHook" ? "article.title" : "contentBrief.keyPoints",
-    supportingTextSource: scene.sceneType === "coverHook" ? "article.summary" : "contentBrief.summary",
-    contentIntent:
-      scene.componentProps && typeof scene.componentProps === "object" && "contentIntent" in scene.componentProps
-        ? String(scene.componentProps.contentIntent)
-        : undefined,
-    policyWarnings: warnings,
-  };
-
-  if (scene.selectedShotId === "shot_51") {
-    const recommendationItems =
-      scene.componentProps && typeof scene.componentProps === "object" && "policyRecommendationItems" in scene.componentProps
-        ? ((scene.componentProps.policyRecommendationItems as string[]) ?? [])
-        : [];
-    return {
-      ...base,
-      recommendationTitle: scene.headline,
-      recommendationItems,
-    };
-  }
-
-  if (scene.selectedShotId === "shot_15") {
-    const stepItems =
-      scene.componentProps && typeof scene.componentProps === "object" && "policyStepItems" in scene.componentProps
-        ? ((scene.componentProps.policyStepItems as string[]) ?? [])
-        : [];
-    return {
-      ...base,
-      stepItems,
-    };
-  }
-
-  return base;
-}
-
-function shotPreferredDurationSeconds(shotId: "shot_01" | "shot_15" | "shot_51") {
+function shotPreferredDurationSeconds(shotId: RuntimeShotId) {
   const shot = getShot(shotId);
   const preferredFrames = shot.duration_frames?.preferred ?? shot.choreography?.durationFrames?.preferred;
   if (!preferredFrames) {
@@ -252,7 +112,7 @@ function shotPreferredDurationSeconds(shotId: "shot_01" | "shot_15" | "shot_51")
 
 function baseScene(
   id: number,
-  shotId: "shot_01" | "shot_15" | "shot_51",
+  shotId: RuntimeShotId,
   visualIntent: string,
   textOverlay: string[],
   audioCue: string,
@@ -272,282 +132,194 @@ function baseScene(
   };
 }
 
-function buildHookScene(article: ArticleInput, brief: ArticleContentBrief): ArticlePlannedScene {
-  const warnings: ArticlePolicyWarning[] = [];
-  const headlineBinding = bindPolicyText({
-    value: article.title || brief.coreMessage,
-    maxCharacters: articleVisualPolicy.textDensity.maxHookHeadlineCharacters,
-    sourceField: "article.title",
-    sourceExcerpt: article.title || brief.coreMessage,
-  });
-  const supportBinding = bindPolicyText({
-    value: article.summary || brief.summary,
-    maxCharacters: articleVisualPolicy.textDensity.maxHookSupportingCharacters,
-    sourceField: "article.summary",
-    sourceExcerpt: article.summary || brief.summary,
-  });
-  if (headlineBinding.compacted) {
-    warnings.push({ code: "TEXT_COMPACTED", sceneId: 1, message: "Hook headline was compacted to fit policy." });
+function sceneTitle(scene: ArticlePolicyScenePlan, brief: ArticleContentBrief) {
+  return (
+    textValue(scene.headline) ??
+    textValue(scene.recommendationTitle) ??
+    textValue(scene.cta) ??
+    brief.coreMessage
+  );
+}
+
+function sceneSupport(scene: ArticlePolicyScenePlan, brief: ArticleContentBrief) {
+  return (
+    textValue(scene.supportingText) ??
+    bindPolicyText({
+      value: brief.summary,
+      maxCharacters: 34,
+      sourceField: "contentBrief.summary",
+      sourceExcerpt: brief.summary,
+    }).value
+  );
+}
+
+function selectionDataFocus(
+  policyScene: ArticlePolicyScenePlan,
+  runtimeScene: ArticleRuntimeSelectionPlanScene,
+  article: ArticleInput,
+  brief: ArticleContentBrief,
+) {
+  if (runtimeScene.visualIntent === "step_flow" || runtimeScene.visualIntent === "checklist") {
+    return (policyScene.stepItems ?? []).map((item) => item.value).slice(0, 4);
   }
-  if (supportBinding.compacted) {
-    warnings.push({ code: "TEXT_COMPACTED", sceneId: 1, message: "Hook supporting text was compacted to fit policy." });
+  if (runtimeScene.visualIntent === "recommendation" || runtimeScene.selectedRuntimeShotId === "shot_51" || runtimeScene.selectedRuntimeShotId === "shot_30") {
+    const rows = (policyScene.recommendationItems ?? []).map((item) => item.value);
+    return (rows.length ? rows : brief.keyPoints).slice(0, 3);
   }
+  if (runtimeScene.visualIntent === "price_comparison" || runtimeScene.visualIntent === "result_metric" || runtimeScene.visualIntent === "evidence") {
+    const rows = evidenceRows(brief, policyScene.selectedEvidenceIds);
+    return (rows.length ? rows : brief.keyPoints).slice(0, 3);
+  }
+  if (runtimeScene.visualIntent === "reason") {
+    return (evidenceRows(brief, policyScene.selectedEvidenceIds).length ? evidenceRows(brief, policyScene.selectedEvidenceIds) : brief.keyPoints).slice(0, 3);
+  }
+  if (runtimeScene.visualIntent === "hook") {
+    return brief.keyPoints.slice(0, 3).map((point) => clean(point, 18));
+  }
+  return orderedSteps(article).slice(0, 3);
+}
+
+function componentPropsForSelection(
+  policyScene: ArticlePolicyScenePlan,
+  runtimeScene: ArticleRuntimeSelectionPlanScene,
+  article: ArticleInput,
+  brief: ArticleContentBrief,
+) {
+  const selectedEvidence = toSceneEvidence(brief, policyScene.selectedEvidenceIds);
+  const recommendationItems = (policyScene.recommendationItems ?? []).map((item) => item.value);
+  const stepItems = (policyScene.stepItems ?? []).map((item) => item.value);
   return {
-    ...baseScene(
-      1,
-      "shot_01",
-      "hook",
-      [headlineBinding.value, supportBinding.value],
-      "clean opener",
-    ),
+    articleId: article.articleId,
+    articleBindingMode: "strict",
+    articleBindingRequired: true,
+    evidenceIds: policyScene.selectedEvidenceIds,
+    contentIntent: runtimeScene.visualIntent,
+    policyWarnings: warningMessages(policyScene, runtimeScene),
+    policyRecommendationItems: recommendationItems.length ? recommendationItems : undefined,
+    policyStepItems: stepItems.length ? stepItems : undefined,
+    selectedEvidence,
+  } satisfies Record<string, unknown>;
+}
+
+function buildPlannedSceneFromSelection(
+  policyScene: ArticlePolicyScenePlan,
+  runtimeScene: ArticleRuntimeSelectionPlanScene,
+  article: ArticleInput,
+  brief: ArticleContentBrief,
+): ArticlePlannedScene | undefined {
+  const runtimeShotId = runtimeScene.selectedRuntimeShotId;
+  const selectedChoreographyId = runtimeScene.selectedChoreographyId;
+  if (!runtimeShotId || !selectedChoreographyId) return undefined;
+
+  const catalogEntry = getRuntimeShotCatalogEntry(runtimeShotId);
+  if (!catalogEntry) {
+    throw new Error(`Runtime catalog entry missing for ${runtimeShotId}.`);
+  }
+
+  const headline = sceneTitle(policyScene, brief);
+  const supportingText = sceneSupport(policyScene, brief);
+  const audioCue = runtimeScene.visualIntent.replace(/_/g, " ");
+  const dataFocus = selectionDataFocus(policyScene, runtimeScene, article, brief);
+  const textOverlay = [headline, supportingText].filter(Boolean).slice(0, 2);
+
+  return {
+    ...baseScene(policyScene.sceneId, runtimeShotId, runtimeScene.visualIntent, textOverlay, audioCue),
     sourceType: "article",
-    sceneType: "coverHook",
-    visualTemplate: "websiteHero",
-    preferredRuntimeShotId: "shot_01",
-    evidenceIds: paragraphEvidence(brief.evidence, ["fact", "quote", "comparison"]).slice(0, 2).map((item) => item.evidenceId),
-    dataFocus: brief.keyPoints.slice(0, 3).map((point) => clean(point, 18)),
-    componentProps: {
-      contentIntent: "hook",
-      policyWarnings: articleWarningsMessage(warnings),
-    },
-    visualIntentKey: "hook",
-    policyWarnings: warnings,
+    sceneType: catalogEntry.sceneType,
+    visualTemplate: catalogEntry.visualType as PlannedScene["visualTemplate"],
+    preferredRuntimeShotId: runtimeShotId,
+    evidenceIds: policyScene.selectedEvidenceIds,
+    dataFocus,
+    componentProps: componentPropsForSelection(policyScene, runtimeScene, article, brief),
+    visualIntentKey: runtimeScene.visualIntent,
+    policyWarnings: warningMessages(policyScene, runtimeScene),
     policyBindings: {
-      headline: headlineBinding,
-      supportingText: supportBinding,
+      headline: policyScene.headline,
+      supportingText: policyScene.supportingText,
+      recommendationTitle: policyScene.recommendationTitle,
+      recommendationItems: policyScene.recommendationItems,
+      stepItems: policyScene.stepItems,
+      cta: policyScene.cta,
     },
   };
 }
 
-function buildRecommendationScene(article: ArticleInput, brief: ArticleContentBrief): ArticlePlannedScene {
-  const warnings: ArticlePolicyWarning[] = [];
-  const recommendationEvidence = paragraphEvidence(brief.evidence, ["instruction", "fact", "quote"]).slice(0, 3);
-  const recommendationTitleBinding = bindPolicyText({
-    value: brief.coreMessage,
-    maxCharacters: articleVisualPolicy.textDensity.maxRecommendationTitleCharacters,
-    sourceField: "contentBrief.coreMessage",
-    sourceExcerpt: brief.coreMessage,
-  });
-  const supportBinding = bindPolicyText({
-    value: brief.summary,
-    maxCharacters: articleVisualPolicy.textDensity.maxHookSupportingCharacters,
-    sourceField: "contentBrief.summary",
-    sourceExcerpt: brief.summary,
-  });
-  const itemBindings = recommendationBindings(article, brief, recommendationEvidence.map((item) => item.evidenceId));
-  if (recommendationTitleBinding.compacted) {
-    warnings.push({ code: "TEXT_COMPACTED", sceneId: 2, message: "Recommendation title was compacted to fit policy." });
-  }
-  if (itemBindings.length < recommendationEvidence.length) {
-    warnings.push({ code: "RECOMMENDATION_ITEMS_REDUCED", sceneId: 2, message: "Recommendation items were reduced to fit policy." });
-  }
-  return {
-    ...baseScene(
-      2,
-      "shot_51",
-      "recommendation",
-      [recommendationTitleBinding.value, supportBinding.value],
-      "recommendation reveal",
-    ),
-    sourceType: "article",
-    sceneType: "aiRecommendation",
-    visualTemplate: "recommendationPanel",
-    preferredRuntimeShotId: "shot_51",
-    evidenceIds: recommendationEvidence.map((item) => item.evidenceId),
-    dataFocus: itemBindings.map((binding) => binding.value),
-    componentProps: {
-      articleId: article.articleId,
-      evidenceIds: recommendationEvidence.map((item) => item.evidenceId),
-      contentIntent: "recommendation",
-      policyWarnings: articleWarningsMessage(warnings),
-      policyRecommendationItems: itemBindings.map((binding) => binding.value),
-    },
-    visualIntentKey: "recommendation",
-    policyWarnings: warnings,
-    policyBindings: {
-      headline: recommendationTitleBinding,
-      supportingText: supportBinding,
-      recommendationTitle: recommendationTitleBinding,
-      recommendationItems: itemBindings,
-      cta: article.cta?.text
-        ? bindPolicyText({
-            value: article.cta.text,
-            maxCharacters: articleVisualPolicy.textDensity.maxCtaCharacters,
-            sourceField: "article.cta.text",
-            sourceExcerpt: article.cta.text,
-          })
+function articleSceneProps(
+  scene: ResolvedScene,
+  article: ArticleInput,
+  brief: ArticleContentBrief,
+  visibleCopyPlan: ArticleVisibleCopyScenePlan | undefined,
+): ArticleSceneComponentProps {
+  const selectedEvidence = toSceneEvidence(brief, scene.selectedEvidenceIds ?? []);
+  const firstEvidence = selectedEvidence[0];
+  const warnings =
+    scene.componentProps && typeof scene.componentProps === "object" && "policyWarnings" in scene.componentProps
+      ? ((scene.componentProps.policyWarnings as string[]) ?? [])
+      : [];
+
+  const base: ArticleSceneComponentProps = {
+    contentSource: "article",
+    articleId: article.articleId,
+    articleBindingMode: "strict",
+    articleBindingRequired: true,
+    headline: visibleCopyPlan?.headline?.value,
+    supportingText: visibleCopyPlan?.supportingText?.value,
+    shortLabel: visibleCopyPlan?.shortLabel?.value,
+    evidenceId: firstEvidence?.evidenceId ?? visibleCopyPlan?.selectedEvidenceIds[0],
+    evidenceText: visibleCopyPlan?.evidenceCaption?.value ?? firstEvidence?.evidenceText,
+    ctaText: article.cta?.text,
+    ctaUrl: article.cta?.url,
+    visualIntent: scene.visualIntent,
+    selectedEvidence,
+    headlineSource: visibleCopyPlan?.headline?.sourceField,
+    supportingTextSource: visibleCopyPlan?.supportingText?.sourceField,
+    contentIntent:
+      scene.componentProps && typeof scene.componentProps === "object" && "contentIntent" in scene.componentProps
+        ? String(scene.componentProps.contentIntent)
         : undefined,
-    },
+    policyWarnings: warnings,
+    visibleCopyPlan,
   };
-}
 
-function buildStructuredInfoScene(article: ArticleInput, brief: ArticleContentBrief) {
-  const sceneEvidence = [...structuredEvidence(brief), ...paragraphEvidence(brief.evidence, ["instruction", "comparison"])].slice(0, 4);
-  const bindings = stepBindings(article, brief, sceneEvidence.map((item) => item.evidenceId));
-  const warnings: ArticlePolicyWarning[] = [];
-  const structuredDecision = shouldUseStructuredScene(bindings, article, brief);
-  if (!structuredDecision.allowed) {
-    warnings.push({
-      code: "STRUCTURED_SCENE_UNSUITABLE",
-      sceneId: 3,
-      message: structuredDecision.reason ?? "Structured article scene is unsuitable under the current article visual policy.",
-    });
-  }
-  if (bindings.length < articleVisualPolicy.textDensity.maxStepItems) {
-    warnings.push({ code: "STEP_ITEMS_REDUCED", sceneId: 3, message: "Step items were reduced to fit policy." });
-  }
-  if (sceneEvidence.length === 0 || !structuredDecision.allowed) {
+  const recommendationItems = (visibleCopyPlan?.recommendationItems ?? [])
+    .filter((item) => item.displayMode !== "skipped" && item.value)
+    .map((item) => item.value);
+  const stepItems = (visibleCopyPlan?.stepItems ?? [])
+    .filter((item) => item.displayMode !== "skipped" && item.value)
+    .map((item) => item.value);
+
+  if (recommendationItems.length || visibleCopyPlan?.recommendationTitle?.value) {
     return {
-      scene: undefined,
-      debug: {
-        sceneId: 3,
-        visualIntent: "step_flow" as const,
-        warnings,
-        stepItems: bindings,
-        selectedEvidenceIds: [],
-        rejectedEvidenceIds: sceneEvidence.map((item) => item.evidenceId),
-      } satisfies Partial<ArticlePolicyScenePlan>,
+      ...base,
+      recommendationTitle: visibleCopyPlan?.recommendationTitle?.value ?? base.headline,
+      recommendationItems,
     };
   }
 
-  const headlineBinding = bindPolicyText({
-    value: brief.keyPoints[1] ?? "Structured evidence",
-    maxCharacters: articleVisualPolicy.textDensity.maxHookHeadlineCharacters,
-    sourceField: "contentBrief.keyPoints[1]",
-    sourceExcerpt: brief.keyPoints[1] ?? "Structured evidence",
-  });
-  const supportBinding = bindPolicyText({
-    value: brief.keyPoints[2] ?? brief.summary,
-    maxCharacters: articleVisualPolicy.textDensity.maxHookSupportingCharacters,
-    sourceField: brief.keyPoints[2] ? "contentBrief.keyPoints[2]" : "contentBrief.summary",
-    sourceExcerpt: brief.keyPoints[2] ?? brief.summary,
-  });
-  return {
-    scene: {
-      ...baseScene(
-        3,
-        "shot_15",
-        "step_flow",
-        [headlineBinding.value, supportBinding.value],
-        "structured info hold",
-      ),
-      sourceType: "article",
-      sceneType: "appGrid",
-      visualTemplate: "appGrid",
-      preferredRuntimeShotId: "shot_15",
-      dataFocus: bindings.map((binding) => binding.value),
-      evidenceIds: sceneEvidence.map((item) => item.evidenceId),
-      componentProps: {
-        evidenceIds: sceneEvidence.map((item) => item.evidenceId),
-        contentIntent: "step_flow",
-        policyWarnings: articleWarningsMessage(warnings),
-        policyStepItems: bindings.map((binding) => binding.value),
-      },
-      visualIntentKey: "step_flow",
-      policyWarnings: warnings,
-      policyBindings: {
-        headline: headlineBinding,
-        supportingText: supportBinding,
-        stepItems: bindings,
-      },
-    } satisfies ArticlePlannedScene,
-    debug: {
-      sceneId: 3,
-      visualIntent: "step_flow",
-      warnings,
-      headline: headlineBinding,
-      supportingText: supportBinding,
-      stepItems: bindings,
-      selectedEvidenceIds: sceneEvidence.map((item) => item.evidenceId),
-      rejectedEvidenceIds: [],
-    } satisfies Partial<ArticlePolicyScenePlan>,
-  };
+  if (stepItems.length) {
+    return {
+      ...base,
+      stepItems,
+    };
+  }
+
+  return base;
 }
 
-function buildSafeEndScene(article: ArticleInput, brief: ArticleContentBrief): ArticlePlannedScene {
-  const warnings: ArticlePolicyWarning[] = [
-    {
-      code: "SAFE_END_ENABLED",
-      sceneId: 99,
-      message: "Policy enabled a safe ending scene to keep duration within the approved window.",
-    },
-  ];
-  const ctaText = article.cta?.text ?? "Safe ending";
-  const headlineBinding = bindPolicyText({
-    value: ctaText,
-    maxCharacters: articleVisualPolicy.textDensity.maxCtaCharacters,
-    sourceField: article.cta?.text ? "article.cta.text" : "contentBrief.summary",
-    sourceExcerpt: ctaText,
-  });
-  const supportBinding = bindPolicyText({
-    value: article.cta?.url ?? brief.summary,
-    maxCharacters: articleVisualPolicy.textDensity.maxHookSupportingCharacters,
-    sourceField: article.cta?.url ? "article.cta.url" : "contentBrief.summary",
-    sourceExcerpt: article.cta?.url ?? brief.summary,
-  });
-
-  return {
-    ...baseScene(
-      4,
-      "shot_51",
-      "safe_end",
-      [headlineBinding.value, supportBinding.value],
-      "safe ending hold",
-    ),
-    sourceType: "article",
-    sceneType: "aiRecommendation",
-    visualTemplate: "recommendationPanel",
-    preferredRuntimeShotId: "shot_51",
-    evidenceIds: [],
-    dataFocus: brief.keyPoints.slice(0, 2).map((point) => clean(point, articleVisualPolicy.textDensity.maxRecommendationItemCharacters)),
-    componentProps: {
-      articleId: article.articleId,
-      evidenceIds: [],
-      contentIntent: "safe_end",
-      policyWarnings: articleWarningsMessage(warnings),
-      policyRecommendationItems: brief.keyPoints
-        .slice(0, 2)
-        .map((point, index) =>
-          bindPolicyText({
-            value: point,
-            maxCharacters: articleVisualPolicy.textDensity.maxRecommendationItemCharacters,
-            sourceField: `contentBrief.keyPoints[${index}]`,
-            sourceExcerpt: point,
-          }).value,
-        ),
-    },
-    visualIntentKey: "safe_end",
-    policyWarnings: warnings,
-    policyBindings: {
-      headline: headlineBinding,
-      supportingText: supportBinding,
-      cta: article.cta?.text
-        ? bindPolicyText({
-            value: article.cta.text,
-            maxCharacters: articleVisualPolicy.textDensity.maxCtaCharacters,
-            sourceField: "article.cta.text",
-            sourceExcerpt: article.cta.text,
-          })
-        : undefined,
-      recommendationItems: brief.keyPoints.slice(0, 2).map((point, index) =>
-        bindPolicyText({
-          value: point,
-          maxCharacters: articleVisualPolicy.textDensity.maxRecommendationItemCharacters,
-          sourceField: `contentBrief.keyPoints[${index}]`,
-          sourceExcerpt: point,
-        }),
-      ),
-    },
-  };
-}
-
-function enrichResolvedScenes(scenes: ResolvedScene[], article: ArticleInput, brief: ArticleContentBrief) {
+function enrichResolvedScenes(
+  scenes: ResolvedScene[],
+  article: ArticleInput,
+  brief: ArticleContentBrief,
+  visibleCopyPlan: ArticleVisibleCopyScenePlan[],
+) {
   return scenes.map((scene) => ({
     ...scene,
     componentProps: {
       ...scene.componentProps,
       sourceType: "article",
       articleId: article.articleId,
+      articleBindingMode: "strict",
+      articleBindingRequired: true,
       evidenceIds: scene.selectedEvidenceIds ?? [],
       factConstraints: brief.factConstraints,
       contentIntent:
@@ -566,7 +338,12 @@ function enrichResolvedScenes(scenes: ResolvedScene[], article: ArticleInput, br
         scene.componentProps && typeof scene.componentProps === "object" && "policyStepItems" in scene.componentProps
           ? scene.componentProps.policyStepItems
           : undefined,
-      articleContent: articleSceneProps(scene, article, brief),
+      articleContent: articleSceneProps(
+        scene,
+        article,
+        brief,
+        visibleCopyPlan.find((item) => item.sceneId === scene.id && item.runtimeShotId === scene.selectedShotId),
+      ),
     },
   }));
 }
@@ -611,6 +388,14 @@ function toRemotionScene(scene: ResolvedScene): ResolvedScene {
         scene.componentProps && typeof scene.componentProps === "object" && "contentIntent" in scene.componentProps
           ? scene.componentProps.contentIntent
           : undefined,
+      articleBindingMode:
+        scene.componentProps && typeof scene.componentProps === "object" && "articleBindingMode" in scene.componentProps
+          ? scene.componentProps.articleBindingMode
+          : undefined,
+      articleBindingRequired:
+        scene.componentProps && typeof scene.componentProps === "object" && "articleBindingRequired" in scene.componentProps
+          ? scene.componentProps.articleBindingRequired
+          : undefined,
       policyWarnings:
         scene.componentProps && typeof scene.componentProps === "object" && "policyWarnings" in scene.componentProps
           ? scene.componentProps.policyWarnings
@@ -652,33 +437,41 @@ function buildSceneSchedule(scenes: ResolvedScene[]): ArticleSceneSchedule[] {
 
 export function buildArticleVideoJob(article: ArticleInput, contentBrief: ArticleContentBrief, outputDirectory: string): ArticleVideoJob {
   const policyPlan = planArticleVisualPolicy(article, contentBrief, articleVideoSpec);
-  const structuredInfo = buildStructuredInfoScene(article, contentBrief);
-  const plannedScenes = [buildHookScene(article, contentBrief), buildRecommendationScene(article, contentBrief), structuredInfo.scene].filter(
-    Boolean,
-  ) as ArticlePlannedScene[];
+  const runtimeSelectionPlan = buildArticleRuntimeSelectionPlan(policyPlan, contentBrief, articleVideoSpec);
+  const visibleCopyPlan = buildArticleVisibleCopyPlan({
+    article,
+    brief: contentBrief,
+    policyScenes: policyPlan.scenes,
+    runtimeScenes: runtimeSelectionPlan.scenes,
+  });
+  const selectedPlannedScenes = policyPlan.scenes
+    .map((scene) => {
+      const runtimeScene = runtimeSelectionPlan.scenes.find((item) => item.sceneId === scene.sceneId);
+      if (!runtimeScene || runtimeScene.selectionStatus !== "selected") return undefined;
+      return buildPlannedSceneFromSelection(scene, runtimeScene, article, contentBrief);
+    })
+    .filter((scene): scene is ArticlePlannedScene => Boolean(scene));
 
-  const projectedFrames = plannedScenes.reduce((sum, scene) => sum + Math.round(scene.duration * articleVideoSpec.fps), 0);
-  if (projectedFrames / articleVideoSpec.fps < articleVisualPolicy.globalRhythm.minDurationSeconds) {
-    plannedScenes.push(buildSafeEndScene(article, contentBrief));
-  }
-
-  const policyWarnings = [
-    ...plannedScenes.flatMap((scene) => scene.policyWarnings),
-    ...(!structuredInfo.scene ? structuredInfo.debug?.warnings ?? [] : []),
-  ];
-  const shotPlan = planResolvedScenesWithShots(plannedScenes, {
+  const shotPlan = planResolvedScenesWithShots(selectedPlannedScenes, {
     fps: articleVideoSpec.fps,
     profile: "default-promo",
-    narrativeId: "comparison",
+    narrativeId: contentBrief.sourceMetadata.pageType === "comparison" ? "comparison" : "trust",
   });
 
-  const resolvedScenes = enrichResolvedScenes(shotPlan.scenes, article, contentBrief);
+  const resolvedScenes = enrichResolvedScenes(shotPlan.scenes, article, contentBrief, visibleCopyPlan);
   const remotionScenes = resolvedScenes.map(toRemotionScene);
   const sceneSchedule = buildSceneSchedule(resolvedScenes);
-  const selectedEvidenceIds = dedupe(plannedScenes.flatMap((scene) => scene.evidenceIds ?? []));
+  const selectedEvidenceIds = dedupe(selectedPlannedScenes.flatMap((scene) => scene.evidenceIds ?? []));
   const actualDurationFrames = sceneSchedule.reduce((sum, scene) => sum + scene.durationInFrames, 0);
   const actualDurationSeconds = actualDurationFrames / articleVideoSpec.fps;
   const jobId = `${article.articleId}_preview_job`;
+  const runtimeWarnings = runtimeSelectionPlan.warnings;
+  const runtimePolicyWarnings: ArticlePolicyWarning[] = runtimeWarnings.map((message) => ({
+    code: "INTENT_NOT_SUPPORTED",
+    message,
+  }));
+  const combinedPolicyWarnings = [...policyPlan.debug.policyWarnings, ...runtimePolicyWarnings];
+  const combinedPolicyWarningMessages = combinedPolicyWarnings.map((warning) => warning.message);
 
   return {
     jobId,
@@ -692,11 +485,14 @@ export function buildArticleVideoJob(article: ArticleInput, contentBrief: Articl
     selectedChoreographyIds: dedupe(resolvedScenes.map((scene) => scene.choreographyId).filter(Boolean) as string[]),
     contentBrief,
     selectedEvidenceIds,
+    visibleCopyPlan,
     resolvedScenes,
     policyDebug: {
       ...policyPlan.debug,
-      policyWarnings: [...policyPlan.debug.policyWarnings, ...policyWarnings],
-    } satisfies ArticlePolicyDebug as unknown as Record<string, unknown>,
+      runtimeSelectionPlan,
+      visibleCopyPlan,
+      policyWarnings: combinedPolicyWarnings,
+    } as Record<string, unknown>,
     remotionInputProps: {
       structure: {
         meta: {
@@ -712,10 +508,12 @@ export function buildArticleVideoJob(article: ArticleInput, contentBrief: Articl
         articleJob: {
           jobId,
           articleId: article.articleId,
+          articleBindingMode: "strict",
           selectedEvidenceIds,
           selectedShotIds: dedupe(resolvedScenes.map((scene) => scene.selectedShotId).filter(Boolean) as string[]),
           selectedChoreographyIds: dedupe(resolvedScenes.map((scene) => scene.choreographyId).filter(Boolean) as string[]),
-          policyWarnings: articleWarningsMessage(policyWarnings),
+          policyWarnings: combinedPolicyWarningMessages,
+          visibleCopyPlan,
         },
       },
     },

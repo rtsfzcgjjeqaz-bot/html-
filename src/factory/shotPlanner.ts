@@ -1,4 +1,5 @@
 import { getShot, getShotPath, type ShotAsset } from "../../assets/index/asset-resolver";
+import { getRuntimeShotCatalogEntry, type RuntimeShotId } from "./runtimeShotCatalog";
 import { getChoreographyEntry, materializeAnimationTracks } from "../motion/choreographyRegistry";
 import type { ChoreographyAnimationTrack, StyleProfileId } from "../motion/choreographyTypes";
 import type { PlannedScene } from "./videoVariantPlanner";
@@ -10,7 +11,7 @@ export type ResolvedScene = PlannedScene & {
   supportingText: string;
   visualType: string;
   componentProps: Record<string, unknown>;
-  selectedShotId?: "shot_01" | "shot_15" | "shot_51";
+  selectedShotId?: RuntimeShotId;
   choreographyId?: string;
   motionPresetIds: string[];
   visualAssetRefs: string[];
@@ -51,7 +52,7 @@ type ShotPlannerOptions = {
 };
 
 type RuntimeCandidate = {
-  shotId: "shot_01" | "shot_15" | "shot_51";
+  shotId: RuntimeShotId;
   sceneType: string;
   visualType: string;
 };
@@ -65,7 +66,12 @@ const recommendationCandidate: RuntimeCandidate = {
 const infoCandidate: RuntimeCandidate = { shotId: "shot_15", sceneType: "appGrid", visualType: "dashboardGrid" };
 const runtimeCandidates: Record<NonNullable<PlannedScene["preferredRuntimeShotId"]>, RuntimeCandidate> = {
   shot_01: openingHookCandidate,
+  shot_03: { shotId: "shot_03", sceneType: "stepFlow", visualType: "stepFlowRail" },
   shot_15: infoCandidate,
+  shot_25: { shotId: "shot_25", sceneType: "searchDemo", visualType: "searchRows" },
+  shot_27: { shotId: "shot_27", sceneType: "resultComparison", visualType: "splitCompareCards" },
+  shot_30: { shotId: "shot_30", sceneType: "finalCTA", visualType: "finalCTA" },
+  shot_50: { shotId: "shot_50", sceneType: "priceInsight", visualType: "priceInsight" },
   shot_51: recommendationCandidate,
 };
 
@@ -166,6 +172,7 @@ function buildFallbackReason(shot: ShotAsset, candidate: RuntimeCandidate, optio
 function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandidate, options: ShotPlannerOptions): ResolvedScene {
   const shot = getShot(candidate.shotId);
   const shotPath = getShotPath(candidate.shotId);
+  const catalogEntry = getRuntimeShotCatalogEntry(candidate.shotId);
   const base = toResolvedFallback(scene, index, options.fps);
   const preferredFrames = shot.duration_frames?.preferred ?? shot.choreography?.durationFrames?.preferred ?? base.durationInFrames;
   const durationInFrames = Math.max(1, preferredFrames);
@@ -188,8 +195,8 @@ function applyShot(scene: PlannedScene, index: number, candidate: RuntimeCandida
     ...base,
     duration: durationInFrames / options.fps,
     durationInFrames,
-    sceneType: candidate.sceneType,
-    visualType: candidate.visualType,
+    sceneType: catalogEntry?.sceneType ?? candidate.sceneType,
+    visualType: catalogEntry?.visualType ?? candidate.visualType,
     visualTemplate: enabled ? undefined : base.visualTemplate,
     selectedShotId: candidate.shotId,
     choreographyId: enabled ? choreographyId : undefined,

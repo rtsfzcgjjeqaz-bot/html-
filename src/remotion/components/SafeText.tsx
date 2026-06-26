@@ -8,6 +8,7 @@ type SafeTextProps = {
   tone?: Tone;
   maxLines?: number;
   maxWidth?: number;
+  preserveContent?: boolean;
   children: React.ReactNode;
   style?: Omit<React.CSSProperties, "fontSize" | "lineHeight" | "fontWeight" | "color">;
 };
@@ -38,7 +39,15 @@ function compactText(value: React.ReactNode, role: TypographyRole) {
   return normalized.length > limit ? normalized.slice(0, limit).trim() : normalized;
 }
 
-export const SafeText: React.FC<SafeTextProps> = ({ role, tone = "primary", maxLines = 2, maxWidth, children, style }) => {
+export const SafeText: React.FC<SafeTextProps> = ({
+  role,
+  tone = "primary",
+  maxLines = 2,
+  maxWidth,
+  preserveContent = false,
+  children,
+  style,
+}) => {
   const token = typography[role];
   const resolvedMaxWidth = maxWidth ?? (role === "hero" || role === "title" ? safeArea.titleMaxWidth : safeArea.bodyMaxWidth);
 
@@ -51,18 +60,18 @@ export const SafeText: React.FC<SafeTextProps> = ({ role, tone = "primary", maxL
         ...token,
         color: toneColor[tone],
         maxWidth: resolvedMaxWidth,
-        overflow: "hidden",
-        display: "-webkit-box",
-        WebkitLineClamp: maxLines,
-        WebkitBoxOrient: "vertical",
-        textOverflow: "clip",
+        overflow: preserveContent ? "visible" : "hidden",
+        display: preserveContent ? "block" : "-webkit-box",
+        WebkitLineClamp: preserveContent ? undefined : maxLines,
+        WebkitBoxOrient: preserveContent ? undefined : "vertical",
+        textOverflow: preserveContent ? "unset" : "clip",
         wordBreak: "normal",
         overflowWrap: "break-word",
         textWrap: "balance",
         ...style,
       }}
     >
-      {compactText(children, role)}
+      {preserveContent ? children : compactText(children, role)}
     </div>
   );
 };

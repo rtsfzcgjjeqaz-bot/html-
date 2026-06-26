@@ -6,6 +6,8 @@ import { buildBeatMap } from "../timeline/beatMap";
 import { buildTimeline } from "../timeline/storyboard";
 import { Scene } from "./components/Scene";
 import { SceneRenderer } from "./components/SceneRenderer";
+import { ArticleTransitionLayer } from "./components/ArticleTransitionLayer";
+import { buildArticleTransitionPlan, overlapForIncomingScene } from "./articleTransitionContract";
 
 type WebsiteAdVideoProps = RuntimeInputProps;
 
@@ -46,6 +48,7 @@ export const WebsiteAdVideo: React.FC<WebsiteAdVideoProps> = (props) => {
   const fps = structure.meta?.fps ?? 30;
   const scenes = pickScenesFromStructure(structure, strategyId);
   const timeline = buildTimeline(scenes, fps);
+  const articleTransitionPlan = structure.articleJob ? buildArticleTransitionPlan(scenes) : undefined;
   buildBeatMap(timeline);
 
   return (
@@ -54,8 +57,11 @@ export const WebsiteAdVideo: React.FC<WebsiteAdVideoProps> = (props) => {
       {timeline.map(({ scene, index, startFrame, durationFrames }) => {
         const previousScene = timeline[index - 1]?.scene;
         const sequenceTiming = sequenceTimingWithPreroll(scene, previousScene, startFrame, durationFrames);
+        const articleOverlapFrames = structure.articleJob ? overlapForIncomingScene(scenes, index) : 0;
+        const sequenceFrom = sequenceTiming.from - articleOverlapFrames;
+        const sequenceDuration = sequenceTiming.durationInFrames + articleOverlapFrames;
         return (
-          <Sequence key={scene.id ?? index} from={sequenceTiming.from} durationInFrames={sequenceTiming.durationInFrames} premountFor={fps}>
+          <Sequence key={scene.id ?? index} from={sequenceFrom} durationInFrames={sequenceDuration} premountFor={fps}>
             {shouldUseCertifiedShotRenderer(scene) ? (
               <SceneRenderer scene={scene} sceneIndex={index} />
             ) : sequenceTiming.prerollFrames > 0 ? (
@@ -68,6 +74,7 @@ export const WebsiteAdVideo: React.FC<WebsiteAdVideoProps> = (props) => {
           </Sequence>
         );
       })}
+      {articleTransitionPlan ? <ArticleTransitionLayer boundaries={articleTransitionPlan.boundaries} /> : null}
       {withAudio ? <Audio src={staticFile("audio/voice.mp3")} volume={1} /> : null}
     </AbsoluteFill>
   );

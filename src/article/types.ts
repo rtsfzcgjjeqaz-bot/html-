@@ -140,9 +140,58 @@ export type ArticleSceneEvidenceRef = {
   };
 };
 
+export type ArticleBindingMode = "strict" | "default";
+export type ArticleVisibleCopyDisplayMode = "full" | "condensed" | "skipped";
+
+export type ArticleVisibleCopyTrace = {
+  sourceField: string;
+  sourceExcerpt: string;
+  sourceLocation?: ArticleSourceLocation & {
+    sectionId?: string;
+  };
+  sourceEvidenceIds: string[];
+};
+
+export type ArticleVisibleCopyTextValue = ArticleVisibleCopyTrace & {
+  value: string;
+  displayMode: Exclude<ArticleVisibleCopyDisplayMode, "skipped">;
+  textCapacityDecision: "full" | "condensed";
+  compactionReason?: string;
+};
+
+export type ArticleVisibleCopyListValue = ArticleVisibleCopyTrace & {
+  value: string;
+  displayMode: ArticleVisibleCopyDisplayMode;
+  textCapacityDecision: "full" | "condensed" | "skipped";
+  compactionReason?: string;
+};
+
+export type ArticleVisibleCopyScenePlan = {
+  sceneId: number;
+  runtimeShotId: string;
+  choreographyId: string;
+  visualIntent: string;
+  contentRole: "hook" | "body" | "step_flow" | "recommendation" | "safe_end";
+  articleBindingRequired: true;
+  articleBindingMode: "strict";
+  noPlaceholderFallback: true;
+  visibleAtFrame: number;
+  headline?: ArticleVisibleCopyTextValue;
+  supportingText?: ArticleVisibleCopyTextValue;
+  shortLabel?: ArticleVisibleCopyTextValue;
+  recommendationTitle?: ArticleVisibleCopyTextValue;
+  recommendationItems?: ArticleVisibleCopyListValue[];
+  stepItems?: ArticleVisibleCopyListValue[];
+  cards?: ArticleVisibleCopyListValue[];
+  evidenceCaption?: ArticleVisibleCopyTextValue;
+  selectedEvidenceIds: string[];
+};
+
 export type ArticleSceneComponentProps = {
   contentSource: "article" | "website";
   articleId?: string;
+  articleBindingMode?: ArticleBindingMode;
+  articleBindingRequired?: boolean;
   headline?: string;
   supportingText?: string;
   shortLabel?: string;
@@ -159,6 +208,7 @@ export type ArticleSceneComponentProps = {
   supportingTextSource?: string;
   contentIntent?: string;
   policyWarnings?: string[];
+  visibleCopyPlan?: ArticleVisibleCopyScenePlan;
 };
 
 export type ArticleRenderInputProps = {
@@ -180,10 +230,12 @@ export type ArticleRenderInputProps = {
     articleJob?: {
       jobId: string;
       articleId: string;
+      articleBindingMode?: ArticleBindingMode;
       selectedEvidenceIds: string[];
       selectedShotIds: string[];
       selectedChoreographyIds: string[];
       policyWarnings?: string[];
+      visibleCopyPlan?: ArticleVisibleCopyScenePlan[];
     };
   };
 };
@@ -205,4 +257,5 @@ export type ArticleVideoJob = {
   outputDirectory: string;
   policyDebug?: Record<string, unknown>;
   qaResult?: ArticlePreviewQaResult;
+  visibleCopyPlan?: ArticleVisibleCopyScenePlan[];
 };

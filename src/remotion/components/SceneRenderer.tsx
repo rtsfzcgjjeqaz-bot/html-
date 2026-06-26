@@ -1,11 +1,14 @@
 import React from "react";
-import { AbsoluteFill, Img, staticFile } from "remotion";
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { getChoreographyEntry, materializeAnimationTracks } from "../../motion/choreographyRegistry";
 import type { ChoreographyAnimationTrack } from "../../motion/choreographyTypes";
 import { colors } from "../../design/tokens";
 import { MotionComposer, validateAnimationTracks } from "./MotionComposer";
 import { SafeText } from "./SafeText";
 import type { ArticleSceneComponentProps } from "../../article/types";
+import { containsArticlePlaceholder, visibleCopyHasEllipsis } from "../../article/articleVisibleCopyPlan";
+import { getArticleLayoutContract } from "../articleLayoutContract";
+import { getArticleMotionContract } from "../articleMotionContract";
 
 type SceneRendererProps = {
   scene: {
@@ -37,6 +40,22 @@ const cleanLine = (value = "", max = 48) => {
   return clean.length > max ? clean.slice(0, max - 1).trim() : clean;
 };
 
+const ease = (frame: number, input: [number, number], output: [number, number]) =>
+  interpolate(frame, input, output, { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+
+const enterStyle = (frame: number, start: number, distance = 14) => ({
+  opacity: ease(frame, [start, start + 8], [0, 1]),
+  transform: `translateY(${ease(frame, [start, start + 10], [distance, 0])}px) scale(${ease(frame, [start, start + 10], [0.985, 1])})`,
+});
+
+const slideInStyle = (frame: number, start: number, distance = 28) => ({
+  opacity: ease(frame, [start, start + 10], [0, 1]),
+  transform: `translateX(${ease(frame, [start, start + 12], [distance, 0])}px) scale(${ease(frame, [start, start + 12], [0.985, 1])})`,
+});
+
+const emphasis = (frame: number, start: number, amount = 1.03) =>
+  interpolate(frame, [start, start + 8, start + 18], [1, amount, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+
 const fallbackRows = ["Hero message", "Feature proof", "Conversion point", "Customer signal"];
 
 type ArticleSceneBoundProps = ArticleSceneComponentProps & {
@@ -49,39 +68,84 @@ function articleContent(scene: SceneRendererProps["scene"]): ArticleSceneBoundPr
   return candidate as ArticleSceneBoundProps;
 }
 
+function isStrictArticleScene(scene: SceneRendererProps["scene"]) {
+  const bound = articleContent(scene);
+  return bound?.contentSource === "article" && bound.articleBindingMode === "strict" && bound.articleBindingRequired === true;
+}
+
+function assertArticleCopy(scene: SceneRendererProps["scene"], field: string, value: string | undefined) {
+  if (!isStrictArticleScene(scene)) {
+    return value;
+  }
+  if (!value || !value.trim()) {
+    throw new Error(`ARTICLE_SCENE_REQUIRED_COPY_MISSING:${scene.selectedShotId ?? scene.sceneType ?? "scene"}:${field}`);
+  }
+  if (containsArticlePlaceholder(value)) {
+    throw new Error(`ARTICLE_SCENE_PLACEHOLDER_COPY_BLOCKED:${scene.selectedShotId ?? scene.sceneType ?? "scene"}:${field}`);
+  }
+  if (visibleCopyHasEllipsis(value)) {
+    throw new Error(`ARTICLE_SCENE_ELLIPSIS_BLOCKED:${scene.selectedShotId ?? scene.sceneType ?? "scene"}:${field}`);
+  }
+  return value;
+}
+
 function articleTitle(scene: SceneRendererProps["scene"], fallback: string) {
   const bound = articleContent(scene);
-  if (bound?.headline) return bound.headline;
+  if (bound?.headline) return assertArticleCopy(scene, "headline", bound.headline);
+  if (isStrictArticleScene(scene)) {
+    return assertArticleCopy(scene, "headline", undefined);
+  }
   return cleanLine(fallback, 72);
 }
 
 function articleSupport(scene: SceneRendererProps["scene"], fallback: string) {
   const bound = articleContent(scene);
-  if (bound?.supportingText) return bound.supportingText;
+  if (bound?.supportingText) return assertArticleCopy(scene, "supportingText", bound.supportingText);
+  if (isStrictArticleScene(scene)) {
+    return undefined;
+  }
   return cleanLine(fallback, 96);
 }
 
 function articleShortLabel(scene: SceneRendererProps["scene"], fallback: string) {
   const bound = articleContent(scene);
-  if (bound?.shortLabel) return bound.shortLabel;
+  if (bound?.shortLabel) return assertArticleCopy(scene, "shortLabel", bound.shortLabel);
+  if (isStrictArticleScene(scene)) {
+    return undefined;
+  }
   return cleanLine(fallback, 20);
 }
 
-function articleRecommendationItems(scene: SceneRendererProps["scene"]) {
+function articleRecommendationItems(scene: SceneRendererProps["scene"]): string[] {
   const bound = articleContent(scene);
   const items = bound?.recommendationItems?.length ? bound.recommendationItems : undefined;
-  return (items ?? aiRecommendationRows(scene)).map((item) => (items ? item : cleanLine(item, 34))).slice(0, 3);
+  if (items?.length) {
+    return items.map((item: string, index: number) => assertArticleCopy(scene, `recommendationItems[${index}]`, item) ?? "").slice(0, 3);
+  }
+  if (isStrictArticleScene(scene)) {
+    throw new Error(`ARTICLE_SCENE_REQUIRED_COPY_MISSING:${scene.selectedShotId ?? scene.sceneType ?? "scene"}:recommendationItems`);
+  }
+  return aiRecommendationRows(scene).map((item) => cleanLine(item, 34)).slice(0, 3);
 }
 
-function articleStepItems(scene: SceneRendererProps["scene"]) {
+function articleStepItems(scene: SceneRendererProps["scene"]): string[] {
   const bound = articleContent(scene);
   const items = bound?.stepItems?.length ? bound.stepItems : undefined;
-  return (items ?? []).map((item) => item).slice(0, 3);
+  if (items?.length) {
+    return items.map((item: string, index: number) => assertArticleCopy(scene, `stepItems[${index}]`, item) ?? "").slice(0, 3);
+  }
+  if (isStrictArticleScene(scene)) {
+    throw new Error(`ARTICLE_SCENE_REQUIRED_COPY_MISSING:${scene.selectedShotId ?? scene.sceneType ?? "scene"}:stepItems`);
+  }
+  return [];
 }
 
 function articleEvidenceCaption(scene: SceneRendererProps["scene"], fallback: string) {
   const bound = articleContent(scene);
-  if (bound?.evidenceText) return bound.evidenceText;
+  if (bound?.evidenceText) return assertArticleCopy(scene, "evidenceText", bound.evidenceText);
+  if (isStrictArticleScene(scene)) {
+    return undefined;
+  }
   return cleanLine(fallback, 42);
 }
 
@@ -93,17 +157,33 @@ function articleEvidenceAt(scene: SceneRendererProps["scene"], index: number) {
 }
 
 
-function sceneLines(scene: SceneRendererProps["scene"]) {
+function sceneLines(scene: SceneRendererProps["scene"]): string[] {
+  if (isStrictArticleScene(scene)) {
+    const bound = articleContent(scene);
+    const lines = [bound?.headline, bound?.supportingText].filter(Boolean).map((line, index) => assertArticleCopy(scene, index === 0 ? "headline" : "supportingText", line));
+    return lines.filter(Boolean) as string[];
+  }
   const raw = scene.textOverlay?.length ? scene.textOverlay : [scene.visualIntent ?? "Show the page. Reveal the value."];
   return raw.map((line, index) => cleanLine(line, index === 0 ? 42 : 64)).filter(Boolean).slice(0, 2);
 }
 
-function sceneCards(scene: SceneRendererProps["scene"]) {
+function sceneCards(scene: SceneRendererProps["scene"]): string[] {
+  if (isStrictArticleScene(scene)) {
+    const bound = articleContent(scene);
+    const cards = bound?.recommendationItems?.length ? bound.recommendationItems : bound?.stepItems?.length ? bound.stepItems : [];
+    if (cards.length) {
+      return cards.map((item, index) => assertArticleCopy(scene, `cards[${index}]`, item) ?? "").slice(0, 3);
+    }
+    return [];
+  }
   const raw = scene.dataFocus?.length ? scene.dataFocus : ["Fast setup", "Clear proof", "Ready CTA"];
   return raw.map((item) => cleanLine(item, 22)).filter(Boolean).slice(0, 3);
 }
 
-function aiRecommendationRows(scene: SceneRendererProps["scene"]) {
+function aiRecommendationRows(scene: SceneRendererProps["scene"]): string[] {
+  if (isStrictArticleScene(scene)) {
+    return articleRecommendationItems(scene);
+  }
   const secondaryLines = scene.textOverlay?.slice(1) ?? [];
   const raw = scene.dataFocus?.length
     ? scene.dataFocus
@@ -250,14 +330,107 @@ const WebsiteHeroAngledPushInScene: React.FC<SceneRendererProps & { animationTra
 const AIRecommendationCursorPanelRevealScene: React.FC<
   SceneRendererProps & { animationTracks: ChoreographyAnimationTrack[]; choreographyId: string }
 > = ({ scene, sceneIndex, animationTracks, choreographyId }) => {
+  const frame = useCurrentFrame();
   const lines = sceneLines(scene);
   const bound = articleContent(scene);
   const rows = articleRecommendationItems(scene);
   const title = articleTitle(scene, lines[0] ?? "Turn context into a structured recommendation.");
   const subtitle = articleSupport(scene, lines[1] ?? "The cursor lands first, then the panel and evidence rows arrive.");
-  const panelTitle = cleanLine(bound?.recommendationTitle ?? title, 26);
+  const panelTitle = isStrictArticleScene(scene)
+    ? assertArticleCopy(scene, "recommendationTitle", bound?.recommendationTitle ?? title)
+    : cleanLine(bound?.recommendationTitle ?? title, 26);
   const evidenceCaption = articleEvidenceCaption(scene, "Readable evidence row");
   const traceLabel = String(scene.selectedShotId ?? "shot_51");
+
+  if (isStrictArticleScene(scene)) {
+    const contract = getArticleLayoutContract("recommendation");
+    const motion = getArticleMotionContract("recommendation");
+    const panelAccent = emphasis(frame, motion.emphasisPhase.startFrame + 8, 1.025);
+    return (
+      <AbsoluteFill
+        style={{
+          background:
+            "radial-gradient(circle at 74% 24%, rgba(47,128,237,0.24), transparent 28%), radial-gradient(circle at 22% 78%, rgba(34,160,107,0.12), transparent 30%), linear-gradient(135deg, #F8FBFF 0%, #EEF4FF 52%, #F7F1E8 100%)",
+          color: colors.textPrimary,
+          overflow: "hidden",
+          fontFamily: '"Aptos Display", "Microsoft YaHei UI", sans-serif',
+        }}
+      >
+        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["aiBackdrop"]} style={{ position: "absolute", inset: -140 }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity: 0.13,
+              backgroundImage:
+                "linear-gradient(rgba(15,23,42,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,.12) 1px, transparent 1px)",
+              backgroundSize: "64px 64px",
+              transform: "rotateX(62deg) scale(1.2)",
+            }}
+          />
+        </MotionComposer>
+        <div style={{ position: "absolute", ...contract.layoutZones.primary, display: "flex", flexDirection: "column", justifyContent: "center", ...enterStyle(frame, motion.introPhase.startFrame + 1, 10) }}>
+          <div style={{ color: colors.accentBlue, fontSize: contract.label.fontSize, lineHeight: contract.label.lineHeight, fontWeight: 950, textTransform: "uppercase", letterSpacing: 1 }}>
+            {articleShortLabel(scene, "选择建议")}
+          </div>
+          <div style={{ height: contract.label.headlineGap }} />
+          <SafeText role="hero" tone="primary" maxLines={contract.headline.maxLines} maxWidth={contract.headline.maxWidth} preserveContent>
+            {title}
+          </SafeText>
+        </div>
+        <div style={{ position: "absolute", ...contract.layoutZones.secondary, ...slideInStyle(frame, motion.visibleByFrame.secondary, 26), transform: `${slideInStyle(frame, motion.visibleByFrame.secondary, 26).transform} scale(${panelAccent})` }}>
+          <div
+            style={{
+              width: contract.panel.box.width,
+              minHeight: contract.panel.box.height,
+              borderRadius: 38,
+              padding: contract.panel.textPadding,
+              background: "rgba(255,255,255,0.96)",
+              border: "1px solid rgba(15,23,42,0.09)",
+              boxShadow: "0 42px 110px rgba(20,32,48,0.18)",
+              overflow: "hidden",
+              position: "relative",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, paddingBottom: 24, borderBottom: "1px solid rgba(15,23,42,0.08)" }}>
+              <div>
+                <div style={{ color: colors.textSecondary, fontSize: 16, lineHeight: 1.2, fontWeight: 900, textTransform: "uppercase", letterSpacing: 1.1 }}>
+                  Recommendation
+                </div>
+                <div style={{ marginTop: 8, color: colors.textPrimary, fontSize: 30, lineHeight: 1.18, fontWeight: 950, maxWidth: 460, overflowWrap: "break-word" }}>{panelTitle}</div>
+              </div>
+              <div style={{ width: 150, height: 78, borderRadius: 24, background: "linear-gradient(135deg, rgba(47,128,237,0.12), rgba(34,160,107,0.10))", border: "1px solid rgba(15,23,42,0.06)" }} />
+            </div>
+            <div style={{ marginTop: 30, display: "grid", gap: 18 }}>
+              {rows.map((row, index) => (
+                <div
+                  key={`${row}-${index}`}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "28px 1fr",
+                    gap: 16,
+                    alignItems: "center",
+                    padding: "20px 22px",
+                    borderRadius: 24,
+                    background: index === 0 ? "rgba(47,128,237,0.10)" : "rgba(15,23,42,0.04)",
+                    border: frame >= motion.emphasisPhase.startFrame + 8 && index === 0 ? "2px solid rgba(47,128,237,0.34)" : "1px solid rgba(15,23,42,0.08)",
+                    ...enterStyle(frame, (motion.visibleByFrame.firstItem ?? 20) + index * 8, 14),
+                  }}
+                >
+                  <div style={{ width: 24, height: 24, borderRadius: 999, background: index === 0 ? colors.accentBlue : "rgba(15,23,42,0.22)" }} />
+                  <div style={{ color: colors.textPrimary, fontSize: contract.panel.fontSize + 2, lineHeight: contract.panel.lineHeight, fontWeight: 900, overflowWrap: "break-word" }}>{row}</div>
+                </div>
+              ))}
+            </div>
+            <div style={{ position: "absolute", left: contract.panel.textPadding, right: contract.panel.textPadding, bottom: 30, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 18, color: colors.textSecondary, fontSize: 14, lineHeight: 1.25, fontWeight: 750 }}>
+              <span>{evidenceCaption}</span>
+              <span>{traceLabel}</span>
+            </div>
+          </div>
+        </div>
+      </AbsoluteFill>
+    );
+  }
 
   return (
     <AbsoluteFill
@@ -289,11 +462,11 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
             AI Recommendation / {String(scene.id ?? sceneIndex + 1).padStart(2, "0")}
           </SafeText>
           <div style={{ height: 18 }} />
-          <SafeText role="hero" tone="primary" maxLines={2} maxWidth={630}>
+          <SafeText role="hero" tone="primary" maxLines={2} maxWidth={630} preserveContent={isStrictArticleScene(scene)}>
             {title}
           </SafeText>
           <div style={{ marginTop: 18 }}>
-            <SafeText role="body" tone="secondary" maxLines={2} maxWidth={560}>
+            <SafeText role="body" tone="secondary" maxLines={2} maxWidth={560} preserveContent={isStrictArticleScene(scene)}>
               {subtitle}
             </SafeText>
           </div>
@@ -375,7 +548,7 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
                 <div style={{ color: colors.textSecondary, fontSize: 15, fontWeight: 850, textTransform: "uppercase", letterSpacing: 1.2 }}>
                   {articleShortLabel(scene, "Recommendation panel")}
                 </div>
-                <div style={{ marginTop: 8, color: colors.textPrimary, fontSize: 26, fontWeight: 900 }}>{panelTitle}</div>
+                <div style={{ marginTop: 8, color: colors.textPrimary, fontSize: 26, fontWeight: 900, maxWidth: 420, overflowWrap: "break-word" }}>{panelTitle}</div>
               </div>
               <div
                 style={{
@@ -388,11 +561,11 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
               />
             </div>
             <div style={{ marginTop: 24 }}>
-              <SafeText role="title" tone="primary" maxLines={2} maxWidth={520}>
+              <SafeText role="title" tone="primary" maxLines={2} maxWidth={520} preserveContent={isStrictArticleScene(scene)}>
                 {title}
               </SafeText>
               <div style={{ marginTop: 14 }}>
-                <SafeText role="body" tone="secondary" maxLines={2} maxWidth={500}>
+                <SafeText role="body" tone="secondary" maxLines={2} maxWidth={500} preserveContent={isStrictArticleScene(scene)}>
                   {subtitle}
                 </SafeText>
               </div>
@@ -431,8 +604,8 @@ const AIRecommendationCursorPanelRevealScene: React.FC<
                       }}
                     />
                     <div>
-                      <div style={{ color: colors.textPrimary, fontSize: 17, fontWeight: 850 }}>{row}</div>
-                      <div style={{ marginTop: 4, color: colors.textSecondary, fontSize: 14, fontWeight: 650 }}>
+                      <div style={{ color: colors.textPrimary, fontSize: 17, fontWeight: 850, overflowWrap: "break-word" }}>{row}</div>
+                      <div style={{ marginTop: 4, color: colors.textSecondary, fontSize: 14, fontWeight: 650, overflowWrap: "break-word" }}>
                         {rowCaption}
                       </div>
                     </div>
@@ -830,8 +1003,77 @@ const StepFlowRailScene: React.FC<SceneRendererProps & { animationTracks: Choreo
   animationTracks,
   choreographyId,
 }) => {
+  const frame = useCurrentFrame();
   const lines = sceneLines(scene);
-  const steps = scene.dataFocus?.length ? scene.dataFocus.slice(0, 4) : ["Request", "Plan", "Build", "Review"];
+  const steps = isStrictArticleScene(scene)
+    ? articleStepItems(scene)
+    : scene.dataFocus?.length
+      ? scene.dataFocus.slice(0, 4)
+      : ["Request", "Plan", "Build", "Review"];
+  const support = articleSupport(scene, "");
+  const label = articleShortLabel(scene, "");
+
+  if (isStrictArticleScene(scene)) {
+    const contract = getArticleLayoutContract("step_flow");
+    const motion = getArticleMotionContract("step_flow");
+    const cardBoxes = contract.layoutZones.cards ?? [];
+    const railScale = ease(frame, [motion.introPhase.startFrame + 4, motion.buildPhase.startFrame + 8], [0.08, 1]);
+    return (
+      <AbsoluteFill
+        style={{
+          background:
+            "radial-gradient(circle at 18% 20%, rgba(99,102,241,0.16), transparent 32%), radial-gradient(circle at 82% 78%, rgba(20,184,166,0.16), transparent 30%), linear-gradient(135deg, #F8FAFC 0%, #F4F7FF 52%, #F6F3EA 100%)",
+          overflow: "hidden",
+          fontFamily: '"Aptos Display", "Microsoft YaHei UI", sans-serif',
+        }}
+      >
+        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["stepBackdrop"]} style={{ position: "absolute", inset: -160 }}>
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity: 0.12,
+              backgroundImage:
+                "linear-gradient(rgba(15,23,42,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.10) 1px, transparent 1px)",
+              backgroundSize: "56px 56px",
+            }}
+          />
+        </MotionComposer>
+        <div style={{ position: "absolute", left: 130, top: 112, width: 780, ...enterStyle(frame, motion.introPhase.startFrame + 1, 10) }}>
+          <div style={{ color: "#4F46E5", fontSize: contract.label.fontSize, lineHeight: contract.label.lineHeight, fontWeight: 950, textTransform: "uppercase", letterSpacing: 1 }}>
+            {label || "省钱策略"}
+          </div>
+          <div style={{ height: contract.label.headlineGap }} />
+          <SafeText role="title" tone="primary" maxLines={contract.headline.maxLines} maxWidth={contract.headline.maxWidth} preserveContent>
+            {lines[0]}
+          </SafeText>
+          {support ? (
+            <div style={{ marginTop: 14, fontSize: contract.supportingText.fontSize, lineHeight: contract.supportingText.lineHeight, color: colors.textSecondary, fontWeight: 750, maxWidth: contract.supportingText.maxWidth }}>
+              {support}
+            </div>
+          ) : null}
+        </div>
+        <div style={{ position: "absolute", left: 150, top: 340, right: 150, height: 8, borderRadius: 99, background: "linear-gradient(90deg, rgba(79,70,229,.24), rgba(20,184,166,.24))", transform: `scaleX(${railScale})`, transformOrigin: "left center" }} />
+        {steps.slice(0, 3).map((step, index) => {
+          const box = cardBoxes[index] ?? contract.card.box;
+          const start = motion.visibleByFrame.firstItem ?? 12;
+          const cardStart = start + index * 6;
+          const cardScale = emphasis(frame, motion.emphasisPhase.startFrame + index * 12, 1.025);
+          return (
+            <div key={step} style={{ position: "absolute", ...box, borderRadius: 34, background: "rgba(255,255,255,.96)", border: frame >= motion.emphasisPhase.startFrame + index * 12 && frame <= motion.emphasisPhase.startFrame + index * 12 + 16 ? "2px solid rgba(79,70,229,.42)" : "1px solid rgba(15,23,42,.10)", boxShadow: "0 28px 80px rgba(30,41,59,.14)", padding: contract.card.textPadding, display: "grid", gridTemplateRows: "auto 1fr", alignItems: "center", ...enterStyle(frame, cardStart, 20), transform: `${enterStyle(frame, cardStart, 20).transform} scale(${cardScale})` }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, color: "#4F46E5", fontSize: 18, fontWeight: 950 }}>
+                <span style={{ width: 46, height: 46, borderRadius: 16, background: ["#94A3B8", "#2563EB", "#4F46E5"][index] ?? "#4F46E5", color: "white", display: "grid", placeItems: "center" }}>{index + 1}</span>
+                <span>STEP {index + 1}</span>
+              </div>
+              <strong style={{ color: "#0F172A", fontSize: contract.card.fontSize, lineHeight: contract.card.lineHeight, fontWeight: 950, overflowWrap: "break-word" }}>
+                {step}
+              </strong>
+            </div>
+          );
+        })}
+      </AbsoluteFill>
+    );
+  }
 
   return (
     <AbsoluteFill
@@ -860,9 +1102,16 @@ const StepFlowRailScene: React.FC<SceneRendererProps & { animationTracks: Choreo
             Step Flow / {String(scene.id ?? sceneIndex + 1).padStart(2, "0")}
           </SafeText>
           <div style={{ height: 24 }} />
-          <SafeText role="title" tone="primary" maxLines={2} maxWidth={760}>
+          <SafeText role="title" tone="primary" maxLines={2} maxWidth={760} preserveContent={isStrictArticleScene(scene)}>
             {lines[0] ?? "Turn a process into a guided sequence."}
           </SafeText>
+          {support ? (
+            <div style={{ marginTop: 16 }}>
+              <SafeText role="body" tone="secondary" maxLines={2} maxWidth={760} preserveContent={isStrictArticleScene(scene)}>
+                {support}
+              </SafeText>
+            </div>
+          ) : null}
         </div>
         <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["processRail"]} style={{ position: "absolute", left: 230, top: 548, width: 1000, height: 5, transformOrigin: "left" }}>
           <div style={{ width: "100%", height: "100%", borderRadius: 99, background: "linear-gradient(90deg, #4F46E5, #14B8A6)" }} />
@@ -881,30 +1130,43 @@ const StepFlowRailScene: React.FC<SceneRendererProps & { animationTracks: Choreo
                 <div style={{ width: 210, height: 150, borderRadius: 30, background: "rgba(255,255,255,.94)", border: isActive ? "1px solid rgba(79,70,229,.28)" : "1px solid rgba(15,23,42,.09)", boxShadow: isActive ? "0 24px 70px rgba(79,70,229,.18)" : "0 18px 48px rgba(30,41,59,.10)", display: "grid", placeItems: "center" }}>
                   <div style={{ textAlign: "center" }}>
                     <div style={{ width: 46, height: 46, borderRadius: 16, background: ["#94A3B8", "#2563EB", "#4F46E5", "#0F766E"][index] ?? "#4F46E5", margin: "0 auto 18px" }} />
-                    <strong style={{ color: "#0F172A", fontSize: 22 }}>{cleanLine(step, 16)}</strong>
+                    <strong style={{ color: "#0F172A", fontSize: 22, lineHeight: 1.15, padding: "0 16px", overflowWrap: "break-word" }}>
+                      {isStrictArticleScene(scene) ? step : cleanLine(step, 16)}
+                    </strong>
                   </div>
                 </div>
               </MotionComposer>
             );
           })}
         </div>
-        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["toolModule"]} style={{ position: "absolute", left: 950, top: 650 }}>
-          <div style={{ width: 210, height: 140, borderRadius: 34, background: "rgba(79,70,229,.94)", boxShadow: "0 30px 80px rgba(79,70,229,.24)", color: "white", display: "grid", placeItems: "center" }}>
-            <div style={{ textAlign: "center" }}>
-              <div style={{ width: 52, height: 42, borderRadius: 16, background: "rgba(255,255,255,.24)", margin: "0 auto 14px" }} />
-              <strong style={{ fontSize: 22 }}>Auto route</strong>
+        {isStrictArticleScene(scene) ? (
+          <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["toolModule"]} style={{ position: "absolute", left: 950, top: 650 }}>
+            <div style={{ width: 300, minHeight: 140, borderRadius: 34, background: "rgba(79,70,229,.94)", boxShadow: "0 30px 80px rgba(79,70,229,.24)", color: "white", padding: 24 }}>
+              <div style={{ fontSize: 16, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em" }}>{label ?? "Article step flow"}</div>
+              {support ? <div style={{ marginTop: 12, fontSize: 18, lineHeight: 1.3, overflowWrap: "break-word" }}>{support}</div> : null}
             </div>
-          </div>
-        </MotionComposer>
-        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["progressMeter"]} style={{ position: "absolute", right: 150, bottom: 130 }}>
-          <div style={{ width: 330, height: 160, borderRadius: 34, background: "rgba(255,255,255,.94)", border: "1px solid rgba(15,118,110,.16)", boxShadow: "0 26px 76px rgba(30,41,59,.14)", padding: 28 }}>
-            <div style={{ color: "#0F766E", fontSize: 16, fontWeight: 900, textTransform: "uppercase", marginBottom: 24 }}>Flow readiness</div>
-            <div style={{ height: 16, borderRadius: 999, background: "#D1FAE5", overflow: "hidden" }}>
-              <div style={{ width: "78%", height: "100%", borderRadius: 999, background: "#0F766E" }} />
-            </div>
-            <strong style={{ display: "block", color: "#0F172A", fontSize: 28, marginTop: 18 }}>78% aligned</strong>
-          </div>
-        </MotionComposer>
+          </MotionComposer>
+        ) : (
+          <>
+            <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["toolModule"]} style={{ position: "absolute", left: 950, top: 650 }}>
+              <div style={{ width: 210, height: 140, borderRadius: 34, background: "rgba(79,70,229,.94)", boxShadow: "0 30px 80px rgba(79,70,229,.24)", color: "white", display: "grid", placeItems: "center" }}>
+                <div style={{ textAlign: "center" }}>
+                  <div style={{ width: 52, height: 42, borderRadius: 16, background: "rgba(255,255,255,.24)", margin: "0 auto 14px" }} />
+                  <strong style={{ fontSize: 22 }}>Auto route</strong>
+                </div>
+              </div>
+            </MotionComposer>
+            <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["progressMeter"]} style={{ position: "absolute", right: 150, bottom: 130 }}>
+              <div style={{ width: 330, height: 160, borderRadius: 34, background: "rgba(255,255,255,.94)", border: "1px solid rgba(15,118,110,.16)", boxShadow: "0 26px 76px rgba(30,41,59,.14)", padding: 28 }}>
+                <div style={{ color: "#0F766E", fontSize: 16, fontWeight: 900, textTransform: "uppercase", marginBottom: 24 }}>Flow readiness</div>
+                <div style={{ height: 16, borderRadius: 999, background: "#D1FAE5", overflow: "hidden" }}>
+                  <div style={{ width: "78%", height: "100%", borderRadius: 999, background: "#0F766E" }} />
+                </div>
+                <strong style={{ display: "block", color: "#0F172A", fontSize: 28, marginTop: 18 }}>78% aligned</strong>
+              </div>
+            </MotionComposer>
+          </>
+        )}
       </MotionComposer>
     </AbsoluteFill>
   );
@@ -1019,8 +1281,61 @@ const CoverHookImpactScene: React.FC<SceneRendererProps & { animationTracks: Cho
   animationTracks,
   choreographyId,
 }) => {
+  const frame = useCurrentFrame();
   const lines = sceneLines(scene);
-  const chips = scene.dataFocus?.length ? scene.dataFocus.slice(0, 3) : ["Fast", "Reusable", "Certified"];
+  const chips = isStrictArticleScene(scene) ? sceneCards(scene) : scene.dataFocus?.length ? scene.dataFocus.slice(0, 3) : ["Fast", "Reusable", "Certified"];
+  const support = articleSupport(scene, "");
+  const evidenceCaption = articleEvidenceCaption(scene, "");
+
+  if (isStrictArticleScene(scene)) {
+    const contract = getArticleLayoutContract("hook");
+    const motion = getArticleMotionContract("hook");
+    const evidenceScale = emphasis(frame, motion.emphasisPhase.startFrame + 8, 1.045);
+    const highlightOpacity = ease(frame, [motion.emphasisPhase.startFrame + 10, motion.emphasisPhase.startFrame + 22], [0, 0.35]);
+    return (
+      <AbsoluteFill
+        style={{
+          background:
+            "radial-gradient(circle at 72% 26%,rgba(37,99,235,.28),transparent 34%),radial-gradient(circle at 18% 78%,rgba(245,158,11,.18),transparent 30%),linear-gradient(135deg,#0F172A,#1E3A8A 54%,#F8FAFC)",
+          overflow: "hidden",
+          fontFamily: '"Aptos Display", "Microsoft YaHei UI", sans-serif',
+        }}
+      >
+        <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["hookBackdrop"]} style={{ position: "absolute", inset: -160 }}>
+          <div style={{ position: "absolute", inset: 0, opacity: 0.16, backgroundImage: "linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.18) 1px, transparent 1px)", backgroundSize: "56px 56px" }} />
+        </MotionComposer>
+        <div style={{ position: "absolute", ...contract.layoutZones.primary, color: "white", display: "flex", flexDirection: "column", justifyContent: "center", ...enterStyle(frame, motion.introPhase.startFrame + 1, 12) }}>
+          <div style={{ color: "#FBBF24", fontSize: contract.label.fontSize, lineHeight: contract.label.lineHeight, fontWeight: 900, textTransform: "uppercase", letterSpacing: 1 }}>
+            {articleShortLabel(scene, "对比结论")}
+          </div>
+          <div style={{ height: contract.label.headlineGap }} />
+          <div style={{ maxWidth: contract.headline.maxWidth, color: "white", fontSize: contract.headline.fontSize, lineHeight: contract.headline.lineHeight, letterSpacing: "-0.02em", fontWeight: 950, overflowWrap: "break-word" }}>
+            {lines[0]}
+          </div>
+          {evidenceCaption ? (
+            <div style={{ marginTop: 30, ...contract.evidence.box, position: "static", maxWidth: contract.evidence.maxWidth, minHeight: 0, borderRadius: 28, padding: "20px 26px", background: `linear-gradient(90deg, rgba(251,191,36,${highlightOpacity}), rgba(255,255,255,.14) 42%)`, border: "1px solid rgba(255,255,255,.24)", color: "rgba(255,255,255,.96)", fontSize: contract.evidence.fontSize, lineHeight: contract.evidence.lineHeight, fontWeight: 850, boxShadow: "0 24px 70px rgba(15,23,42,.22)", transform: `scale(${evidenceScale})`, transformOrigin: "left center" }}>
+              {evidenceCaption}
+            </div>
+          ) : support ? (
+            <div style={{ marginTop: 28, maxWidth: contract.supportingText.maxWidth, color: "rgba(255,255,255,0.92)", fontSize: contract.supportingText.fontSize, lineHeight: contract.supportingText.lineHeight, fontWeight: 700 }}>
+              {support}
+            </div>
+          ) : null}
+        </div>
+        <div style={{ position: "absolute", ...contract.layoutZones.secondary, display: "grid", placeItems: "center" }}>
+          <div style={{ width: contract.card.box.width, height: contract.card.box.height, borderRadius: 42, background: "rgba(255,255,255,.94)", boxShadow: "0 42px 112px rgba(15,23,42,.28)", border: "1px solid rgba(255,255,255,.35)", padding: contract.card.textPadding, color: "#0F172A", ...slideInStyle(frame, motion.buildPhase.startFrame, 34) }}>
+            <div style={{ color: "#1D4ED8", fontSize: 18, lineHeight: 1.25, fontWeight: 950, letterSpacing: ".04em", textTransform: "uppercase" }}>Annual vs Monthly</div>
+            <div style={{ marginTop: 30, height: 138, borderRadius: 30, background: "linear-gradient(135deg,#DBEAFE,#FDE68A)", display: "grid", placeItems: "center", color: "#1D4ED8", fontSize: 56, fontWeight: 950 }}>15-25%</div>
+            <div style={{ marginTop: 28, fontSize: 24, lineHeight: 1.28, fontWeight: 900 }}>年度方案的长期成本优势</div>
+            <div style={{ marginTop: 18, display: "grid", gap: 12 }}>
+              <div style={{ height: 16, width: 330, borderRadius: 99, background: "#CBD5E1" }} />
+              <div style={{ height: 16, width: 260, borderRadius: 99, background: "#E2E8F0" }} />
+            </div>
+          </div>
+        </div>
+      </AbsoluteFill>
+    );
+  }
 
   return (
     <AbsoluteFill
@@ -1043,6 +1358,11 @@ const CoverHookImpactScene: React.FC<SceneRendererProps & { animationTracks: Cho
           <div style={{ maxWidth: 820, color: "white", fontSize: 76, lineHeight: 0.95, letterSpacing: "-0.07em", fontWeight: 950 }}>
             {lines[0] ?? "Open with one unforgettable value moment."}
           </div>
+          {support ? (
+            <div style={{ marginTop: 24, maxWidth: 720, color: "rgba(255,255,255,0.92)", fontSize: 28, lineHeight: 1.2, fontWeight: 700, overflowWrap: "break-word" }}>
+              {support}
+            </div>
+          ) : null}
           <MotionComposer choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["hookUnderline"]} style={{ width: 520, height: 10, borderRadius: 99, background: "#FBBF24", marginTop: 32, transformOrigin: "left" }}>
             <span />
           </MotionComposer>
@@ -1059,7 +1379,7 @@ const CoverHookImpactScene: React.FC<SceneRendererProps & { animationTracks: Cho
           {chips.map((chip, index) => (
             <MotionComposer key={chip} choreographyId={choreographyId} animationTracks={animationTracks} targetIds={["accentChips"]} featureIndex={index}>
               <div style={{ padding: "16px 24px", borderRadius: 999, background: "rgba(255,255,255,.90)", color: "#1D4ED8", fontWeight: 900, fontSize: 20 }}>
-                {cleanLine(chip, 18)}
+                {isStrictArticleScene(scene) ? chip : cleanLine(chip, 18)}
               </div>
             </MotionComposer>
           ))}

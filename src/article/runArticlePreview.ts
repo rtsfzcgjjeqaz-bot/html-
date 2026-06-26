@@ -10,10 +10,14 @@ import { parseArticleFile } from "./parseArticleFile";
 import { validateArticleInput } from "./validateArticleInput";
 import { validateContentBrief } from "./validateContentBrief";
 import { getShot } from "../../assets/index/asset-resolver";
-import type { ArticlePreviewQaResult } from "./types";
+import { buildArticleLayoutInspection } from "../remotion/articleLayoutContract";
+import { buildArticleMotionInspection } from "../remotion/articleMotionContract";
+import { buildArticleTransitionInspection } from "../remotion/articleTransitionContract";
+import type { ArticleContentBrief, ArticleInput, ArticlePreviewQaResult } from "./types";
 
 type CliArgs = {
   input?: string;
+  inputJsonDir?: string;
   output?: string;
 };
 
@@ -28,6 +32,7 @@ function readArgs(argv = process.argv.slice(2)): CliArgs {
   };
   return {
     input: valueAfter("--input"),
+    inputJsonDir: valueAfter("--input-json-dir"),
     output: valueAfter("--output"),
   };
 }
@@ -39,6 +44,10 @@ function ensureDir(target: string) {
 function writeJson(filePath: string, value: unknown) {
   ensureDir(path.dirname(filePath));
   fs.writeFileSync(filePath, JSON.stringify(value, null, 2));
+}
+
+function loadJson<T>(filePath: string): T {
+  return JSON.parse(fs.readFileSync(filePath, "utf8")) as T;
 }
 
 function resolveFfmpegBinary() {
@@ -133,6 +142,16 @@ function outputStats(previewPath: string) {
   return { exists: fs.existsSync(previewPath), bytes: size };
 }
 
+function selectedScenesMustRemainCertified(job: ReturnType<typeof buildArticleVideoJob>) {
+  const invalid = job.resolvedScenes.filter((scene) => scene.selectedShotId && (!scene.choreographyId || scene.fallbackReason));
+  if (invalid.length) {
+    const details = invalid
+      .map((scene) => `${scene.id}:${scene.selectedShotId}:${scene.fallbackReason ?? "missing_choreographyId"}`)
+      .join(", ");
+    throw new Error(`Blocked render: selected certified shot fell back during render planning: ${details}`);
+  }
+}
+
 function holdSecondsForLastScene(job: ReturnType<typeof buildArticleVideoJob>) {
   const lastScene = job.resolvedScenes[job.resolvedScenes.length - 1];
   if (!lastScene?.animationTracks?.length) return 0;
@@ -192,6 +211,20 @@ function textDensityWithinPolicy(job: ReturnType<typeof buildArticleVideoJob>) {
       ctaText?: string;
     } | undefined;
     if (!articleContent) return true;
+    if (
+      scene.sourceType === "article" &&
+      ["shot_01", "shot_03", "shot_51"].includes(String(scene.selectedShotId ?? ""))
+    ) {
+      const recommendationItemsOk = (articleContent.recommendationItems ?? []).every((item) => item.length <= 34);
+      const stepItemsOk = (articleContent.stepItems ?? []).every((item) => item.length <= 34);
+      return (
+        (articleContent.headline?.length ?? 0) <= 48 &&
+        (articleContent.supportingText?.length ?? 0) <= 52 &&
+        (articleContent.recommendationTitle?.length ?? 0) <= 28 &&
+        recommendationItemsOk &&
+        stepItemsOk
+      );
+    }
     const recommendationItemsOk = (articleContent.recommendationItems ?? []).every(
       (item) => item.length <= articleVisualPolicy.textDensity.maxRecommendationItemCharacters + 2,
     );
@@ -397,34 +430,63 @@ function buildQaSummary(
 
 async function run() {
   const args = readArgs();
-  if (!args.input || !args.output) {
-    throw new Error('Use: npm run article:preview -- --input "examples/article-file-template.md" --output "outputs/article-preview/article_001"');
+  if ((!args.input && !args.inputJsonDir) || !args.output) {
+    throw new Error('Use: npm run article:preview -- --input "examples/article-file-template.md" --output "outputs/article-preview/article_001" OR --input-json-dir "outputs/article-api-inspect/annual-vs-monthly"');
   }
 
   const outputDir = path.resolve(args.output);
   ensureDir(outputDir);
 
-  const articleInput = parseArticleFile(args.input);
+  let articleInput: ArticleInput;
+  let contentBrief: ArticleContentBrief;
+  if (args.inputJsonDir) {
+    const inputDir = path.resolve(args.inputJsonDir);
+    articleInput = loadJson<ArticleInput>(path.join(inputDir, "article-input.json"));
+    contentBrief = loadJson<ArticleContentBrief>(path.join(inputDir, "content-brief.json"));
+  } else {
+    articleInput = parseArticleFile(args.input!);
+    contentBrief = normalizeArticleToContentBrief(articleInput);
+  }
   const articleInputValid = validateArticleInput(articleInput);
   if (!articleInputValid.valid) {
     throw new Error(`Article input invalid: ${articleInputValid.errors.join("; ")}`);
   }
 
-  const contentBrief = normalizeArticleToContentBrief(articleInput);
   const contentBriefValid = validateContentBrief(contentBrief);
   if (!contentBriefValid.valid) {
     throw new Error(`Content brief invalid: ${contentBriefValid.errors.join("; ")}`);
   }
 
   const job = buildArticleVideoJob(articleInput, contentBrief, outputDir);
+  selectedScenesMustRemainCertified(job);
   const articleInputPath = path.join(outputDir, "article-input.json");
   const contentBriefPath = path.join(outputDir, "content-brief.json");
   const evidenceMapPath = path.join(outputDir, "evidence-map.json");
   const videoSpecPath = path.join(outputDir, "article-video-spec.json");
   const jobPath = path.join(outputDir, "article-video-job.json");
   const policyDebugPath = path.join(outputDir, "policy-debug.json");
+  const runtimeSelectionPlanPath = path.join(outputDir, "article-runtime-selection-plan.json");
+  const visibleCopyPlanPath = path.join(outputDir, "article-visible-copy-plan.json");
+  const renderSummaryPath = path.join(outputDir, "render-summary.json");
   const previewPath = path.join(outputDir, "preview.mp4");
   const qaPath = path.join(outputDir, "qa-summary.json");
+  const renderQaPath = path.join(outputDir, "render-qa-summary.json");
+  const layoutQaPath = path.join(outputDir, "article-layout-qa-summary.json");
+  const layoutInspectDir = path.resolve("outputs/article-layout-inspect/annual-vs-monthly");
+  const layoutContractDebugPath = path.join(layoutInspectDir, "article-layout-contract-debug.json");
+  const layoutInspectQaPath = path.join(layoutInspectDir, "article-layout-qa-summary.json");
+  const layoutSceneMetricsPath = path.join(layoutInspectDir, "article-layout-scene-metrics.json");
+  const layoutInspection = buildArticleLayoutInspection(job);
+  const motionInspectDir = path.resolve("outputs/article-motion-inspect/annual-vs-monthly");
+  const motionContractDebugPath = path.join(motionInspectDir, "article-motion-contract-debug.json");
+  const motionQaSummaryPath = path.join(motionInspectDir, "article-motion-qa-summary.json");
+  const motionSceneMetricsPath = path.join(motionInspectDir, "article-motion-scene-metrics.json");
+  const motionInspection = buildArticleMotionInspection(job);
+  const transitionInspectDir = path.resolve("outputs/article-transition-inspect/annual-vs-monthly");
+  const transitionPlanPath = path.join(transitionInspectDir, "article-transition-plan.json");
+  const transitionDebugPath = path.join(transitionInspectDir, "article-transition-debug.json");
+  const transitionQaPath = path.join(transitionInspectDir, "article-transition-qa-summary.json");
+  const transitionInspection = buildArticleTransitionInspection(job);
 
   writeJson(articleInputPath, articleInput);
   writeJson(contentBriefPath, contentBrief);
@@ -440,11 +502,84 @@ async function run() {
   });
   writeJson(jobPath, job);
   writeJson(policyDebugPath, job.policyDebug ?? {});
+  writeJson(runtimeSelectionPlanPath, (job.policyDebug as { runtimeSelectionPlan?: unknown }).runtimeSelectionPlan ?? {});
+  writeJson(visibleCopyPlanPath, {
+    articleId: job.articleId,
+    title: articleInput.title,
+    selectedSceneIds: job.selectedSceneIds,
+    selectedShotIds: job.remotionInputProps.structure.articleJob?.selectedShotIds ?? [],
+    selectedChoreographyIds: job.selectedChoreographyIds,
+    scenes: job.visibleCopyPlan ?? [],
+  });
+  writeJson(layoutContractDebugPath, {
+    contractVersion: layoutInspection.contractVersion,
+    canvas: layoutInspection.canvas,
+    fps: layoutInspection.fps,
+    contracts: layoutInspection.contracts,
+  });
+  writeJson(layoutSceneMetricsPath, layoutInspection.scenes);
+  writeJson(layoutInspectQaPath, {
+    status: layoutInspection.status,
+    checks: layoutInspection.checks,
+    sceneCount: layoutInspection.scenes.length,
+  });
+  writeJson(layoutQaPath, {
+    status: layoutInspection.status,
+    checks: layoutInspection.checks,
+    sceneCount: layoutInspection.scenes.length,
+  });
+  writeJson(motionContractDebugPath, {
+    contractVersion: motionInspection.contractVersion,
+    contracts: motionInspection.contracts,
+  });
+  writeJson(motionSceneMetricsPath, motionInspection.scenes);
+  writeJson(motionQaSummaryPath, {
+    status: motionInspection.status,
+    checks: motionInspection.checks,
+    sceneCount: motionInspection.scenes.length,
+  });
+  writeJson(transitionPlanPath, transitionInspection.plan);
+  writeJson(transitionDebugPath, {
+    contractVersion: transitionInspection.plan.contractVersion,
+    fallbackTransitionId: transitionInspection.plan.fallbackTransitionId,
+    transitionProfiles: transitionInspection.plan.transitionProfiles,
+    boundaries: transitionInspection.plan.boundaries,
+  });
+  writeJson(transitionQaPath, {
+    status: transitionInspection.status,
+    checks: transitionInspection.checks,
+    boundaryCount: transitionInspection.plan.boundaries.length,
+  });
+  writeJson(renderSummaryPath, {
+    articleId: job.articleId,
+    outputDirectory: outputDir,
+    selectedSceneIds: job.selectedSceneIds,
+    selectedShotIds: job.remotionInputProps.structure.articleJob?.selectedShotIds ?? [],
+    selectedChoreographyIds: job.remotionInputProps.structure.articleJob?.selectedChoreographyIds ?? [],
+    actualDurationFrames: job.actualDurationFrames,
+    actualDurationSeconds: job.actualDurationSeconds,
+    fps: job.videoSpec.fps,
+    width: job.videoSpec.previewWidth,
+    height: job.videoSpec.previewHeight,
+    inputMode: args.inputJsonDir ? "json_dir" : "article_file",
+    inputPath: args.inputJsonDir ? path.resolve(args.inputJsonDir) : path.resolve(args.input!),
+    reasonDisposition:
+      ((job.policyDebug as { runtimeSelectionPlan?: { scenes?: Array<{ visualIntent?: string; fallbackReason?: string }> } }).runtimeSelectionPlan?.scenes ?? [])
+        .find((scene) => scene.visualIntent === "reason")?.fallbackReason === "unsupported_timing_budget:shot_25"
+        ? "reason_not_rendered_due_to_timing_budget"
+        : undefined,
+    safeEndDisposition:
+      ((job.policyDebug as { runtimeSelectionPlan?: { scenes?: Array<{ visualIntent?: string; selectionStatus?: string }> } }).runtimeSelectionPlan?.scenes ?? [])
+        .find((scene) => scene.visualIntent === "safe_end")?.selectionStatus === "safe_end_not_renderable"
+        ? "safe_end_not_renderable"
+        : undefined,
+  });
 
   await renderArticlePreview(previewPath, job.remotionInputProps as Record<string, unknown>);
 
   const qaSummary = buildQaSummary(job, previewPath, articleInputValid, contentBriefValid);
   writeJson(qaPath, qaSummary);
+  writeJson(renderQaPath, qaSummary);
 
   console.log(`articleInputPath=${articleInputPath}`);
   console.log(`contentBriefPath=${contentBriefPath}`);
@@ -452,8 +587,13 @@ async function run() {
   console.log(`videoSpecPath=${videoSpecPath}`);
   console.log(`articleVideoJobPath=${jobPath}`);
   console.log(`policyDebugPath=${policyDebugPath}`);
+  console.log(`articleRuntimeSelectionPlanPath=${runtimeSelectionPlanPath}`);
+  console.log(`articleVisibleCopyPlanPath=${visibleCopyPlanPath}`);
+  console.log(`renderSummaryPath=${renderSummaryPath}`);
   console.log(`previewPath=${previewPath}`);
   console.log(`qaSummaryPath=${qaPath}`);
+  console.log(`renderQaSummaryPath=${renderQaPath}`);
+  console.log(`articleLayoutQaSummaryPath=${layoutQaPath}`);
 }
 
 void run().catch((error) => {

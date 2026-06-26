@@ -119,6 +119,7 @@ export type ArticlePolicyDebug = {
   duplicatePreventionActions: ArticlePolicyDuplicateAction[];
   policyWarnings: ArticlePolicyWarning[];
   safeEndReason?: string;
+  runtimeSelectionPlan?: unknown;
   scenes: ArticlePolicyScenePlan[];
   qaChecks: ArticlePolicyQaChecks;
 };
