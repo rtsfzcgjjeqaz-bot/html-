@@ -24,6 +24,19 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_35"
+    },
+    {
+      "shotId": "shot_36",
+      "choreographyId": "emailDraftGenerationDemo",
+      "purpose": "Search and AI email draft generation demo for product walkthroughs.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-26",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_36"
     }
-  ]
+  ],
+  "updatedAt": "2026-06-26"
 }
