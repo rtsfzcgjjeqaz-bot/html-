@@ -1,0 +1,42 @@
+{
+  "shotId": "shot_64",
+  "choreographyId": "bigNumberInvestmentImpact",
+  "purpose": "Dark numbered proof-point card stack for high-impact result comparison and investment/reason highlights.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/bigNumberInvestmentImpact.tsx",
+    "runtime/catalog-entry/big-number-investment-impact.library-entry.ts",
+    "runtime/shot/shot64-atomic-motions.ts",
+    "runtime/shot/shot64-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "activeLabel",
+      "activeNumber",
+      "supportingCards"
+    ],
+    "optional": [
+      "cardImagery",
+      "accentGlowColor",
+      "cardCount",
+      "holdDuration"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-27",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_64"
+}
