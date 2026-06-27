@@ -1,0 +1,44 @@
+{
+  "shotId": "shot_55",
+  "choreographyId": "aiRequirementComposer",
+  "purpose": "AI prompt-to-generated-workspace demo for requirement extraction, field generation, and summarization scenes.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/aiRequirementComposer.tsx",
+    "runtime/catalog-entry/ai-requirement-composer.library-entry.ts",
+    "runtime/shot/shot55-atomic-motions.ts",
+    "runtime/shot/shot55-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "aiLabel",
+      "promptText",
+      "generationStatus",
+      "generatedRows"
+    ],
+    "optional": [
+      "featureTitle",
+      "typingSpeed",
+      "workspaceLabels",
+      "summaryLines",
+      "accentColor"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-27",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_55"
+}

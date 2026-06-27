@@ -144,7 +144,19 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_51"
+    },
+    {
+      "shotId": "shot_55",
+      "choreographyId": "aiRequirementComposer",
+      "purpose": "AI prompt-to-generated-workspace demo for requirement extraction, field generation, and summarization scenes.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-27",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_55"
     }
   ],
-  "updatedAt": "2026-06-26"
+  "updatedAt": "2026-06-27"
 }
