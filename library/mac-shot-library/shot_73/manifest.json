@@ -1,0 +1,45 @@
+{
+  "shotId": "shot_73",
+  "choreographyId": "platformCapabilityMatrixReveal",
+  "purpose": "Wide platform capability matrix and result-comparison board for solution overviews, capability maps, and end-of-section summaries.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/platformCapabilityMatrixReveal.tsx",
+    "runtime/catalog-entry/platform-capability-matrix-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/shot/shot73-atomic-motions.ts",
+    "runtime/shot/shot73-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "promisePanelCopy",
+      "matrixColumns",
+      "matrixRows",
+      "highlightedTiles",
+      "outcomeProofPanel"
+    ],
+    "optional": [
+      "columnCount",
+      "accentColors",
+      "bottomSummary",
+      "cameraPushIntensity"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-28",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_73"
+}
