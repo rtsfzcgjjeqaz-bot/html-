@@ -1,0 +1,43 @@
+{
+  "shotId": "shot_74",
+  "choreographyId": "cleanBrandFinalCta",
+  "purpose": "Minimal white brand final CTA for clean SaaS sign-offs, product closers, and campaign end cards.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/cleanBrandFinalCta.tsx",
+    "runtime/catalog-entry/clean-brand-final-cta.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/shot/shot74-atomic-motions.ts",
+    "runtime/shot/shot74-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "brandMark",
+      "ctaText"
+    ],
+    "optional": [
+      "logoDimensions",
+      "fontWeight",
+      "brandColorTreatment",
+      "holdDuration",
+      "backgroundColor"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-28",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_74"
+}

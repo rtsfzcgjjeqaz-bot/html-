@@ -192,6 +192,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_73"
+    },
+    {
+      "shotId": "shot_74",
+      "choreographyId": "cleanBrandFinalCta",
+      "purpose": "Minimal white brand final CTA for clean SaaS sign-offs, product closers, and campaign end cards.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-28",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_74"
     }
   ],
   "updatedAt": "2026-06-28"
