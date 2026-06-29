@@ -56,7 +56,11 @@
     "motion:validate": "tsx src/motion/validateMotionLibrary.ts",
     "motion:promote-draft": "tsx src/motion/promoteClaudeDraft.ts",
     "article:preview": "tsx src/article/runArticlePreview.ts",
-    "article:api-inspect": "tsx src/article/inspectApiArticle.ts"
+    "article:api-inspect": "tsx src/article/inspectApiArticle.ts",
+    "asset-library:inspect": "tsx src/library/inspectAssetLibrary.ts",
+    "article:plan-mixed-source": "tsx src/article/planMixedSourceArticle.ts",
+    "article:smoke-mixed-source": "tsx src/article/runMixedSourceSmoke.ts",
+    "article:batch": "tsx src/article/batch/runArticleBatch.ts"
   },
   "sideEffects": [
     "*.css"

@@ -10,11 +10,6 @@ const countPattern = /\b\d[\d,]*(?:\.\d+)?\s*(?:users?|people|devices?|times?|re
 const genericNumberPattern = /\b\d[\d,]*(?:\.\d+)?\b/g;
 const quotePattern = /["\u201C\u201D][^"\u201C\u201D]{8,}["\u201C\u201D]/g;
 
-function clip(value: string, max = 180) {
-  const clean = value.replace(/\s+/g, " ").trim();
-  return clean.length > max ? `${clean.slice(0, max - 3).trim()}...` : clean;
-}
-
 function normalizedText(value: string) {
   return value.replace(/\s+/g, " ").trim();
 }
@@ -93,8 +88,8 @@ function pushEvidence(
 
   items.push({
     evidenceId: evidenceId(articleId, section.sectionId, paragraphIndex, kind, items.length),
-    claim: clip(claim, 120),
-    sourceExcerpt: clip(sourceExcerpt, 220),
+    claim: normalizedText(claim),
+    sourceExcerpt: normalizedText(sourceExcerpt),
     sourceLocation,
     kind,
     valueType,
