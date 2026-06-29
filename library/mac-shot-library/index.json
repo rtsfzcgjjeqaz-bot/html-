@@ -216,6 +216,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_76"
+    },
+    {
+      "shotId": "shot_78",
+      "choreographyId": "documentSelectionAiToolbar",
+      "purpose": "Dark document selection with AI action toolbar for writing, summarization, rewrite, and assistant recommendation scenes.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-29",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_78"
     }
   ],
   "updatedAt": "2026-06-29"
