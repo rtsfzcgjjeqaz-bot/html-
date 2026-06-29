@@ -8,6 +8,8 @@ import shot25 from "../shots/shot_25.json";
 import shot26 from "../shots/shot_26.json";
 import shot27 from "../shots/shot_27.json";
 import shot30 from "../shots/shot_30.json";
+import shot35 from "../shots/shot_35.json";
+import shot36 from "../shots/shot_36.json";
 import shot37 from "../shots/shot_37.json";
 import shot50 from "../shots/shot_50.json";
 import shot51 from "../shots/shot_51.json";
@@ -91,6 +93,8 @@ const shotModulesByPath: Record<string, ShotAsset> = {
   "assets/shots/shot_26.json": shot26 as ShotAsset,
   "assets/shots/shot_27.json": shot27 as ShotAsset,
   "assets/shots/shot_30.json": shot30 as ShotAsset,
+  "assets/shots/shot_35.json": shot35 as ShotAsset,
+  "assets/shots/shot_36.json": shot36 as ShotAsset,
   "assets/shots/shot_37.json": shot37 as ShotAsset,
   "assets/shots/shot_50.json": shot50 as ShotAsset,
   "assets/shots/shot_51.json": shot51 as ShotAsset,

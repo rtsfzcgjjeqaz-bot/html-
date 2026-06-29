@@ -1,0 +1,108 @@
+﻿{
+  "shot_id": "shot_35",
+  "runtimeShotId": "shot_35",
+  "sourceShotId": "mac_shot_35",
+  "sourceLibrary": "mac_approved_shots",
+  "sourceBranch": "origin/library/mac-approved-shots",
+  "sourceChoreographyId": "websiteHeroAngledProductSurface",
+  "adaptationStatus": "runtime_validated",
+  "packageId": "mac_shot_35_windows_runtime_adapter_v1",
+  "choreography_id": "websiteHeroAngledProductSurface",
+  "source_scene_type": "websiteHero",
+  "scene_type": "INFO",
+  "action_breakdown": "Metadata-only Windows runtime adapter for Mac source shot_35 website hero angled product surface. Source package remains on origin/library/mac-approved-shots; this JSON registers the validated runtime package without copying media assets.",
+  "atomic_motions": [
+    "macHeroSurfaceEnter",
+    "macHeroSidebarReveal",
+    "macHeroHeaderSettle",
+    "macHeroContentCard",
+    "macHeroReadableHold"
+  ],
+  "choreography": {
+    "shotId": "shot_35",
+    "choreographyId": "websiteHeroAngledProductSurface",
+    "sceneType": "websiteHero",
+    "durationSeconds": 4.4,
+    "approved": true,
+    "allowedInFactory": true,
+    "candidateForFactoryTemplate": true,
+    "libraryStatus": "runtime_validated",
+    "animationTracks": [
+      {
+        "trackId": "track-macHeroSurfaceEnter",
+        "motionId": "macHeroSurfaceEnter",
+        "target": "heroSurface",
+        "layer": "website",
+        "startPercent": 0,
+        "endPercent": 34,
+        "role": "entry",
+        "purpose": "Bring the angled product surface into view."
+      },
+      {
+        "trackId": "track-macHeroSidebarReveal",
+        "motionId": "macHeroSidebarReveal",
+        "target": "supportPanel",
+        "layer": "semantic",
+        "startPercent": 10,
+        "endPercent": 42,
+        "role": "build",
+        "purpose": "Reveal supporting article-backed rows."
+      },
+      {
+        "trackId": "track-macHeroHeaderSettle",
+        "motionId": "macHeroHeaderSettle",
+        "target": "headline",
+        "layer": "title",
+        "startPercent": 20,
+        "endPercent": 48,
+        "role": "message-hierarchy",
+        "purpose": "Lock the article headline into the hero area."
+      },
+      {
+        "trackId": "track-macHeroContentCard",
+        "motionId": "macHeroContentCard",
+        "target": "evidenceCard",
+        "layer": "semantic",
+        "startPercent": 44,
+        "endPercent": 78,
+        "role": "emphasis",
+        "purpose": "Emphasize a source-backed article claim."
+      },
+      {
+        "trackId": "track-macHeroReadableHold",
+        "motionId": "macHeroReadableHold",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 78,
+        "endPercent": 100,
+        "role": "settle",
+        "purpose": "Hold the completed layout for readability."
+      }
+    ]
+  },
+  "duration": 4.4,
+  "duration_frames": {
+    "min": 110,
+    "preferred": 132,
+    "max": 150
+  },
+  "motion_tags": [
+    "websiteHero",
+    "websiteHeroAngledProductSurface",
+    "mac_source",
+    "article_strict_binding"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "websiteHeroAngledProductSurface"
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_35"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

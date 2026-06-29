@@ -1,16 +1,65 @@
 import { dashboardGridOrbit } from "./choreographies/dashboardGridOrbit";
 import { coverHookImpact } from "./choreographies/coverHookImpact";
 import { finalCtaCardsConverge } from "./choreographies/finalCtaCardsConverge";
+import { emailDraftGenerationDemo } from "./choreographies/emailDraftGenerationDemo";
 import { aiRecommendationCursorPanelReveal } from "./choreographies/aiRecommendationCursorPanelReveal";
 import { priceInsightSnap } from "./choreographies/priceInsightSnap";
 import { searchTypingThenRows } from "./choreographies/searchTypingThenRows";
 import { splitCompareCards } from "./choreographies/splitCompareCards";
 import { stepFlowRail } from "./choreographies/stepFlowRail";
+import { websiteHeroAngledProductSurface } from "./choreographies/websiteHeroAngledProductSurface";
 import { websiteHeroAngledPushIn } from "./choreographies/websiteHeroAngledPushIn";
 import { websiteHeroCenterStage } from "./choreographies/websiteHeroCenterStage";
 import type { ChoreographyAnimationTrack, ChoreographyRegistryEntry } from "./choreographyTypes";
 
 export const choreographyRegistry: ChoreographyRegistryEntry[] = [
+  {
+    choreographyId: "websiteHeroAngledProductSurface",
+    sceneType: "websiteHero",
+    approved: true,
+    allowedInFactory: true,
+    compatibleProfiles: ["ai-tool-promo", "saas-product-promo", "default-promo"],
+    compatibleNarratives: ["pain_attack", "comparison", "aesthetic", "curiosity", "trust", "desire", "urgency"],
+    compatibleLayouts: ["websiteHero", "browserHero", "landingHero"],
+    visualStyle: ["clean", "premium", "angled", "browser", "light"],
+    riskLevel: "low",
+    atomicMotions: [
+      "macHeroSurfaceEnter",
+      "macHeroSidebarReveal",
+      "macHeroHeaderSettle",
+      "macHeroContentCard",
+      "macHeroReadableHold",
+    ],
+    durationFrames: {
+      min: 110,
+      preferred: 132,
+      max: 150,
+    },
+  },
+  {
+    choreographyId: "emailDraftGenerationDemo",
+    sceneType: "emailDraftDemo",
+    approved: true,
+    allowedInFactory: true,
+    compatibleProfiles: ["ai-tool-promo", "saas-product-promo", "default-promo"],
+    compatibleNarratives: ["pain_attack", "comparison", "aesthetic", "curiosity", "trust", "desire", "urgency"],
+    compatibleLayouts: ["emailDraftDemo", "searchDemo", "recommendationPanel"],
+    visualStyle: ["clean", "email", "workspace", "assistant", "light"],
+    riskLevel: "medium",
+    atomicMotions: [
+      "macEmailPromptEmerge",
+      "macEmailQueryReveal",
+      "macEmailWorkspaceEnter",
+      "macEmailRowsGenerate",
+      "macEmailSuggestionSettle",
+      "macEmailReadableHold",
+    ],
+    durationFrames: {
+      min: 120,
+      preferred: 144,
+      max: 170,
+    },
+  },
   {
     choreographyId: "websiteHeroAngledPushIn",
     sceneType: "websiteHero",
@@ -258,6 +307,8 @@ export const choreographyRegistry: ChoreographyRegistryEntry[] = [
 ];
 
 const trackDefinitionsByChoreographyId = {
+  websiteHeroAngledProductSurface: websiteHeroAngledProductSurface.animationTracks,
+  emailDraftGenerationDemo: emailDraftGenerationDemo.animationTracks,
   websiteHeroAngledPushIn: websiteHeroAngledPushIn.animationTracks,
   aiRecommendationCursorPanelReveal: aiRecommendationCursorPanelReveal.animationTracks,
   searchTypingThenRows: searchTypingThenRows.animationTracks,

@@ -4,7 +4,9 @@ import { buildArticleLayoutInspection } from "./articleLayoutContract";
 import { buildArticleMotionInspection } from "./articleMotionContract";
 
 export type ArticleTransitionRecipeId =
+  | "hero_surface_to_step_rail_bridge"
   | "evidence_to_rail_bridge"
+  | "step_rail_to_decision_panel_bridge"
   | "step_to_decision_panel_bridge"
   | "article_continuous_cross_slide";
 
@@ -45,6 +47,24 @@ export type ArticleTransitionPlanBoundary = {
 };
 
 export const articleTransitionContracts = {
+  hero_surface_to_step_rail_bridge: {
+    transitionId: "hero_surface_to_step_rail_bridge" as const,
+    fromIntent: "hook",
+    toIntent: "step_flow",
+    durationFrames: 18,
+    overlapFrames: 12,
+    incomingVisibleByFrame: 7,
+    outgoingRemainVisibleUntilFrame: 12,
+    backgroundContinuity: "shared_article_backdrop" as const,
+    bridgeType: "semantic_anchor_handoff" as const,
+    anchorHandoff: "hero_surface_to_step_rail",
+    direction: "right_to_center" as const,
+    readingProtectionFrames: 36,
+    settleProtectionFrames: 12,
+    maxBlankBoundaryFrames: 3,
+    maxLowInformationBoundaryFrames: 6,
+    requiredMotionEvents: ["outgoing_hero_surface_hold", "incoming_rail_reveal", "first_step_card_readable"],
+  },
   evidence_to_rail_bridge: {
     transitionId: "evidence_to_rail_bridge" as const,
     fromIntent: "hook",
@@ -80,6 +100,24 @@ export const articleTransitionContracts = {
     maxBlankBoundaryFrames: 3,
     maxLowInformationBoundaryFrames: 6,
     requiredMotionEvents: ["active_step_anchor_hold", "panel_skeleton_reveal", "first_recommendation_row_readable"],
+  },
+  step_rail_to_decision_panel_bridge: {
+    transitionId: "step_rail_to_decision_panel_bridge" as const,
+    fromIntent: "step_flow",
+    toIntent: "recommendation",
+    durationFrames: 18,
+    overlapFrames: 12,
+    incomingVisibleByFrame: 8,
+    outgoingRemainVisibleUntilFrame: 12,
+    backgroundContinuity: "shared_article_backdrop" as const,
+    bridgeType: "semantic_anchor_handoff" as const,
+    anchorHandoff: "final_step_card_to_email_decision_panel",
+    direction: "right_panel_handoff" as const,
+    readingProtectionFrames: 36,
+    settleProtectionFrames: 12,
+    maxBlankBoundaryFrames: 3,
+    maxLowInformationBoundaryFrames: 6,
+    requiredMotionEvents: ["active_step_anchor_hold", "email_decision_panel_reveal", "first_recommendation_row_readable"],
   },
   article_continuous_cross_slide: {
     transitionId: "article_continuous_cross_slide" as const,
@@ -121,11 +159,29 @@ export const articleRuntimeTransitionProfiles: Record<string, ArticleTransitionP
     supportsOverlap: true,
     minimumReadableFrames: 36,
   },
+  shot_35: {
+    transitionProfile: "article_hero_surface_anchor_v1",
+    entryAnchors: ["hero_surface", "information_card", "data_focus"],
+    exitAnchors: ["hero_surface", "information_card", "data_focus"],
+    supportedTransitionPairs: ["hook->step_flow"],
+    supportsContinuousBackground: true,
+    supportsOverlap: true,
+    minimumReadableFrames: 36,
+  },
   shot_03: {
     transitionProfile: "article_step_flow_anchor_v1",
     entryAnchors: ["rail", "first_step_card"],
     exitAnchors: ["rail", "active_step_card"],
     supportedTransitionPairs: ["hook->step_flow", "step_flow->recommendation"],
+    supportsContinuousBackground: true,
+    supportsOverlap: true,
+    minimumReadableFrames: 36,
+  },
+  shot_36: {
+    transitionProfile: "article_email_decision_panel_anchor_v1",
+    entryAnchors: ["recommendation_panel", "email_decision_panel"],
+    exitAnchors: ["recommendation_panel", "email_decision_panel"],
+    supportedTransitionPairs: ["step_flow->recommendation"],
     supportsContinuousBackground: true,
     supportsOverlap: true,
     minimumReadableFrames: 36,
@@ -141,7 +197,9 @@ export const articleRuntimeTransitionProfiles: Record<string, ArticleTransitionP
   },
 };
 
-function recipeFor(fromIntent: string, toIntent: string) {
+function recipeFor(fromIntent: string, toIntent: string, fromShotId?: string, toShotId?: string) {
+  if (fromShotId === "shot_35" && toShotId === "shot_03") return articleTransitionContracts.hero_surface_to_step_rail_bridge;
+  if (fromShotId === "shot_03" && toShotId === "shot_36") return articleTransitionContracts.step_rail_to_decision_panel_bridge;
   if (fromIntent === "hook" && toIntent === "step_flow") return articleTransitionContracts.evidence_to_rail_bridge;
   if (fromIntent === "step_flow" && toIntent === "recommendation") return articleTransitionContracts.step_to_decision_panel_bridge;
   return articleTransitionContracts.article_continuous_cross_slide;
@@ -172,7 +230,12 @@ export function buildArticleTransitionPlan(scenes: ResolvedScene[]) {
   for (let index = 0; index < articleScenes.length - 1; index += 1) {
     const fromScene = articleScenes[index];
     const toScene = articleScenes[index + 1];
-    const recipe = recipeFor(fromScene.visualIntent, toScene.visualIntent);
+    const recipe = recipeFor(
+      fromScene.visualIntent,
+      toScene.visualIntent,
+      String(fromScene.selectedShotId ?? ""),
+      String(toScene.selectedShotId ?? ""),
+    );
     const transitionStartFrame = Math.max(0, cursor + fromScene.durationInFrames - recipe.overlapFrames);
     const transitionEndFrame = transitionStartFrame + recipe.durationFrames;
     const isCompatible = compatible(fromScene, toScene);

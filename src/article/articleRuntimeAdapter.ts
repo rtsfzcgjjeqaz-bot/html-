@@ -1,10 +1,10 @@
 import {
   auditRuntimeShotCatalog,
-  getRuntimeShotsForIntent,
-  listRuntimeShotCatalog,
+  getRuntimeShotCatalogEntry,
   type RuntimeShotCatalogEntry,
   type RuntimeShotId,
 } from "../factory/runtimeShotCatalog";
+import { listUnifiedRuntimeSelectionPool } from "../library/assetLibraryCatalog";
 import { articleVisualPolicy, type ArticlePolicyPlan, type ArticleVisualIntent } from "./articleVisualPolicy";
 import type { ArticleContentBrief, ArticleVideoSpec, EvidenceItem } from "./types";
 
@@ -159,18 +159,15 @@ function evidenceGateCheck(intent: ArticleVisualIntent, scene: ArticlePolicyPlan
   };
 }
 
-function reasonCandidates(scene: ArticlePolicyPlan["scenes"][number], brief: ArticleContentBrief) {
-  const evidence = sceneEvidence(scene.selectedEvidenceIds, brief);
-  if (evidence.some((item) => item.kind === "comparison")) {
-    return ["shot_25", "shot_15"] as RuntimeShotId[];
-  }
-  return ["shot_25", "shot_15"] as RuntimeShotId[];
+function isRuntimeShotId(value: string | undefined): value is RuntimeShotId {
+  return Boolean(value && getRuntimeShotCatalogEntry(value as RuntimeShotId));
 }
 
-function candidatesForIntent(intent: ArticleVisualIntent, scene: ArticlePolicyPlan["scenes"][number], brief: ArticleContentBrief) {
-  if (intent === "reason") return reasonCandidates(scene, brief);
-  if (intent === "safe_end") return [] as RuntimeShotId[];
-  return getRuntimeShotsForIntent(intent).map((entry) => entry.runtimeShotId);
+function candidatesForIntent(intent: ArticleVisualIntent) {
+  return listUnifiedRuntimeSelectionPool()
+    .filter((entry) => entry.supportedVisualIntents.includes(intent))
+    .map((entry) => entry.runtimeShotId)
+    .filter(isRuntimeShotId);
 }
 
 function explicitGapReason(intent: ArticleVisualIntent) {
@@ -185,7 +182,7 @@ function hasShotIdLeak(value: unknown) {
 }
 
 function preferredFramesFor(runtimeShotId: RuntimeShotId) {
-  const entry = listRuntimeShotCatalog().find((item) => item.runtimeShotId === runtimeShotId);
+  const entry = getRuntimeShotCatalogEntry(runtimeShotId);
   return entry?.recommendedDurationRange.preferredFrames ?? Number.POSITIVE_INFINITY;
 }
 
@@ -196,7 +193,7 @@ export function buildArticleRuntimeSelectionPlan(
 ): ArticleRuntimeSelectionPlan {
   const warnings: string[] = [];
   const scenes = policyPlan.scenes.map<ArticleRuntimeSelectionPlanScene>((scene) => {
-    const candidateIds = candidatesForIntent(scene.visualIntent, scene, brief);
+    const candidateIds = candidatesForIntent(scene.visualIntent);
     const rejectedCandidateIds: RuntimeShotId[] = [];
 
     if (!candidateIds.length) {
@@ -218,7 +215,7 @@ export function buildArticleRuntimeSelectionPlan(
     }
 
     for (const candidateId of candidateIds) {
-      const entry = listRuntimeShotCatalog().find((item) => item.runtimeShotId === candidateId);
+      const entry = getRuntimeShotCatalogEntry(candidateId);
       if (!entry) {
         rejectedCandidateIds.push(candidateId);
         continue;
@@ -309,7 +306,15 @@ export function buildArticleRuntimeSelectionPlan(
       catalogShotExistsInRegistry: catalogAudit.every((entry) => entry.registeredInShotRegistry),
       catalogShotResolvesViaAssetResolver: catalogAudit.every((entry) => entry.resolvesViaAssetResolver),
       catalogShotHasRegisteredChoreography: catalogAudit.every((entry) => entry.hasRegisteredChoreography),
-      onlyRuntimeCallableShotsSelectable: scenes.every((scene) => !scene.selectedRuntimeShotId || Boolean(getRuntimeShotsForIntent(scene.visualIntent).find((item) => item.runtimeShotId === scene.selectedRuntimeShotId))),
+      onlyRuntimeCallableShotsSelectable: scenes.every(
+        (scene) =>
+          !scene.selectedRuntimeShotId ||
+          listUnifiedRuntimeSelectionPool().some(
+            (entry) =>
+              entry.runtimeShotId === scene.selectedRuntimeShotId &&
+              entry.supportedVisualIntents.includes(scene.visualIntent),
+          ),
+      ),
       articlePolicyContainsNoShotId: !hasShotIdLeak(policyPlan),
       articleRuntimeAdapterContainsNoMacImport: true,
       visualIntentMapsToSupportedShot: scenes.every((scene) => scene.selectionStatus !== "selected" || Boolean(scene.selectedRuntimeShotId)),

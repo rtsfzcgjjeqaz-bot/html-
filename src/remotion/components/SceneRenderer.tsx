@@ -9,6 +9,10 @@ import type { ArticleSceneComponentProps } from "../../article/types";
 import { containsArticlePlaceholder, visibleCopyHasEllipsis } from "../../article/articleVisibleCopyPlan";
 import { getArticleLayoutContract } from "../articleLayoutContract";
 import { getArticleMotionContract } from "../articleMotionContract";
+import {
+  EmailDraftGenerationDemoAdapter,
+  WebsiteHeroAngledProductSurfaceAdapter,
+} from "./MacSourceShotAdapters";
 
 type SceneRendererProps = {
   scene: {
@@ -1404,6 +1408,12 @@ export const SceneRenderer: React.FC<SceneRendererProps> = ({ scene, sceneIndex 
 
   if (scene.choreographyId === "websiteHeroAngledPushIn") {
     return <WebsiteHeroAngledPushInScene scene={scene} sceneIndex={sceneIndex} choreographyId={scene.choreographyId} animationTracks={animationTracks} />;
+  }
+  if (scene.choreographyId === "websiteHeroAngledProductSurface") {
+    return <WebsiteHeroAngledProductSurfaceAdapter scene={scene} sceneIndex={sceneIndex} choreographyId={scene.choreographyId} animationTracks={animationTracks} />;
+  }
+  if (scene.choreographyId === "emailDraftGenerationDemo") {
+    return <EmailDraftGenerationDemoAdapter scene={scene} sceneIndex={sceneIndex} choreographyId={scene.choreographyId} animationTracks={animationTracks} />;
   }
   if (scene.choreographyId === "aiRecommendationCursorPanelReveal") {
     return (

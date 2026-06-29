@@ -1,0 +1,119 @@
+﻿{
+  "shot_id": "shot_36",
+  "runtimeShotId": "shot_36",
+  "sourceShotId": "mac_shot_36",
+  "sourceLibrary": "mac_approved_shots",
+  "sourceBranch": "origin/library/mac-approved-shots",
+  "sourceChoreographyId": "emailDraftGenerationDemo",
+  "adaptationStatus": "runtime_validated",
+  "packageId": "mac_shot_36_windows_runtime_adapter_v1",
+  "choreography_id": "emailDraftGenerationDemo",
+  "source_scene_type": "emailDraftDemo",
+  "scene_type": "INFO",
+  "action_breakdown": "Metadata-only Windows runtime adapter for Mac source shot_36 email draft generation demo. Source package remains on origin/library/mac-approved-shots; this JSON registers the validated runtime package without copying media assets.",
+  "atomic_motions": [
+    "macEmailPromptEmerge",
+    "macEmailQueryReveal",
+    "macEmailWorkspaceEnter",
+    "macEmailRowsGenerate",
+    "macEmailSuggestionSettle",
+    "macEmailReadableHold"
+  ],
+  "choreography": {
+    "shotId": "shot_36",
+    "choreographyId": "emailDraftGenerationDemo",
+    "sceneType": "emailDraftDemo",
+    "durationSeconds": 4.8,
+    "approved": true,
+    "allowedInFactory": true,
+    "candidateForFactoryTemplate": true,
+    "libraryStatus": "runtime_validated",
+    "animationTracks": [
+      {
+        "trackId": "track-macEmailPromptEmerge",
+        "motionId": "macEmailPromptEmerge",
+        "target": "promptPanel",
+        "layer": "search",
+        "startPercent": 0,
+        "endPercent": 24,
+        "role": "entry",
+        "purpose": "Introduce the article-backed prompt field."
+      },
+      {
+        "trackId": "track-macEmailQueryReveal",
+        "motionId": "macEmailQueryReveal",
+        "target": "headline",
+        "layer": "title",
+        "startPercent": 10,
+        "endPercent": 36,
+        "role": "message-hierarchy",
+        "purpose": "Reveal the main article claim without demo fallback copy."
+      },
+      {
+        "trackId": "track-macEmailWorkspaceEnter",
+        "motionId": "macEmailWorkspaceEnter",
+        "target": "workspace",
+        "layer": "website",
+        "startPercent": 26,
+        "endPercent": 54,
+        "role": "build",
+        "purpose": "Move into the generated workspace panel."
+      },
+      {
+        "trackId": "track-macEmailRowsGenerate",
+        "motionId": "macEmailRowsGenerate",
+        "target": "resultRows",
+        "layer": "results",
+        "startPercent": 44,
+        "endPercent": 76,
+        "role": "supporting-value-proof",
+        "purpose": "Show article-derived rows in a readable sequence."
+      },
+      {
+        "trackId": "track-macEmailSuggestionSettle",
+        "motionId": "macEmailSuggestionSettle",
+        "target": "supportPanel",
+        "layer": "semantic",
+        "startPercent": 62,
+        "endPercent": 88,
+        "role": "emphasis",
+        "purpose": "Settle a secondary article-backed recommendation panel."
+      },
+      {
+        "trackId": "track-macEmailReadableHold",
+        "motionId": "macEmailReadableHold",
+        "target": "fullComposition",
+        "layer": "camera",
+        "startPercent": 84,
+        "endPercent": 100,
+        "role": "settle",
+        "purpose": "Hold the completed composition for readability."
+      }
+    ]
+  },
+  "duration": 4.8,
+  "duration_frames": {
+    "min": 120,
+    "preferred": 144,
+    "max": 170
+  },
+  "motion_tags": [
+    "emailDraftDemo",
+    "emailDraftGenerationDemo",
+    "mac_source",
+    "article_strict_binding"
+  ],
+  "remotion": {
+    "frame_based": true,
+    "choreography_id": "emailDraftGenerationDemo"
+  },
+  "batch": {
+    "compatible": true,
+    "filesystem_dependency": false,
+    "resolver_key": "shot_36"
+  },
+  "approval": {
+    "approved": true,
+    "allowed_in_factory": true
+  }
+}

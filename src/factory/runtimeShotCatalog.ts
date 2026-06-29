@@ -8,6 +8,8 @@ export type RuntimeShotId =
   | "shot_25"
   | "shot_27"
   | "shot_30"
+  | "shot_35"
+  | "shot_36"
   | "shot_50"
   | "shot_51";
 
@@ -81,6 +83,49 @@ export type RuntimeCatalogAuditEntry = {
 };
 
 const runtimeShotCatalog: RuntimeShotCatalogEntry[] = [
+  {
+    runtimeShotId: "shot_35",
+    choreographyId: "websiteHeroAngledProductSurface",
+    sceneType: "websiteHero",
+    visualType: "websiteHeroAngledProductSurface",
+    runtimeStatus: "runtime_callable",
+    renderMode: "component_choreography",
+    supportedVisualIntents: ["hook", "brief_summary"],
+    allowedAspectRatios: ["16:9"],
+    recommendedDurationRange: { minFrames: 110, preferredFrames: 132, maxFrames: 150 },
+    textCapacity: {
+      headline: "medium",
+      supportingText: "medium",
+      structuredItems: "medium",
+      notes: [
+        "Chinese headline capacity: 2 lines x 18 characters with overflow blocked.",
+        "Supporting rows must be article-derived and cannot use demo fallback text.",
+      ],
+    },
+    evidenceRequirements: {
+      requiresTraceableEvidence: false,
+      notes: ["May carry a source-backed hook/evidence card when evidence exists, but does not require a numeric claim."],
+    },
+    componentPropsContract: {
+      required: ["headline"],
+      optional: ["supportingText", "recommendationItems", "stepItems", "selectedEvidence"],
+    },
+    transitionProfile: {
+      profileId: "mac_source_hero_surface_v1",
+      entryAnchors: ["hero_surface", "headline"],
+      exitAnchors: ["evidence_card", "support_panel"],
+      supportedTransitionPairs: ["hook->reason", "hook->step_flow", "brief_summary->recommendation"],
+      supportsContinuousBackground: true,
+      supportsOverlap: true,
+      minimumReadableFrames: 42,
+    },
+    approvedInFactory: true,
+    selectionPriority: 88,
+    notes: [
+      "Onboarded from Mac source shot_35 through Windows Runtime Package Validation.",
+      "Source environment is trace metadata only and does not affect selection eligibility.",
+    ],
+  },
   {
     runtimeShotId: "shot_01",
     choreographyId: "coverHookImpact",
@@ -213,6 +258,50 @@ const runtimeShotCatalog: RuntimeShotCatalogEntry[] = [
     notes: ["Preferred reason shot before any dashboard fallback.", "May carry evidence rows when comparison-specific shots are not required."],
   },
   {
+    runtimeShotId: "shot_36",
+    choreographyId: "emailDraftGenerationDemo",
+    sceneType: "emailDraftDemo",
+    visualType: "emailDraftGenerationDemo",
+    runtimeStatus: "runtime_callable",
+    renderMode: "component_choreography",
+    supportedVisualIntents: ["reason", "evidence", "recommendation"],
+    allowedAspectRatios: ["16:9"],
+    recommendedDurationRange: { minFrames: 120, preferredFrames: 144, maxFrames: 170 },
+    textCapacity: {
+      headline: "medium",
+      supportingText: "medium",
+      structuredItems: "medium",
+      notes: [
+        "Chinese prompt/headline capacity: 2 lines x 16 characters with overflow blocked.",
+        "Rows support up to 3 article-derived items, 2 lines each, no ellipsis fallback.",
+      ],
+    },
+    evidenceRequirements: {
+      requiresTraceableEvidence: false,
+      minimumEvidenceCount: 1,
+      notes: ["Reason/evidence rows may use traceable evidence, but generic demo copy is forbidden in strict article binding."],
+    },
+    componentPropsContract: {
+      required: ["headline"],
+      optional: ["supportingText", "recommendationItems", "stepItems", "selectedEvidence"],
+    },
+    transitionProfile: {
+      profileId: "mac_source_email_demo_v1",
+      entryAnchors: ["prompt_panel", "headline"],
+      exitAnchors: ["result_rows", "support_panel"],
+      supportedTransitionPairs: ["hook->reason", "reason->step_flow", "reason->recommendation", "evidence->recommendation"],
+      supportsContinuousBackground: true,
+      supportsOverlap: true,
+      minimumReadableFrames: 42,
+    },
+    approvedInFactory: true,
+    selectionPriority: 82,
+    notes: [
+      "Onboarded from Mac source shot_36 through Windows Runtime Package Validation.",
+      "Source environment is trace metadata only and does not affect selection eligibility.",
+    ],
+  },
+  {
     runtimeShotId: "shot_27",
     choreographyId: "splitCompareCards",
     sceneType: "resultComparison",
@@ -340,6 +429,8 @@ const runtimeShotCatalog: RuntimeShotCatalogEntry[] = [
 ];
 
 const sceneRendererSupportedChoreographies = new Set([
+  "websiteHeroAngledProductSurface",
+  "emailDraftGenerationDemo",
   "coverHookImpact",
   "stepFlowRail",
   "dashboardGridOrbit",

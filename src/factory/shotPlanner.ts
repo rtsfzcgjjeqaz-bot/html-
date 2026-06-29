@@ -71,6 +71,8 @@ const runtimeCandidates: Record<NonNullable<PlannedScene["preferredRuntimeShotId
   shot_25: { shotId: "shot_25", sceneType: "searchDemo", visualType: "searchRows" },
   shot_27: { shotId: "shot_27", sceneType: "resultComparison", visualType: "splitCompareCards" },
   shot_30: { shotId: "shot_30", sceneType: "finalCTA", visualType: "finalCTA" },
+  shot_35: { shotId: "shot_35", sceneType: "websiteHero", visualType: "websiteHeroAngledProductSurface" },
+  shot_36: { shotId: "shot_36", sceneType: "emailDraftDemo", visualType: "emailDraftGenerationDemo" },
   shot_50: { shotId: "shot_50", sceneType: "priceInsight", visualType: "priceInsight" },
   shot_51: recommendationCandidate,
 };

@@ -14,7 +14,7 @@ export type VideoVariantPlannerOptions = {
 
 export type PlannedScene = StoryboardScene & {
   sourceType?: "website" | "article";
-  preferredRuntimeShotId?: "shot_01" | "shot_03" | "shot_15" | "shot_25" | "shot_27" | "shot_30" | "shot_50" | "shot_51";
+  preferredRuntimeShotId?: "shot_01" | "shot_03" | "shot_15" | "shot_25" | "shot_27" | "shot_30" | "shot_35" | "shot_36" | "shot_50" | "shot_51";
   evidenceIds?: string[];
   componentProps?: Record<string, unknown>;
   sceneType: string;
