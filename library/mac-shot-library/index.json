@@ -204,7 +204,19 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_74"
+    },
+    {
+      "shotId": "shot_76",
+      "choreographyId": "darkAssistantDeviceHero",
+      "purpose": "Dark multi-device AI assistant website hero for SaaS landing pages, product openers, and assistant feature introductions.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-29",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_76"
     }
   ],
-  "updatedAt": "2026-06-28"
+  "updatedAt": "2026-06-29"
 }
