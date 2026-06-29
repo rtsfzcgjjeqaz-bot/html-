@@ -1,0 +1,46 @@
+{
+  "shotId": "shot_81",
+  "choreographyId": "darkPromptCodeCanvasPush",
+  "purpose": "Dark prompt-to-code canvas push for AI coding, app-builder, and developer workflow product demos.",
+  "status": "github_published",
+  "requiredFiles": [
+    "runtime/choreography/darkPromptCodeCanvasPush.tsx",
+    "runtime/catalog-entry/dark-prompt-code-canvas-push.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/shot/shot81-atomic-motions.ts",
+    "runtime/shot/shot81-choreography.tsx",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": {
+    "required": [
+      "headlineText",
+      "highlightKeyword",
+      "editorTitle",
+      "codeRows",
+      "selectionBlockTarget"
+    ],
+    "optional": [
+      "backgroundGlowColor",
+      "editorTilt",
+      "codeRowStagger",
+      "selectionHighlightColor",
+      "settleStrength"
+    ]
+  },
+  "verificationStatus": {
+    "typescript": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "localPreview": "passed",
+    "keyframeReview": "passed",
+    "lint": "skipped_no_lint_script"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "publishedAt": "2026-06-29",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "latestPackagePath": "library/mac-shot-library/shot_81"
+}

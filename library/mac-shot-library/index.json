@@ -240,6 +240,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_79"
+    },
+    {
+      "shotId": "shot_81",
+      "choreographyId": "darkPromptCodeCanvasPush",
+      "purpose": "Dark prompt-to-code canvas push for AI coding, app-builder, and developer workflow product demos.",
+      "status": "github_published",
+      "sourceProject": "/Users/mac/Desktop/jewelry-video",
+      "publishedAt": "2026-06-29",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_81"
     }
   ],
   "updatedAt": "2026-06-29"
