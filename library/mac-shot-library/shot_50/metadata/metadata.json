@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_50",
+  "libraryId": "modular-dashboard-grid-build",
+  "choreographyId": "modularDashboardGridBuild",
+  "sceneType": "appGrid",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/modular-dashboard-grid-build.library-entry.ts",
+  "sourceCatalogEntryHash": "616415e6ef0b9c4cfa2bc571371509687d8ffd2daf51b7b0a481dc0b42eeb9e9",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

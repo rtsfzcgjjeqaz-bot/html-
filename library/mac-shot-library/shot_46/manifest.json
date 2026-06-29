@@ -1,39 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_46",
+  "libraryId": "dark-product-engine-cover",
   "choreographyId": "darkProductEngineCover",
-  "purpose": "Dark 3D product-engine cover hook for SaaS, AI platform, and workflow opener moments.",
+  "displayName": "Dark Product Engine Cover",
+  "purpose": "open_video; establish_brand_or_product_hook",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/darkProductEngineCover.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/dark-product-engine-cover.library-entry.ts",
-    "runtime/shot/shot46-atomic-motions.ts",
-    "runtime/shot/shot46-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/darkProductEngineCover.tsx",
+    "runtime/atomic/shot46-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [],
-    "optional": [
-      "coreLabel",
-      "nodeLabels",
-      "accentGradient",
-      "railCount",
-      "backgroundTone"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-26",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "ead260f440fd41f9e23afdc96e41d7e214ed5330de7f7c662f9b52a7503bcba3",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_46"
+  "runtimeIntegrationStatus": "not_integrated"
 }

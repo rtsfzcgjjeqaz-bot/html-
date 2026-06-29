@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_28",
+  "libraryId": "step-flow-timeline-calculation",
+  "choreographyId": "stepFlowTimelineCalculation",
+  "displayName": "Step Flow Timeline Calculation",
+  "purpose": "explain_workflow_steps; show_process_progression",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/step-flow-timeline-calculation.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/stepFlowTimelineCalculation.tsx",
+    "runtime/atomic/shot28-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "d172b9803cadee149bd094003f82982a71ede089bef171380dcd0453ba2a7f64",
+  "publishedAt": "2026-06-29",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

@@ -1,46 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_81",
+  "libraryId": "dark-prompt-code-canvas-push",
   "choreographyId": "darkPromptCodeCanvasPush",
-  "purpose": "Dark prompt-to-code canvas push for AI coding, app-builder, and developer workflow product demos.",
+  "displayName": "Dark Prompt Code Canvas Push",
+  "purpose": "demonstrate_prompt_or_search_flow; show_user_input_to_result",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/darkPromptCodeCanvasPush.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/dark-prompt-code-canvas-push.library-entry.ts",
     "runtime/catalog-entry/types.ts",
-    "runtime/shot/shot81-atomic-motions.ts",
-    "runtime/shot/shot81-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/choreography/darkPromptCodeCanvasPush.tsx",
+    "runtime/atomic/shot81-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "headlineText",
-      "highlightKeyword",
-      "editorTitle",
-      "codeRows",
-      "selectionBlockTarget"
-    ],
-    "optional": [
-      "backgroundGlowColor",
-      "editorTilt",
-      "codeRowStagger",
-      "selectionHighlightColor",
-      "settleStrength"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "1c5d47b38942e39f192d5dcbe97a16ba6486f89567fd37ba6827ab80589ed07d",
   "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_81"
+  "runtimeIntegrationStatus": "not_integrated"
 }

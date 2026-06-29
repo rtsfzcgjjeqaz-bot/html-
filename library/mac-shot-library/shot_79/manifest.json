@@ -1,46 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_79",
+  "libraryId": "ai-suggestion-card-from-selection",
   "choreographyId": "aiSuggestionCardFromSelection",
-  "purpose": "AI suggestion card expanding from selected document text for rewrite, summarization, recommendation, and assistant editing scenes.",
+  "displayName": "AI Suggestion Card From Selection",
+  "purpose": "show_ai_assistance; reveal_recommendation_or_suggestion",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/aiSuggestionCardFromSelection.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/ai-suggestion-card-from-selection.library-entry.ts",
     "runtime/catalog-entry/types.ts",
-    "runtime/shot/shot79-atomic-motions.ts",
-    "runtime/shot/shot79-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/choreography/aiSuggestionCardFromSelection.tsx",
+    "runtime/atomic/shot79-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "documentContextRows",
-      "selectedRange",
-      "toolbarActionLabels",
-      "suggestionTitle",
-      "suggestionCopyLines"
-    ],
-    "optional": [
-      "accentGlowColor",
-      "toolbarIcons",
-      "suggestionCardPosition",
-      "tooltipLabels",
-      "cardExpansionTiming"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "de7cc13e919a5a01ad93fcceff6ae3f7d5fc317c5e1d1ed1e93e73bd67e79d00",
   "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_79"
+  "runtimeIntegrationStatus": "not_integrated"
 }

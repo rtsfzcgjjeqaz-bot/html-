@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_71",
+  "libraryId": "mobile-quality-governance-stack",
+  "choreographyId": "mobileQualityGovernanceStack",
+  "sceneType": "aiRecommendation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/mobile-quality-governance-stack.library-entry.ts",
+  "sourceCatalogEntryHash": "1538cdc7c564bef36d4ab40f751452fc9b904664e1c760b25aa52fa479de1973",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

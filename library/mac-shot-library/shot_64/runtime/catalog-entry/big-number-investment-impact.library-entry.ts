@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot64AtomicMotionIds } from "../shot_64/shot64-atomic-motions";
+import { shot64AtomicMotionIds } from "../atomic/shot64-atomic-motions";
 
 export const bigNumberInvestmentImpactLibraryEntry: ShotLibraryEntry = {
   libraryId: "big-number-investment-impact",

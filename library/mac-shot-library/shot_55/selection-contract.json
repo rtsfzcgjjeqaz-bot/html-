@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_55",
+  "displayName": "AI Requirement Composer",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/ai-requirement-composer.library-entry.ts",
+  "sourceCatalogEntryHash": "346979b664a7c474053ac706d26adf45fb4d37bff0cb903963b15c9a4f69b110",
+  "intents": [
+    "demonstrate_prompt_or_search_flow",
+    "show_user_input_to_result"
+  ],
+  "semanticTags": [
+    "searchdemo",
+    "ai",
+    "requirement",
+    "composer"
+  ],
+  "sceneRoles": [
+    "searchDemo"
+  ],
+  "supportedEvidenceTypes": [
+    "prompt",
+    "search_query",
+    "input_text",
+    "result_preview"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    178,
+    178
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 1,
+    "bodyMaxChars": 180,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 84,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/ai-requirement-composer.library-entry.ts",
+  "runtimeExport": "aiRequirementComposerLibraryEntry",
+  "choreographyEntry": "runtime/choreography/aiRequirementComposer.tsx",
+  "choreographyExport": "Shot55AiRequirementComposerChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_55_DURATION_FRAMES"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_51",
+  "libraryId": "vehicle-timeline-metric-insight",
+  "choreographyId": "vehicleTimelineMetricInsight",
+  "sceneType": "priceInsight",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/vehicle-timeline-metric-insight.library-entry.ts",
+  "sourceCatalogEntryHash": "60a8962cafe53230935b0a01d7025ea90f8dc3d629fb19addc34cafaae9d717c",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

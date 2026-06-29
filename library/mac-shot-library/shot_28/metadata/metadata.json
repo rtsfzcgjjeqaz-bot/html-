@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_28",
+  "libraryId": "step-flow-timeline-calculation",
+  "choreographyId": "stepFlowTimelineCalculation",
+  "sceneType": "stepFlow",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/step-flow-timeline-calculation.library-entry.ts",
+  "sourceCatalogEntryHash": "d172b9803cadee149bd094003f82982a71ede089bef171380dcd0453ba2a7f64",
+  "sourceQaAvailable": false,
+  "sourceMetadataAvailable": false,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

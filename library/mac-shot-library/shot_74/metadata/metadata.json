@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_74",
+  "libraryId": "clean-brand-final-cta",
+  "choreographyId": "cleanBrandFinalCta",
+  "sceneType": "finalCTA",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/clean-brand-final-cta.library-entry.ts",
+  "sourceCatalogEntryHash": "b8d11ec90ee1276adbc1cedf3fd30d4c1737d5a13be5b6daebe49d65255a0af9",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

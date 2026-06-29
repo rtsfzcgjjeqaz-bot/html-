@@ -1,46 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_78",
+  "libraryId": "document-selection-ai-toolbar",
   "choreographyId": "documentSelectionAiToolbar",
-  "purpose": "Dark document selection with AI action toolbar for writing, summarization, rewrite, and assistant recommendation scenes.",
+  "displayName": "Document Selection AI Toolbar",
+  "purpose": "show_ai_assistance; reveal_recommendation_or_suggestion",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/documentSelectionAiToolbar.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/document-selection-ai-toolbar.library-entry.ts",
     "runtime/catalog-entry/types.ts",
-    "runtime/shot/shot78-atomic-motions.ts",
-    "runtime/shot/shot78-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/choreography/documentSelectionAiToolbar.tsx",
+    "runtime/atomic/shot78-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "documentTitle",
-      "paragraphRows",
-      "selectedRange",
-      "toolbarActions",
-      "commandTooltipLabel"
-    ],
-    "optional": [
-      "accentColor",
-      "documentTilt",
-      "toolbarSide",
-      "highlightIntensity",
-      "tooltipPosition"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "58b450d3212a2c99eedee25308f184391c6e65dc242948bef72048be43a5710d",
   "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_78"
+  "runtimeIntegrationStatus": "not_integrated"
 }

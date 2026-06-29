@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_44",
+  "libraryId": "dual-device-feature-stage",
+  "choreographyId": "dualDeviceFeatureStage",
+  "sceneType": "featureHighlight",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dual-device-feature-stage.library-entry.ts",
+  "sourceCatalogEntryHash": "f3ceb91fefca117b2e0a23491162858c933400e63b7af8449d5a94debfb86262",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

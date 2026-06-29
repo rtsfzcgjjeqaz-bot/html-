@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_28",
+  "displayName": "Step Flow Timeline Calculation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/step-flow-timeline-calculation.library-entry.ts",
+  "sourceCatalogEntryHash": "d172b9803cadee149bd094003f82982a71ede089bef171380dcd0453ba2a7f64",
+  "intents": [
+    "explain_workflow_steps",
+    "show_process_progression"
+  ],
+  "semanticTags": [
+    "stepflow",
+    "step",
+    "flow",
+    "timeline",
+    "calculation"
+  ],
+  "sceneRoles": [
+    "stepFlow"
+  ],
+  "supportedEvidenceTypes": [
+    "steps",
+    "workflow_nodes",
+    "timeline"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    292,
+    292
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 44,
+    "supportingLines": 3,
+    "bodyMaxChars": 180,
+    "labelMaxChars": 22
+  },
+  "selectionPriority": 78,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/step-flow-timeline-calculation.library-entry.ts",
+  "runtimeExport": "stepFlowTimelineCalculationLibraryEntry",
+  "choreographyEntry": "runtime/choreography/stepFlowTimelineCalculation.tsx",
+  "choreographyExport": "Shot28StepFlowChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_28_DURATION_FRAMES"
+}

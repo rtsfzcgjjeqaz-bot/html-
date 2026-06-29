@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_26",
+  "libraryId": "app-grid-tilted-dashboard-callout",
+  "choreographyId": "appGridTiltedDashboardCallout",
+  "displayName": "App Grid Tilted Dashboard Callout",
+  "purpose": "show_multi_panel_product_state; summarize_capabilities",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/app-grid-tilted-dashboard-callout.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/appGridTiltedDashboardCallout.tsx",
+    "runtime/atomic/shot26-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "2c8cec23f57bd65b1be4c98e01ace97fa8bb80571915198714292ae007438edf",
+  "publishedAt": "2026-06-29",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

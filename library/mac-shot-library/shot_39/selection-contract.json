@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_39",
+  "displayName": "Mobile Prompt Composer Flow",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/mobile-prompt-composer-flow.library-entry.ts",
+  "sourceCatalogEntryHash": "b45f19a3d395f4803572a3b2c8c5517061febdff2cff4cca8207b84a69b45f05",
+  "intents": [
+    "demonstrate_prompt_or_search_flow",
+    "show_user_input_to_result"
+  ],
+  "semanticTags": [
+    "searchdemo",
+    "mobile",
+    "prompt",
+    "composer",
+    "flow"
+  ],
+  "sceneRoles": [
+    "searchDemo"
+  ],
+  "supportedEvidenceTypes": [
+    "prompt",
+    "search_query",
+    "input_text",
+    "result_preview"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    111,
+    111
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 1,
+    "bodyMaxChars": 180,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 84,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/mobile-prompt-composer-flow.library-entry.ts",
+  "runtimeExport": "mobilePromptComposerFlowLibraryEntry",
+  "choreographyEntry": "runtime/choreography/mobilePromptComposerFlow.tsx",
+  "choreographyExport": "Shot39MobilePromptComposerFlowChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_39_DURATION_FRAMES"
+}

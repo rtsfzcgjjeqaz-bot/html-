@@ -13,9 +13,9 @@ export const codePreviewToggleFocusRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_82_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_82/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_82/runtime/shot/shot82-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_82/runtime/shot/shot82-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_82/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_82/runtime/atomic/shot82-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_82/runtime/choreography/codePreviewToggleFocus.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_82/runtime/catalog-entry/code-preview-toggle-focus.library-entry.ts",
   Component: Shot82CodePreviewToggleFocusChoreography,
 } as const;

@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot71AtomicMotionIds } from "../shot/shot71-atomic-motions";
+import { shot71AtomicMotionIds } from "../atomic/shot71-atomic-motions";
 
 export const mobileQualityGovernanceStackLibraryEntry: ShotLibraryEntry = {
   libraryId: "mobile-quality-governance-stack",

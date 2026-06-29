@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot35AtomicMotionIds } from "../shot_35/shot35-atomic-motions";
+import { shot35AtomicMotionIds } from "../atomic/shot35-atomic-motions";
 
 export const websiteHeroAngledProductSurfaceLibraryEntry: ShotLibraryEntry = {
   libraryId: "website-hero-angled-product-surface",

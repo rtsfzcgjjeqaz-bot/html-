@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_78",
+  "libraryId": "document-selection-ai-toolbar",
+  "choreographyId": "documentSelectionAiToolbar",
+  "sceneType": "aiRecommendation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/document-selection-ai-toolbar.library-entry.ts",
+  "sourceCatalogEntryHash": "58b450d3212a2c99eedee25308f184391c6e65dc242948bef72048be43a5710d",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot39AtomicMotionIds } from "../shot_39/shot39-atomic-motions";
+import { shot39AtomicMotionIds } from "../atomic/shot39-atomic-motions";
 
 export const mobilePromptComposerFlowLibraryEntry: ShotLibraryEntry = {
   libraryId: "mobile-prompt-composer-flow",

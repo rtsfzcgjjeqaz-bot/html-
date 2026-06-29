@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_24",
+  "libraryId": "step-flow-product-module-fanout",
+  "choreographyId": "stepFlowProductModuleFanout",
+  "sceneType": "stepFlow",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/step-flow-product-module-fanout.library-entry.ts",
+  "sourceCatalogEntryHash": "04932aae18e05c669385fe520744db887f58ab045441a3c483c6cb8c2a40f5cc",
+  "sourceQaAvailable": false,
+  "sourceMetadataAvailable": false,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

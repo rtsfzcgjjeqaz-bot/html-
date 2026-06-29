@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot79AtomicMotionIds } from "../shot/shot79-atomic-motions";
+import { shot79AtomicMotionIds } from "../atomic/shot79-atomic-motions";
 
 export const aiSuggestionCardFromSelectionLibraryEntry: ShotLibraryEntry = {
   libraryId: "ai-suggestion-card-from-selection",

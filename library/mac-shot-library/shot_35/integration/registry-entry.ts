@@ -1,7 +1,7 @@
 import {
   SHOT_35_DURATION_FRAMES,
   Shot35WebsiteHeroAngledProductSurfaceChoreography,
-} from "./choreographies/websiteHeroAngledProductSurface";
+} from "../runtime/choreography/websiteHeroAngledProductSurface";
 
 export const websiteHeroAngledProductSurfaceRegistryEntry = {
   id: "websiteHeroAngledProductSurface",
@@ -13,9 +13,9 @@ export const websiteHeroAngledProductSurfaceRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_35_DURATION_FRAMES,
-  actionBreakdownPath: "src/motion/shot_35/shot35-action-breakdown.md",
-  atomicMotionsPath: "src/motion/shot_35/shot35-atomic-motions.ts",
-  choreographyPath: "src/motion/shot_35/shot35-choreography.tsx",
-  catalogEntryPath: "src/motion/catalog/website-hero-angled-product-surface.library-entry.ts",
+  actionBreakdownPath: "library/mac-shot-library/shot_35/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_35/runtime/atomic/shot35-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_35/runtime/choreography/websiteHeroAngledProductSurface.tsx",
+  catalogEntryPath: "library/mac-shot-library/shot_35/runtime/catalog-entry/website-hero-angled-product-surface.library-entry.ts",
   Component: Shot35WebsiteHeroAngledProductSurfaceChoreography,
-};
+} as const;

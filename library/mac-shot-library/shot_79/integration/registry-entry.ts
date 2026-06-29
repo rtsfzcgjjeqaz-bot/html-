@@ -13,9 +13,9 @@ export const aiSuggestionCardFromSelectionRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_79_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_79/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_79/runtime/shot/shot79-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_79/runtime/shot/shot79-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_79/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_79/runtime/atomic/shot79-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_79/runtime/choreography/aiSuggestionCardFromSelection.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_79/runtime/catalog-entry/ai-suggestion-card-from-selection.library-entry.ts",
   Component: Shot79AiSuggestionCardFromSelectionChoreography,
 } as const;

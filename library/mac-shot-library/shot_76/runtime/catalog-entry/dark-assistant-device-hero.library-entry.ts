@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot76AtomicMotionIds } from "../shot/shot76-atomic-motions";
+import { shot76AtomicMotionIds } from "../atomic/shot76-atomic-motions";
 
 export const darkAssistantDeviceHeroLibraryEntry: ShotLibraryEntry = {
   libraryId: "dark-assistant-device-hero",

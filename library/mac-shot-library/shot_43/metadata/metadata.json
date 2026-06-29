@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_43",
+  "libraryId": "dark-capability-cards-burst",
+  "choreographyId": "darkCapabilityCardsBurst",
+  "sceneType": "resultComparison",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-capability-cards-burst.library-entry.ts",
+  "sourceCatalogEntryHash": "d9a9bf4cac8d952ba69a1ec668159f125ed64e51bf11674221b356e614a5a43d",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

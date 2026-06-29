@@ -13,9 +13,9 @@ export const documentSelectionAiToolbarRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_78_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_78/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_78/runtime/shot/shot78-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_78/runtime/shot/shot78-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_78/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_78/runtime/atomic/shot78-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_78/runtime/choreography/documentSelectionAiToolbar.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_78/runtime/catalog-entry/document-selection-ai-toolbar.library-entry.ts",
   Component: Shot78DocumentSelectionAiToolbarChoreography,
 } as const;

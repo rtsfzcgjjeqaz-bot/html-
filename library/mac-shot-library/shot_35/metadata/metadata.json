@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_35",
+  "libraryId": "website-hero-angled-product-surface",
+  "choreographyId": "websiteHeroAngledProductSurface",
+  "sceneType": "websiteHero",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/website-hero-angled-product-surface.library-entry.ts",
+  "sourceCatalogEntryHash": "db81e4116c7e495115bd20c6ad44ddcac96a4ca4065d74509c39f3eb6ff2d782",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

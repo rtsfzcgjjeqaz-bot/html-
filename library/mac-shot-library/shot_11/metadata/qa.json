@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_11",
+  "choreographyId": "resultComparisonBigNumberBurst",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "typescript": "source_build_previously_verified_and_current_noemit_requested",
+  "registryResolve": "exported_registry_entry_generated",
+  "catalogLookup": "source_library_entry_parsed",
+  "localPreview": "formal_approved_catalog_entry_without_review_json",
+  "keyframeReview": "approved_in_mac_catalog",
+  "selectionContract": "generated",
+  "selectionAllowed": true
+}

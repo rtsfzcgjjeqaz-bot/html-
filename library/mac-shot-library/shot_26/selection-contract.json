@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_26",
+  "displayName": "App Grid Tilted Dashboard Callout",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/app-grid-tilted-dashboard-callout.library-entry.ts",
+  "sourceCatalogEntryHash": "2c8cec23f57bd65b1be4c98e01ace97fa8bb80571915198714292ae007438edf",
+  "intents": [
+    "show_multi_panel_product_state",
+    "summarize_capabilities"
+  ],
+  "semanticTags": [
+    "appgrid",
+    "app",
+    "grid",
+    "tilted",
+    "dashboard",
+    "callout"
+  ],
+  "sceneRoles": [
+    "appGrid"
+  ],
+  "supportedEvidenceTypes": [
+    "dashboard_panels",
+    "feature_list",
+    "app_screens"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    194,
+    194
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 1,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 22
+  },
+  "selectionPriority": 82,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/app-grid-tilted-dashboard-callout.library-entry.ts",
+  "runtimeExport": "appGridTiltedDashboardCalloutLibraryEntry",
+  "choreographyEntry": "runtime/choreography/appGridTiltedDashboardCallout.tsx",
+  "choreographyExport": "Shot26AppGridChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_26_DURATION_FRAMES"
+}

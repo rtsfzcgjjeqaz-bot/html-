@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_55",
+  "libraryId": "ai-requirement-composer",
+  "choreographyId": "aiRequirementComposer",
+  "sceneType": "searchDemo",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/ai-requirement-composer.library-entry.ts",
+  "sourceCatalogEntryHash": "346979b664a7c474053ac706d26adf45fb4d37bff0cb903963b15c9a4f69b110",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_08",
+  "libraryId": "ai-recommendation-cursor-panel-reveal",
+  "choreographyId": "aiRecommendationCursorPanelReveal",
+  "sceneType": "aiRecommendation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/ai-recommendation-cursor-panel-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "ad99fe639c12c2964a8f2ab5894ec9f3c6f81b48dfd8efb2692271fd5f0e0bef",
+  "sourceQaAvailable": false,
+  "sourceMetadataAvailable": false,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

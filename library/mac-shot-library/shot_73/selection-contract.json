@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_73",
+  "displayName": "Platform Capability Matrix Reveal",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/platform-capability-matrix-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "f303bd46c86eb05c80f5fa798208655c2255f7c32e4f4e2ba5ab2961541227b4",
+  "intents": [
+    "compare_results",
+    "highlight_metric_or_outcome"
+  ],
+  "semanticTags": [
+    "resultcomparison",
+    "platform",
+    "capability",
+    "matrix",
+    "reveal"
+  ],
+  "sceneRoles": [
+    "resultComparison"
+  ],
+  "supportedEvidenceTypes": [
+    "before_after",
+    "metrics",
+    "comparison_table"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    219,
+    219
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 40,
+    "supportingLines": 2,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 20
+  },
+  "selectionPriority": 80,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/platform-capability-matrix-reveal.library-entry.ts",
+  "runtimeExport": "platformCapabilityMatrixRevealLibraryEntry",
+  "choreographyEntry": "runtime/choreography/platformCapabilityMatrixReveal.tsx",
+  "choreographyExport": "Shot73PlatformCapabilityMatrixRevealChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_73_DURATION_FRAMES"
+}

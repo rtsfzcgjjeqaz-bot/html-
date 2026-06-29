@@ -13,9 +13,9 @@ export const cleanBrandFinalCtaRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_74_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_74/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_74/runtime/shot/shot74-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_74/runtime/shot/shot74-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_74/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_74/runtime/atomic/shot74-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_74/runtime/choreography/cleanBrandFinalCta.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_74/runtime/catalog-entry/clean-brand-final-cta.library-entry.ts",
   Component: Shot74CleanBrandFinalCtaChoreography,
 } as const;

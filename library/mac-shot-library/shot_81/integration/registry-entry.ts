@@ -13,9 +13,9 @@ export const darkPromptCodeCanvasPushRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_81_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_81/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_81/runtime/shot/shot81-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_81/runtime/shot/shot81-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_81/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_81/runtime/atomic/shot81-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_81/runtime/choreography/darkPromptCodeCanvasPush.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_81/runtime/catalog-entry/dark-prompt-code-canvas-push.library-entry.ts",
   Component: Shot81DarkPromptCodeCanvasPushChoreography,
 } as const;

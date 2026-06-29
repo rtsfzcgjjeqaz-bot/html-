@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_76",
+  "choreographyId": "darkAssistantDeviceHero",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "typescript": "source_build_previously_verified_and_current_noemit_requested",
+  "registryResolve": "exported_registry_entry_generated",
+  "catalogLookup": "source_library_entry_parsed",
+  "localPreview": "source_review_artifact_record_available",
+  "keyframeReview": "approved_in_mac_catalog",
+  "selectionContract": "generated",
+  "selectionAllowed": true
+}

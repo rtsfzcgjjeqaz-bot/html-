@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot50AtomicMotionIds } from "../shot_50/shot50-atomic-motions";
+import { shot50AtomicMotionIds } from "../atomic/shot50-atomic-motions";
 
 export const modularDashboardGridBuildLibraryEntry: ShotLibraryEntry = {
   libraryId: "modular-dashboard-grid-build",

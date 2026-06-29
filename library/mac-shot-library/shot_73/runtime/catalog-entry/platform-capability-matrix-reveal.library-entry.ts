@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot73AtomicMotionIds } from "../shot/shot73-atomic-motions";
+import { shot73AtomicMotionIds } from "../atomic/shot73-atomic-motions";
 
 export const platformCapabilityMatrixRevealLibraryEntry: ShotLibraryEntry = {
   libraryId: "platform-capability-matrix-reveal",

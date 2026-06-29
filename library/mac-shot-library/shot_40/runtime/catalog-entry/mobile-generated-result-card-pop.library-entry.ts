@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot40AtomicMotionIds } from "../shot_40/shot40-atomic-motions";
+import { shot40AtomicMotionIds } from "../atomic/shot40-atomic-motions";
 
 export const mobileGeneratedResultCardPopLibraryEntry: ShotLibraryEntry = {
   libraryId: "mobile-generated-result-card-pop",

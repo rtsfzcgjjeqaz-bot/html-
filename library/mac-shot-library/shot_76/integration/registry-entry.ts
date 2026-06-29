@@ -13,9 +13,9 @@ export const darkAssistantDeviceHeroRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_76_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_76/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_76/runtime/shot/shot76-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_76/runtime/shot/shot76-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_76/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_76/runtime/atomic/shot76-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_76/runtime/choreography/darkAssistantDeviceHero.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_76/runtime/catalog-entry/dark-assistant-device-hero.library-entry.ts",
   Component: Shot76DarkAssistantDeviceHeroChoreography,
 } as const;

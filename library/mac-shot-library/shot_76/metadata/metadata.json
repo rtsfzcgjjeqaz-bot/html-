@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_76",
+  "libraryId": "dark-assistant-device-hero",
+  "choreographyId": "darkAssistantDeviceHero",
+  "sceneType": "websiteHero",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-assistant-device-hero.library-entry.ts",
+  "sourceCatalogEntryHash": "5475d8ea9140607c51967fabc86500741d1c4fe38a64725d256b9bd0b9fa960d",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

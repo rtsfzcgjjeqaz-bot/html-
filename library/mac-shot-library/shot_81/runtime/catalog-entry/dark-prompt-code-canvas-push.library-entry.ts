@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot81AtomicMotionIds } from "../shot/shot81-atomic-motions";
+import { shot81AtomicMotionIds } from "../atomic/shot81-atomic-motions";
 
 export const darkPromptCodeCanvasPushLibraryEntry: ShotLibraryEntry = {
   libraryId: "dark-prompt-code-canvas-push",

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_40",
+  "libraryId": "mobile-generated-result-card-pop",
+  "choreographyId": "mobileGeneratedResultCardPop",
+  "sceneType": "aiRecommendation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/mobile-generated-result-card-pop.library-entry.ts",
+  "sourceCatalogEntryHash": "9ac084b94818910f1d25e8089ccf4c0d9d15dcca8ddc73e0d339884f82b95802",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

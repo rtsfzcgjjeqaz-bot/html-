@@ -1,0 +1,50 @@
+{
+  "shotId": "shot_74",
+  "displayName": "Clean Brand Final CTA",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/clean-brand-final-cta.library-entry.ts",
+  "sourceCatalogEntryHash": "b8d11ec90ee1276adbc1cedf3fd30d4c1737d5a13be5b6daebe49d65255a0af9",
+  "intents": [
+    "close_with_brand_or_call_to_action"
+  ],
+  "semanticTags": [
+    "finalcta",
+    "clean",
+    "brand",
+    "final",
+    "cta"
+  ],
+  "sceneRoles": [
+    "finalCTA"
+  ],
+  "supportedEvidenceTypes": [
+    "brand",
+    "url",
+    "cta_text"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    64,
+    64
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 34,
+    "supportingLines": 1,
+    "bodyMaxChars": 90,
+    "labelMaxChars": 20
+  },
+  "selectionPriority": 72,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/clean-brand-final-cta.library-entry.ts",
+  "runtimeExport": "cleanBrandFinalCtaLibraryEntry",
+  "choreographyEntry": "runtime/choreography/cleanBrandFinalCta.tsx",
+  "choreographyExport": "Shot74CleanBrandFinalCtaChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_74_DURATION_FRAMES"
+}

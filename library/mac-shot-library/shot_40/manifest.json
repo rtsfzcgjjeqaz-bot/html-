@@ -1,39 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_40",
+  "libraryId": "mobile-generated-result-card-pop",
   "choreographyId": "mobileGeneratedResultCardPop",
-  "purpose": "Mobile generated-result card pop for short AI response and recommendation follow-up moments.",
+  "displayName": "Mobile Generated Result Card Pop",
+  "purpose": "show_ai_assistance; reveal_recommendation_or_suggestion",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/mobileGeneratedResultCardPop.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/mobile-generated-result-card-pop.library-entry.ts",
-    "runtime/shot/shot40-atomic-motions.ts",
-    "runtime/shot/shot40-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/mobileGeneratedResultCardPop.tsx",
+    "runtime/atomic/shot40-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [],
-    "optional": [
-      "mediaDescriptor",
-      "resultLines",
-      "feedbackLabels",
-      "composerPlaceholder",
-      "accentColor"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-26",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "9ac084b94818910f1d25e8089ccf4c0d9d15dcca8ddc73e0d339884f82b95802",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_40"
+  "runtimeIntegrationStatus": "not_integrated"
 }

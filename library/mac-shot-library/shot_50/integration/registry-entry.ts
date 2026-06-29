@@ -13,9 +13,9 @@ export const modularDashboardGridBuildRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_50_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_50/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_50/runtime/shot/shot50-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_50/runtime/shot/shot50-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_50/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_50/runtime/atomic/shot50-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_50/runtime/choreography/modularDashboardGridBuild.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_50/runtime/catalog-entry/modular-dashboard-grid-build.library-entry.ts",
   Component: Shot50ModularDashboardGridBuildChoreography,
 } as const;

@@ -1,43 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_74",
+  "libraryId": "clean-brand-final-cta",
   "choreographyId": "cleanBrandFinalCta",
-  "purpose": "Minimal white brand final CTA for clean SaaS sign-offs, product closers, and campaign end cards.",
+  "displayName": "Clean Brand Final CTA",
+  "purpose": "close_with_brand_or_call_to_action",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/cleanBrandFinalCta.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/clean-brand-final-cta.library-entry.ts",
     "runtime/catalog-entry/types.ts",
-    "runtime/shot/shot74-atomic-motions.ts",
-    "runtime/shot/shot74-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/choreography/cleanBrandFinalCta.tsx",
+    "runtime/atomic/shot74-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "brandMark",
-      "ctaText"
-    ],
-    "optional": [
-      "logoDimensions",
-      "fontWeight",
-      "brandColorTreatment",
-      "holdDuration",
-      "backgroundColor"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-28",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "b8d11ec90ee1276adbc1cedf3fd30d4c1737d5a13be5b6daebe49d65255a0af9",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_74"
+  "runtimeIntegrationStatus": "not_integrated"
 }

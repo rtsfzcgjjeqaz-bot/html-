@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_50",
+  "displayName": "Modular Dashboard Grid Build",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/modular-dashboard-grid-build.library-entry.ts",
+  "sourceCatalogEntryHash": "616415e6ef0b9c4cfa2bc571371509687d8ffd2daf51b7b0a481dc0b42eeb9e9",
+  "intents": [
+    "show_multi_panel_product_state",
+    "summarize_capabilities"
+  ],
+  "semanticTags": [
+    "appgrid",
+    "modular",
+    "dashboard",
+    "grid",
+    "build"
+  ],
+  "sceneRoles": [
+    "appGrid"
+  ],
+  "supportedEvidenceTypes": [
+    "dashboard_panels",
+    "feature_list",
+    "app_screens"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    162,
+    162
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 1,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 22
+  },
+  "selectionPriority": 82,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/modular-dashboard-grid-build.library-entry.ts",
+  "runtimeExport": "modularDashboardGridBuildLibraryEntry",
+  "choreographyEntry": "runtime/choreography/modularDashboardGridBuild.tsx",
+  "choreographyExport": "Shot50ModularDashboardGridBuildChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_50_DURATION_FRAMES"
+}

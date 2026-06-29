@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_46",
+  "libraryId": "dark-product-engine-cover",
+  "choreographyId": "darkProductEngineCover",
+  "sceneType": "coverHook",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-product-engine-cover.library-entry.ts",
+  "sourceCatalogEntryHash": "ead260f440fd41f9e23afdc96e41d7e214ed5330de7f7c662f9b52a7503bcba3",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

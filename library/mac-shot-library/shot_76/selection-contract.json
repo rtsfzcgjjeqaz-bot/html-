@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_76",
+  "displayName": "Dark Assistant Device Hero",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-assistant-device-hero.library-entry.ts",
+  "sourceCatalogEntryHash": "5475d8ea9140607c51967fabc86500741d1c4fe38a64725d256b9bd0b9fa960d",
+  "intents": [
+    "introduce_product_hero",
+    "show_primary_interface"
+  ],
+  "semanticTags": [
+    "websitehero",
+    "dark",
+    "assistant",
+    "device",
+    "hero"
+  ],
+  "sceneRoles": [
+    "websiteHero"
+  ],
+  "supportedEvidenceTypes": [
+    "website_screenshot",
+    "product_surface",
+    "headline"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    85,
+    85
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 54,
+    "supportingLines": 2,
+    "bodyMaxChars": 120,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 88,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/dark-assistant-device-hero.library-entry.ts",
+  "runtimeExport": "darkAssistantDeviceHeroLibraryEntry",
+  "choreographyEntry": "runtime/choreography/darkAssistantDeviceHero.tsx",
+  "choreographyExport": "Shot76DarkAssistantDeviceHeroChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_76_DURATION_FRAMES"
+}

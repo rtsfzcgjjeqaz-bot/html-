@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot78AtomicMotionIds } from "../shot/shot78-atomic-motions";
+import { shot78AtomicMotionIds } from "../atomic/shot78-atomic-motions";
 
 export const documentSelectionAiToolbarLibraryEntry: ShotLibraryEntry = {
   libraryId: "document-selection-ai-toolbar",

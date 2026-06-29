@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_26",
+  "libraryId": "app-grid-tilted-dashboard-callout",
+  "choreographyId": "appGridTiltedDashboardCallout",
+  "sceneType": "appGrid",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/app-grid-tilted-dashboard-callout.library-entry.ts",
+  "sourceCatalogEntryHash": "2c8cec23f57bd65b1be4c98e01ace97fa8bb80571915198714292ae007438edf",
+  "sourceQaAvailable": false,
+  "sourceMetadataAvailable": false,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

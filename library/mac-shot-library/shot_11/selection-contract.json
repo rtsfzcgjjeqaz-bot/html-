@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_11",
+  "displayName": "Result Comparison Big Number Burst",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/result-comparison-big-number-burst.library-entry.ts",
+  "sourceCatalogEntryHash": "d0a31b4fbdf784d67fb04d2cbf3f227a9bd0b0ec301d703121e81a4934aba34b",
+  "intents": [
+    "compare_results",
+    "highlight_metric_or_outcome"
+  ],
+  "semanticTags": [
+    "resultcomparison",
+    "result",
+    "comparison",
+    "big",
+    "number",
+    "burst"
+  ],
+  "sceneRoles": [
+    "resultComparison"
+  ],
+  "supportedEvidenceTypes": [
+    "before_after",
+    "metrics",
+    "comparison_table"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    45,
+    45
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 40,
+    "supportingLines": 2,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 20
+  },
+  "selectionPriority": 80,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/result-comparison-big-number-burst.library-entry.ts",
+  "runtimeExport": "resultComparisonBigNumberBurstLibraryEntry",
+  "choreographyEntry": "runtime/choreography/resultComparisonBigNumberBurst.tsx",
+  "choreographyExport": "Shot11ResultComparisonChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_11_DURATION_FRAMES"
+}

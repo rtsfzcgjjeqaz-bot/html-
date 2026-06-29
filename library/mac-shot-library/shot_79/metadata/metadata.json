@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_79",
+  "libraryId": "ai-suggestion-card-from-selection",
+  "choreographyId": "aiSuggestionCardFromSelection",
+  "sceneType": "aiRecommendation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/ai-suggestion-card-from-selection.library-entry.ts",
+  "sourceCatalogEntryHash": "de7cc13e919a5a01ad93fcceff6ae3f7d5fc317c5e1d1ed1e93e73bd67e79d00",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

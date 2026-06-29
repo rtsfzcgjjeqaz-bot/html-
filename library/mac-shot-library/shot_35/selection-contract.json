@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_35",
+  "displayName": "Website Hero Angled Product Surface",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/website-hero-angled-product-surface.library-entry.ts",
+  "sourceCatalogEntryHash": "db81e4116c7e495115bd20c6ad44ddcac96a4ca4065d74509c39f3eb6ff2d782",
+  "intents": [
+    "introduce_product_hero",
+    "show_primary_interface"
+  ],
+  "semanticTags": [
+    "websitehero",
+    "website",
+    "hero",
+    "angled",
+    "product",
+    "surface"
+  ],
+  "sceneRoles": [
+    "websiteHero"
+  ],
+  "supportedEvidenceTypes": [
+    "website_screenshot",
+    "product_surface",
+    "headline"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    188,
+    188
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 54,
+    "supportingLines": 2,
+    "bodyMaxChars": 120,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 88,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/website-hero-angled-product-surface.library-entry.ts",
+  "runtimeExport": "websiteHeroAngledProductSurfaceLibraryEntry",
+  "choreographyEntry": "runtime/choreography/websiteHeroAngledProductSurface.tsx",
+  "choreographyExport": "Shot35WebsiteHeroAngledProductSurfaceChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_35_DURATION_FRAMES"
+}

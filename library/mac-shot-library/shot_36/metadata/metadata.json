@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_36",
+  "libraryId": "email-draft-generation-demo",
+  "choreographyId": "emailDraftGenerationDemo",
+  "sceneType": "searchDemo",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/email-draft-generation-demo.library-entry.ts",
+  "sourceCatalogEntryHash": "4f3698384c5680536520f331aa3485dc87b74886c235e505f7fd87dd73c13256",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

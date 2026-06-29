@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_64",
+  "displayName": "Big Number Investment Impact",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/big-number-investment-impact.library-entry.ts",
+  "sourceCatalogEntryHash": "cc870d907c8879bf9e3e269edc9471e18b805a96936dc3881e4c50f5332e7ae7",
+  "intents": [
+    "compare_results",
+    "highlight_metric_or_outcome"
+  ],
+  "semanticTags": [
+    "resultcomparison",
+    "big",
+    "number",
+    "investment",
+    "impact"
+  ],
+  "sceneRoles": [
+    "resultComparison"
+  ],
+  "supportedEvidenceTypes": [
+    "before_after",
+    "metrics",
+    "comparison_table"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    57,
+    57
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 40,
+    "supportingLines": 2,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 20
+  },
+  "selectionPriority": 80,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/big-number-investment-impact.library-entry.ts",
+  "runtimeExport": "bigNumberInvestmentImpactLibraryEntry",
+  "choreographyEntry": "runtime/choreography/bigNumberInvestmentImpact.tsx",
+  "choreographyExport": "Shot64BigNumberInvestmentImpactChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_64_DURATION_FRAMES"
+}

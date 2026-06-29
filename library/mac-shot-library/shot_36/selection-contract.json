@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_36",
+  "displayName": "Email Draft Generation Demo",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/email-draft-generation-demo.library-entry.ts",
+  "sourceCatalogEntryHash": "4f3698384c5680536520f331aa3485dc87b74886c235e505f7fd87dd73c13256",
+  "intents": [
+    "demonstrate_prompt_or_search_flow",
+    "show_user_input_to_result"
+  ],
+  "semanticTags": [
+    "searchdemo",
+    "email",
+    "draft",
+    "generation",
+    "demo"
+  ],
+  "sceneRoles": [
+    "searchDemo"
+  ],
+  "supportedEvidenceTypes": [
+    "prompt",
+    "search_query",
+    "input_text",
+    "result_preview"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    288,
+    288
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 1,
+    "bodyMaxChars": 180,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 84,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/email-draft-generation-demo.library-entry.ts",
+  "runtimeExport": "emailDraftGenerationDemoLibraryEntry",
+  "choreographyEntry": "runtime/choreography/emailDraftGenerationDemo.tsx",
+  "choreographyExport": "Shot36EmailDraftGenerationDemoChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_36_DURATION_FRAMES"
+}

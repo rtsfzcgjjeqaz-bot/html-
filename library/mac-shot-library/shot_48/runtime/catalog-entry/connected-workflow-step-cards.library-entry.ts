@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot48AtomicMotionIds } from "../shot_48/shot48-atomic-motions";
+import { shot48AtomicMotionIds } from "../atomic/shot48-atomic-motions";
 
 export const connectedWorkflowStepCardsLibraryEntry: ShotLibraryEntry = {
   libraryId: "connected-workflow-step-cards",

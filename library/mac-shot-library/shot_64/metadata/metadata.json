@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_64",
+  "libraryId": "big-number-investment-impact",
+  "choreographyId": "bigNumberInvestmentImpact",
+  "sceneType": "resultComparison",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/big-number-investment-impact.library-entry.ts",
+  "sourceCatalogEntryHash": "cc870d907c8879bf9e3e269edc9471e18b805a96936dc3881e4c50f5332e7ae7",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

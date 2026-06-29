@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_48",
+  "displayName": "Connected Workflow Step Cards",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/connected-workflow-step-cards.library-entry.ts",
+  "sourceCatalogEntryHash": "9774159e40e2e7b95cffe860fa81223564fd1b740e5681ef0268950cd6b120b2",
+  "intents": [
+    "explain_workflow_steps",
+    "show_process_progression"
+  ],
+  "semanticTags": [
+    "stepflow",
+    "connected",
+    "workflow",
+    "step",
+    "cards"
+  ],
+  "sceneRoles": [
+    "stepFlow"
+  ],
+  "supportedEvidenceTypes": [
+    "steps",
+    "workflow_nodes",
+    "timeline"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    162,
+    162
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 44,
+    "supportingLines": 3,
+    "bodyMaxChars": 180,
+    "labelMaxChars": 22
+  },
+  "selectionPriority": 78,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/connected-workflow-step-cards.library-entry.ts",
+  "runtimeExport": "connectedWorkflowStepCardsLibraryEntry",
+  "choreographyEntry": "runtime/choreography/connectedWorkflowStepCards.tsx",
+  "choreographyExport": "Shot48ConnectedWorkflowStepCardsChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_48_DURATION_FRAMES"
+}

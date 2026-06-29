@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_51",
+  "displayName": "Vehicle Timeline Metric Insight",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/vehicle-timeline-metric-insight.library-entry.ts",
+  "sourceCatalogEntryHash": "60a8962cafe53230935b0a01d7025ea90f8dc3d629fb19addc34cafaae9d717c",
+  "intents": [
+    "show_metric_insight",
+    "explain_price_or_value_signal"
+  ],
+  "semanticTags": [
+    "priceinsight",
+    "vehicle",
+    "timeline",
+    "metric",
+    "insight"
+  ],
+  "sceneRoles": [
+    "priceInsight"
+  ],
+  "supportedEvidenceTypes": [
+    "price",
+    "metric",
+    "chart",
+    "timeline"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    102,
+    102
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 38,
+    "supportingLines": 2,
+    "bodyMaxChars": 150,
+    "labelMaxChars": 20
+  },
+  "selectionPriority": 76,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/vehicle-timeline-metric-insight.library-entry.ts",
+  "runtimeExport": "vehicleTimelineMetricInsightLibraryEntry",
+  "choreographyEntry": "runtime/choreography/vehicleTimelineMetricInsight.tsx",
+  "choreographyExport": "Shot51VehicleTimelineMetricInsightChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_51_DURATION_FRAMES"
+}

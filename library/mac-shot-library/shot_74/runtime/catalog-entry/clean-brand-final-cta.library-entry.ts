@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot74AtomicMotionIds } from "../shot/shot74-atomic-motions";
+import { shot74AtomicMotionIds } from "../atomic/shot74-atomic-motions";
 
 export const cleanBrandFinalCtaLibraryEntry: ShotLibraryEntry = {
   libraryId: "clean-brand-final-cta",

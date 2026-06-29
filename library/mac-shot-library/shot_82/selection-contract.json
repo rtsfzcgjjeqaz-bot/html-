@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_82",
+  "displayName": "Code Preview Toggle Focus",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/code-preview-toggle-focus.library-entry.ts",
+  "sourceCatalogEntryHash": "080305494a59c2e4b843ce88da7de86150d6e66b42c32a06a11a977a7a9b2ebf",
+  "intents": [
+    "highlight_product_feature",
+    "show_focused_interaction"
+  ],
+  "semanticTags": [
+    "featurehighlight",
+    "code",
+    "preview",
+    "toggle",
+    "focus"
+  ],
+  "sceneRoles": [
+    "featureHighlight"
+  ],
+  "supportedEvidenceTypes": [
+    "feature_label",
+    "ui_state",
+    "supporting_copy"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    67,
+    67
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 44,
+    "supportingLines": 2,
+    "bodyMaxChars": 180,
+    "labelMaxChars": 22
+  },
+  "selectionPriority": 74,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/code-preview-toggle-focus.library-entry.ts",
+  "runtimeExport": "codePreviewToggleFocusLibraryEntry",
+  "choreographyEntry": "runtime/choreography/codePreviewToggleFocus.tsx",
+  "choreographyExport": "Shot82CodePreviewToggleFocusChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_82_DURATION_FRAMES"
+}

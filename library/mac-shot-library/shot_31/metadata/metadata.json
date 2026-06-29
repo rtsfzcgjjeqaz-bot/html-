@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_31",
+  "libraryId": "final-cta-brand-end-card",
+  "choreographyId": "finalCtaBrandEndCard",
+  "sceneType": "finalCTA",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/final-cta-brand-end-card.library-entry.ts",
+  "sourceCatalogEntryHash": "193c363b3de3d0de5759416827b68a3236c722e8ee2d0557bf204a0f122cc80e",
+  "sourceQaAvailable": false,
+  "sourceMetadataAvailable": false,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

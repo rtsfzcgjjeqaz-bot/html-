@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot55AtomicMotionIds } from "../shot_55/shot55-atomic-motions";
+import { shot55AtomicMotionIds } from "../atomic/shot55-atomic-motions";
 
 export const aiRequirementComposerLibraryEntry: ShotLibraryEntry = {
   libraryId: "ai-requirement-composer",

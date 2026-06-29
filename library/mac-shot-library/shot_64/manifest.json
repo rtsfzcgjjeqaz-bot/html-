@@ -1,42 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_64",
+  "libraryId": "big-number-investment-impact",
   "choreographyId": "bigNumberInvestmentImpact",
-  "purpose": "Dark numbered proof-point card stack for high-impact result comparison and investment/reason highlights.",
+  "displayName": "Big Number Investment Impact",
+  "purpose": "compare_results; highlight_metric_or_outcome",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/bigNumberInvestmentImpact.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/big-number-investment-impact.library-entry.ts",
-    "runtime/shot/shot64-atomic-motions.ts",
-    "runtime/shot/shot64-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/bigNumberInvestmentImpact.tsx",
+    "runtime/atomic/shot64-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "activeLabel",
-      "activeNumber",
-      "supportingCards"
-    ],
-    "optional": [
-      "cardImagery",
-      "accentGlowColor",
-      "cardCount",
-      "holdDuration"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-27",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "cc870d907c8879bf9e3e269edc9471e18b805a96936dc3881e4c50f5332e7ae7",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_64"
+  "runtimeIntegrationStatus": "not_integrated"
 }

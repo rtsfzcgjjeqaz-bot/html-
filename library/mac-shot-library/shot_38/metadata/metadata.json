@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_38",
+  "libraryId": "mobile-ai-brief-card-reveal",
+  "choreographyId": "mobileAiBriefCardReveal",
+  "sceneType": "aiRecommendation",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/mobile-ai-brief-card-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "3ec3fc578dd4d3f6ef0a11b52f89b4dcc8469278974f2ad97e05fb06f58dae7b",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

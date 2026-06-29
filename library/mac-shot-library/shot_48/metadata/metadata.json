@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_48",
+  "libraryId": "connected-workflow-step-cards",
+  "choreographyId": "connectedWorkflowStepCards",
+  "sceneType": "stepFlow",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/connected-workflow-step-cards.library-entry.ts",
+  "sourceCatalogEntryHash": "9774159e40e2e7b95cffe860fa81223564fd1b740e5681ef0268950cd6b120b2",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

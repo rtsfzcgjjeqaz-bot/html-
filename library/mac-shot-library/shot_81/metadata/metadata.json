@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_81",
+  "libraryId": "dark-prompt-code-canvas-push",
+  "choreographyId": "darkPromptCodeCanvasPush",
+  "sceneType": "searchDemo",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-prompt-code-canvas-push.library-entry.ts",
+  "sourceCatalogEntryHash": "1c5d47b38942e39f192d5dcbe97a16ba6486f89567fd37ba6827ab80589ed07d",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

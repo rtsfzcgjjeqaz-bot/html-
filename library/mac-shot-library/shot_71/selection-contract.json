@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_71",
+  "displayName": "Mobile Quality Governance Stack",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/mobile-quality-governance-stack.library-entry.ts",
+  "sourceCatalogEntryHash": "1538cdc7c564bef36d4ab40f751452fc9b904664e1c760b25aa52fa479de1973",
+  "intents": [
+    "show_ai_assistance",
+    "reveal_recommendation_or_suggestion"
+  ],
+  "semanticTags": [
+    "airecommendation",
+    "mobile",
+    "quality",
+    "governance",
+    "stack"
+  ],
+  "sceneRoles": [
+    "aiRecommendation"
+  ],
+  "supportedEvidenceTypes": [
+    "selected_text",
+    "recommendation_copy",
+    "assistant_response"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    213,
+    213
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 2,
+    "bodyMaxChars": 220,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 86,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/mobile-quality-governance-stack.library-entry.ts",
+  "runtimeExport": "mobileQualityGovernanceStackLibraryEntry",
+  "choreographyEntry": "runtime/choreography/mobileQualityGovernanceStack.tsx",
+  "choreographyExport": "Shot71MobileQualityGovernanceStackChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_71_DURATION_FRAMES"
+}

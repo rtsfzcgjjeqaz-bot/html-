@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_73",
+  "libraryId": "platform-capability-matrix-reveal",
+  "choreographyId": "platformCapabilityMatrixReveal",
+  "sceneType": "resultComparison",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/platform-capability-matrix-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "f303bd46c86eb05c80f5fa798208655c2255f7c32e4f4e2ba5ab2961541227b4",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

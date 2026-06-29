@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot51AtomicMotionIds } from "../shot_51/shot51-atomic-motions";
+import { shot51AtomicMotionIds } from "../atomic/shot51-atomic-motions";
 
 export const vehicleTimelineMetricInsightLibraryEntry: ShotLibraryEntry = {
   libraryId: "vehicle-timeline-metric-insight",

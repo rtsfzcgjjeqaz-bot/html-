@@ -1,46 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_76",
+  "libraryId": "dark-assistant-device-hero",
   "choreographyId": "darkAssistantDeviceHero",
-  "purpose": "Dark multi-device AI assistant website hero for SaaS landing pages, product openers, and assistant feature introductions.",
+  "displayName": "Dark Assistant Device Hero",
+  "purpose": "introduce_product_hero; show_primary_interface",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/darkAssistantDeviceHero.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/dark-assistant-device-hero.library-entry.ts",
     "runtime/catalog-entry/types.ts",
-    "runtime/shot/shot76-atomic-motions.ts",
-    "runtime/shot/shot76-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/choreography/darkAssistantDeviceHero.tsx",
+    "runtime/atomic/shot76-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "desktopPanelContent",
-      "phonePanelContent",
-      "heroGreeting",
-      "valueLine",
-      "ctaLabel"
-    ],
-    "optional": [
-      "accentColors",
-      "devicePanelSizes",
-      "ctaIcon",
-      "cameraPushIntensity",
-      "backgroundGlow"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "5475d8ea9140607c51967fabc86500741d1c4fe38a64725d256b9bd0b9fa960d",
   "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_76"
+  "runtimeIntegrationStatus": "not_integrated"
 }

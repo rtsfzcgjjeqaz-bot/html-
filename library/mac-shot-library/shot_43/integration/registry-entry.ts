@@ -1,7 +1,7 @@
 import {
   SHOT_43_DURATION_FRAMES,
   Shot43DarkCapabilityCardsBurstChoreography,
-} from "./runtime/choreography/darkCapabilityCardsBurst";
+} from "../runtime/choreography/darkCapabilityCardsBurst";
 
 export const darkCapabilityCardsBurstRegistryEntry = {
   id: "darkCapabilityCardsBurst",
@@ -13,9 +13,9 @@ export const darkCapabilityCardsBurstRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_43_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_43/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_43/runtime/shot/shot43-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_43/runtime/shot/shot43-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_43/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_43/runtime/atomic/shot43-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_43/runtime/choreography/darkCapabilityCardsBurst.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_43/runtime/catalog-entry/dark-capability-cards-burst.library-entry.ts",
   Component: Shot43DarkCapabilityCardsBurstChoreography,
 } as const;

@@ -13,9 +13,9 @@ export const connectedWorkflowStepCardsRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_48_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_48/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_48/runtime/shot/shot48-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_48/runtime/shot/shot48-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_48/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_48/runtime/atomic/shot48-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_48/runtime/choreography/connectedWorkflowStepCards.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_48/runtime/catalog-entry/connected-workflow-step-cards.library-entry.ts",
   Component: Shot48ConnectedWorkflowStepCardsChoreography,
 } as const;

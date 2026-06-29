@@ -13,9 +13,9 @@ export const bigNumberInvestmentImpactRegistryEntry = {
   approved: true,
   allowedInFactory: true,
   durationInFrames: SHOT_64_DURATION_FRAMES,
-  actionBreakdownPath: "library/mac-shot-library/shot_64/analysis/action-breakdown.md",
-  atomicMotionsPath: "library/mac-shot-library/shot_64/runtime/shot/shot64-atomic-motions.ts",
-  choreographyPath: "library/mac-shot-library/shot_64/runtime/shot/shot64-choreography.tsx",
+  actionBreakdownPath: "library/mac-shot-library/shot_64/docs/action-breakdown.md",
+  atomicMotionsPath: "library/mac-shot-library/shot_64/runtime/atomic/shot64-atomic-motions.ts",
+  choreographyPath: "library/mac-shot-library/shot_64/runtime/choreography/bigNumberInvestmentImpact.tsx",
   catalogEntryPath: "library/mac-shot-library/shot_64/runtime/catalog-entry/big-number-investment-impact.library-entry.ts",
   Component: Shot64BigNumberInvestmentImpactChoreography,
 } as const;

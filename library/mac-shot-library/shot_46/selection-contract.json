@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_46",
+  "displayName": "Dark Product Engine Cover",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-product-engine-cover.library-entry.ts",
+  "sourceCatalogEntryHash": "ead260f440fd41f9e23afdc96e41d7e214ed5330de7f7c662f9b52a7503bcba3",
+  "intents": [
+    "open_video",
+    "establish_brand_or_product_hook"
+  ],
+  "semanticTags": [
+    "coverhook",
+    "dark",
+    "product",
+    "engine",
+    "cover"
+  ],
+  "sceneRoles": [
+    "coverHook"
+  ],
+  "supportedEvidenceTypes": [
+    "brand",
+    "headline",
+    "product_name"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    67,
+    67
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 36,
+    "supportingLines": 1,
+    "bodyMaxChars": 0,
+    "labelMaxChars": 18
+  },
+  "selectionPriority": 90,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/dark-product-engine-cover.library-entry.ts",
+  "runtimeExport": "darkProductEngineCoverLibraryEntry",
+  "choreographyEntry": "runtime/choreography/darkProductEngineCover.tsx",
+  "choreographyExport": "Shot46DarkProductEngineCoverChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_46_DURATION_FRAMES"
+}

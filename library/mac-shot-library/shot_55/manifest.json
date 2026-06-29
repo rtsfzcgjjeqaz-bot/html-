@@ -1,44 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_55",
+  "libraryId": "ai-requirement-composer",
   "choreographyId": "aiRequirementComposer",
-  "purpose": "AI prompt-to-generated-workspace demo for requirement extraction, field generation, and summarization scenes.",
+  "displayName": "AI Requirement Composer",
+  "purpose": "demonstrate_prompt_or_search_flow; show_user_input_to_result",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/aiRequirementComposer.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/ai-requirement-composer.library-entry.ts",
-    "runtime/shot/shot55-atomic-motions.ts",
-    "runtime/shot/shot55-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/aiRequirementComposer.tsx",
+    "runtime/atomic/shot55-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "aiLabel",
-      "promptText",
-      "generationStatus",
-      "generatedRows"
-    ],
-    "optional": [
-      "featureTitle",
-      "typingSpeed",
-      "workspaceLabels",
-      "summaryLines",
-      "accentColor"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-27",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "346979b664a7c474053ac706d26adf45fb4d37bff0cb903963b15c9a4f69b110",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_55"
+  "runtimeIntegrationStatus": "not_integrated"
 }

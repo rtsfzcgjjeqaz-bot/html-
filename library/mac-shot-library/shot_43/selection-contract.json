@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_43",
+  "displayName": "Dark Capability Cards Burst",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/dark-capability-cards-burst.library-entry.ts",
+  "sourceCatalogEntryHash": "d9a9bf4cac8d952ba69a1ec668159f125ed64e51bf11674221b356e614a5a43d",
+  "intents": [
+    "compare_results",
+    "highlight_metric_or_outcome"
+  ],
+  "semanticTags": [
+    "resultcomparison",
+    "dark",
+    "capability",
+    "cards",
+    "burst"
+  ],
+  "sceneRoles": [
+    "resultComparison"
+  ],
+  "supportedEvidenceTypes": [
+    "before_after",
+    "metrics",
+    "comparison_table"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    171,
+    171
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 40,
+    "supportingLines": 2,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 20
+  },
+  "selectionPriority": 80,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/dark-capability-cards-burst.library-entry.ts",
+  "runtimeExport": "darkCapabilityCardsBurstLibraryEntry",
+  "choreographyEntry": "runtime/choreography/darkCapabilityCardsBurst.tsx",
+  "choreographyExport": "Shot43DarkCapabilityCardsBurstChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_43_DURATION_FRAMES"
+}

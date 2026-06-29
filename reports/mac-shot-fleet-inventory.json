@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "exportName": "Mac Approved Shot Fleet Export v1",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "generatedAt": "2026-06-29",
+  "discoveredShotIds": [
+    "shot_08",
+    "shot_11",
+    "shot_24",
+    "shot_26",
+    "shot_28",
+    "shot_31",
+    "shot_32",
+    "shot_35",
+    "shot_36",
+    "shot_38",
+    "shot_39",
+    "shot_40",
+    "shot_43",
+    "shot_44",
+    "shot_45",
+    "shot_46",
+    "shot_48",
+    "shot_50",
+    "shot_51",
+    "shot_55",
+    "shot_64",
+    "shot_65",
+    "shot_66",
+    "shot_68",
+    "shot_71",
+    "shot_73",
+    "shot_74",
+    "shot_75",
+    "shot_76",
+    "shot_78",
+    "shot_79",
+    "shot_81",
+    "shot_82",
+    "shot_83"
+  ],
+  "approvedShotIds": [
+    "shot_08",
+    "shot_11",
+    "shot_24",
+    "shot_26",
+    "shot_28",
+    "shot_31",
+    "shot_35",
+    "shot_36",
+    "shot_38",
+    "shot_39",
+    "shot_40",
+    "shot_43",
+    "shot_44",
+    "shot_46",
+    "shot_48",
+    "shot_50",
+    "shot_51",
+    "shot_55",
+    "shot_64",
+    "shot_71",
+    "shot_73",
+    "shot_74",
+    "shot_76",
+    "shot_78",
+    "shot_79",
+    "shot_81",
+    "shot_82"
+  ],
+  "rejectedShotIds": [],
+  "needsManualApprovalShotIds": [
+    "shot_32",
+    "shot_45",
+    "shot_65",
+    "shot_66",
+    "shot_68",
+    "shot_75",
+    "shot_83"
+  ],
+  "missingRuntimeShotIds": [],
+  "missingQaShotIds": [
+    "shot_08",
+    "shot_11",
+    "shot_24",
+    "shot_26",
+    "shot_28",
+    "shot_31"
+  ],
+  "perShot": [
+    {
+      "shotId": "shot_08",
+      "sourceCatalogEntry": "src/motion/catalog/ai-recommendation-cursor-panel-reveal.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": false,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_11",
+      "sourceCatalogEntry": "src/motion/catalog/result-comparison-big-number-burst.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": false,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_24",
+      "sourceCatalogEntry": "src/motion/catalog/step-flow-product-module-fanout.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": false,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_26",
+      "sourceCatalogEntry": "src/motion/catalog/app-grid-tilted-dashboard-callout.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": false,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_28",
+      "sourceCatalogEntry": "src/motion/catalog/step-flow-timeline-calculation.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": false,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_31",
+      "sourceCatalogEntry": "src/motion/catalog/final-cta-brand-end-card.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": false,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_32",
+      "sourceCatalogEntry": "src/motion/catalog/cover-hook-keyword-highlight.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_35",
+      "sourceCatalogEntry": "src/motion/catalog/website-hero-angled-product-surface.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_36",
+      "sourceCatalogEntry": "src/motion/catalog/email-draft-generation-demo.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_38",
+      "sourceCatalogEntry": "src/motion/catalog/mobile-ai-brief-card-reveal.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_39",
+      "sourceCatalogEntry": "src/motion/catalog/mobile-prompt-composer-flow.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_40",
+      "sourceCatalogEntry": "src/motion/catalog/mobile-generated-result-card-pop.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_43",
+      "sourceCatalogEntry": "src/motion/catalog/dark-capability-cards-burst.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_44",
+      "sourceCatalogEntry": "src/motion/catalog/dual-device-feature-stage.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_45",
+      "sourceCatalogEntry": "src/motion/catalog/dark-brand-final-cta-end-card.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_46",
+      "sourceCatalogEntry": "src/motion/catalog/dark-product-engine-cover.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_48",
+      "sourceCatalogEntry": "src/motion/catalog/connected-workflow-step-cards.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_50",
+      "sourceCatalogEntry": "src/motion/catalog/modular-dashboard-grid-build.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_51",
+      "sourceCatalogEntry": "src/motion/catalog/vehicle-timeline-metric-insight.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_55",
+      "sourceCatalogEntry": "src/motion/catalog/ai-requirement-composer.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_64",
+      "sourceCatalogEntry": "src/motion/catalog/big-number-investment-impact.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_65",
+      "sourceCatalogEntry": "src/motion/catalog/dark-vehicle-project-engine-timeline.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_66",
+      "sourceCatalogEntry": "src/motion/catalog/dark-vehicle-solution-hero.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_68",
+      "sourceCatalogEntry": "src/motion/catalog/dark-table-action-chip-automation.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_71",
+      "sourceCatalogEntry": "src/motion/catalog/mobile-quality-governance-stack.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_73",
+      "sourceCatalogEntry": "src/motion/catalog/platform-capability-matrix-reveal.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_74",
+      "sourceCatalogEntry": "src/motion/catalog/clean-brand-final-cta.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_75",
+      "sourceCatalogEntry": "src/motion/catalog/dark-ai-brand-mark-open.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_76",
+      "sourceCatalogEntry": "src/motion/catalog/dark-assistant-device-hero.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_78",
+      "sourceCatalogEntry": "src/motion/catalog/document-selection-ai-toolbar.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_79",
+      "sourceCatalogEntry": "src/motion/catalog/ai-suggestion-card-from-selection.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_81",
+      "sourceCatalogEntry": "src/motion/catalog/dark-prompt-code-canvas-push.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_82",
+      "sourceCatalogEntry": "src/motion/catalog/code-preview-toggle-focus.library-entry.ts",
+      "approved": true,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    },
+    {
+      "shotId": "shot_83",
+      "sourceCatalogEntry": "src/motion/catalog/knowledge-element-card-fanout.library-entry.ts",
+      "approved": false,
+      "hasQaOrMetadata": true,
+      "runtimeFilesPresent": true,
+      "failureCodes": []
+    }
+  ]
+}

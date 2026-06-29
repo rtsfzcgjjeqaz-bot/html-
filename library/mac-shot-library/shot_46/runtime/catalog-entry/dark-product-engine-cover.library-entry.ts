@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot46AtomicMotionIds } from "../shot_46/shot46-atomic-motions";
+import { shot46AtomicMotionIds } from "../atomic/shot46-atomic-motions";
 
 export const darkProductEngineCoverLibraryEntry: ShotLibraryEntry = {
   libraryId: "dark-product-engine-cover",

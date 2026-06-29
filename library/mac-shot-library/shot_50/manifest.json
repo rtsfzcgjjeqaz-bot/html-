@@ -1,45 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_50",
+  "libraryId": "modular-dashboard-grid-build",
   "choreographyId": "modularDashboardGridBuild",
-  "purpose": "Bright modular dashboard grid reveal for SaaS app-builder, analytics, and productivity product videos.",
+  "displayName": "Modular Dashboard Grid Build",
+  "purpose": "show_multi_panel_product_state; summarize_capabilities",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/modularDashboardGridBuild.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/modular-dashboard-grid-build.library-entry.ts",
-    "runtime/shot/shot50-atomic-motions.ts",
-    "runtime/shot/shot50-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/modularDashboardGridBuild.tsx",
+    "runtime/atomic/shot50-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [
-      "headline",
-      "dashboardModules",
-      "metrics",
-      "heatmapCells"
-    ],
-    "optional": [
-      "browserTitle",
-      "sidebarLabels",
-      "gaugeValue",
-      "moduleCards",
-      "accentColors",
-      "cameraPush"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-26",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "616415e6ef0b9c4cfa2bc571371509687d8ffd2daf51b7b0a481dc0b42eeb9e9",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_50"
+  "runtimeIntegrationStatus": "not_integrated"
 }

@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_08",
+  "displayName": "AI Recommendation Cursor Panel Reveal",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/ai-recommendation-cursor-panel-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "ad99fe639c12c2964a8f2ab5894ec9f3c6f81b48dfd8efb2692271fd5f0e0bef",
+  "intents": [
+    "show_ai_assistance",
+    "reveal_recommendation_or_suggestion"
+  ],
+  "semanticTags": [
+    "airecommendation",
+    "ai",
+    "recommendation",
+    "cursor",
+    "panel",
+    "reveal"
+  ],
+  "sceneRoles": [
+    "aiRecommendation"
+  ],
+  "supportedEvidenceTypes": [
+    "selected_text",
+    "recommendation_copy",
+    "assistant_response"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    140,
+    140
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "supportingLines": 2,
+    "bodyMaxChars": 220,
+    "labelMaxChars": 24
+  },
+  "selectionPriority": 86,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/ai-recommendation-cursor-panel-reveal.library-entry.ts",
+  "runtimeExport": "aiRecommendationCursorPanelRevealLibraryEntry",
+  "choreographyEntry": "runtime/choreography/aiRecommendationCursorPanelReveal.tsx",
+  "choreographyExport": "Shot08AIRecommendationChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_08_DURATION_FRAMES"
+}

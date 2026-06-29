@@ -8,8 +8,8 @@ Each Shot still requires Windows-side review and adaptation before it can enter 
 
 ## Workflow
 
-1. Develop queued Shots locally in `/Users/mac/Desktop/jewelry-video/src/motion/`.
-2. Keep raw reference files local under `/Users/mac/Desktop/jewelry-video/references/incoming/`.
+1. Develop queued Shots locally in the Mac source motion project.
+2. Keep raw reference files local in the Mac source reference intake folder.
 3. Keep previews, keyframes, contact sheets, and render artifacts local under `outputs/`.
 4. Publish a Shot here only after the user explicitly sends `APPROVE SHOT_<ID>`.
 5. Published Shots default to:

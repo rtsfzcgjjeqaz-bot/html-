@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot82AtomicMotionIds } from "../shot/shot82-atomic-motions";
+import { shot82AtomicMotionIds } from "../atomic/shot82-atomic-motions";
 
 export const codePreviewToggleFocusLibraryEntry: ShotLibraryEntry = {
   libraryId: "code-preview-toggle-focus",

@@ -1,40 +1,35 @@
 {
+  "schemaVersion": 2,
   "shotId": "shot_36",
+  "libraryId": "email-draft-generation-demo",
   "choreographyId": "emailDraftGenerationDemo",
-  "purpose": "Search and AI email draft generation demo for product walkthroughs.",
+  "displayName": "Email Draft Generation Demo",
+  "purpose": "demonstrate_prompt_or_search_flow; show_user_input_to_result",
   "status": "github_published",
+  "selectionAllowed": true,
   "requiredFiles": [
-    "runtime/choreography/emailDraftGenerationDemo.tsx",
+    "selection-contract.json",
     "runtime/catalog-entry/email-draft-generation-demo.library-entry.ts",
-    "runtime/shot/shot36-atomic-motions.ts",
-    "runtime/shot/shot36-choreography.tsx",
-    "integration/registry-entry.ts"
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/emailDraftGenerationDemo.tsx",
+    "runtime/atomic/shot36-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
   ],
+  "requiredAssets": [],
   "requiredPresets": [],
-  "requiredTokens": [],
-  "requiredProps": {
-    "required": [],
-    "optional": [
-      "promptText",
-      "workspaceTitle",
-      "draftTitle",
-      "rows",
-      "assistantLabel",
-      "accentColor"
-    ]
-  },
   "verificationStatus": {
-    "typescript": "passed",
-    "registryResolve": "passed",
-    "catalogLookup": "passed",
-    "localPreview": "passed",
-    "keyframeReview": "passed",
-    "lint": "skipped_no_lint_script"
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
   },
-  "localPreviewApproved": true,
-  "sourceProject": "/Users/mac/Desktop/jewelry-video",
-  "publishedAt": "2026-06-26",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntryHash": "4f3698384c5680536520f331aa3485dc87b74886c235e505f7fd87dd73c13256",
+  "publishedAt": "2026-06-29",
   "windowsReviewStatus": "pending",
-  "runtimeIntegrationStatus": "not_integrated",
-  "latestPackagePath": "library/mac-shot-library/shot_36"
+  "runtimeIntegrationStatus": "not_integrated"
 }

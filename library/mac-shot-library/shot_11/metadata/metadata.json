@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_11",
+  "libraryId": "result-comparison-big-number-burst",
+  "choreographyId": "resultComparisonBigNumberBurst",
+  "sceneType": "resultComparison",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/result-comparison-big-number-burst.library-entry.ts",
+  "sourceCatalogEntryHash": "d0a31b4fbdf784d67fb04d2cbf3f227a9bd0b0ec301d703121e81a4934aba34b",
+  "sourceQaAvailable": false,
+  "sourceMetadataAvailable": false,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

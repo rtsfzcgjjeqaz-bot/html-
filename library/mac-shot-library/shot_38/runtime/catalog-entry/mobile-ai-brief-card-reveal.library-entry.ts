@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot38AtomicMotionIds } from "../shot_38/shot38-atomic-motions";
+import { shot38AtomicMotionIds } from "../atomic/shot38-atomic-motions";
 
 export const mobileAiBriefCardRevealLibraryEntry: ShotLibraryEntry = {
   libraryId: "mobile-ai-brief-card-reveal",

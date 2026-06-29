@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot44AtomicMotionIds } from "../shot_44/shot44-atomic-motions";
+import { shot44AtomicMotionIds } from "../atomic/shot44-atomic-motions";
 
 export const dualDeviceFeatureStageLibraryEntry: ShotLibraryEntry = {
   libraryId: "dual-device-feature-stage",

@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot43AtomicMotionIds } from "../shot_43/shot43-atomic-motions";
+import { shot43AtomicMotionIds } from "../atomic/shot43-atomic-motions";
 
 export const darkCapabilityCardsBurstLibraryEntry: ShotLibraryEntry = {
   libraryId: "dark-capability-cards-burst",

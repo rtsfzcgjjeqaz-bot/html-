@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_82",
+  "libraryId": "code-preview-toggle-focus",
+  "choreographyId": "codePreviewToggleFocus",
+  "sceneType": "featureHighlight",
+  "sourceEnvironment": "mac-approved-shot-fleet-export-v1",
+  "sourceCatalogEntry": "src/motion/catalog/code-preview-toggle-focus.library-entry.ts",
+  "sourceCatalogEntryHash": "080305494a59c2e4b843ce88da7de86150d6e66b42c32a06a11a977a7a9b2ebf",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-29"
+}

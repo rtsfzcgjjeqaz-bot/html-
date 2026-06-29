@@ -1,5 +1,5 @@
 import type { ShotLibraryEntry } from "./types";
-import { shot36AtomicMotionIds } from "../shot_36/shot36-atomic-motions";
+import { shot36AtomicMotionIds } from "../atomic/shot36-atomic-motions";
 
 export const emailDraftGenerationDemoLibraryEntry: ShotLibraryEntry = {
   libraryId: "email-draft-generation-demo",
