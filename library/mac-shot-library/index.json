@@ -341,6 +341,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_88/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_89",
+      "choreographyId": "paymentPromptToFormReveal",
+      "displayName": "Payment Prompt To Form Reveal",
+      "sceneType": "searchDemo",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_89",
+      "selectionContractPath": "library/mac-shot-library/shot_89/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

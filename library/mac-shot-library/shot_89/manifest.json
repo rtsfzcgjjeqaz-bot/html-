@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_89",
+  "libraryId": "payment-prompt-to-form-reveal",
+  "choreographyId": "paymentPromptToFormReveal",
+  "sceneType": "searchDemo",
+  "displayName": "Payment Prompt To Form Reveal",
+  "purpose": "search_demo; show_prompt_to_structured_form",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/payment-prompt-to-form-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/paymentPromptToFormReveal.tsx",
+    "runtime/atomic/shot89-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "promptCopy",
+    "submitLabel",
+    "resultRows",
+    "supportingCopy"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "994e412cc67a8f56c0fd12c6c73d09ea08eaae22c43172117d4c05aca998761c",
+  "publishedAt": "2026-06-30",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

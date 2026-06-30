@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_89",
+  "libraryId": "payment-prompt-to-form-reveal",
+  "choreographyId": "paymentPromptToFormReveal",
+  "sceneType": "searchDemo",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/payment-prompt-to-form-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "994e412cc67a8f56c0fd12c6c73d09ea08eaae22c43172117d4c05aca998761c",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-30"
+}

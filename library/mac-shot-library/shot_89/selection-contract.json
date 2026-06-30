@@ -1,0 +1,54 @@
+{
+  "shotId": "shot_89",
+  "displayName": "Payment Prompt To Form Reveal",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/payment-prompt-to-form-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "994e412cc67a8f56c0fd12c6c73d09ea08eaae22c43172117d4c05aca998761c",
+  "intents": [
+    "show_ai_prompt_to_structured_record",
+    "demonstrate_search_prompt_flow"
+  ],
+  "semanticTags": [
+    "searchdemo",
+    "ai",
+    "prompt",
+    "payment",
+    "form-reveal"
+  ],
+  "sceneRoles": [
+    "searchDemo"
+  ],
+  "supportedEvidenceTypes": [
+    "prompt_copy",
+    "generated_form",
+    "action_label",
+    "supporting_copy"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    54,
+    54
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 0,
+    "supportingLines": 1,
+    "bodyMaxChars": 120,
+    "labelMaxChars": 28,
+    "promptMaxChars": 44,
+    "tableRows": 2
+  },
+  "selectionPriority": 80,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/payment-prompt-to-form-reveal.library-entry.ts",
+  "runtimeExport": "paymentPromptToFormRevealLibraryEntry",
+  "choreographyEntry": "runtime/choreography/paymentPromptToFormReveal.tsx",
+  "choreographyExport": "Shot89PaymentPromptToFormRevealChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_89_DURATION_FRAMES"
+}
