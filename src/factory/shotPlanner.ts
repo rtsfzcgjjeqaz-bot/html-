@@ -176,8 +176,10 @@ export function planRuntimeShotsForArticle(
   policyPlan: ArticlePolicyPlan,
   brief: ArticleContentBrief,
   _spec: ArticleVideoSpec,
+  options: { runtimeSelectionPlan?: ShotSelectionPlan } = {},
 ): ShotSelectionPlan {
   void _spec;
+  if (options.runtimeSelectionPlan) return options.runtimeSelectionPlan;
   return selectShotsForScenes(policyPlan.scenes.map((scene) => articleSelectionInputForScene(scene, brief)), undefined, { contracts: listUnifiedShotSelectionContracts() });
 }
 

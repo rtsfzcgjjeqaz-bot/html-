@@ -16,7 +16,7 @@ import { runPreviewRenderGate } from "./previewRenderGate";
 import { runPreviewQaGate } from "./previewQaGate";
 import { buildPreviewRepairPlan } from "./previewRepairRouter";
 import { runMediaToolchainPreflight } from "./mediaToolchainPreflight";
-import { createPreviewApprovedCheckpoint, createVisibleCopyApprovedCheckpointFromLatest, loadAndValidateCheckpoint, loadCheckpointArtifacts, validatePreviewApprovedCheckpoint } from "./checkpointManager";
+import { createPreviewApprovedCheckpoint, createVisibleCopyApprovedCheckpointFromLatest, loadAndValidateCheckpoint, loadCheckpointArtifacts, loadRuntimeSelectionPlanArtifact, validatePreviewApprovedCheckpoint } from "./checkpointManager";
 import { runFinalRenderGate } from "./finalRenderGate";
 import { runOutputQaGate } from "./outputQaGate";
 import { runFinalDeliveryGate } from "./finalDeliveryGate";
@@ -26,6 +26,7 @@ import { buildArticleVideoJob } from "../buildArticleVideoJob";
 import { normalizeApiArticleToInput } from "../normalizeApiArticleToInput";
 import { normalizeArticleToContentBrief } from "../normalizeArticleToContentBrief";
 import type { ApiArticleRecord, ArticleContentBrief, ArticleInput, EvidenceItem } from "../types";
+import { ensureMacShotRuntimeForBatch, requiredMacRuntimeSource, summarizeRuntimePinning, validatePinnedRuntimeSelectionPlan, type MacRuntimePinningSnapshot } from "./macRuntimeCheckpointPinning";
 
 type CliArgs = { inputJsonDir?: string; output?: string; stopAfter?: ArticleBatchStage; resumeFromCheckpoint?: string };
 
@@ -142,6 +143,30 @@ function stage(stage: ArticleBatchStage, status: ArticleBatchStageStatus, summar
 function stopReached(current: ArticleBatchStage, stopAfter?: ArticleBatchStage) {
   if (!stopAfter) return false;
   return articleBatchQualityPolicy.stageOrder.indexOf(current) >= articleBatchQualityPolicy.stageOrder.indexOf(stopAfter);
+}
+
+
+function applyMacRuntimePinning(jobState: ArticleBatchJobState, pinning: ReturnType<typeof summarizeRuntimePinning>) {
+  jobState.runtimePinningStatus = pinning.runtimePinningStatus;
+  jobState.runtimeSelectionPlanHash = pinning.runtimeSelectionPlanHash;
+  jobState.canonicalRuntimeSelectionPlanHash = pinning.canonicalRuntimeSelectionPlanHash;
+  if (pinning.macShotRuntimeStatus) jobState.macShotRuntimeStatus = pinning.macShotRuntimeStatus;
+  if (pinning.macShotSourceBranch) jobState.macShotSourceBranch = pinning.macShotSourceBranch;
+  if (pinning.macShotSourceCommit) jobState.macShotSourceCommit = pinning.macShotSourceCommit;
+  if (pinning.macShotRuntimeCatalogVersion) jobState.macShotRuntimeCatalogVersion = pinning.macShotRuntimeCatalogVersion;
+  if (pinning.generatedRuntimeRegistryHash) jobState.generatedRuntimeRegistryHash = pinning.generatedRuntimeRegistryHash;
+}
+
+function applyMacRuntimeSnapshot(jobState: ArticleBatchJobState, snapshot: MacRuntimePinningSnapshot) {
+  jobState.macShotRuntimeStatus = snapshot.macShotRuntimeStatus;
+  jobState.macShotSourceSyncStatus = "passed";
+  jobState.macShotSourceBranch = snapshot.macShotSourceBranch;
+  jobState.macShotSourceCommit = snapshot.macShotSourceCommit;
+  jobState.macShotPackagesDiscovered = snapshot.macShotPackagesDiscovered;
+  jobState.macShotPackagesValidated = snapshot.macShotPackagesValidated;
+  jobState.macShotPackagesRejected = snapshot.macShotPackagesRejected;
+  jobState.macShotRuntimeCatalogVersion = snapshot.macShotRuntimeCatalogVersion;
+  jobState.generatedRuntimeRegistryHash = snapshot.generatedRuntimeRegistryHash;
 }
 
 function buildInitialJobState(input: {
@@ -605,6 +630,33 @@ async function runResumeFromCheckpoint(input: { outputDir: string; checkpointId:
     return;
   }
 
+  const pinnedRuntimeSelectionPlan = loadRuntimeSelectionPlanArtifact(input.outputDir, checkpoint.manifest);
+  let resumeMacRuntimeSnapshot: MacRuntimePinningSnapshot | undefined;
+  try {
+    if (pinnedRuntimeSelectionPlan) {
+      const requiredRuntime = requiredMacRuntimeSource(pinnedRuntimeSelectionPlan);
+      if (requiredRuntime.requiredSourceCommit) {
+        resumeMacRuntimeSnapshot = ensureMacShotRuntimeForBatch(requiredRuntime);
+        validatePinnedRuntimeSelectionPlan(pinnedRuntimeSelectionPlan, resumeMacRuntimeSnapshot);
+      }
+    }
+  } catch (error) {
+    const blockedReason = error instanceof Error ? error.name : "MAC_SHOT_CHECKPOINT_RUNTIME_IDENTITY_MISMATCH";
+    writeJson(path.join(input.outputDir, "batch-dry-run-summary.json"), {
+      status: "blocked",
+      currentStage: "VISIBLE_COPY_AND_VISUAL_PLAN",
+      checkpointResume: true,
+      checkpointId: input.checkpointId,
+      blocked: true,
+      blockedReason,
+      failureCode: blockedReason,
+    });
+    console.log(`checkpointId=${input.checkpointId}`);
+    console.log("blocked=true");
+    console.log(`blockedReason=${blockedReason}`);
+    return;
+  }
+
   const { article, brief, scriptPlan } = loadCheckpointArtifacts(input.outputDir, checkpoint.manifest);
   const attemptId = `resume_${new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14)}`;
   const jobState: ArticleBatchJobState = {
@@ -628,6 +680,9 @@ async function runResumeFromCheckpoint(input: { outputDir: string; checkpointId:
     visibleCopyRepairAttemptCount: 0,
     finalDeliveryEligible: false,
   };
+  if (pinnedRuntimeSelectionPlan) {
+    applyMacRuntimePinning(jobState, summarizeRuntimePinning(pinnedRuntimeSelectionPlan, resumeMacRuntimeSnapshot));
+  }
 
   jobState.stageHistory.push(stage("PREVIEW_RENDER", "running", "Rendering article preview from checkpoint.", attemptId));
   const previewRender = await runPreviewRenderGate({
@@ -639,6 +694,7 @@ async function runResumeFromCheckpoint(input: { outputDir: string; checkpointId:
     sourceSnapshotId: checkpoint.manifest.sourceAttemptIds.sourceSnapshotId,
     scriptAttemptId: checkpoint.manifest.sourceAttemptIds.scriptAttemptId,
     visibleCopyAttemptId: checkpoint.manifest.sourceAttemptIds.visibleCopyAttemptId,
+    pinnedRuntimeSelectionPlan,
   });
   const previewAttemptHistory = [path.join(input.outputDir, "preview-attempts", previewRender.manifest.attemptId, "preview-attempt.json")];
   jobState.attemptCounts.previewRender = 1;
@@ -808,6 +864,12 @@ async function runResumeFromCheckpoint(input: { outputDir: string; checkpointId:
     repairRoute: jobState.repairRoute,
     blocked: jobState.finalStatus === "blocked",
     blockedReason: jobState.blockedReason,
+    failureCode: jobState.failureCode,
+    macShotRuntimeStatus: jobState.macShotRuntimeStatus,
+    runtimePinningStatus: jobState.runtimePinningStatus,
+    runtimeSelectionPlanHash: jobState.runtimeSelectionPlanHash,
+    canonicalRuntimeSelectionPlanHash: jobState.canonicalRuntimeSelectionPlanHash,
+    generatedRuntimeRegistryHash: jobState.generatedRuntimeRegistryHash,
     paths: {
       checkpointManifest: path.join("checkpoints", "checkpoint-manifest.json"),
       mediaToolchainPreflight: "media-toolchain-preflight.json",
@@ -872,6 +934,38 @@ async function run() {
   const { article, evidence } = bundle;
   const jobId = safeJobId(article);
   const jobState = buildInitialJobState({ jobId, articleSlug: article.metadata.slug ?? article.articleId, sourceSnapshotId, sourceContentHash: hash });
+  let initialMacRuntimeSnapshot: MacRuntimePinningSnapshot;
+  try {
+    initialMacRuntimeSnapshot = ensureMacShotRuntimeForBatch({ requiredSourceBranch: "library/mac-approved-shots" });
+    applyMacRuntimeSnapshot(jobState, initialMacRuntimeSnapshot);
+    jobState.stageHistory.push(stage("INPUT_READING", "passed", "Strict Mac runtime ensure completed before planner execution.", "mac-runtime-strict-ensure"));
+  } catch (error) {
+    jobState.currentStage = "INPUT_READING";
+    jobState.finalStatus = "blocked";
+    jobState.macShotRuntimeStatus = "blocked";
+    jobState.runtimePinningStatus = "blocked";
+    jobState.blockedReason = error instanceof Error ? error.name : "MAC_SHOT_BATCH_STRICT_ENSURE_FAILED";
+    jobState.failureCode = jobState.blockedReason;
+    jobState.stageHistory.push(stage("INPUT_READING", "blocked", "Strict Mac runtime ensure failed before planner execution.", "mac-runtime-strict-ensure"));
+    jobState.updatedAt = nowIso();
+    writeJson(path.join(outputDir, "job-state.json"), jobState);
+    writeJson(path.join(outputDir, "batch-dry-run-summary.json"), {
+      status: jobState.finalStatus,
+      currentStage: jobState.currentStage,
+      inputQaStatus: inputQa.status,
+      inputIntegrityStatus: inputIntegrity.status,
+      macShotRuntimeStatus: jobState.macShotRuntimeStatus,
+      runtimePinningStatus: jobState.runtimePinningStatus,
+      blocked: true,
+      blockedReason: jobState.blockedReason,
+      failureCode: jobState.failureCode,
+      strictRuntimeEnsureBeforePlanner: true,
+    });
+    console.log(`articleBatchJobStatePath=${path.join(outputDir, "job-state.json")}`);
+    console.log("blocked=true");
+    console.log(`blockedReason=${jobState.blockedReason}`);
+    return;
+  }
   jobState.attemptCounts.inputRead = inputRead.recoveryHistory.length;
   writeJson(path.join(outputDir, "quality-policy.json"), articleBatchQualityPolicy);
 
@@ -982,6 +1076,12 @@ async function run() {
       sanitizedFailureCategory: providerPreflight.sanitizedFailureCategory,
       blocked: true,
       blockedReason: jobState.blockedReason,
+      failureCode: jobState.failureCode,
+      macShotRuntimeStatus: jobState.macShotRuntimeStatus,
+      runtimePinningStatus: jobState.runtimePinningStatus,
+      runtimeSelectionPlanHash: jobState.runtimeSelectionPlanHash,
+      canonicalRuntimeSelectionPlanHash: jobState.canonicalRuntimeSelectionPlanHash,
+      generatedRuntimeRegistryHash: jobState.generatedRuntimeRegistryHash,
       evidenceCount: inputQa.evidenceCount,
       tableCount: inputQa.tableCount,
       pricePercentageComparisonDataCount: inputQa.pricePercentageComparisonDataCount,
@@ -1114,6 +1214,7 @@ async function run() {
     });
     previewAttemptHistory.push(path.join(outputDir, "preview-attempts", previewRender.manifest.attemptId, "preview-attempt.json"));
     jobState.attemptCounts.previewRender = previewAttemptHistory.length;
+    applyMacRuntimePinning(jobState, summarizeRuntimePinning(previewRender.job.runtimeSelectionPlan, initialMacRuntimeSnapshot));
 
     if (previewRender.blockedReason) {
       jobState.stageHistory.push(stage("PREVIEW_RENDER", "blocked", "Preview Render preflight failed.", previewRender.manifest.attemptId));

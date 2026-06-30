@@ -198,9 +198,10 @@ export function buildArticleRuntimeSelectionPlan(
   policyPlan: ArticlePolicyPlan,
   brief: ArticleContentBrief,
   spec: ArticleVideoSpec,
+  options: { pinnedRuntimeSelectionPlan?: ShotSelectionPlan } = {},
 ): ArticleRuntimeSelectionPlan {
   const warnings: string[] = [];
-  const runtimeSelectionPlan = planRuntimeShotsForArticle(policyPlan, brief, spec);
+  const runtimeSelectionPlan = planRuntimeShotsForArticle(policyPlan, brief, spec, { runtimeSelectionPlan: options.pinnedRuntimeSelectionPlan });
   const scenes = policyPlan.scenes.map<ArticleRuntimeSelectionPlanScene>((scene) => {
     const decision = runtimeSelectionPlan.decisions.find((item) => item.sceneId === scene.sceneId);
     const rejectedCandidateIds = (decision?.hardFilteredOutShotIds ?? []).filter(isRuntimeShotId);

@@ -4,6 +4,8 @@ import path from "path";
 import { articleBatchQualityPolicy } from "./articleBatchQualityPolicy";
 import type { ArticleScriptPlan } from "./articleBatchTypes";
 import type { ArticleContentBrief, ArticleInput, EvidenceItem } from "../types";
+import type { ShotSelectionPlan } from "../../library/shotSelectionTypes";
+import { assertCheckpointRuntimePinningComplete, computeRuntimeSelectionPlanHash, macShotBatchPinningIncompleteCode, macShotCheckpointRuntimeIdentityMismatchCode, summarizeRuntimePinning } from "./macRuntimeCheckpointPinning";
 
 export type BatchCheckpointManifest = {
   checkpointId: string;
@@ -29,6 +31,12 @@ function writeJson(filePath: string, value: unknown) {
 
 export function hashFile(filePath: string) {
   return crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex").toUpperCase();
+}
+
+export function loadRuntimeSelectionPlanArtifact(outputDir: string, manifest: BatchCheckpointManifest) {
+  const artifactPath = manifest.artifactPaths.runtimeSelectionPlanPath;
+  if (!artifactPath) return undefined;
+  return readJson<ShotSelectionPlan>(resolveArtifact(outputDir, artifactPath));
 }
 
 export function resolveCheckpointArtifact(outputDir: string, artifactPath: string) {
@@ -153,6 +161,9 @@ export function createVisibleCopyApprovedCheckpointFromLatest(outputDir: string)
   };
   if (!Object.values(required).every(fileExists)) return undefined;
 
+  const runtimeSelectionPlan = readJson<ShotSelectionPlan>(runtimeSelectionPlanPath);
+  assertCheckpointRuntimePinningComplete(runtimeSelectionPlan);
+  const runtimePinning = summarizeRuntimePinning(runtimeSelectionPlan);
   const checkpointId = "checkpoint-visible-copy-approved";
   const manifest: BatchCheckpointManifest = {
     checkpointId,
@@ -171,6 +182,10 @@ export function createVisibleCopyApprovedCheckpointFromLatest(outputDir: string)
       visibleCopyQaStatus: visibleCopyQa.status,
       strictBindingPassed: true,
       runtimeSelectionPlanExists: true,
+      runtimeSelectionPlanHash: runtimePinning.runtimeSelectionPlanHash,
+      canonicalRuntimeSelectionPlanHash: runtimePinning.canonicalRuntimeSelectionPlanHash,
+      runtimePinningStatus: runtimePinning.runtimePinningStatus,
+      macRuntimeDecisionCount: runtimePinning.macRuntimeDecisionCount,
     },
     resumeAllowedStages: ["PREVIEW_RENDER", "MEDIA_TOOLCHAIN_PREFLIGHT", "PREVIEW_QA"],
     invalidated: false,
@@ -202,6 +217,25 @@ export function loadAndValidateCheckpoint(outputDir: string, checkpointId: strin
   const current = dependencyHashes({ ...required, sourceSnapshotHash: manifest.dependencyHashes.sourceSnapshotHash });
   const mismatch = Object.entries(current).find(([key, value]) => manifest.dependencyHashes[key] !== value);
   if (mismatch) return { manifest, valid: false, reason: `CHECKPOINT_INVALIDATED:${mismatch[0]}` };
+  const runtimeSelectionPlan = readJson<ShotSelectionPlan>(required.runtimeSelectionPlanPath);
+  try {
+    const canonicalHash = computeRuntimeSelectionPlanHash(runtimeSelectionPlan);
+    const pinnedHash = manifest.qualityStatuses.runtimeSelectionPlanHash;
+    if (pinnedHash && pinnedHash !== runtimeSelectionPlan.runtimeSelectionPlanHash) {
+      return { manifest, valid: false, reason: macShotCheckpointRuntimeIdentityMismatchCode };
+    }
+    const pinnedCanonicalHash = manifest.qualityStatuses.canonicalRuntimeSelectionPlanHash;
+    if (pinnedCanonicalHash && pinnedCanonicalHash !== canonicalHash) {
+      return { manifest, valid: false, reason: macShotCheckpointRuntimeIdentityMismatchCode };
+    }
+    const pinning = assertCheckpointRuntimePinningComplete(runtimeSelectionPlan);
+    if (pinning.hasMacRuntime && (!pinnedHash || !pinnedCanonicalHash || manifest.qualityStatuses.runtimePinningStatus !== "pinned")) {
+      return { manifest, valid: false, reason: macShotBatchPinningIncompleteCode };
+    }
+  } catch (error) {
+    const reason = error instanceof Error && error.name ? error.name : macShotCheckpointRuntimeIdentityMismatchCode;
+    return { manifest, valid: false, reason };
+  }
   return { manifest, valid: true };
 }
 

@@ -9,6 +9,7 @@ import { buildArticleLayoutInspection } from "../../remotion/articleLayoutContra
 import { buildArticleMotionInspection } from "../../remotion/articleMotionContract";
 import { buildArticleTransitionInspection } from "../../remotion/articleTransitionContract";
 import type { ArticleContentBrief, ArticleInput } from "../types";
+import type { ShotSelectionPlan } from "../../library/shotSelectionTypes";
 import type { ArticleScriptPlan } from "./articleBatchTypes";
 
 const remotionEntry = "src/index.ts";
@@ -86,11 +87,12 @@ export async function runPreviewRenderGate(input: {
   sourceSnapshotId: string;
   scriptAttemptId?: string;
   visibleCopyAttemptId?: string;
+  pinnedRuntimeSelectionPlan?: ShotSelectionPlan;
 }): Promise<{ manifest: PreviewAttemptManifest; job: ReturnType<typeof buildArticleVideoJob>; blockedReason?: string }> {
   const attemptId = `preview-${String(input.attemptNumber).padStart(2, "0")}`;
   const attemptDir = path.join(input.outputDir, "preview-attempts", attemptId);
   ensureDir(attemptDir);
-  const job = buildArticleVideoJob(input.article, input.brief, attemptDir);
+  const job = buildArticleVideoJob(input.article, input.brief, attemptDir, { pinnedRuntimeSelectionPlan: input.pinnedRuntimeSelectionPlan });
   const runtimeSelectionPlanId = `runtime-selection-${attemptId}`;
   const renderInputPath = path.join(attemptDir, "render-input.json");
   const previewPath = path.join(attemptDir, "preview.mp4");
@@ -105,7 +107,7 @@ export async function runPreviewRenderGate(input: {
 
   writeJson(renderInputPath, job.remotionInputProps);
   writeJson(articleVideoJobPath, job);
-  writeJson(runtimeSelectionPlanPath, (job.policyDebug as { runtimeSelectionPlan?: unknown }).runtimeSelectionPlan ?? {});
+  writeJson(runtimeSelectionPlanPath, job.runtimeSelectionPlan);
   writeJson(visibleCopyPlanPath, { scenes: job.visibleCopyPlan ?? [] });
 
   const layoutInspection = buildArticleLayoutInspection(job);

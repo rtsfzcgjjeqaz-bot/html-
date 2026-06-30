@@ -18,6 +18,7 @@ import {
   type ArticleRuntimeSelectionPlanScene,
 } from "./articleRuntimeAdapter";
 import { buildArticleVisibleCopyPlan } from "./articleVisibleCopyPlan";
+import type { ShotSelectionPlan } from "../library/shotSelectionTypes";
 import type {
   ArticleContentBrief,
   ArticleInput,
@@ -450,9 +451,16 @@ export function assertArticleRuntimeSelectionComplete(runtimeSelectionPlan: Arti
   }
 }
 
-export function buildArticleVideoJob(article: ArticleInput, contentBrief: ArticleContentBrief, outputDirectory: string): ArticleVideoJob {
+export function buildArticleVideoJob(
+  article: ArticleInput,
+  contentBrief: ArticleContentBrief,
+  outputDirectory: string,
+  options: { pinnedRuntimeSelectionPlan?: ShotSelectionPlan } = {},
+): ArticleVideoJob {
   const policyPlan = planArticleVisualPolicy(article, contentBrief, articleVideoSpec);
-  const runtimeSelectionPlan = buildArticleRuntimeSelectionPlan(policyPlan, contentBrief, articleVideoSpec);
+  const runtimeSelectionPlan = buildArticleRuntimeSelectionPlan(policyPlan, contentBrief, articleVideoSpec, {
+    pinnedRuntimeSelectionPlan: options.pinnedRuntimeSelectionPlan,
+  });
   assertArticleRuntimeSelectionComplete(runtimeSelectionPlan);
   const visibleCopyPlan = buildArticleVisibleCopyPlan({
     article,
