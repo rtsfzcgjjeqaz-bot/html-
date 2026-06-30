@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_93",
+  "choreographyId": "noMoreFormsDocumentStack",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "typescript": "passed_on_source_project",
+  "registryResolve": "source_registry_entry_present",
+  "catalogLookup": "source_library_entry_present",
+  "localPreview": "approved_by_user",
+  "keyframeReview": "approved_in_mac_catalog",
+  "selectionContract": "generated",
+  "selectionAllowed": true
+}

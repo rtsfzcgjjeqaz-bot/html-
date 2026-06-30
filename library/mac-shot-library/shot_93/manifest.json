@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_93",
+  "libraryId": "no-more-forms-document-stack",
+  "choreographyId": "noMoreFormsDocumentStack",
+  "displayName": "No More Forms Document Stack",
+  "purpose": "result_comparison; show_manual_forms_removed",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/no-more-forms-document-stack.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/noMoreFormsDocumentStack.tsx",
+    "runtime/atomic/shot93-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "benefitHeadline",
+    "supportingCopy",
+    "documentLines"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "fddda2113d4fd39d6586418bdc3d4a05cf1822e298284fd86f814831b3cbc58c",
+  "publishedAt": "2026-06-30",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

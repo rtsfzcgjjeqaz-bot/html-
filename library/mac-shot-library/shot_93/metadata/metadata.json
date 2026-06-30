@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_93",
+  "libraryId": "no-more-forms-document-stack",
+  "choreographyId": "noMoreFormsDocumentStack",
+  "sceneType": "resultComparison",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/no-more-forms-document-stack.library-entry.ts",
+  "sourceCatalogEntryHash": "fddda2113d4fd39d6586418bdc3d4a05cf1822e298284fd86f814831b3cbc58c",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-30"
+}

@@ -377,6 +377,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_92/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_93",
+      "choreographyId": "noMoreFormsDocumentStack",
+      "displayName": "No More Forms Document Stack",
+      "sceneType": "resultComparison",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_93",
+      "selectionContractPath": "library/mac-shot-library/shot_93/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

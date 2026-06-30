@@ -1,0 +1,51 @@
+{
+  "shotId": "shot_93",
+  "displayName": "No More Forms Document Stack",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/no-more-forms-document-stack.library-entry.ts",
+  "sourceCatalogEntryHash": "fddda2113d4fd39d6586418bdc3d4a05cf1822e298284fd86f814831b3cbc58c",
+  "intents": [
+    "show_before_after_benefit",
+    "communicate_manual_work_removed"
+  ],
+  "semanticTags": [
+    "resultcomparison",
+    "forms",
+    "documents",
+    "manual-work",
+    "benefit"
+  ],
+  "sceneRoles": [
+    "resultComparison"
+  ],
+  "supportedEvidenceTypes": [
+    "benefit_headline",
+    "manual_work_visual",
+    "supporting_copy"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    75,
+    75
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 34,
+    "supportingLines": 1,
+    "bodyMaxChars": 90,
+    "labelMaxChars": 0
+  },
+  "selectionPriority": 74,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/no-more-forms-document-stack.library-entry.ts",
+  "runtimeExport": "noMoreFormsDocumentStackLibraryEntry",
+  "choreographyEntry": "runtime/choreography/noMoreFormsDocumentStack.tsx",
+  "choreographyExport": "Shot93NoMoreFormsDocumentStackChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_93_DURATION_FRAMES"
+}
