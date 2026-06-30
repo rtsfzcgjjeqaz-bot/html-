@@ -353,6 +353,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_89/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_90",
+      "choreographyId": "paymentFormAutoFillTable",
+      "displayName": "Payment Form Auto Fill Table",
+      "sceneType": "appGrid",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_90",
+      "selectionContractPath": "library/mac-shot-library/shot_90/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

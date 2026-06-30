@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_90",
+  "libraryId": "payment-form-auto-fill-table",
+  "choreographyId": "paymentFormAutoFillTable",
+  "displayName": "Payment Form Auto Fill Table",
+  "purpose": "app_grid; show_ai_form_autofill",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/payment-form-auto-fill-table.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/paymentFormAutoFillTable.tsx",
+    "runtime/atomic/shot90-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "formTitle",
+    "paymentChips",
+    "ledgerRows",
+    "statusLabel"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "b6793e8cd914a940612bb7eb54ef8fbf10097aa94e7b7d97116aeeb246d0e4b5",
+  "publishedAt": "2026-06-30",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

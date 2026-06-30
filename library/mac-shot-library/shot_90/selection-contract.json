@@ -1,0 +1,55 @@
+{
+  "shotId": "shot_90",
+  "displayName": "Payment Form Auto Fill Table",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/payment-form-auto-fill-table.library-entry.ts",
+  "sourceCatalogEntryHash": "b6793e8cd914a940612bb7eb54ef8fbf10097aa94e7b7d97116aeeb246d0e4b5",
+  "intents": [
+    "show_ai_generated_form",
+    "demonstrate_table_autofill"
+  ],
+  "semanticTags": [
+    "appgrid",
+    "finance",
+    "form",
+    "table",
+    "autofill",
+    "automation"
+  ],
+  "sceneRoles": [
+    "appGrid"
+  ],
+  "supportedEvidenceTypes": [
+    "form_title",
+    "table_rows",
+    "status_chip",
+    "action_buttons"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    71,
+    71
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 24,
+    "supportingLines": 1,
+    "bodyMaxChars": 160,
+    "labelMaxChars": 24,
+    "tableRows": 2,
+    "tableColumns": 4
+  },
+  "selectionPriority": 78,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/payment-form-auto-fill-table.library-entry.ts",
+  "runtimeExport": "paymentFormAutoFillTableLibraryEntry",
+  "choreographyEntry": "runtime/choreography/paymentFormAutoFillTable.tsx",
+  "choreographyExport": "Shot90PaymentFormAutoFillTableChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_90_DURATION_FRAMES"
+}

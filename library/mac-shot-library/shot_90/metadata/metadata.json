@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_90",
+  "libraryId": "payment-form-auto-fill-table",
+  "choreographyId": "paymentFormAutoFillTable",
+  "sceneType": "appGrid",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/payment-form-auto-fill-table.library-entry.ts",
+  "sourceCatalogEntryHash": "b6793e8cd914a940612bb7eb54ef8fbf10097aa94e7b7d97116aeeb246d0e4b5",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-30"
+}
