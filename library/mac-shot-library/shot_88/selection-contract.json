@@ -1,0 +1,53 @@
+{
+  "shotId": "shot_88",
+  "displayName": "AI Prompt Card Stack Hook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/ai-prompt-card-stack-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "778d3d6955daf2791216e4327d828aeee2f0cbc25aec3de79598fa3e518da61f",
+  "intents": [
+    "open_with_ai_prompt_hook",
+    "show_task_automation_stack"
+  ],
+  "semanticTags": [
+    "coverhook",
+    "ai",
+    "prompt",
+    "task-stack",
+    "automation"
+  ],
+  "sceneRoles": [
+    "coverHook"
+  ],
+  "supportedEvidenceTypes": [
+    "product_name",
+    "workflow_actions",
+    "prompt_copy",
+    "supporting_copy"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    114,
+    114
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 34,
+    "supportingLines": 1,
+    "bodyMaxChars": 120,
+    "labelMaxChars": 24,
+    "taskCardCount": 6
+  },
+  "selectionPriority": 82,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/ai-prompt-card-stack-hook.library-entry.ts",
+  "runtimeExport": "aiPromptCardStackHookLibraryEntry",
+  "choreographyEntry": "runtime/choreography/aiPromptCardStackHook.tsx",
+  "choreographyExport": "Shot88AiPromptCardStackHookChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_88_DURATION_FRAMES"
+}

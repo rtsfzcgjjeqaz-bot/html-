@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_88",
+  "libraryId": "ai-prompt-card-stack-hook",
+  "choreographyId": "aiPromptCardStackHook",
+  "sceneType": "coverHook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/ai-prompt-card-stack-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "778d3d6955daf2791216e4327d828aeee2f0cbc25aec3de79598fa3e518da61f",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "revision": "r2-more-cards-smoother-stack",
+  "generatedAt": "2026-06-30"
+}

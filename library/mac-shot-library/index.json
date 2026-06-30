@@ -4,7 +4,7 @@
   "sourceProject": "mac-jewelry-video",
   "branch": "library/mac-approved-shots",
   "description": "Portable advanced shot packages exported from approved Mac motion catalog. Not auto-imported by production runtime without Windows validation.",
-  "updatedAt": "2026-06-29",
+  "updatedAt": "2026-06-30",
   "shots": [
     {
       "shotId": "shot_08",
@@ -327,6 +327,18 @@
       "selectionAllowed": true,
       "packagePath": "library/mac-shot-library/shot_82",
       "selectionContractPath": "library/mac-shot-library/shot_82/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_88",
+      "choreographyId": "aiPromptCardStackHook",
+      "displayName": "AI Prompt Card Stack Hook",
+      "sceneType": "coverHook",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_88",
+      "selectionContractPath": "library/mac-shot-library/shot_88/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
     }
