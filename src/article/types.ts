@@ -1,4 +1,5 @@
 import type { ResolvedScene } from "../factory/shotPlanner";
+import type { ShotSelectionPlan } from "../library/shotSelectionTypes";
 
 export type ArticleSourceType = "markdown" | "text" | "html" | "api_html";
 export type ArticleApiLocale = "zh" | "en";
@@ -126,6 +127,7 @@ export type ArticleVideoSpec = {
 export type ArticleSceneSchedule = {
   sceneId: number;
   selectedShotId?: string;
+  selectedRuntimeKey?: string;
   choreographyId?: string;
   startFrame: number;
   durationInFrames: number;
@@ -233,9 +235,11 @@ export type ArticleRenderInputProps = {
       articleBindingMode?: ArticleBindingMode;
       selectedEvidenceIds: string[];
       selectedShotIds: string[];
+      selectedRuntimeKeys?: string[];
       selectedChoreographyIds: string[];
       policyWarnings?: string[];
       visibleCopyPlan?: ArticleVisibleCopyScenePlan[];
+      runtimeSelectionPlan?: ShotSelectionPlan;
     };
   };
 };
@@ -253,6 +257,7 @@ export type ArticleVideoJob = {
   contentBrief: ArticleContentBrief;
   selectedEvidenceIds: string[];
   resolvedScenes: ResolvedScene[];
+  runtimeSelectionPlan: ShotSelectionPlan;
   remotionInputProps: ArticleRenderInputProps;
   outputDirectory: string;
   policyDebug?: Record<string, unknown>;

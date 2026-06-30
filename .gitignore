@@ -16,9 +16,12 @@ Thumbs.db
 coverage/
 .cache/
 .remotion/
+.asset-sync-cache/
+.mac-shot-source-cache/
 temp/
 tmp/
 public/renders/
+public/generated-mac-assets/
 public/*preview*.mp4
 public/*final*.mp4
 public/*frame*.png
@@ -32,3 +35,6 @@ public/*cover*.png
 public/variant*.png
 public/scrape/
 build/
+reports/local/
+src/generated/mac-shot-runtime/
+src/generated/macShotRuntimeRegistry.ts

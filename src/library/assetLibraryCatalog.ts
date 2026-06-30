@@ -1,7 +1,11 @@
 ﻿import { getShot } from "../../assets/index/asset-resolver";
 import { auditRuntimeShotCatalog, listRuntimeShotCatalog } from "../factory/runtimeShotCatalog";
 import { candidateShotCatalog } from "./candidateShotCatalog";
+import { listMacShotAssetLibraryEntries, loadMacShotSourceSyncReport } from "./macShotSourceSync";
+import { mapMacShotToSelectionContract } from "./mapMacShotToSelectionContract";
+import { mapWindowsRuntimeShotToSelectionContract } from "./mapWindowsRuntimeShotToSelectionContract";
 import type { AssetLibraryEntry, ChineseTextRisk, PackageValidationResults, SourceEnvironment } from "./assetLibraryTypes";
+import type { UnifiedShotSelectionContract } from "./shotSelectionTypes";
 
 function deriveChineseTextRisk(entry: ReturnType<typeof listRuntimeShotCatalog>[number]): ChineseTextRisk {
   if (entry.textCapacity.structuredItems === "low" || entry.textCapacity.headline === "low") return "high";
@@ -32,8 +36,8 @@ function sourceEnvironmentFor(sourceLibrary?: string): SourceEnvironment {
 }
 
 function sourcePathFor(runtimeShotId: string, sourceShotId?: string, sourceLibrary?: string) {
-  if (sourceLibrary === "mac_approved_shots" && sourceShotId === "mac_shot_35") return "library/mac-shot-library/shot_35";
-  if (sourceLibrary === "mac_approved_shots" && sourceShotId === "mac_shot_36") return "library/mac-shot-library/shot_36";
+  if (sourceLibrary === "mac_approved_shots" && sourceShotId === "mac_shot_35") return "library/mac-shot-library/mac_shot_35";
+  if (sourceLibrary === "mac_approved_shots" && sourceShotId === "mac_shot_36") return "library/mac-shot-library/mac_shot_36";
   return `assets/shots/${runtimeShotId}.json`;
 }
 
@@ -110,12 +114,33 @@ export function listCandidateAssetLibraryEntries(): AssetLibraryEntry[] {
   }));
 }
 
-export function listAssetLibraryEntries(): AssetLibraryEntry[] {
-  return [...listRuntimeAssetLibraryEntries(), ...listCandidateAssetLibraryEntries()];
+export function listAssetLibraryEntries(additionalEntries: AssetLibraryEntry[] = []): AssetLibraryEntry[] {
+  return [
+    ...listRuntimeAssetLibraryEntries(),
+    ...listMacShotAssetLibraryEntries(),
+    ...additionalEntries,
+    ...listCandidateAssetLibraryEntries(),
+  ];
 }
 
 export function listUnifiedRuntimeSelectionPool(): AssetLibraryEntry[] {
   return listAssetLibraryEntries()
     .filter((entry) => entry.packageStatus === "runtime_validated" && entry.selectionAllowed)
+    .sort((a, b) => b.selectionPriority - a.selectionPriority);
+}
+
+export function listUnifiedShotSelectionContracts(): UnifiedShotSelectionContract[] {
+  const auditByShotId = new Map(auditRuntimeShotCatalog().map((entry) => [entry.runtimeShotId, entry]));
+  const windowsContracts = listRuntimeShotCatalog().map((entry) =>
+    mapWindowsRuntimeShotToSelectionContract({
+      entry,
+      runtimeCallable: Boolean(auditByShotId.get(entry.runtimeShotId)?.runtimeCallable),
+    }),
+  );
+  const macContracts = (loadMacShotSourceSyncReport()?.packages ?? [])
+    .map(mapMacShotToSelectionContract)
+    .filter((entry): entry is UnifiedShotSelectionContract => Boolean(entry));
+  return [...windowsContracts, ...macContracts]
+    .filter((contract) => contract.selectionAllowed && contract.runtimeReadiness === "runtime_validated")
     .sort((a, b) => b.selectionPriority - a.selectionPriority);
 }

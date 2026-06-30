@@ -60,7 +60,20 @@
     "asset-library:inspect": "tsx src/library/inspectAssetLibrary.ts",
     "article:plan-mixed-source": "tsx src/article/planMixedSourceArticle.ts",
     "article:smoke-mixed-source": "tsx src/article/runMixedSourceSmoke.ts",
-    "article:batch": "tsx src/article/batch/runArticleBatch.ts"
+    "article:batch": "tsx src/article/batch/runArticleBatch.ts",
+    "mac-shot:sync": "tsx src/library/macShotCli.ts",
+    "mac-shot:inspect": "tsx src/library/macShotCli.ts --inspect",
+    "mac-shot:catalog": "tsx src/library/macShotCli.ts --catalog",
+    "mac-shot:runtime-smoke": "tsx src/library/macShotRuntimeSmoke.ts",
+    "typecheck": "tsc --noEmit",
+    "pretypecheck": "npm run mac-shot:ensure-runtime",
+    "prebuild": "npm run mac-shot:ensure-runtime",
+    "mac-shot:ensure-runtime": "tsx src/library/macShotEnsureRuntime.ts",
+    "mac-shot:planner-acceptance": "tsx src/library/macShotPlannerAcceptance.ts",
+    "mac-shot:runtime-identity-smoke": "tsx src/library/macShotRuntimeIdentitySmoke.ts",
+    "mac-shot:bootstrap-smoke": "tsx src/library/macShotBootstrapSmoke.ts",
+    "mac-shot:clean-bootstrap-smoke": "tsx src/library/macShotCleanBootstrapSmoke.ts",
+    "shot:production-wiring-qa": "tsx src/library/shotProductionWiringQa.ts"
   },
   "sideEffects": [
     "*.css"

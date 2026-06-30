@@ -14,6 +14,7 @@ import {
 } from "./articleVisualPolicy";
 import {
   buildArticleRuntimeSelectionPlan,
+  type ArticleRuntimeSelectionPlan,
   type ArticleRuntimeSelectionPlanScene,
 } from "./articleRuntimeAdapter";
 import { buildArticleVisibleCopyPlan } from "./articleVisibleCopyPlan";
@@ -411,6 +412,8 @@ function toRemotionScene(scene: ResolvedScene): ResolvedScene {
       articleContent,
     },
     selectedShotId: scene.selectedShotId,
+    selectedRuntimeKey: scene.selectedRuntimeKey,
+    selectedRuntimeSourceKind: scene.selectedRuntimeSourceKind,
     choreographyId: scene.choreographyId,
     motionPresetIds: [],
     visualAssetRefs: [],
@@ -427,6 +430,7 @@ function buildSceneSchedule(scenes: ResolvedScene[]): ArticleSceneSchedule[] {
     return {
       sceneId: scene.id,
       selectedShotId: scene.selectedShotId,
+      selectedRuntimeKey: scene.selectedRuntimeKey,
       choreographyId: scene.choreographyId,
       startFrame,
       durationInFrames,
@@ -435,9 +439,21 @@ function buildSceneSchedule(scenes: ResolvedScene[]): ArticleSceneSchedule[] {
   });
 }
 
+
+export function assertArticleRuntimeSelectionComplete(runtimeSelectionPlan: ArticleRuntimeSelectionPlan) {
+  const productionBlockingScenes = runtimeSelectionPlan.scenes.filter(
+    (scene) => scene.sceneRequiredness === "required" && scene.selectionStatus !== "selected" && scene.selectionStatus !== "safe_fallback",
+  );
+  if (productionBlockingScenes.length) {
+    const codes = productionBlockingScenes.map((scene) => scene.blockedCode ?? "REQUIRED_SCENE_NO_RUNTIME_SHOT").join(",");
+    throw new Error(`ArticleVideoJob blocked by incomplete required runtime selection: ${codes}`);
+  }
+}
+
 export function buildArticleVideoJob(article: ArticleInput, contentBrief: ArticleContentBrief, outputDirectory: string): ArticleVideoJob {
   const policyPlan = planArticleVisualPolicy(article, contentBrief, articleVideoSpec);
   const runtimeSelectionPlan = buildArticleRuntimeSelectionPlan(policyPlan, contentBrief, articleVideoSpec);
+  assertArticleRuntimeSelectionComplete(runtimeSelectionPlan);
   const visibleCopyPlan = buildArticleVisibleCopyPlan({
     article,
     brief: contentBrief,
@@ -447,7 +463,7 @@ export function buildArticleVideoJob(article: ArticleInput, contentBrief: Articl
   const selectedPlannedScenes = policyPlan.scenes
     .map((scene) => {
       const runtimeScene = runtimeSelectionPlan.scenes.find((item) => item.sceneId === scene.sceneId);
-      if (!runtimeScene || runtimeScene.selectionStatus !== "selected") return undefined;
+      if (!runtimeScene || (runtimeScene.selectionStatus !== "selected" && runtimeScene.selectionStatus !== "safe_fallback")) return undefined;
       return buildPlannedSceneFromSelection(scene, runtimeScene, article, contentBrief);
     })
     .filter((scene): scene is ArticlePlannedScene => Boolean(scene));
@@ -456,6 +472,7 @@ export function buildArticleVideoJob(article: ArticleInput, contentBrief: Articl
     fps: articleVideoSpec.fps,
     profile: "default-promo",
     narrativeId: contentBrief.sourceMetadata.pageType === "comparison" ? "comparison" : "trust",
+    runtimeSelectionPlan: runtimeSelectionPlan.runtimeSelectionPlan,
   });
 
   const resolvedScenes = enrichResolvedScenes(shotPlan.scenes, article, contentBrief, visibleCopyPlan);
@@ -487,9 +504,11 @@ export function buildArticleVideoJob(article: ArticleInput, contentBrief: Articl
     selectedEvidenceIds,
     visibleCopyPlan,
     resolvedScenes,
+    runtimeSelectionPlan: runtimeSelectionPlan.runtimeSelectionPlan,
     policyDebug: {
       ...policyPlan.debug,
       runtimeSelectionPlan,
+      shotPlannerRuntimeSelectionPlan: shotPlan.runtimeSelectionPlan,
       visibleCopyPlan,
       policyWarnings: combinedPolicyWarnings,
     } as Record<string, unknown>,
@@ -511,9 +530,11 @@ export function buildArticleVideoJob(article: ArticleInput, contentBrief: Articl
           articleBindingMode: "strict",
           selectedEvidenceIds,
           selectedShotIds: dedupe(resolvedScenes.map((scene) => scene.selectedShotId).filter(Boolean) as string[]),
+          selectedRuntimeKeys: dedupe(resolvedScenes.map((scene) => scene.selectedRuntimeKey).filter(Boolean) as string[]),
           selectedChoreographyIds: dedupe(resolvedScenes.map((scene) => scene.choreographyId).filter(Boolean) as string[]),
           policyWarnings: combinedPolicyWarningMessages,
           visibleCopyPlan,
+          runtimeSelectionPlan: runtimeSelectionPlan.runtimeSelectionPlan,
         },
       },
     },

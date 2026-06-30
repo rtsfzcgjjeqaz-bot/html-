@@ -6,7 +6,7 @@ export type AssetAvailability = "runtime_callable" | "candidate_only" | "needs_a
 
 export type SourceEnvironment = "windows_runtime" | "mac_source" | "transfer_library";
 
-export type AssetSourceLibrary = "windows_runtime_catalog" | "mac_approved_shots" | "transfer_mac_motion_library_v1";
+export type AssetSourceLibrary = "windows_runtime_catalog" | "mac_approved_shots" | "transfer_mac_motion_library_v1" | "mac_dropbox";
 
 export type PackageStatus =
   | "runtime_validated"

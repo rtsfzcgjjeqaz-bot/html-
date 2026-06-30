@@ -63,6 +63,14 @@ function eligibleForSelection(entry: AssetLibraryEntry) {
   return entry.packageStatus === "runtime_validated" && packageTechnicallyValidated(entry);
 }
 
+function isGenericMacMedia(entry: AssetLibraryEntry) {
+  return entry.sourceLibrary === "mac_dropbox";
+}
+
+function runtimeCatalogBacked(entry: AssetLibraryEntry) {
+  return entry.packageStatus === "runtime_validated" && !isGenericMacMedia(entry);
+}
+
 function runtimePathContainsSourceImport() {
   return runtimeImportCheckFiles
     .filter((filePath) => fs.existsSync(filePath))
@@ -102,33 +110,33 @@ export function validateAssetLibrary(entries = listAssetLibraryEntries()): Asset
     check(
       "runtimeAssetsComeFromRuntimeCatalog",
       entries
-        .filter((entry) => entry.packageStatus === "runtime_validated")
+        .filter(runtimeCatalogBacked)
         .every((entry) => Boolean(entry.runtimeShotId) && runtimeCatalogIds.has(entry.runtimeShotId as never)),
       entries
-        .filter((entry) => entry.packageStatus === "runtime_validated")
+        .filter(runtimeCatalogBacked)
         .filter((entry) => !entry.runtimeShotId || !runtimeCatalogIds.has(entry.runtimeShotId as never))
         .map((entry) => entry.assetId),
     ),
     check(
       "runtimeAssetsResolveViaRegistry",
       entries
-        .filter((entry) => entry.packageStatus === "runtime_validated")
+        .filter(runtimeCatalogBacked)
         .every((entry) => runtimeShotResolves(entry.runtimeShotId, registeredShotIds)),
       entries
-        .filter((entry) => entry.packageStatus === "runtime_validated")
+        .filter(runtimeCatalogBacked)
         .filter((entry) => !runtimeShotResolves(entry.runtimeShotId, registeredShotIds))
         .map((entry) => entry.assetId),
     ),
     check(
       "runtimeAssetsHaveChoreography",
       entries
-        .filter((entry) => entry.packageStatus === "runtime_validated")
+        .filter(runtimeCatalogBacked)
         .every((entry) => {
           const choreography = getChoreographyEntry(entry.choreographyId);
           return choreography?.approved === true && choreography.allowedInFactory === true;
         }),
       entries
-        .filter((entry) => entry.packageStatus === "runtime_validated")
+        .filter(runtimeCatalogBacked)
         .filter((entry) => !getChoreographyEntry(entry.choreographyId))
         .map((entry) => entry.assetId),
     ),
@@ -202,8 +210,8 @@ export function validateAssetLibrary(entries = listAssetLibraryEntries()): Asset
     ),
     check(
       "candidateAssetsHaveNoRuntimeImport",
-      pendingOrRejectedAssets.every((entry) => !entry.runtimeShotId && entry.dependencyStatus !== "verified"),
-      pendingOrRejectedAssets.filter((entry) => entry.runtimeShotId || entry.dependencyStatus === "verified").map((entry) => entry.assetId),
+      pendingOrRejectedAssets.every((entry) => !entry.runtimeShotId && (isGenericMacMedia(entry) || entry.dependencyStatus !== "verified")),
+      pendingOrRejectedAssets.filter((entry) => entry.runtimeShotId || (!isGenericMacMedia(entry) && entry.dependencyStatus === "verified")).map((entry) => entry.assetId),
     ),
     check("noDuplicateAssetId", !hasDuplicates(entries.map((entry) => entry.assetId))),
     check(

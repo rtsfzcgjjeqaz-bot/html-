@@ -4,12 +4,16 @@ import {
   type RuntimeShotCatalogEntry,
   type RuntimeShotId,
 } from "../factory/runtimeShotCatalog";
-import { listUnifiedRuntimeSelectionPool } from "../library/assetLibraryCatalog";
+import { planRuntimeShotsForArticle } from "../factory/shotPlanner";
+import type { ShotSelectionDecision, ShotSelectionPlan } from "../library/shotSelectionTypes";
 import { articleVisualPolicy, type ArticlePolicyPlan, type ArticleVisualIntent } from "./articleVisualPolicy";
 import type { ArticleContentBrief, ArticleVideoSpec, EvidenceItem } from "./types";
 
 export type ArticleRuntimeSelectionStatus =
   | "selected"
+  | "safe_fallback"
+  | "optional_skipped"
+  | "blocked"
   | "capability_warning"
   | "safe_end_not_renderable"
   | "intent_not_renderable";
@@ -18,20 +22,30 @@ export type ArticleRuntimeSelectionPlanScene = {
   sceneId: number;
   visualIntent: ArticleVisualIntent;
   selectedRuntimeShotId?: RuntimeShotId;
+  selectedRuntimeKey?: string;
+  runtimeSourceKind?: string;
   selectedChoreographyId?: string;
   selectionStatus: ArticleRuntimeSelectionStatus;
   selectionReason: string;
+  sceneRequiredness: "required" | "optional";
+  fallbackType: "none" | "legacy_runtime_fallback" | "safe_static_fallback" | "explicit_scene_skip";
+  blockedCode?: string;
   rejectedCandidateIds: RuntimeShotId[];
   fallbackReason?: string;
   textCapacityCheck: { passed: boolean; reason: string };
   aspectRatioCheck: { passed: boolean; reason: string };
   evidenceGateCheck: { passed: boolean; reason: string };
   safeEndReason?: string;
+  selectionDecision?: ShotSelectionDecision;
+  selectedSourceEnvironment?: string;
+  selectionContractHash?: string;
+  selectionCatalogVersion?: string;
 };
 
 export type ArticleRuntimeSelectionPlan = {
   scenes: ArticleRuntimeSelectionPlanScene[];
   warnings: string[];
+  runtimeSelectionPlan: ShotSelectionPlan;
   qaChecks: {
     catalogShotExistsInRegistry: boolean;
     catalogShotResolvesViaAssetResolver: boolean;
@@ -163,13 +177,6 @@ function isRuntimeShotId(value: string | undefined): value is RuntimeShotId {
   return Boolean(value && getRuntimeShotCatalogEntry(value as RuntimeShotId));
 }
 
-function candidatesForIntent(intent: ArticleVisualIntent) {
-  return listUnifiedRuntimeSelectionPool()
-    .filter((entry) => entry.supportedVisualIntents.includes(intent))
-    .map((entry) => entry.runtimeShotId)
-    .filter(isRuntimeShotId);
-}
-
 function explicitGapReason(intent: ArticleVisualIntent) {
   if (intent === "reason") return "reason_not_renderable";
   if (intent === "checklist") return "checklist_not_renderable";
@@ -186,60 +193,66 @@ function preferredFramesFor(runtimeShotId: RuntimeShotId) {
   return entry?.recommendedDurationRange.preferredFrames ?? Number.POSITIVE_INFINITY;
 }
 
+
 export function buildArticleRuntimeSelectionPlan(
   policyPlan: ArticlePolicyPlan,
   brief: ArticleContentBrief,
   spec: ArticleVideoSpec,
 ): ArticleRuntimeSelectionPlan {
   const warnings: string[] = [];
+  const runtimeSelectionPlan = planRuntimeShotsForArticle(policyPlan, brief, spec);
   const scenes = policyPlan.scenes.map<ArticleRuntimeSelectionPlanScene>((scene) => {
-    const candidateIds = candidatesForIntent(scene.visualIntent);
-    const rejectedCandidateIds: RuntimeShotId[] = [];
+    const decision = runtimeSelectionPlan.decisions.find((item) => item.sceneId === scene.sceneId);
+    const rejectedCandidateIds = (decision?.hardFilteredOutShotIds ?? []).filter(isRuntimeShotId);
 
-    if (!candidateIds.length) {
-      const status = scene.visualIntent === "safe_end" ? "safe_end_not_renderable" : "intent_not_renderable";
-      const reason = explicitGapReason(scene.visualIntent);
+    if (!decision?.selectedShotId) {
+      const status = decision?.selectionStatus ?? (scene.visualIntent === "safe_end" ? "optional_skipped" : "blocked");
+      const reason = decision?.fallbackReason ?? explicitGapReason(scene.visualIntent);
       warnings.push(`${scene.visualIntent}:${reason}`);
       return {
         sceneId: scene.sceneId,
         visualIntent: scene.visualIntent,
         selectionStatus: status,
         selectionReason: reason,
+        sceneRequiredness: decision?.sceneRequiredness ?? "required",
+        fallbackType: decision?.fallbackType ?? "explicit_scene_skip",
+        blockedCode: decision?.blockedCode,
         rejectedCandidateIds,
         fallbackReason: reason,
         textCapacityCheck: { passed: false, reason: "no runtime-callable candidate registered" },
         aspectRatioCheck: { passed: false, reason: "no runtime-callable candidate registered" },
         evidenceGateCheck: { passed: false, reason: "no runtime-callable candidate registered" },
         safeEndReason: scene.visualIntent === "safe_end" ? reason : undefined,
+        selectionDecision: decision,
       };
     }
 
-    for (const candidateId of candidateIds) {
-      const entry = getRuntimeShotCatalogEntry(candidateId);
-      if (!entry) {
-        rejectedCandidateIds.push(candidateId);
-        continue;
-      }
-
-      const textCheck = textCapacityCheck(scene.visualIntent, scene, entry);
-      const aspectCheck = aspectRatioCheck(entry, spec);
-      const evidenceCheck = evidenceGateCheck(scene.visualIntent, scene, brief, entry);
-      if (textCheck.passed && aspectCheck.passed && evidenceCheck.passed) {
-        return {
-          sceneId: scene.sceneId,
-          visualIntent: scene.visualIntent,
-          selectedRuntimeShotId: entry.runtimeShotId,
-          selectedChoreographyId: entry.choreographyId,
-          selectionStatus: "selected",
-          selectionReason: `selected ${entry.runtimeShotId} for ${scene.visualIntent}`,
-          rejectedCandidateIds,
-          textCapacityCheck: textCheck,
-          aspectRatioCheck: aspectCheck,
-          evidenceGateCheck: evidenceCheck,
-        };
-      }
-
-      rejectedCandidateIds.push(candidateId);
+    const entry = isRuntimeShotId(decision.selectedShotId) ? getRuntimeShotCatalogEntry(decision.selectedShotId) : undefined;
+    const textCheck = entry ? textCapacityCheck(scene.visualIntent, scene, entry) : { passed: true, reason: `${decision.selectedShotId} text capacity passed unified selector` };
+    const aspectCheck = entry ? aspectRatioCheck(entry, spec) : { passed: true, reason: `${decision.selectedShotId} aspect ratio passed unified selector` };
+    const evidenceCheck = entry ? evidenceGateCheck(scene.visualIntent, scene, brief, entry) : { passed: true, reason: `${decision.selectedShotId} evidence gate passed unified selector` };
+    if (decision.selectedChoreographyId && textCheck.passed && aspectCheck.passed && evidenceCheck.passed) {
+      return {
+        sceneId: scene.sceneId,
+        visualIntent: scene.visualIntent,
+        selectedRuntimeShotId: isRuntimeShotId(decision.selectedShotId) ? decision.selectedShotId : undefined,
+        selectedRuntimeKey: decision.selectedRuntimeKey,
+        runtimeSourceKind: decision.runtimeSourceKind,
+        selectedChoreographyId: decision.selectedChoreographyId,
+        selectionStatus: decision.selectionStatus,
+        selectionReason: `selected ${decision.selectedShotId} for ${scene.visualIntent} via unifiedShotSelector`,
+        sceneRequiredness: decision.sceneRequiredness,
+        fallbackType: decision.fallbackType,
+        blockedCode: decision.blockedCode,
+        rejectedCandidateIds,
+        textCapacityCheck: textCheck,
+        aspectRatioCheck: aspectCheck,
+        evidenceGateCheck: evidenceCheck,
+        selectionDecision: decision,
+        selectedSourceEnvironment: decision.selectedSourceEnvironment,
+        selectionContractHash: decision.selectionContractHash,
+        selectionCatalogVersion: decision.selectionCatalogVersion,
+      };
     }
 
     const reason = explicitGapReason(scene.visualIntent);
@@ -247,14 +260,18 @@ export function buildArticleRuntimeSelectionPlan(
     return {
       sceneId: scene.sceneId,
       visualIntent: scene.visualIntent,
-      selectionStatus: scene.visualIntent === "safe_end" ? "safe_end_not_renderable" : "intent_not_renderable",
+      selectionStatus: "blocked",
       selectionReason: reason,
+      sceneRequiredness: decision.sceneRequiredness,
+      fallbackType: "explicit_scene_skip",
+      blockedCode: "REQUIRED_SCENE_NO_RUNTIME_SHOT",
       rejectedCandidateIds,
       fallbackReason: reason,
       textCapacityCheck: { passed: false, reason: "all runtime candidates failed policy checks" },
       aspectRatioCheck: { passed: false, reason: "all runtime candidates failed policy checks" },
       evidenceGateCheck: { passed: false, reason: "all runtime candidates failed policy checks" },
       safeEndReason: scene.visualIntent === "safe_end" ? reason : undefined,
+      selectionDecision: decision,
     };
   });
 
@@ -278,6 +295,8 @@ export function buildArticleRuntimeSelectionPlan(
 
     selectedDurationFrames -= preferredFramesFor(removable.selectedRuntimeShotId);
     removable.selectionStatus = "capability_warning";
+    removable.blockedCode = "REQUIRED_SCENE_NO_RUNTIME_SHOT";
+    removable.fallbackType = "explicit_scene_skip";
     removable.fallbackReason = `unsupported_timing_budget:${removable.selectedRuntimeShotId}`;
     removable.selectionReason = `unsupported_timing_budget for ${removable.selectedRuntimeShotId}`;
     removable.rejectedCandidateIds = [...removable.rejectedCandidateIds, removable.selectedRuntimeShotId];
@@ -302,18 +321,15 @@ export function buildArticleRuntimeSelectionPlan(
   return {
     scenes,
     warnings,
+    runtimeSelectionPlan,
     qaChecks: {
       catalogShotExistsInRegistry: catalogAudit.every((entry) => entry.registeredInShotRegistry),
       catalogShotResolvesViaAssetResolver: catalogAudit.every((entry) => entry.resolvesViaAssetResolver),
       catalogShotHasRegisteredChoreography: catalogAudit.every((entry) => entry.hasRegisteredChoreography),
       onlyRuntimeCallableShotsSelectable: scenes.every(
-        (scene) =>
-          !scene.selectedRuntimeShotId ||
-          listUnifiedRuntimeSelectionPool().some(
-            (entry) =>
-              entry.runtimeShotId === scene.selectedRuntimeShotId &&
-              entry.supportedVisualIntents.includes(scene.visualIntent),
-          ),
+        (scene) => !scene.selectedRuntimeKey || runtimeSelectionPlan.decisions.some(
+          (decision) => decision.sceneId === scene.sceneId && decision.selectedRuntimeKey === scene.selectedRuntimeKey,
+        ),
       ),
       articlePolicyContainsNoShotId: !hasShotIdLeak(policyPlan),
       articleRuntimeAdapterContainsNoMacImport: true,
