@@ -13,6 +13,7 @@ import {
   EmailDraftGenerationDemoAdapter,
   WebsiteHeroAngledProductSurfaceAdapter,
 } from "./MacSourceShotAdapters";
+import { resolveSceneRuntime } from "../runtime/resolveSceneRuntime";
 
 type SceneRendererProps = {
   scene: {
@@ -27,6 +28,7 @@ type SceneRendererProps = {
     screenshot?: { publicPath?: string; src?: string };
     componentProps?: Record<string, unknown>;
     selectedShotId?: string;
+    selectedRuntimeKey?: string;
   };
   sceneIndex: number;
 };
@@ -1394,6 +1396,19 @@ const CoverHookImpactScene: React.FC<SceneRendererProps & { animationTracks: Cho
 };
 
 export const SceneRenderer: React.FC<SceneRendererProps> = ({ scene, sceneIndex }) => {
+  const resolvedRuntime = resolveSceneRuntime({
+    selectedRuntimeKey: scene.selectedRuntimeKey,
+    logicalShotId: scene.selectedShotId,
+    choreographyId: scene.choreographyId,
+  });
+  if (resolvedRuntime?.runtimeSourceKind === "mac_package_runtime") {
+    if (!resolvedRuntime.choreography) {
+      throw new Error(`MAC_SHOT_RUNTIME_RENDER_INTERFACE_INCOMPATIBLE:${resolvedRuntime.runtimeKey}`);
+    }
+    const MacChoreography = resolvedRuntime.choreography;
+    return <MacChoreography />;
+  }
+
   if (!scene.choreographyId) {
     throw new Error(`Blocked render: scene ${scene.id ?? sceneIndex + 1} has no choreographyId.`);
   }
