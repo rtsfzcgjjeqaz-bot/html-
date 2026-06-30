@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_92",
+  "libraryId": "ledger-success-benefit-reveal",
+  "choreographyId": "ledgerSuccessBenefitReveal",
+  "displayName": "Ledger Success Benefit Reveal",
+  "purpose": "feature_highlight; show_success_to_benefit",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/ledger-success-benefit-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/ledgerSuccessBenefitReveal.tsx",
+    "runtime/atomic/shot92-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "successMessage",
+    "benefitHeadline",
+    "supportingCopy",
+    "ctaLabels"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "b064933179e61ba25b6f958019b2de7d5d1d0cbacae69895b467c255ccf3d495",
+  "publishedAt": "2026-06-30",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

@@ -365,6 +365,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_90/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_92",
+      "choreographyId": "ledgerSuccessBenefitReveal",
+      "displayName": "Ledger Success Benefit Reveal",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_92",
+      "selectionContractPath": "library/mac-shot-library/shot_92/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

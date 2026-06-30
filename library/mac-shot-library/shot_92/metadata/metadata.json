@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_92",
+  "libraryId": "ledger-success-benefit-reveal",
+  "choreographyId": "ledgerSuccessBenefitReveal",
+  "sceneType": "featureHighlight",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/ledger-success-benefit-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "b064933179e61ba25b6f958019b2de7d5d1d0cbacae69895b467c255ccf3d495",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-06-30"
+}

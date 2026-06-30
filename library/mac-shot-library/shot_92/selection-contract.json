@@ -1,0 +1,53 @@
+{
+  "shotId": "shot_92",
+  "displayName": "Ledger Success Benefit Reveal",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/ledger-success-benefit-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "b064933179e61ba25b6f958019b2de7d5d1d0cbacae69895b467c255ccf3d495",
+  "intents": [
+    "show_success_confirmation",
+    "communicate_workflow_benefit"
+  ],
+  "semanticTags": [
+    "featurehighlight",
+    "success",
+    "confirmation",
+    "benefit",
+    "cta"
+  ],
+  "sceneRoles": [
+    "featureHighlight"
+  ],
+  "supportedEvidenceTypes": [
+    "success_message",
+    "benefit_headline",
+    "cta_buttons",
+    "completion_state"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "unrelated_stock_visual",
+    "long_form_text_reading"
+  ],
+  "durationRangeFrames": [
+    63,
+    63
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 34,
+    "supportingLines": 1,
+    "bodyMaxChars": 100,
+    "labelMaxChars": 24,
+    "buttonCount": 2
+  },
+  "selectionPriority": 75,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/ledger-success-benefit-reveal.library-entry.ts",
+  "runtimeExport": "ledgerSuccessBenefitRevealLibraryEntry",
+  "choreographyEntry": "runtime/choreography/ledgerSuccessBenefitReveal.tsx",
+  "choreographyExport": "Shot92LedgerSuccessBenefitRevealChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_92_DURATION_FRAMES"
+}
