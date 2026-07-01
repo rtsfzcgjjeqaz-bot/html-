@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_96",
+  "displayName": "Finance Market Bar Glow Hook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/finance-market-bar-glow-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "a044e84e56b5a693caaa7342b25997de390a9f6d3be11c9e539980f0a909a178",
+  "intents": [
+    "open_finance_video",
+    "introduce_market_signal",
+    "show_compact_market_bars"
+  ],
+  "semanticTags": [
+    "coverhook",
+    "finance",
+    "market-bars",
+    "data-grid",
+    "price-signal"
+  ],
+  "sceneRoles": [
+    "coverHook"
+  ],
+  "supportedEvidenceTypes": [
+    "short_headline",
+    "metric_label",
+    "market_context"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "long_form_text",
+    "generic_currency_b_roll"
+  ],
+  "durationRangeFrames": [
+    126,
+    126
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 34,
+    "eyebrowMaxChars": 28,
+    "metricLabelMaxChars": 28,
+    "supportingLines": 0
+  },
+  "selectionPriority": 78,
+  "duplicateUsePolicy": "avoid_same_choreography_within_one_video",
+  "runtimeEntry": "runtime/catalog-entry/finance-market-bar-glow-hook.library-entry.ts",
+  "runtimeExport": "financeMarketBarGlowHookLibraryEntry",
+  "choreographyEntry": "runtime/choreography/financeMarketBarGlowHook.tsx",
+  "choreographyExport": "Shot96FinanceMarketBarGlowHookChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_96_DURATION_FRAMES"
+}

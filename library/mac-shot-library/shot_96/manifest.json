@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_96",
+  "libraryId": "finance-market-bar-glow-hook",
+  "choreographyId": "financeMarketBarGlowHook",
+  "displayName": "Finance Market Bar Glow Hook",
+  "purpose": "cover_hook; dark_finance_market_bars_with_semantic_headline",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/finance-market-bar-glow-hook.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/financeMarketBarGlowHook.tsx",
+    "runtime/atomic/shot96-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "headline",
+    "eyebrow",
+    "metricLabel"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "a044e84e56b5a693caaa7342b25997de390a9f6d3be11c9e539980f0a909a178",
+  "publishedAt": "2026-07-01",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

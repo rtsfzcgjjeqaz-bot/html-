@@ -401,6 +401,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_95/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_96",
+      "choreographyId": "financeMarketBarGlowHook",
+      "displayName": "Finance Market Bar Glow Hook",
+      "sceneType": "coverHook",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_96",
+      "selectionContractPath": "library/mac-shot-library/shot_96/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

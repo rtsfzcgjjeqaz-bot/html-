@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_96",
+  "libraryId": "finance-market-bar-glow-hook",
+  "choreographyId": "financeMarketBarGlowHook",
+  "sceneType": "coverHook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/finance-market-bar-glow-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "a044e84e56b5a693caaa7342b25997de390a9f6d3be11c9e539980f0a909a178",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-01"
+}
