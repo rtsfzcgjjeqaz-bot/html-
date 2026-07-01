@@ -425,6 +425,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_99/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_100",
+      "choreographyId": "teamflectHeroLaptopReveal",
+      "displayName": "Teamflect Hero Laptop Reveal",
+      "sceneType": "websiteHero",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_100",
+      "selectionContractPath": "library/mac-shot-library/shot_100/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

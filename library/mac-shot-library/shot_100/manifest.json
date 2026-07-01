@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_100",
+  "libraryId": "teamflect-hero-laptop-reveal",
+  "choreographyId": "teamflectHeroLaptopReveal",
+  "displayName": "Teamflect Hero Laptop Reveal",
+  "purpose": "website_hero; bright_saas_brand_laptop_product_reveal",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/teamflect-hero-laptop-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/teamflectHeroLaptopReveal.tsx",
+    "runtime/atomic/shot100-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "brandName",
+    "tagline",
+    "accent"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "383de512a1078a6e3838faffd67ed7a885bebae414382e15cda9d3d16709d52d",
+  "publishedAt": "2026-07-01",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

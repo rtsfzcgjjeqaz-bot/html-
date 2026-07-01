@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_100",
+  "displayName": "Teamflect Hero Laptop Reveal",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/teamflect-hero-laptop-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "383de512a1078a6e3838faffd67ed7a885bebae414382e15cda9d3d16709d52d",
+  "intents": [
+    "show_saas_product_hero",
+    "introduce_brand_and_product_screen",
+    "present_clean_website_hero"
+  ],
+  "semanticTags": [
+    "websitehero",
+    "saas",
+    "laptop",
+    "product-screen",
+    "brand"
+  ],
+  "sceneRoles": [
+    "websiteHero"
+  ],
+  "supportedEvidenceTypes": [
+    "brand_name",
+    "short_tagline",
+    "product_dashboard"
+  ],
+  "excludedIntents": [
+    "dense_data_analysis",
+    "long_form_text",
+    "pure_decoration"
+  ],
+  "durationRangeFrames": [
+    99,
+    99
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "brandNameMaxChars": 22,
+    "taglineMaxChars": 68,
+    "accentMaxChars": 2,
+    "supportingLines": 2
+  },
+  "selectionPriority": 86,
+  "duplicateUsePolicy": "avoid_multiple_website_hero_openers_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/teamflect-hero-laptop-reveal.library-entry.ts",
+  "runtimeExport": "teamflectHeroLaptopRevealLibraryEntry",
+  "choreographyEntry": "runtime/choreography/teamflectHeroLaptopReveal.tsx",
+  "choreographyExport": "Shot100TeamflectHeroLaptopRevealChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_100_DURATION_FRAMES"
+}

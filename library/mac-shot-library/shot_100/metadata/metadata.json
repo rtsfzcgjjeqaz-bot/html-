@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_100",
+  "libraryId": "teamflect-hero-laptop-reveal",
+  "choreographyId": "teamflectHeroLaptopReveal",
+  "sceneType": "websiteHero",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/teamflect-hero-laptop-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "383de512a1078a6e3838faffd67ed7a885bebae414382e15cda9d3d16709d52d",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-01"
+}
