@@ -413,6 +413,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_96/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_99",
+      "choreographyId": "globalMarketDashboardInsight",
+      "displayName": "Global Market Dashboard Insight",
+      "sceneType": "priceInsight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_99",
+      "selectionContractPath": "library/mac-shot-library/shot_99/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

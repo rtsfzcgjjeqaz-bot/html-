@@ -1,0 +1,54 @@
+{
+  "shotId": "shot_99",
+  "displayName": "Global Market Dashboard Insight",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/global-market-dashboard-insight.library-entry.ts",
+  "sourceCatalogEntryHash": "76b5f35f4f70ec8de348fde596dc35c38a8db9662dc47cd8a679c49672ac3364",
+  "intents": [
+    "show_global_market_context",
+    "explain_price_movement",
+    "present_dashboard_insight"
+  ],
+  "semanticTags": [
+    "priceinsight",
+    "global-market",
+    "dashboard",
+    "globe",
+    "candlestick",
+    "volume"
+  ],
+  "sceneRoles": [
+    "priceInsight"
+  ],
+  "supportedEvidenceTypes": [
+    "headline",
+    "metric",
+    "region_label",
+    "market_context"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "long_form_text",
+    "unrelated_stock_visual"
+  ],
+  "durationRangeFrames": [
+    175,
+    175
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 44,
+    "metricMaxChars": 34,
+    "regionLabelMaxChars": 28,
+    "supportingLines": 0
+  },
+  "selectionPriority": 82,
+  "duplicateUsePolicy": "avoid_multiple_dense_market_dashboards_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/global-market-dashboard-insight.library-entry.ts",
+  "runtimeExport": "globalMarketDashboardInsightLibraryEntry",
+  "choreographyEntry": "runtime/choreography/globalMarketDashboardInsight.tsx",
+  "choreographyExport": "Shot99GlobalMarketDashboardInsightChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_99_DURATION_FRAMES"
+}

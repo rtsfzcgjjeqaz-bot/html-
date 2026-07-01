@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_99",
+  "libraryId": "global-market-dashboard-insight",
+  "choreographyId": "globalMarketDashboardInsight",
+  "sceneType": "priceInsight",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/global-market-dashboard-insight.library-entry.ts",
+  "sourceCatalogEntryHash": "76b5f35f4f70ec8de348fde596dc35c38a8db9662dc47cd8a679c49672ac3364",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-01"
+}

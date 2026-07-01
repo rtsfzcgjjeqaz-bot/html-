@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_99",
+  "libraryId": "global-market-dashboard-insight",
+  "choreographyId": "globalMarketDashboardInsight",
+  "displayName": "Global Market Dashboard Insight",
+  "purpose": "price_insight; global_market_globe_with_dashboard_chart",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/global-market-dashboard-insight.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/globalMarketDashboardInsight.tsx",
+    "runtime/atomic/shot99-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "headline",
+    "metric",
+    "regionLabel"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "76b5f35f4f70ec8de348fde596dc35c38a8db9662dc47cd8a679c49672ac3364",
+  "publishedAt": "2026-07-01",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}
