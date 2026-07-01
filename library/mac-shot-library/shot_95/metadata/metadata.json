@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_95",
+  "libraryId": "kitaabh-brand-final-cta",
+  "choreographyId": "kitaabhBrandFinalCta",
+  "sceneType": "finalCTA",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/kitaabh-brand-final-cta.library-entry.ts",
+  "sourceCatalogEntryHash": "a4ac822bda3ca7334f54ebaa0750b2c8c8d874ba396d850f5a77791a3894c1f1",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-01"
+}

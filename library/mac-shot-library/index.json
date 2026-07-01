@@ -4,7 +4,7 @@
   "sourceProject": "mac-jewelry-video",
   "branch": "library/mac-approved-shots",
   "description": "Portable advanced shot packages exported from approved Mac motion catalog. Not auto-imported by production runtime without Windows validation.",
-  "updatedAt": "2026-06-30",
+  "updatedAt": "2026-07-01",
   "shots": [
     {
       "shotId": "shot_08",
@@ -387,6 +387,18 @@
       "selectionAllowed": true,
       "packagePath": "library/mac-shot-library/shot_93",
       "selectionContractPath": "library/mac-shot-library/shot_93/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_95",
+      "choreographyId": "kitaabhBrandFinalCta",
+      "displayName": "Kitaabh Brand Final CTA",
+      "sceneType": "finalCTA",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_95",
+      "selectionContractPath": "library/mac-shot-library/shot_95/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
     }

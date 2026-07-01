@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_95",
+  "libraryId": "kitaabh-brand-final-cta",
+  "choreographyId": "kitaabhBrandFinalCta",
+  "displayName": "Kitaabh Brand Final CTA",
+  "purpose": "final_cta; brand_lockup_with_tagline_and_website",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/kitaabh-brand-final-cta.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/kitaabhBrandFinalCta.tsx",
+    "runtime/atomic/shot95-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "brandName",
+    "tagline",
+    "website",
+    "bottomCopy",
+    "secondaryCopy"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "a4ac822bda3ca7334f54ebaa0750b2c8c8d874ba396d850f5a77791a3894c1f1",
+  "publishedAt": "2026-07-01",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

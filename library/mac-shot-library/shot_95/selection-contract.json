@@ -1,0 +1,54 @@
+{
+  "shotId": "shot_95",
+  "displayName": "Kitaabh Brand Final CTA",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/kitaabh-brand-final-cta.library-entry.ts",
+  "sourceCatalogEntryHash": "a4ac822bda3ca7334f54ebaa0750b2c8c8d874ba396d850f5a77791a3894c1f1",
+  "intents": [
+    "close_with_brand",
+    "show_product_tagline",
+    "show_website_destination"
+  ],
+  "semanticTags": [
+    "finalcta",
+    "brand",
+    "tagline",
+    "website",
+    "end-card"
+  ],
+  "sceneRoles": [
+    "finalCTA"
+  ],
+  "supportedEvidenceTypes": [
+    "brand_name",
+    "tagline",
+    "website",
+    "short_supporting_copy"
+  ],
+  "excludedIntents": [
+    "pure_decoration",
+    "long_form_explanation",
+    "data_comparison"
+  ],
+  "durationRangeFrames": [
+    70,
+    70
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 18,
+    "taglineMaxChars": 54,
+    "websiteMaxChars": 28,
+    "supportingLines": 2,
+    "bodyMaxChars": 96
+  },
+  "selectionPriority": 76,
+  "duplicateUsePolicy": "avoid_more_than_one_final_cta_per_video",
+  "runtimeEntry": "runtime/catalog-entry/kitaabh-brand-final-cta.library-entry.ts",
+  "runtimeExport": "kitaabhBrandFinalCtaLibraryEntry",
+  "choreographyEntry": "runtime/choreography/kitaabhBrandFinalCta.tsx",
+  "choreographyExport": "Shot95KitaabhBrandFinalCtaChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_95_DURATION_FRAMES"
+}
