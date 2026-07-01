@@ -437,6 +437,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_100/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_101",
+      "choreographyId": "saasRowStreamOverview",
+      "displayName": "SaaS Row Stream Overview",
+      "sceneType": "appGrid",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_101",
+      "selectionContractPath": "library/mac-shot-library/shot_101/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

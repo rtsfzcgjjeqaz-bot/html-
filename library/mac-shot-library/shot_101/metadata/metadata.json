@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_101",
+  "libraryId": "saas-row-stream-overview",
+  "choreographyId": "saasRowStreamOverview",
+  "sceneType": "appGrid",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/saas-row-stream-overview.library-entry.ts",
+  "sourceCatalogEntryHash": "4741484a520ac3b62d776ad3358f012c3814e047a3fb404e7e4ea3b602e2a022",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-01"
+}

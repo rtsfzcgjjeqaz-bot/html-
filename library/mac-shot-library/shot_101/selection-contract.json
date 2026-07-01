@@ -1,0 +1,52 @@
+{
+  "shotId": "shot_101",
+  "displayName": "SaaS Row Stream Overview",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/saas-row-stream-overview.library-entry.ts",
+  "sourceCatalogEntryHash": "4741484a520ac3b62d776ad3358f012c3814e047a3fb404e7e4ea3b602e2a022",
+  "intents": [
+    "show_app_rows",
+    "summarize_workflow_status",
+    "present_review_queue"
+  ],
+  "semanticTags": [
+    "appgrid",
+    "saas",
+    "rows",
+    "status-pills",
+    "workflow"
+  ],
+  "sceneRoles": [
+    "appGrid"
+  ],
+  "supportedEvidenceTypes": [
+    "short_headline",
+    "row_labels",
+    "status_labels"
+  ],
+  "excludedIntents": [
+    "long_form_table_reading",
+    "pure_transition",
+    "dense_financial_chart"
+  ],
+  "durationRangeFrames": [
+    97,
+    97
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "focusStatusMaxChars": 18,
+    "rowLabelMaxChars": 30,
+    "statusLabelMaxChars": 16
+  },
+  "selectionPriority": 80,
+  "duplicateUsePolicy": "avoid_multiple_row_stream_overviews_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/saas-row-stream-overview.library-entry.ts",
+  "runtimeExport": "saasRowStreamOverviewLibraryEntry",
+  "choreographyEntry": "runtime/choreography/saasRowStreamOverview.tsx",
+  "choreographyExport": "Shot101SaasRowStreamOverviewChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_101_DURATION_FRAMES"
+}

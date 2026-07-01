@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_101",
+  "libraryId": "saas-row-stream-overview",
+  "choreographyId": "saasRowStreamOverview",
+  "displayName": "SaaS Row Stream Overview",
+  "purpose": "app_grid; layered_workflow_rows_with_status_pills",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/saas-row-stream-overview.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/saasRowStreamOverview.tsx",
+    "runtime/atomic/shot101-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "focusStatus"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "4741484a520ac3b62d776ad3358f012c3814e047a3fb404e7e4ea3b602e2a022",
+  "publishedAt": "2026-07-01",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}
