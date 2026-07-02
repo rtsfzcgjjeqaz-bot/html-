@@ -461,6 +461,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_104/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_105",
+      "choreographyId": "systemRingMorphHighlight",
+      "displayName": "System Ring Morph Highlight",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_105",
+      "selectionContractPath": "library/mac-shot-library/shot_105/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

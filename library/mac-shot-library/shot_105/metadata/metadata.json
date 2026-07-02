@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_105",
+  "libraryId": "system-ring-morph-highlight",
+  "choreographyId": "systemRingMorphHighlight",
+  "sceneType": "featureHighlight",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/system-ring-morph-highlight.library-entry.ts",
+  "sourceCatalogEntryHash": "b03b1f21a31318e037bcc0e8bcc364c3572bbc30700f5be4bcf5ad7c35dd0706",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-02"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_105",
+  "libraryId": "system-ring-morph-highlight",
+  "choreographyId": "systemRingMorphHighlight",
+  "displayName": "System Ring Morph Highlight",
+  "purpose": "feature_highlight; luminous_system_ring_to_diamond_frame",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/system-ring-morph-highlight.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/systemRingMorphHighlight.tsx",
+    "runtime/atomic/shot105-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "eyebrow"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "b03b1f21a31318e037bcc0e8bcc364c3572bbc30700f5be4bcf5ad7c35dd0706",
+  "publishedAt": "2026-07-02",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

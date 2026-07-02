@@ -1,0 +1,50 @@
+{
+  "shotId": "shot_105",
+  "displayName": "System Ring Morph Highlight",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/system-ring-morph-highlight.library-entry.ts",
+  "sourceCatalogEntryHash": "b03b1f21a31318e037bcc0e8bcc364c3572bbc30700f5be4bcf5ad7c35dd0706",
+  "intents": [
+    "frame_system_concept",
+    "highlight_ai_capability",
+    "show_integrated_platform_principle"
+  ],
+  "semanticTags": [
+    "feature-highlight",
+    "ai",
+    "system",
+    "ring",
+    "diamond-frame",
+    "dark-neon"
+  ],
+  "sceneRoles": [
+    "featureHighlight"
+  ],
+  "supportedEvidenceTypes": [
+    "short_feature_phrase",
+    "short_supporting_label"
+  ],
+  "excludedIntents": [
+    "dense_ui_demo",
+    "long_explainer_text",
+    "price_chart"
+  ],
+  "durationRangeFrames": [
+    156,
+    156
+  ],
+  "aspectRatio": "9:16",
+  "textCapacityContract": {
+    "titleMaxChars": 26,
+    "eyebrowMaxChars": 44
+  },
+  "selectionPriority": 84,
+  "duplicateUsePolicy": "avoid_multiple_neon_system_frames_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/system-ring-morph-highlight.library-entry.ts",
+  "runtimeExport": "systemRingMorphHighlightLibraryEntry",
+  "choreographyEntry": "runtime/choreography/systemRingMorphHighlight.tsx",
+  "choreographyExport": "Shot105SystemRingMorphHighlightChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_105_DURATION_FRAMES"
+}
