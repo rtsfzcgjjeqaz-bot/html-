@@ -1,0 +1,50 @@
+{
+  "shotId": "shot_112",
+  "displayName": "Angled Glass Toolbar Hook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/angled-glass-toolbar-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "a3b5343a8ceebb613eac8fea046316e3a80317bea4515b82a615de3ba1cb82f1",
+  "intents": [
+    "open_saas_agent_video",
+    "show_glassy_product_surface",
+    "introduce_ai_workspace"
+  ],
+  "semanticTags": [
+    "coverhook",
+    "saas",
+    "agent",
+    "glass-ui",
+    "toolbar",
+    "cursor"
+  ],
+  "sceneRoles": [
+    "coverHook"
+  ],
+  "supportedEvidenceTypes": [
+    "short_headline",
+    "product_label"
+  ],
+  "excludedIntents": [
+    "dense_table_reading",
+    "price_chart",
+    "long_explainer_text"
+  ],
+  "durationRangeFrames": [
+    81,
+    81
+  ],
+  "aspectRatio": "16:9",
+  "textCapacityContract": {
+    "headlineMaxChars": 42,
+    "productLabelMaxChars": 22
+  },
+  "selectionPriority": 86,
+  "duplicateUsePolicy": "avoid_multiple_angled_glass_hooks_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/angled-glass-toolbar-hook.library-entry.ts",
+  "runtimeExport": "angledGlassToolbarHookLibraryEntry",
+  "choreographyEntry": "runtime/choreography/angledGlassToolbarHook.tsx",
+  "choreographyExport": "Shot112AngledGlassToolbarHookChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_112_DURATION_FRAMES"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_112",
+  "libraryId": "angled-glass-toolbar-hook",
+  "choreographyId": "angledGlassToolbarHook",
+  "displayName": "Angled Glass Toolbar Hook",
+  "purpose": "cover_hook; angled_glass_saas_toolbar_intro",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/angled-glass-toolbar-hook.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/angledGlassToolbarHook.tsx",
+    "runtime/atomic/shot112-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "headline",
+    "productLabel"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "a3b5343a8ceebb613eac8fea046316e3a80317bea4515b82a615de3ba1cb82f1",
+  "publishedAt": "2026-07-02",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

@@ -485,6 +485,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_106/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_112",
+      "choreographyId": "angledGlassToolbarHook",
+      "displayName": "Angled Glass Toolbar Hook",
+      "sceneType": "coverHook",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_112",
+      "selectionContractPath": "library/mac-shot-library/shot_112/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

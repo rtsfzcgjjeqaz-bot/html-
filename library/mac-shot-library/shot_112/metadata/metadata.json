@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_112",
+  "libraryId": "angled-glass-toolbar-hook",
+  "choreographyId": "angledGlassToolbarHook",
+  "sceneType": "coverHook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/angled-glass-toolbar-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "a3b5343a8ceebb613eac8fea046316e3a80317bea4515b82a615de3ba1cb82f1",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-02"
+}
