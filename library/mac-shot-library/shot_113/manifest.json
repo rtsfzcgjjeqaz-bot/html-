@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_113",
+  "choreographyId": "attachmentCaptureFocus",
+  "libraryId": "attachment-capture-focus",
+  "purpose": "Search demo template for attachment/file capture with cursor selection and AI extraction panel reveal.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot113-atomic-motions.ts",
+    "runtime/choreography/attachmentCaptureFocus.tsx",
+    "runtime/catalog-entry/attachment-capture-focus.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": ["headline", "filename"],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-02",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

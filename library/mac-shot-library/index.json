@@ -497,6 +497,19 @@
       "selectionContractPath": "library/mac-shot-library/shot_112/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_113",
+      "choreographyId": "attachmentCaptureFocus",
+      "libraryId": "attachment-capture-focus",
+      "purpose": "Search demo template for attachment capture, cursor selection, and AI extraction panel reveal.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-02",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_113"
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_113",
+  "choreographyId": "attachmentCaptureFocus",
+  "sceneType": "searchDemo",
+  "selectionUseCases": [
+    "file upload or attachment capture",
+    "email attachment parsing",
+    "AI extraction result reveal",
+    "searchDemo for document intake"
+  ],
+  "textCapacity": {
+    "headline": { "maxChars": 42, "lines": 2 },
+    "filename": { "maxChars": 24, "lines": 1 },
+    "extractedFieldValue": { "maxChars": 12, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 54
+  },
+  "doNotUseFor": [
+    "long paragraph narration",
+    "full document preview",
+    "decorative-only transition"
+  ]
+}
