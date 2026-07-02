@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_104",
+  "libraryId": "luminous-line-begin-hook",
+  "choreographyId": "luminousLineBeginHook",
+  "displayName": "Luminous Line Begin Hook",
+  "purpose": "cover_hook; premium_dark_luminous_line_intro",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/luminous-line-begin-hook.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/luminousLineBeginHook.tsx",
+    "runtime/atomic/shot104-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "subtitle"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "82988388092f313f713f2b0c612f655b30f721d086a425cd71f772f1f6478a6c",
+  "publishedAt": "2026-07-02",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

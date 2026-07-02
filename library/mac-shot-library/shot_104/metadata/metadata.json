@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_104",
+  "libraryId": "luminous-line-begin-hook",
+  "choreographyId": "luminousLineBeginHook",
+  "sceneType": "coverHook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/luminous-line-begin-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "82988388092f313f713f2b0c612f655b30f721d086a425cd71f772f1f6478a6c",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-02"
+}

@@ -1,0 +1,50 @@
+{
+  "shotId": "shot_104",
+  "displayName": "Luminous Line Begin Hook",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/luminous-line-begin-hook.library-entry.ts",
+  "sourceCatalogEntryHash": "82988388092f313f713f2b0c612f655b30f721d086a425cd71f772f1f6478a6c",
+  "intents": [
+    "open_premium_ai_intro",
+    "start_technology_story",
+    "signal_system_beginning"
+  ],
+  "semanticTags": [
+    "coverhook",
+    "ai",
+    "dark",
+    "luminous-line",
+    "premium-intro"
+  ],
+  "sceneRoles": [
+    "coverHook"
+  ],
+  "supportedEvidenceTypes": [
+    "short_title",
+    "short_subtitle",
+    "brand_intro_phrase"
+  ],
+  "excludedIntents": [
+    "dense_ui_demo",
+    "long_form_explanation",
+    "data_chart"
+  ],
+  "durationRangeFrames": [
+    96,
+    96
+  ],
+  "aspectRatio": "9:16",
+  "textCapacityContract": {
+    "titleMaxChars": 24,
+    "subtitleMaxChars": 58
+  },
+  "selectionPriority": 78,
+  "duplicateUsePolicy": "avoid_multiple_luminous_dark_hooks_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/luminous-line-begin-hook.library-entry.ts",
+  "runtimeExport": "luminousLineBeginHookLibraryEntry",
+  "choreographyEntry": "runtime/choreography/luminousLineBeginHook.tsx",
+  "choreographyExport": "Shot104LuminousLineBeginHookChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_104_DURATION_FRAMES"
+}
