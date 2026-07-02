@@ -473,6 +473,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_105/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_106",
+      "choreographyId": "gradientFormCardReveal",
+      "displayName": "Gradient Form Card Reveal",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_106",
+      "selectionContractPath": "library/mac-shot-library/shot_106/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

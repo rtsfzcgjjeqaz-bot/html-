@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 2,
+  "shotId": "shot_106",
+  "libraryId": "gradient-form-card-reveal",
+  "choreographyId": "gradientFormCardReveal",
+  "displayName": "Gradient Form Card Reveal",
+  "purpose": "feature_highlight; gradient_title_card_reveal",
+  "status": "github_published",
+  "selectionAllowed": true,
+  "requiredFiles": [
+    "selection-contract.json",
+    "runtime/catalog-entry/gradient-form-card-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "runtime/choreography/gradientFormCardReveal.tsx",
+    "runtime/atomic/shot106-atomic-motions.ts",
+    "integration/registry-entry.ts",
+    "docs/action-breakdown.md",
+    "metadata/metadata.json",
+    "metadata/qa.json"
+  ],
+  "requiredAssets": [],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "subtitle"
+  ],
+  "verificationStatus": {
+    "choreographyResolvable": true,
+    "runtimeImportsResolvable": true,
+    "requiredAssetsExist": true,
+    "textCapacityContractExists": true,
+    "selectionContractGenerated": true
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "mac-jewelry-video",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntryHash": "89b6243b0b500e5233bc1b4fd45661bd10809444abf545924f717ac696a3abed",
+  "publishedAt": "2026-07-02",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

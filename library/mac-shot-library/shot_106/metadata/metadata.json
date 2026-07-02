@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "shotId": "shot_106",
+  "libraryId": "gradient-form-card-reveal",
+  "choreographyId": "gradientFormCardReveal",
+  "sceneType": "featureHighlight",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/gradient-form-card-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "89b6243b0b500e5233bc1b4fd45661bd10809444abf545924f717ac696a3abed",
+  "sourceQaAvailable": true,
+  "sourceMetadataAvailable": true,
+  "status": "github_published",
+  "localPreviewApproved": true,
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "generatedAt": "2026-07-02"
+}

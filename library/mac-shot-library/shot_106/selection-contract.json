@@ -1,0 +1,49 @@
+{
+  "shotId": "shot_106",
+  "displayName": "Gradient Form Card Reveal",
+  "sourceEnvironment": "mac-approved-shot-library",
+  "sourceCatalogEntry": "src/motion/catalog/gradient-form-card-reveal.library-entry.ts",
+  "sourceCatalogEntryHash": "89b6243b0b500e5233bc1b4fd45661bd10809444abf545924f717ac696a3abed",
+  "intents": [
+    "introduce_feature_word",
+    "highlight_product_principle",
+    "show_gradient_title_card"
+  ],
+  "semanticTags": [
+    "feature-highlight",
+    "gradient-card",
+    "form",
+    "focus",
+    "dark-neon"
+  ],
+  "sceneRoles": [
+    "featureHighlight"
+  ],
+  "supportedEvidenceTypes": [
+    "short_feature_word",
+    "short_subtitle"
+  ],
+  "excludedIntents": [
+    "dense_ui_demo",
+    "long_copy",
+    "multi_step_flow"
+  ],
+  "durationRangeFrames": [
+    96,
+    96
+  ],
+  "aspectRatio": "9:16",
+  "textCapacityContract": {
+    "titleMaxChars": 18,
+    "subtitleMaxChars": 32
+  },
+  "selectionPriority": 76,
+  "duplicateUsePolicy": "avoid_multiple_gradient_title_cards_in_one_video",
+  "runtimeEntry": "runtime/catalog-entry/gradient-form-card-reveal.library-entry.ts",
+  "runtimeExport": "gradientFormCardRevealLibraryEntry",
+  "choreographyEntry": "runtime/choreography/gradientFormCardReveal.tsx",
+  "choreographyExport": "Shot106GradientFormCardRevealChoreography",
+  "requiredAssets": [],
+  "selectionAllowed": true,
+  "durationExport": "SHOT_106_DURATION_FRAMES"
+}
