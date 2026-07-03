@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_115",
+  "choreographyId": "themeSwitchDocumentCards",
+  "libraryId": "theme-switch-document-cards",
+  "purpose": "Feature highlight template for AI rewrite option stack, cursor selection, and document highlight resolution.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot115-atomic-motions.ts",
+    "runtime/choreography/themeSwitchDocumentCards.tsx",
+    "runtime/catalog-entry/theme-switch-document-cards.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": ["selectedText", "label"],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-03",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

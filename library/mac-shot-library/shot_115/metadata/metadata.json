@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_115",
+  "sceneType": "featureHighlight",
+  "choreographyId": "themeSwitchDocumentCards",
+  "libraryId": "theme-switch-document-cards",
+  "sourceReferencePath": "references/extracted-shots/new-reference-saas-agent-mainstream/shot_115_featureHighlight_8p40-11p00.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_115/themeSwitchDocumentCards.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_115/themeSwitchDocumentCards.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-03",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true
+}
