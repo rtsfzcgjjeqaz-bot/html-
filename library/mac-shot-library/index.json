@@ -612,6 +612,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_123/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_124",
+      "choreographyId": "translationAiResponsePanel",
+      "displayName": "Translation AI Response Panel",
+      "sceneType": "aiRecommendation",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_124",
+      "selectionContractPath": "library/mac-shot-library/shot_124/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

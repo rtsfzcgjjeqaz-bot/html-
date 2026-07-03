@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_124",
+  "choreographyId": "translationAiResponsePanel",
+  "libraryId": "translation-ai-response-panel",
+  "purpose": "AIRecommendation template for mobile language selector to translated response or assistant answer panel.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot124-atomic-motions.ts",
+    "runtime/choreography/translationAiResponsePanel.tsx",
+    "runtime/catalog-entry/translation-ai-response-panel.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": ["headline", "sourceLanguage", "targetLanguage", "responseTitle", "responseLines"],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-03",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

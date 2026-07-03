@@ -1,0 +1,20 @@
+{
+  "shotId": "shot_124",
+  "sceneType": "aiRecommendation",
+  "choreographyId": "translationAiResponsePanel",
+  "libraryId": "translation-ai-response-panel",
+  "sourceReferencePath": "references/extracted-shots/new-reference-google-ai-software/shot_124_aiRecommendation_8p40-10p87.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_124/translationAiResponsePanel.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_124/translationAiResponsePanel.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-03",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "manualApprovedAt": "2026-07-03"
+}
