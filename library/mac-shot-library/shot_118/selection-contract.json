@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_118",
+  "choreographyId": "agentCommandBoardShowcase",
+  "sceneType": "appGrid",
+  "selectionUseCases": [
+    "agent command board",
+    "inbox to task attachment",
+    "schedule board showcase",
+    "productivity dashboard app grid"
+  ],
+  "textCapacity": {
+    "boardTitle": { "maxChars": 24, "lines": 1 },
+    "rowLabel": { "maxChars": 18, "lines": 1 },
+    "taskTitle": { "maxChars": 24, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 56
+  },
+  "doNotUseFor": [
+    "long email body display",
+    "dense analytics dashboard",
+    "decorative-only floating cards"
+  ]
+}

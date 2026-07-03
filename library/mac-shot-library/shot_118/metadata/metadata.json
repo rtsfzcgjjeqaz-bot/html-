@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_118",
+  "sceneType": "appGrid",
+  "choreographyId": "agentCommandBoardShowcase",
+  "libraryId": "agent-command-board-showcase",
+  "sourceReferencePath": "references/extracted-shots/new-reference-saas-agent-mainstream/shot_118_appGrid_16p30-18p50.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_118/agentCommandBoardShowcase.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_118/agentCommandBoardShowcase.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-03",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true
+}
