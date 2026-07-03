@@ -575,6 +575,19 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_118"
+    },
+    {
+      "shotId": "shot_120",
+      "choreographyId": "darkGoogleAiBusinessHook",
+      "libraryId": "dark-google-ai-business-hook",
+      "purpose": "CoverHook template for dark AI product intro with floating product panels, app mark, headline, and assist chips.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-03",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_120"
     }
   ]
 }

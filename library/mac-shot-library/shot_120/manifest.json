@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_120",
+  "choreographyId": "darkGoogleAiBusinessHook",
+  "libraryId": "dark-google-ai-business-hook",
+  "purpose": "CoverHook template for dark AI product intro with floating product panels, app mark, headline, and assist chips.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot120-atomic-motions.ts",
+    "runtime/choreography/darkGoogleAiBusinessHook.tsx",
+    "runtime/catalog-entry/dark-google-ai-business-hook.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": ["headline", "subline"],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-03",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_120",
+  "choreographyId": "darkGoogleAiBusinessHook",
+  "sceneType": "coverHook",
+  "selectionUseCases": [
+    "AI product cover hook",
+    "dark SaaS intro",
+    "website hero opener",
+    "software feature reel opening"
+  ],
+  "textCapacity": {
+    "headline": { "maxChars": 34, "lines": 1 },
+    "subline": { "maxChars": 18, "lines": 1 },
+    "chipLabel": { "maxChars": 12, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 64
+  },
+  "doNotUseFor": [
+    "long paragraph intro",
+    "brand-specific Google runtime unless licensed",
+    "decorative-only dark card drift"
+  ]
+}
