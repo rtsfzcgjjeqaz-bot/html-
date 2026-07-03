@@ -624,6 +624,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_124/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_125",
+      "choreographyId": "needNotCopyMorph",
+      "displayName": "Need Not Copy Morph",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_125",
+      "selectionContractPath": "library/mac-shot-library/shot_125/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

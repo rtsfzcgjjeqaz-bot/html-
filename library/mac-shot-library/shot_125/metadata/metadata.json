@@ -1,0 +1,20 @@
+{
+  "shotId": "shot_125",
+  "sceneType": "featureHighlight",
+  "choreographyId": "needNotCopyMorph",
+  "libraryId": "need-not-copy-morph",
+  "sourceReferencePath": "references/extracted-shots/new-reference-google-ai-software/shot_125_featureHighlight_10p87-12p87.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_125/needNotCopyMorph.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_125/needNotCopyMorph.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-03",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "manualApprovedAt": "2026-07-03"
+}
