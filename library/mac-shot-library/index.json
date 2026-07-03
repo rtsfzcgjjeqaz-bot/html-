@@ -549,6 +549,19 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_116"
+    },
+    {
+      "shotId": "shot_117",
+      "choreographyId": "floatingWorkflowStepRail",
+      "libraryId": "floating-workflow-step-rail",
+      "purpose": "StepFlow template for turning a selected message into a curved workflow card rail.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-03",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_117"
     }
   ]
 }

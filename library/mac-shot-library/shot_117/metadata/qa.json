@@ -1,0 +1,16 @@
+{
+  "shotId": "shot_117",
+  "choreographyId": "floatingWorkflowStepRail",
+  "status": "approved_pending_github_publish",
+  "checks": {
+    "build": "passed",
+    "previewRender": "passed",
+    "contactSheet": "passed",
+    "dimensions": "1280x720",
+    "fps": 30,
+    "frames": 78,
+    "manualReview": "passed"
+  },
+  "approved": true,
+  "allowedInFactory": true
+}
