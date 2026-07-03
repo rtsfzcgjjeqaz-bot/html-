@@ -600,6 +600,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_122/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_123",
+      "choreographyId": "languageNeedPromptFocus",
+      "displayName": "Language Need Prompt Focus",
+      "sceneType": "searchDemo",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_123",
+      "selectionContractPath": "library/mac-shot-library/shot_123/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }
