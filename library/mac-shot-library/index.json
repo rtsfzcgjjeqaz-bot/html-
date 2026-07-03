@@ -536,6 +536,19 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_115"
+    },
+    {
+      "shotId": "shot_116",
+      "choreographyId": "darkAgentDashboardGridBuild",
+      "libraryId": "dark-agent-dashboard-grid-build",
+      "purpose": "AppGrid template for Light/Dark mode selection with cursor targeting and active dark dashboard confirmation.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-03",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_116"
     }
   ]
 }

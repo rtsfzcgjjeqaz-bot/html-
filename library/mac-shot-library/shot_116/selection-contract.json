@@ -1,0 +1,25 @@
+{
+  "shotId": "shot_116",
+  "choreographyId": "darkAgentDashboardGridBuild",
+  "sceneType": "appGrid",
+  "selectionUseCases": [
+    "dark mode selection",
+    "product setting toggle",
+    "app state choice",
+    "dashboard theme switch"
+  ],
+  "textCapacity": {
+    "title": { "maxChars": 22, "lines": 1 },
+    "optionLabel": { "maxChars": 10, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 56
+  },
+  "doNotUseFor": [
+    "dense dashboard analytics",
+    "long settings forms",
+    "decorative-only card toggle"
+  ]
+}

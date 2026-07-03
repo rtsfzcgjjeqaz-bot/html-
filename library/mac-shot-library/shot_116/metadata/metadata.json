@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_116",
+  "sceneType": "appGrid",
+  "choreographyId": "darkAgentDashboardGridBuild",
+  "libraryId": "dark-agent-dashboard-grid-build",
+  "sourceReferencePath": "references/extracted-shots/new-reference-saas-agent-mainstream/shot_116_appGrid_11p00-13p70.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_116/darkAgentDashboardGridBuild.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_116/darkAgentDashboardGridBuild.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-03",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true
+}
