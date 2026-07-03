@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_127",
+  "choreographyId": "langeaseKineticTextHook",
+  "sceneType": "coverHook",
+  "selectionUseCases": [
+    "SaaS product opening hook",
+    "input mode promise",
+    "document or audio transformation opener",
+    "minimal kinetic typography cover"
+  ],
+  "textCapacity": {
+    "brand": { "maxChars": 12, "lines": 1 },
+    "verb": { "maxChars": 8, "lines": 1 },
+    "word": { "maxChars": 10, "lines": 1, "maxItems": 3 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 96
+  },
+  "doNotUseFor": [
+    "long headline hooks",
+    "dense explanatory intros",
+    "brand-only scenes without follow-up product context"
+  ]
+}
