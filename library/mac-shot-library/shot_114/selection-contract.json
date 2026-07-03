@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_114",
+  "choreographyId": "documentActionPanelReveal",
+  "sceneType": "featureHighlight",
+  "selectionUseCases": [
+    "inline document editing",
+    "grammar or writing assistant feature",
+    "text selection action popover",
+    "AI suggestion fanout"
+  ],
+  "textCapacity": {
+    "phrase": { "maxChars": 18, "lines": 1 },
+    "label": { "maxChars": 28, "lines": 1 },
+    "ribbonText": { "maxChars": 20, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 56
+  },
+  "doNotUseFor": [
+    "long document reading",
+    "dense table data",
+    "decorative-only transition"
+  ]
+}
