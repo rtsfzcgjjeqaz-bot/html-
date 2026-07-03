@@ -1,0 +1,20 @@
+{
+  "shotId": "shot_122",
+  "sceneType": "appGrid",
+  "choreographyId": "phoneCarouselPerformanceFan",
+  "libraryId": "phone-carousel-performance-fan",
+  "sourceReferencePath": "references/extracted-shots/new-reference-google-ai-software/shot_122_appGrid_4p77-6p20.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_122/phoneCarouselPerformanceFan.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_122/phoneCarouselPerformanceFan.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-03",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "manualApprovedAt": "2026-07-03"
+}

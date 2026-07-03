@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_122",
+  "choreographyId": "phoneCarouselPerformanceFan",
+  "sceneType": "appGrid",
+  "selectionUseCases": [
+    "mobile app feature grid",
+    "phone hero with surrounding capability tiles",
+    "bright SaaS product module",
+    "consumer app value highlight"
+  ],
+  "textCapacity": {
+    "headline": { "maxChars": 28, "lines": 1 },
+    "tileLabel": { "maxChars": 10, "lines": 1 },
+    "screenChip": { "maxChars": 12, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 64
+  },
+  "doNotUseFor": [
+    "long headline copy",
+    "dense analytics dashboards",
+    "decorative-only confetti without product meaning"
+  ]
+}
