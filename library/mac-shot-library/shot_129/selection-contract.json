@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_129",
+  "choreographyId": "languageProcessingProgressRail",
+  "sceneType": "stepFlow",
+  "selectionUseCases": [
+    "upload to processing step",
+    "document parsing progress",
+    "multi-input workflow setup",
+    "AI import or conversion flow"
+  ],
+  "textCapacity": {
+    "instruction": { "maxChars": 22, "lines": 1 },
+    "mode": { "maxChars": 8, "lines": 1, "maxItems": 3 },
+    "progressLabel": { "maxChars": 14, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "dense document previews",
+    "long instruction copy",
+    "unrelated decorative progress bars"
+  ]
+}

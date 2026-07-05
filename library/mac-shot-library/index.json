@@ -660,6 +660,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_128/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_129",
+      "choreographyId": "languageProcessingProgressRail",
+      "displayName": "Language Processing Progress Rail",
+      "sceneType": "stepFlow",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_129",
+      "selectionContractPath": "library/mac-shot-library/shot_129/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

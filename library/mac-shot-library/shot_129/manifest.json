@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_129",
+  "choreographyId": "languageProcessingProgressRail",
+  "libraryId": "language-processing-progress-rail",
+  "purpose": "StepFlow template for upload/drop input processing with diagonal content surfaces, input mode labels, and a progress rail.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot129-atomic-motions.ts",
+    "runtime/choreography/languageProcessingProgressRail.tsx",
+    "runtime/catalog-entry/language-processing-progress-rail.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": ["instruction", "modes", "progressLabel"],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-05",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}
