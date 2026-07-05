@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_128",
+  "choreographyId": "bookAudioDropTransform",
+  "libraryId": "book-audio-drop-transform",
+  "purpose": "FeatureHighlight template for transforming books, audio, files, or documents into an instant AI workflow input.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot128-atomic-motions.ts",
+    "runtime/choreography/bookAudioDropTransform.tsx",
+    "runtime/catalog-entry/book-audio-drop-transform.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": ["leftPhrase", "rightPhrase", "cardLabel", "subLabel"],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-05",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_128",
+  "choreographyId": "bookAudioDropTransform",
+  "sceneType": "featureHighlight",
+  "selectionUseCases": [
+    "document to workflow input",
+    "audio or book transformation",
+    "file upload feature highlight",
+    "instant AI processing setup"
+  ],
+  "textCapacity": {
+    "leftPhrase": { "maxChars": 18, "lines": 1 },
+    "rightPhrase": { "maxChars": 12, "lines": 1 },
+    "cardLabel": { "maxChars": 12, "lines": 1 },
+    "subLabel": { "maxChars": 18, "lines": 1 }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 88
+  },
+  "doNotUseFor": [
+    "long explanatory copy",
+    "dense upload forms",
+    "unrelated decorative floating cards"
+  ]
+}

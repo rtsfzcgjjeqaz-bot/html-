@@ -4,7 +4,7 @@
   "sourceProject": "mac-jewelry-video",
   "branch": "library/mac-approved-shots",
   "description": "Portable advanced shot packages exported from approved Mac motion catalog. Not auto-imported by production runtime without Windows validation.",
-  "updatedAt": "2026-07-03",
+  "updatedAt": "2026-07-05",
   "shots": [
     {
       "shotId": "shot_08",
@@ -646,6 +646,18 @@
       "selectionAllowed": true,
       "packagePath": "library/mac-shot-library/shot_127",
       "selectionContractPath": "library/mac-shot-library/shot_127/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_128",
+      "choreographyId": "bookAudioDropTransform",
+      "displayName": "Book Audio Drop Transform",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_128",
+      "selectionContractPath": "library/mac-shot-library/shot_128/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
     }
