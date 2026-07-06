@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_136",
+  "sceneType": "coverHook",
+  "choreographyId": "prebuiltAgentCardsReveal",
+  "libraryId": "prebuilt-agent-cards-reveal",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ai-agent-platform-click-feedback/shot_136_coverHook_0-4p6.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_136/prebuiltAgentCardsReveal.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_136/prebuiltAgentCardsReveal.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 140,
+    "duration": "4.714667"
+  },
+  "manualApprovedAt": "2026-07-06"
+}

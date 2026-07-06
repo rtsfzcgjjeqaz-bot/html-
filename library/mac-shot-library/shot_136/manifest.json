@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_136",
+  "choreographyId": "prebuiltAgentCardsReveal",
+  "libraryId": "prebuilt-agent-cards-reveal",
+  "purpose": "CoverHook template for revealing a catalog of prebuilt agent/template cards around a central product headline.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot136-atomic-motions.ts",
+    "runtime/choreography/prebuiltAgentCardsReveal.tsx",
+    "runtime/catalog-entry/prebuilt-agent-cards-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "headline",
+    "cards",
+    "chipLabel"
+  ],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

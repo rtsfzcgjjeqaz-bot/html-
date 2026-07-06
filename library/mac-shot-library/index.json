@@ -744,6 +744,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_135/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_136",
+      "choreographyId": "prebuiltAgentCardsReveal",
+      "displayName": "Prebuilt Agent Cards Reveal",
+      "sceneType": "coverHook",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_136",
+      "selectionContractPath": "library/mac-shot-library/shot_136/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

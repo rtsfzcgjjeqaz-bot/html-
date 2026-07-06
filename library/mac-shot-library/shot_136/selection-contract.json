@@ -1,0 +1,37 @@
+{
+  "shotId": "shot_136",
+  "choreographyId": "prebuiltAgentCardsReveal",
+  "sceneType": "coverHook",
+  "selectionUseCases": [
+    "prebuilt agent library intro",
+    "template catalog opening",
+    "AI module cover hook",
+    "feature catalog reveal"
+  ],
+  "textCapacity": {
+    "headline": {
+      "maxChars": 24,
+      "lines": 1
+    },
+    "cardTitle": {
+      "maxChars": 18,
+      "lines": 1,
+      "maxItems": 8
+    },
+    "chipLabel": {
+      "maxChars": 12,
+      "lines": 1
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "long card descriptions",
+    "dense readable dashboards",
+    "random decorative cards",
+    "more than eight visible cards"
+  ]
+}
