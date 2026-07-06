@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_137",
+  "choreographyId": "workflowStepperBridge",
+  "libraryId": "workflow-stepper-bridge",
+  "purpose": "StepFlow template for bridging from a feature catalog into a guided workflow with a connected step rail.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot137-atomic-motions.ts",
+    "runtime/choreography/workflowStepperBridge.tsx",
+    "runtime/catalog-entry/workflow-stepper-bridge.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "steps",
+    "activeStep"
+  ],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

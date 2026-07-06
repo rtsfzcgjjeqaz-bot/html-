@@ -1,0 +1,37 @@
+{
+  "shotId": "shot_137",
+  "choreographyId": "workflowStepperBridge",
+  "sceneType": "stepFlow",
+  "selectionUseCases": [
+    "workflow stepper bridge",
+    "guided onboarding steps",
+    "process setup rail",
+    "automation configuration flow"
+  ],
+  "textCapacity": {
+    "title": {
+      "maxChars": 20,
+      "lines": 1
+    },
+    "step": {
+      "maxChars": 10,
+      "lines": 1,
+      "maxItems": 3
+    },
+    "activeStep": {
+      "maxChars": 10,
+      "lines": 1
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "dense workflow maps",
+    "more than three primary steps",
+    "long step labels",
+    "decorative connector lines"
+  ]
+}

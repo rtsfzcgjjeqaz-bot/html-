@@ -756,6 +756,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_136/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_137",
+      "choreographyId": "workflowStepperBridge",
+      "displayName": "Workflow Stepper Bridge",
+      "sceneType": "stepFlow",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_137",
+      "selectionContractPath": "library/mac-shot-library/shot_137/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

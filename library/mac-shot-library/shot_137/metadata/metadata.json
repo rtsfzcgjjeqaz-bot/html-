@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_137",
+  "sceneType": "stepFlow",
+  "choreographyId": "workflowStepperBridge",
+  "libraryId": "workflow-stepper-bridge",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ai-agent-platform-click-feedback/shot_137_stepFlow_4p6-7p4.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_137/workflowStepperBridge.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_137/workflowStepperBridge.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 87,
+    "duration": "2.944000"
+  },
+  "manualApprovedAt": "2026-07-06"
+}
