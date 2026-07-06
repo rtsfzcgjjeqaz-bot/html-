@@ -1,0 +1,32 @@
+{
+  "shotId": "shot_140",
+  "choreographyId": "evaluationDashboardMetricsGrid",
+  "purpose": "Reusable analytics dashboard and result comparison shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot140-atomic-motions.ts",
+    "runtime/choreography/evaluationDashboardMetricsGrid.tsx",
+    "runtime/catalog-entry/evaluation-dashboard-metrics-grid.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "metricCardGridBuild",
+    "pieChartSweep",
+    "miniTrendReveal",
+    "dashboardFocusHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "cards"
+  ],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

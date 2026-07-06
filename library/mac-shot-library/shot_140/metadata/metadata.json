@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_140",
+  "sceneType": "resultComparison",
+  "choreographyId": "evaluationDashboardMetricsGrid",
+  "libraryId": "evaluation-dashboard-metrics-grid",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ai-agent-platform-click-feedback/shot_140_resultComparison_12-16p2.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_140/evaluationDashboardMetricsGrid.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_140/evaluationDashboardMetricsGrid.contact-sheet.jpg",
+  "status": "awaiting_review",
+  "visualApproved": false,
+  "implementationVerified": true,
+  "approved": false,
+  "allowedInFactory": false,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 131,
+    "duration": "4.416000"
+  }
+}

@@ -1,0 +1,15 @@
+export const shot140RegistryEntry = {
+  id: "evaluationDashboardMetricsGrid",
+  libraryId: "evaluation-dashboard-metrics-grid",
+  sourceShotId: "shot_140",
+  sceneType: "resultComparison",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 131,
+  actionBreakdownPath: "src/motion/shot_140/shot140-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_140/shot140-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_140/shot140-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/evaluation-dashboard-metrics-grid.library-entry.ts",
+};
