@@ -1,0 +1,33 @@
+{
+  "shotId": "shot_135",
+  "choreographyId": "translateDubDistributeFinalCta",
+  "sceneType": "finalCTA",
+  "selectionUseCases": [
+    "final CTA action trio",
+    "brand close phrase",
+    "product promise end card",
+    "minimal closing mark"
+  ],
+  "textCapacity": {
+    "word": {
+      "maxChars": 12,
+      "lines": 1,
+      "maxItems": 3
+    },
+    "suffix": {
+      "maxChars": 18,
+      "lines": 1
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "long CTA sentences",
+    "dense product details",
+    "decorative spark-only endings",
+    "unbranded standalone scenes without context"
+  ]
+}

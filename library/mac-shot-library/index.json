@@ -732,6 +732,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_134/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_135",
+      "choreographyId": "translateDubDistributeFinalCta",
+      "displayName": "Translate Dub Distribute Final CTA",
+      "sceneType": "finalCTA",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_135",
+      "selectionContractPath": "library/mac-shot-library/shot_135/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

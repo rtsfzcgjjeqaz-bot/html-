@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_135",
+  "sceneType": "finalCTA",
+  "choreographyId": "translateDubDistributeFinalCta",
+  "libraryId": "translate-dub-distribute-final-cta",
+  "sourceReferencePath": "references/extracted-shots/new-reference-langease-saas-ai/shot_135_finalCTA_24p3-27p84.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_135/translateDubDistributeFinalCta.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_135/translateDubDistributeFinalCta.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 106,
+    "duration": "3.584000"
+  },
+  "manualApprovedAt": "2026-07-06"
+}
