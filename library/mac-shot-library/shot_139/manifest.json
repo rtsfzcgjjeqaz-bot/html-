@@ -1,0 +1,33 @@
+{
+  "shotId": "shot_139",
+  "choreographyId": "aiProviderEcosystemOrbit",
+  "purpose": "Reusable AI provider ecosystem and integration hub shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot139-atomic-motions.ts",
+    "runtime/choreography/aiProviderEcosystemOrbit.tsx",
+    "runtime/catalog-entry/ai-provider-ecosystem-orbit.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "centralAiOrbBloom",
+    "providerLogoOrbit",
+    "integrationNodeSettle",
+    "featuredProviderPulse",
+    "hubHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [
+    "hubLabel",
+    "providers"
+  ],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

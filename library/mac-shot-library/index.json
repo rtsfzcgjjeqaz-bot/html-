@@ -780,6 +780,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_138"
+    },
+    {
+      "shotId": "shot_139",
+      "choreographyId": "aiProviderEcosystemOrbit",
+      "purpose": "Reusable AI provider ecosystem and integration hub shot.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-06",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_139"
     }
   ]
 }

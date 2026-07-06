@@ -1,0 +1,15 @@
+export const shot139RegistryEntry = {
+  id: "aiProviderEcosystemOrbit",
+  libraryId: "ai-provider-ecosystem-orbit",
+  sourceShotId: "shot_139",
+  sceneType: "aiRecommendation",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 71,
+  actionBreakdownPath: "src/motion/shot_139/shot139-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_139/shot139-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_139/shot139-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/ai-provider-ecosystem-orbit.library-entry.ts",
+};

@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_139",
+  "sceneType": "aiRecommendation",
+  "choreographyId": "aiProviderEcosystemOrbit",
+  "libraryId": "ai-provider-ecosystem-orbit",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ai-agent-platform-click-feedback/shot_139_aiRecommendation_9p8-12.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_139/aiProviderEcosystemOrbit.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_139/aiProviderEcosystemOrbit.contact-sheet.jpg",
+  "status": "awaiting_review",
+  "visualApproved": false,
+  "implementationVerified": true,
+  "approved": false,
+  "allowedInFactory": false,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 71,
+    "duration": "2.410667"
+  }
+}
