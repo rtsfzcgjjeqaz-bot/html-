@@ -696,6 +696,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_131/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_132",
+      "choreographyId": "dashboardSearchSelectFocus",
+      "displayName": "Dashboard Search Select Focus",
+      "sceneType": "searchDemo",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_132",
+      "selectionContractPath": "library/mac-shot-library/shot_132/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

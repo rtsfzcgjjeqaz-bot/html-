@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_132",
+  "sceneType": "searchDemo",
+  "choreographyId": "dashboardSearchSelectFocus",
+  "libraryId": "dashboard-search-select-focus",
+  "sourceReferencePath": "references/extracted-shots/new-reference-langease-saas-ai/shot_132_searchDemo_14p6-17p4.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_132/dashboardSearchSelectFocus.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_132/dashboardSearchSelectFocus.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 84,
+    "duration": "2.858667"
+  },
+  "manualApprovedAt": "2026-07-06"
+}

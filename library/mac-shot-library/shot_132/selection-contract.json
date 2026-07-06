@@ -1,0 +1,37 @@
+{
+  "shotId": "shot_132",
+  "choreographyId": "dashboardSearchSelectFocus",
+  "sceneType": "searchDemo",
+  "selectionUseCases": [
+    "dashboard search selection",
+    "content lookup",
+    "template search result focus",
+    "asset selection before publish"
+  ],
+  "textCapacity": {
+    "query": {
+      "maxChars": 22,
+      "lines": 1
+    },
+    "activeTitle": {
+      "maxChars": 18,
+      "lines": 1
+    },
+    "resultLabel": {
+      "maxChars": 10,
+      "lines": 1,
+      "maxItems": 3
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "long query strings",
+    "dense readable tables",
+    "decorative cursor movement",
+    "unrelated non-search dashboards"
+  ]
+}
