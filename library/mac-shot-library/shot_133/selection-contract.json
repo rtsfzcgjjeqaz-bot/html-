@@ -1,0 +1,37 @@
+{
+  "shotId": "shot_133",
+  "choreographyId": "distributionActionBarFlow",
+  "sceneType": "stepFlow",
+  "selectionUseCases": [
+    "publish action rail",
+    "export action confirmation",
+    "send or distribute workflow",
+    "selected asset action bar"
+  ],
+  "textCapacity": {
+    "chipTitle": {
+      "maxChars": 18,
+      "lines": 1
+    },
+    "ctaLabel": {
+      "maxChars": 14,
+      "lines": 1
+    },
+    "target": {
+      "maxChars": 10,
+      "lines": 1,
+      "maxItems": 3
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "platform-specific hardcoded CTA without review",
+    "long target labels",
+    "decorative button pulses",
+    "dense bottom navigation bars"
+  ]
+}

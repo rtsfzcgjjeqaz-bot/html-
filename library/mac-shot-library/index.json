@@ -708,6 +708,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_132/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_133",
+      "choreographyId": "distributionActionBarFlow",
+      "displayName": "Distribution Action Bar Flow",
+      "sceneType": "stepFlow",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_133",
+      "selectionContractPath": "library/mac-shot-library/shot_133/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

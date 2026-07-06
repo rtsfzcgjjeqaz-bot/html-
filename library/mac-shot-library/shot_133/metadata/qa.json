@@ -1,0 +1,17 @@
+{
+  "shotId": "shot_133",
+  "choreographyId": "distributionActionBarFlow",
+  "status": "approved_pending_github_publish",
+  "checks": {
+    "build": "passed",
+    "previewRender": "passed",
+    "contactSheet": "passed",
+    "dimensions": "1280x720",
+    "fps": 30,
+    "frames": 102,
+    "manualReview": "passed",
+    "githubPublish": "pending"
+  },
+  "approved": true,
+  "allowedInFactory": true
+}

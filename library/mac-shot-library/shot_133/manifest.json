@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_133",
+  "choreographyId": "distributionActionBarFlow",
+  "libraryId": "distribution-action-bar-flow",
+  "purpose": "StepFlow template for docking selected content into a bottom action bar and emphasizing a configurable distribution CTA.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot133-atomic-motions.ts",
+    "runtime/choreography/distributionActionBarFlow.tsx",
+    "runtime/catalog-entry/distribution-action-bar-flow.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "chipTitle",
+    "ctaLabel",
+    "targets"
+  ],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}
