@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_131",
+  "sceneType": "appGrid",
+  "choreographyId": "videoCardLibraryGridSweep",
+  "libraryId": "video-card-library-grid-sweep",
+  "sourceReferencePath": "references/extracted-shots/new-reference-langease-saas-ai/shot_131_appGrid_11p3-14p6.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_131/videoCardLibraryGridSweep.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_131/videoCardLibraryGridSweep.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 99,
+    "duration": "3.349333"
+  },
+  "manualApprovedAt": "2026-07-06"
+}

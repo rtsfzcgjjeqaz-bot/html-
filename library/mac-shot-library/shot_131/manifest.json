@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_131",
+  "choreographyId": "videoCardLibraryGridSweep",
+  "libraryId": "video-card-library-grid-sweep",
+  "purpose": "AppGrid template for video/content library browsing with card row sweep, active thumbnail focus, and metadata strip resolve.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot131-atomic-motions.ts",
+    "runtime/choreography/videoCardLibraryGridSweep.tsx",
+    "runtime/catalog-entry/video-card-library-grid-sweep.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "sectionLabel",
+    "activeTitle",
+    "cardLabels"
+  ],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

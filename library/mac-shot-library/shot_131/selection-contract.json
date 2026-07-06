@@ -1,0 +1,37 @@
+{
+  "shotId": "shot_131",
+  "choreographyId": "videoCardLibraryGridSweep",
+  "sceneType": "appGrid",
+  "selectionUseCases": [
+    "video library browse",
+    "content card gallery",
+    "template selection grid",
+    "AI output collection review"
+  ],
+  "textCapacity": {
+    "sectionLabel": {
+      "maxChars": 18,
+      "lines": 1
+    },
+    "activeTitle": {
+      "maxChars": 18,
+      "lines": 1
+    },
+    "cardLabel": {
+      "maxChars": 10,
+      "lines": 1,
+      "maxItems": 4
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "long card titles",
+    "dense readable dashboards",
+    "single hero headline scenes",
+    "decorative card dumps without active focus"
+  ]
+}

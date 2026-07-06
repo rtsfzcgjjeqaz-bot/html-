@@ -684,6 +684,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_130/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_131",
+      "choreographyId": "videoCardLibraryGridSweep",
+      "displayName": "Video Card Library Grid Sweep",
+      "sceneType": "appGrid",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_131",
+      "selectionContractPath": "library/mac-shot-library/shot_131/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }
