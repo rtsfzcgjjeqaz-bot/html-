@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_130",
+  "choreographyId": "completionCheckConfettiReveal",
+  "libraryId": "completion-check-confetti-reveal",
+  "purpose": "AIRecommendation template for a completion check, restrained success confetti, and generated result card fan-in.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot130-atomic-motions.ts",
+    "runtime/choreography/completionCheckConfettiReveal.tsx",
+    "runtime/catalog-entry/completion-check-confetti-reveal.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "label",
+    "eyebrow",
+    "resultCards"
+  ],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

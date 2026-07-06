@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_130",
+  "sceneType": "aiRecommendation",
+  "choreographyId": "completionCheckConfettiReveal",
+  "libraryId": "completion-check-confetti-reveal",
+  "sourceReferencePath": "references/extracted-shots/new-reference-langease-saas-ai/shot_130_aiRecommendation_8p5-11p3.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_130/completionCheckConfettiReveal.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_130/completionCheckConfettiReveal.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-05",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "manualApprovedAt": "2026-07-06",
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 84,
+    "duration": "2.858667"
+  }
+}

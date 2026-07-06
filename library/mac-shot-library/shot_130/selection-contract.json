@@ -1,0 +1,37 @@
+{
+  "shotId": "shot_130",
+  "choreographyId": "completionCheckConfettiReveal",
+  "sceneType": "aiRecommendation",
+  "selectionUseCases": [
+    "AI completion result reveal",
+    "generation done state",
+    "translation or dubbing completed",
+    "export ready confirmation"
+  ],
+  "textCapacity": {
+    "label": {
+      "maxChars": 10,
+      "lines": 1
+    },
+    "eyebrow": {
+      "maxChars": 24,
+      "lines": 1
+    },
+    "resultCard": {
+      "maxChars": 14,
+      "lines": 1,
+      "maxItems": 3
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "long explanatory copy",
+    "serious error states",
+    "dense dashboards or data tables",
+    "decorative-only confetti scenes"
+  ]
+}
