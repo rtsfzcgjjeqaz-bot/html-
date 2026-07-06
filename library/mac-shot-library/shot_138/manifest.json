@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_138",
+  "choreographyId": "agentBuilderPanelFocus",
+  "purpose": "Reusable product dashboard or agent builder focus shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot138-atomic-motions.ts",
+    "runtime/choreography/agentBuilderPanelFocus.tsx",
+    "runtime/catalog-entry/agent-builder-panel-focus.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "builderPanelSlide",
+    "configRowHighlight",
+    "sideCardStackIn",
+    "selectedControlLift",
+    "cameraFocusSettle"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [
+    "title",
+    "rows",
+    "sideCards"
+  ],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

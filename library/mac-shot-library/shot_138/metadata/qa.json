@@ -1,0 +1,17 @@
+{
+  "shotId": "shot_138",
+  "choreographyId": "agentBuilderPanelFocus",
+  "status": "awaiting_review",
+  "checks": {
+    "build": "passed",
+    "previewRender": "passed",
+    "contactSheet": "passed",
+    "dimensions": "1280x720",
+    "fps": 30,
+    "frames": 74,
+    "manualReview": "pending",
+    "githubPublish": "not_started"
+  },
+  "approved": false,
+  "allowedInFactory": false
+}

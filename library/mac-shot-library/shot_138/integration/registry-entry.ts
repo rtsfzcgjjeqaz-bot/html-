@@ -1,0 +1,15 @@
+export const shot138RegistryEntry = {
+  id: "agentBuilderPanelFocus",
+  libraryId: "agent-builder-panel-focus",
+  sourceShotId: "shot_138",
+  sceneType: "appGrid",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 74,
+  actionBreakdownPath: "src/motion/shot_138/shot138-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_138/shot138-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_138/shot138-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/agent-builder-panel-focus.library-entry.ts",
+};
