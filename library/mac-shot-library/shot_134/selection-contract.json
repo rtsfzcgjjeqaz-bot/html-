@@ -1,0 +1,33 @@
+{
+  "shotId": "shot_134",
+  "choreographyId": "multiLanguageCardFanout",
+  "sceneType": "featureHighlight",
+  "selectionUseCases": [
+    "multi-language output reveal",
+    "localized card fanout",
+    "translation or dubbing variants",
+    "batch content generation proof"
+  ],
+  "textCapacity": {
+    "label": {
+      "maxChars": 22,
+      "lines": 1
+    },
+    "language": {
+      "maxChars": 6,
+      "lines": 1,
+      "maxItems": 7
+    }
+  },
+  "safeArea": {
+    "width": 1280,
+    "height": 720,
+    "padding": 80
+  },
+  "doNotUseFor": [
+    "long localized copy",
+    "dense readable card content",
+    "random decorative card orbit",
+    "more than seven output cards"
+  ]
+}

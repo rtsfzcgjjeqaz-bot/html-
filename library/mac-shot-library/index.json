@@ -720,6 +720,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_133/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_134",
+      "choreographyId": "multiLanguageCardFanout",
+      "displayName": "Multi Language Card Fanout",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_134",
+      "selectionContractPath": "library/mac-shot-library/shot_134/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

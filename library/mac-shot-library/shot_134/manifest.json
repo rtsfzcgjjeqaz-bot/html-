@@ -1,0 +1,33 @@
+{
+  "shotId": "shot_134",
+  "choreographyId": "multiLanguageCardFanout",
+  "libraryId": "multi-language-card-fanout",
+  "purpose": "FeatureHighlight template for showing multilingual/localized output cards fanning out around a central language claim.",
+  "status": "github_published",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot134-atomic-motions.ts",
+    "runtime/choreography/multiLanguageCardFanout.tsx",
+    "runtime/catalog-entry/multi-language-card-fanout.library-entry.ts",
+    "runtime/catalog-entry/types.ts",
+    "integration/registry-entry.ts"
+  ],
+  "requiredPresets": [],
+  "requiredTokens": [],
+  "requiredProps": [
+    "label",
+    "languages"
+  ],
+  "verificationStatus": {
+    "localBuild": "passed",
+    "localPreview": "passed",
+    "contactSheet": "passed",
+    "githubSafetyScan": "pending"
+  },
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-06",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated",
+  "notes": "该目录仅用于审核和适配，不应被当前 production runtime 自动 import。"
+}

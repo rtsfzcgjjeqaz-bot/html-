@@ -1,0 +1,27 @@
+{
+  "shotId": "shot_134",
+  "sceneType": "featureHighlight",
+  "choreographyId": "multiLanguageCardFanout",
+  "libraryId": "multi-language-card-fanout",
+  "sourceReferencePath": "references/extracted-shots/new-reference-langease-saas-ai/shot_134_featureHighlight_20p8-24p3.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_134/multiLanguageCardFanout.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_134/multiLanguageCardFanout.contact-sheet.jpg",
+  "status": "approved_pending_github_publish",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": false,
+  "createdAt": "2026-07-06",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 105,
+    "duration": "3.562667"
+  },
+  "manualApprovedAt": "2026-07-06"
+}
