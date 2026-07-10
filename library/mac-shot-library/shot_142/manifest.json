@@ -1,0 +1,33 @@
+{
+  "shotId": "shot_142",
+  "choreographyId": "aiPartnerValueStatement",
+  "purpose": "Reusable product value statement and feature highlight shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot142-atomic-motions.ts",
+    "runtime/choreography/aiPartnerValueStatement.tsx",
+    "runtime/catalog-entry/ai-partner-value-statement.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "headlineWordBuild",
+    "aiWordColorPop",
+    "softGlowPush",
+    "statementHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [
+    "leading",
+    "emphasis",
+    "trailing"
+  ],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-10",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

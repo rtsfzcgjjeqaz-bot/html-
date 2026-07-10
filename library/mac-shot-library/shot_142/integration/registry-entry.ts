@@ -1,0 +1,15 @@
+export const shot142RegistryEntry = {
+  id: "aiPartnerValueStatement",
+  libraryId: "ai-partner-value-statement",
+  sourceShotId: "shot_142",
+  sceneType: "featureHighlight",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 75,
+  actionBreakdownPath: "src/motion/shot_142/shot142-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_142/shot142-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_142/shot142-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/ai-partner-value-statement.library-entry.ts",
+};

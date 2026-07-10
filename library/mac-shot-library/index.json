@@ -816,6 +816,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_141"
+    },
+    {
+      "shotId": "shot_142",
+      "choreographyId": "aiPartnerValueStatement",
+      "purpose": "Reusable product value statement and feature highlight shot.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-10",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_142"
     }
   ]
 }
