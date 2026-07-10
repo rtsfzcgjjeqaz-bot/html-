@@ -1,0 +1,15 @@
+export const shot144RegistryEntry = {
+  id: "synoptixBrandFinalCta",
+  libraryId: "synoptix-brand-final-cta",
+  sourceShotId: "shot_144",
+  sceneType: "finalCTA",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 99,
+  actionBreakdownPath: "src/motion/shot_144/shot144-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_144/shot144-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_144/shot144-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/synoptix-brand-final-cta.library-entry.ts",
+};

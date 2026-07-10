@@ -1,0 +1,33 @@
+{
+  "shotId": "shot_144",
+  "choreographyId": "synoptixBrandFinalCta",
+  "purpose": "Reusable bright end card and final CTA shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot144-atomic-motions.ts",
+    "runtime/choreography/synoptixBrandFinalCta.tsx",
+    "runtime/catalog-entry/synoptix-brand-final-cta.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "brandMarkResolve",
+    "taglineFadeIn",
+    "ctaButtonSettle",
+    "finalHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [
+    "brandName",
+    "tagline",
+    "cta"
+  ],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-10",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}
