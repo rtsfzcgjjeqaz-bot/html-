@@ -1,0 +1,15 @@
+export const shot141RegistryEntry = {
+  id: "guardMetricTrendCards",
+  libraryId: "guard-metric-trend-cards",
+  sourceShotId: "shot_141",
+  sceneType: "priceInsight",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 120,
+  actionBreakdownPath: "src/motion/shot_141/shot141-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_141/shot141-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_141/shot141-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/guard-metric-trend-cards.library-entry.ts",
+};
