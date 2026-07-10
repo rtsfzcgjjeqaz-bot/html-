@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_143",
+  "choreographyId": "branchingWorkflowMapReveal",
+  "libraryId": "branching-workflow-map-reveal",
+  "selectionType": "portable_approved_shot_package",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ai-agent-platform-click-feedback/shot_143_stepFlow_22p6-26p2.mp4",
+  "previewIncluded": false,
+  "contactSheetIncluded": false,
+  "runtimeFiles": [
+    "runtime/atomic/shot143-atomic-motions.ts",
+    "runtime/choreography/branchingWorkflowMapReveal.tsx",
+    "runtime/catalog-entry/branching-workflow-map-reveal.library-entry.ts"
+  ],
+  "docsFiles": [
+    "docs/action-breakdown.md",
+    "integration/registry-entry.ts"
+  ],
+  "reviewStatus": "github_published_candidate"
+}

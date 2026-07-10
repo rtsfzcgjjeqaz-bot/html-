@@ -1,0 +1,15 @@
+export const shot143RegistryEntry = {
+  id: "branchingWorkflowMapReveal",
+  libraryId: "branching-workflow-map-reveal",
+  sourceShotId: "shot_143",
+  sceneType: "stepFlow",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 114,
+  actionBreakdownPath: "src/motion/shot_143/shot143-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_143/shot143-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_143/shot143-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/branching-workflow-map-reveal.library-entry.ts",
+};

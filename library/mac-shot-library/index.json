@@ -828,6 +828,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_142"
+    },
+    {
+      "shotId": "shot_143",
+      "choreographyId": "branchingWorkflowMapReveal",
+      "purpose": "Reusable branching workflow and process map shot.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-10",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_143"
     }
   ]
 }
