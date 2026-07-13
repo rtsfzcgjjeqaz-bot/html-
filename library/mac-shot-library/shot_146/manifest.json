@@ -1,0 +1,34 @@
+{
+  "shotId": "shot_146",
+  "choreographyId": "darkWordmarkOrbitHero",
+  "purpose": "Reusable premium dark website hero shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot146-atomic-motions.ts",
+    "runtime/choreography/darkWordmarkOrbitHero.tsx",
+    "runtime/catalog-entry/dark-wordmark-orbit-hero.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "darkStageGlow",
+    "heroWordAssemble",
+    "moduleOrbitParallax",
+    "cursorAccentSweep",
+    "heroHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [
+    "heroWord",
+    "eyebrow",
+    "modules"
+  ],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

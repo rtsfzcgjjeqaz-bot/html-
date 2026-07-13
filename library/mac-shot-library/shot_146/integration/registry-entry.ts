@@ -1,0 +1,15 @@
+export const shot146RegistryEntry = {
+  id: "darkWordmarkOrbitHero",
+  libraryId: "dark-wordmark-orbit-hero",
+  sourceShotId: "shot_146",
+  sceneType: "websiteHero",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 132,
+  actionBreakdownPath: "src/motion/shot_146/shot146-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_146/shot146-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_146/shot146-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/dark-wordmark-orbit-hero.library-entry.ts",
+};

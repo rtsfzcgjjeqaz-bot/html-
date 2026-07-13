@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_146",
+  "sceneType": "websiteHero",
+  "choreographyId": "darkWordmarkOrbitHero",
+  "libraryId": "dark-wordmark-orbit-hero",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ui-brand-story/shot_146_websiteHero_3p37-7p77.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_146/darkWordmarkOrbitHero.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_146/darkWordmarkOrbitHero.contact-sheet.jpg",
+  "status": "github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 132,
+    "duration": "4.458667"
+  }
+}

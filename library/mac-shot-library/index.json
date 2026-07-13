@@ -4,7 +4,7 @@
   "sourceProject": "mac-jewelry-video",
   "branch": "library/mac-approved-shots",
   "description": "Portable advanced shot packages exported from approved Mac motion catalog. Not auto-imported by production runtime without Windows validation.",
-  "updatedAt": "2026-07-06",
+  "updatedAt": "2026-07-13",
   "shots": [
     {
       "shotId": "shot_08",
@@ -852,6 +852,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_144"
+    },
+    {
+      "shotId": "shot_146",
+      "choreographyId": "darkWordmarkOrbitHero",
+      "purpose": "Reusable premium dark website hero shot.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-13",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_146"
     }
   ]
 }
