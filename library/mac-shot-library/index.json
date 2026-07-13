@@ -972,6 +972,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_161/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_167",
+      "choreographyId": "kineticQuestionBrandResolve",
+      "displayName": "Kinetic Question Brand Resolve",
+      "sceneType": "coverHook",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_167",
+      "selectionContractPath": "library/mac-shot-library/shot_167/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

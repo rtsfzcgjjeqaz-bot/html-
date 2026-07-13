@@ -1,0 +1,12 @@
+{
+  "shotId": "shot_167",
+  "choreographyId": "kineticQuestionBrandResolve",
+  "libraryId": "kinetic-question-brand-resolve",
+  "selectionType": "portable_approved_shot_package",
+  "sourceReferencePath": "references/extracted-shots/new-reference-remotion-code-promo/shot_167_coverHook_0p00-7p50.mp4",
+  "previewIncluded": false,
+  "contactSheetIncluded": false,
+  "runtimeFiles": ["runtime/atomic/shot167-atomic-motions.ts","runtime/choreography/kineticQuestionBrandResolve.tsx","runtime/catalog-entry/kinetic-question-brand-resolve.library-entry.ts"],
+  "docsFiles": ["docs/action-breakdown.md","integration/registry-entry.ts"],
+  "reviewStatus": "github_published_candidate"
+}

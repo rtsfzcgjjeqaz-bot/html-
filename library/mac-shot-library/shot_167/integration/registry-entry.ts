@@ -1,0 +1,15 @@
+export const shot167RegistryEntry = {
+  id: "kineticQuestionBrandResolve",
+  libraryId: "kinetic-question-brand-resolve",
+  sourceShotId: "shot_167",
+  sceneType: "coverHook",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 210,
+  actionBreakdownPath: "src/motion/shot_167/shot167-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_167/shot167-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_167/shot167-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/kinetic-question-brand-resolve.library-entry.ts",
+};
