@@ -1,0 +1,31 @@
+{
+  "shotId": "shot_152",
+  "choreographyId": "assistantPanelConfirmFlow",
+  "purpose": "Reusable centered AI recommendation and confirmation flow shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot152-atomic-motions.ts",
+    "runtime/choreography/assistantPanelConfirmFlow.tsx",
+    "runtime/catalog-entry/assistant-panel-confirm-flow.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "stageDriftReveal",
+    "devicePanelFloatIn",
+    "recommendationCardsFan",
+    "assistantConsoleSwap",
+    "confirmationDockReturn",
+    "trustShieldResolve"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

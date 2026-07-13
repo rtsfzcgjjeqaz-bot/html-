@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_152",
+  "choreographyId": "assistantPanelConfirmFlow",
+  "libraryId": "assistant-panel-confirm-flow",
+  "selectionType": "portable_approved_shot_package",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ui-brand-story/shot_152_aiRecommendation_28p93-35p20.mp4",
+  "previewIncluded": false,
+  "contactSheetIncluded": false,
+  "runtimeFiles": [
+    "runtime/atomic/shot152-atomic-motions.ts",
+    "runtime/choreography/assistantPanelConfirmFlow.tsx",
+    "runtime/catalog-entry/assistant-panel-confirm-flow.library-entry.ts"
+  ],
+  "docsFiles": [
+    "docs/action-breakdown.md",
+    "integration/registry-entry.ts"
+  ],
+  "reviewStatus": "github_published_candidate"
+}

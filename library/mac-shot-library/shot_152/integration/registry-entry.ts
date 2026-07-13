@@ -1,0 +1,15 @@
+export const shot152RegistryEntry = {
+  id: "assistantPanelConfirmFlow",
+  libraryId: "assistant-panel-confirm-flow",
+  sourceShotId: "shot_152",
+  sceneType: "aiRecommendation",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 189,
+  actionBreakdownPath: "src/motion/shot_152/shot152-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_152/shot152-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_152/shot152-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/assistant-panel-confirm-flow.library-entry.ts",
+};

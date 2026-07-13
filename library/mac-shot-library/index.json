@@ -900,6 +900,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_150/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_152",
+      "choreographyId": "assistantPanelConfirmFlow",
+      "displayName": "Assistant Panel Confirm Flow",
+      "sceneType": "aiRecommendation",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_152",
+      "selectionContractPath": "library/mac-shot-library/shot_152/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

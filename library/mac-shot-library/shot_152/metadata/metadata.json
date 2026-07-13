@@ -1,0 +1,28 @@
+{
+  "shotId": "shot_152",
+  "sceneType": "aiRecommendation",
+  "choreographyId": "assistantPanelConfirmFlow",
+  "libraryId": "assistant-panel-confirm-flow",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ui-brand-story/shot_152_aiRecommendation_28p93-35p20.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_152/assistantPanelConfirmFlow.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_152/assistantPanelConfirmFlow.contact-sheet.jpg",
+  "status": "approved_and_github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 189,
+    "duration": "6.357333"
+  },
+  "localPreviewApproved": true,
+  "manualApprovedAt": "2026-07-13"
+}
