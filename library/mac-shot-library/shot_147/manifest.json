@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_147",
+  "choreographyId": "quadrantGalleryGridReveal",
+  "purpose": "Reusable quadrant gallery app-grid shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot147-atomic-motions.ts",
+    "runtime/choreography/quadrantGalleryGridReveal.tsx",
+    "runtime/catalog-entry/quadrant-gallery-grid-reveal.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "quadGridBuild",
+    "panelImageLift",
+    "gridDepthTilt",
+    "panelCrossFadeSwap",
+    "quadrantHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

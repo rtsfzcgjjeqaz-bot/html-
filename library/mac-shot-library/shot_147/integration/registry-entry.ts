@@ -1,0 +1,15 @@
+export const shot147RegistryEntry = {
+  id: "quadrantGalleryGridReveal",
+  libraryId: "quadrant-gallery-grid-reveal",
+  sourceShotId: "shot_147",
+  sceneType: "appGrid",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 96,
+  actionBreakdownPath: "src/motion/shot_147/shot147-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_147/shot147-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_147/shot147-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/quadrant-gallery-grid-reveal.library-entry.ts",
+};

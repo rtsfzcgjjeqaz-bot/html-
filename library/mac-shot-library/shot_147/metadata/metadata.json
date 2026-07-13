@@ -1,0 +1,26 @@
+{
+  "shotId": "shot_147",
+  "sceneType": "appGrid",
+  "choreographyId": "quadrantGalleryGridReveal",
+  "libraryId": "quadrant-gallery-grid-reveal",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ui-brand-story/shot_147_appGrid_7p77-9p90.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_147/quadrantGalleryGridReveal.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_147/quadrantGalleryGridReveal.contact-sheet.jpg",
+  "status": "github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 96,
+    "duration": "3.242667"
+  }
+}
