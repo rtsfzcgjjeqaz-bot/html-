@@ -1,0 +1,15 @@
+export const shot155RegistryEntry = {
+  id: "googleGeminiMorphHook",
+  libraryId: "google-gemini-morph-hook",
+  sourceShotId: "shot_155",
+  sceneType: "coverHook",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 82,
+  actionBreakdownPath: "src/motion/shot_155/shot155-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_155/shot155-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_155/shot155-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/google-gemini-morph-hook.library-entry.ts",
+};

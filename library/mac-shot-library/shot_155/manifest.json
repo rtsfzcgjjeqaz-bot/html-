@@ -1,0 +1,31 @@
+{
+  "shotId": "shot_155",
+  "choreographyId": "googleGeminiMorphHook",
+  "purpose": "Reusable branded AI launch cover hook that morphs into a Gemini-like product identity.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot155-atomic-motions.ts",
+    "runtime/choreography/googleGeminiMorphHook.tsx",
+    "runtime/catalog-entry/google-gemini-morph-hook.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "ambientFieldBloom",
+    "geminiNodeOrbitIn",
+    "logoMorphResolve",
+    "hookCopyReveal",
+    "surfaceSettle",
+    "hookHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

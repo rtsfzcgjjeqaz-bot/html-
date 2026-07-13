@@ -926,6 +926,18 @@
       "runtimeIntegrationStatus": "not_integrated"
     },
     {
+      "shotId": "shot_155",
+      "choreographyId": "googleGeminiMorphHook",
+      "displayName": "Google Gemini Morph Hook",
+      "sceneType": "coverHook",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_155",
+      "selectionContractPath": "library/mac-shot-library/shot_155/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
       "shotId": "shot_156",
       "choreographyId": "multimodalPromptExploreBar",
       "displayName": "Multimodal Prompt Explore Bar",
