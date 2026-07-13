@@ -1,0 +1,23 @@
+{
+  "shotId": "shot_172",
+  "choreographyId": "genreWorkspaceCarousel",
+  "status": "approved_and_github_published",
+  "checks": {
+    "build": "passed",
+    "registryResolve": "passed",
+    "catalogLookup": "passed",
+    "previewRender": "passed",
+    "contactSheet": "passed",
+    "firstFrameVisible": "passed",
+    "categoryRailContinuity": "passed",
+    "previewCanvasContinuity": "passed",
+    "overflow": "passed",
+    "dimensions": "1280x720",
+    "fps": "30/1",
+    "frames": 210,
+    "manualReview": "passed",
+    "githubPublish": "passed"
+  },
+  "approved": true,
+  "allowedInFactory": true
+}

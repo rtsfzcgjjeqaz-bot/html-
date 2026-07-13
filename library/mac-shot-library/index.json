@@ -996,6 +996,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_169/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_172",
+      "choreographyId": "genreWorkspaceCarousel",
+      "displayName": "Genre Workspace Carousel",
+      "sceneType": "appGrid",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_172",
+      "selectionContractPath": "library/mac-shot-library/shot_172/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

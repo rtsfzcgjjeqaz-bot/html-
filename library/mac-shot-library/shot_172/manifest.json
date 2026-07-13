@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_172",
+  "choreographyId": "genreWorkspaceCarousel",
+  "purpose": "Reusable multi-category product workspace with continuous selection travel and in-place preview transitions.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot172-atomic-motions.ts",
+    "runtime/choreography/genreWorkspaceCarousel.tsx",
+    "runtime/catalog-entry/genre-workspace-carousel.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "workspaceFrameLift",
+    "genreTabTraverse",
+    "previewCanvasSwap",
+    "detailCardResolve",
+    "workspaceHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

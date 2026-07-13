@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_172",
+  "choreographyId": "genreWorkspaceCarousel",
+  "libraryId": "genre-workspace-carousel",
+  "selectionType": "portable_approved_shot_package",
+  "sourceReferencePath": "references/extracted-shots/new-reference-remotion-code-promo/shot_172_appGrid_30p50-37p50.mp4",
+  "previewIncluded": false,
+  "contactSheetIncluded": false,
+  "runtimeFiles": [
+    "runtime/atomic/shot172-atomic-motions.ts",
+    "runtime/choreography/genreWorkspaceCarousel.tsx",
+    "runtime/catalog-entry/genre-workspace-carousel.library-entry.ts"
+  ],
+  "docsFiles": [
+    "docs/action-breakdown.md",
+    "integration/registry-entry.ts"
+  ],
+  "reviewStatus": "github_published_candidate"
+}

@@ -1,0 +1,15 @@
+export const shot172RegistryEntry = {
+  id: "genreWorkspaceCarousel",
+  libraryId: "genre-workspace-carousel",
+  sourceShotId: "shot_172",
+  sceneType: "appGrid",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 210,
+  actionBreakdownPath: "src/motion/shot_172/shot172-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_172/shot172-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_172/shot172-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/genre-workspace-carousel.library-entry.ts",
+};
