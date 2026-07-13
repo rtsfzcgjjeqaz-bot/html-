@@ -1,0 +1,17 @@
+{
+  "shotId": "shot_156",
+  "choreographyId": "multimodalPromptExploreBar",
+  "status": "approved_and_github_published",
+  "checks": {
+    "build": "passed",
+    "previewRender": "passed",
+    "contactSheet": "passed",
+    "dimensions": "1280x720",
+    "fps": 30,
+    "frames": 117,
+    "manualReview": "passed",
+    "githubPublish": "passed"
+  },
+  "approved": true,
+  "allowedInFactory": true
+}

@@ -1,0 +1,28 @@
+{
+  "shotId": "shot_156",
+  "sceneType": "searchDemo",
+  "choreographyId": "multimodalPromptExploreBar",
+  "libraryId": "multimodal-prompt-explore-bar",
+  "sourceReferencePath": "references/extracted-shots/new-reference-gemini-era-launch/shot_156_searchDemo_2p73-6p60.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_156/multimodalPromptExploreBar.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_156/multimodalPromptExploreBar.contact-sheet.jpg",
+  "status": "approved_and_github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 117,
+    "duration": "3.946667"
+  },
+  "localPreviewApproved": true,
+  "manualApprovedAt": "2026-07-13"
+}

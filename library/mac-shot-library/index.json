@@ -924,6 +924,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_154/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_156",
+      "choreographyId": "multimodalPromptExploreBar",
+      "displayName": "Multimodal Prompt Explore Bar",
+      "sceneType": "searchDemo",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_156",
+      "selectionContractPath": "library/mac-shot-library/shot_156/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

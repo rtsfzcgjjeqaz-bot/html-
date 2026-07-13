@@ -1,0 +1,15 @@
+export const shot156RegistryEntry = {
+  id: "multimodalPromptExploreBar",
+  libraryId: "multimodal-prompt-explore-bar",
+  sourceShotId: "shot_156",
+  sceneType: "searchDemo",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 117,
+  actionBreakdownPath: "src/motion/shot_156/shot156-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_156/shot156-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_156/shot156-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/multimodal-prompt-explore-bar.library-entry.ts",
+};
