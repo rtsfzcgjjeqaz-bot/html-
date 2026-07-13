@@ -1,0 +1,28 @@
+{
+  "shotId": "shot_161",
+  "sceneType": "appGrid",
+  "choreographyId": "mobileMemoriesAskGrid",
+  "libraryId": "mobile-memories-ask-grid",
+  "sourceReferencePath": "references/extracted-shots/new-reference-gemini-era-launch/shot_161_appGrid_21p27-22p27.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_161/mobileMemoriesAskGrid.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_161/mobileMemoriesAskGrid.contact-sheet.jpg",
+  "status": "approved_and_github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 90,
+    "duration": "3.050667"
+  },
+  "localPreviewApproved": true,
+  "manualApprovedAt": "2026-07-13"
+}

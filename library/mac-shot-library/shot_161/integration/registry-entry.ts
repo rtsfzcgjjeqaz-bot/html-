@@ -1,0 +1,15 @@
+export const shot161RegistryEntry = {
+  id: "mobileMemoriesAskGrid",
+  libraryId: "mobile-memories-ask-grid",
+  sourceShotId: "shot_161",
+  sceneType: "appGrid",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 90,
+  actionBreakdownPath: "src/motion/shot_161/shot161-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_161/shot161-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_161/shot161-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/mobile-memories-ask-grid.library-entry.ts",
+};
