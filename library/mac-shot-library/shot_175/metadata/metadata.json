@@ -1,0 +1,28 @@
+{
+  "shotId": "shot_175",
+  "sceneType": "featureHighlight",
+  "choreographyId": "terminologyExtractionWorkspace",
+  "libraryId": "terminology-extraction-workspace",
+  "sourceReferencePath": "references/extracted-shots/new-reference-remotion-code-promo/shot_175_featureHighlight_52p50-60p50.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_175/terminologyExtractionWorkspace.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_175/terminologyExtractionWorkspace.contact-sheet.jpg",
+  "status": "approved_and_github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {
+    "width": 1280,
+    "height": 720,
+    "fps": "30/1",
+    "frames": 240,
+    "duration": "8.042667"
+  },
+  "localPreviewApproved": true,
+  "manualApprovedAt": "2026-07-13"
+}

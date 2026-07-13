@@ -1,0 +1,12 @@
+{
+  "shotId": "shot_175",
+  "choreographyId": "terminologyExtractionWorkspace",
+  "libraryId": "terminology-extraction-workspace",
+  "selectionType": "portable_approved_shot_package",
+  "sourceReferencePath": "references/extracted-shots/new-reference-remotion-code-promo/shot_175_featureHighlight_52p50-60p50.mp4",
+  "previewIncluded": false,
+  "contactSheetIncluded": false,
+  "runtimeFiles": ["runtime/atomic/shot175-atomic-motions.ts","runtime/choreography/terminologyExtractionWorkspace.tsx","runtime/catalog-entry/terminology-extraction-workspace.library-entry.ts"],
+  "docsFiles": ["docs/action-breakdown.md","integration/registry-entry.ts"],
+  "reviewStatus": "github_published_candidate"
+}

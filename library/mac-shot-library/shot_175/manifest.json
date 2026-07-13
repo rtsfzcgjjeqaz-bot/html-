@@ -1,0 +1,24 @@
+{
+  "shotId": "shot_175",
+  "choreographyId": "terminologyExtractionWorkspace",
+  "purpose": "Reusable source-to-structured-output workspace for semantic term extraction and consistency review.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot175-atomic-motions.ts",
+    "runtime/choreography/terminologyExtractionWorkspace.tsx",
+    "runtime/catalog-entry/terminology-extraction-workspace.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": ["documentPanelDock","termHighlightSweep","extractedTermTransfer","consistencyListResolve","consistencyWorkspaceHold"],
+  "requiredTokens": [],
+  "requiredProps": ["headline","sourceLabel","resultLabel","terms"],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

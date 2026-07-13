@@ -1,0 +1,15 @@
+export const shot175RegistryEntry = {
+  id: "terminologyExtractionWorkspace",
+  libraryId: "terminology-extraction-workspace",
+  sourceShotId: "shot_175",
+  sceneType: "featureHighlight",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 240,
+  actionBreakdownPath: "src/motion/shot_175/shot175-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_175/shot175-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_175/shot175-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/terminology-extraction-workspace.library-entry.ts",
+};

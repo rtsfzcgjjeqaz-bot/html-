@@ -1008,6 +1008,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_172/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_175",
+      "choreographyId": "terminologyExtractionWorkspace",
+      "displayName": "Terminology Extraction Workspace",
+      "sceneType": "featureHighlight",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_175",
+      "selectionContractPath": "library/mac-shot-library/shot_175/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }
