@@ -1,0 +1,31 @@
+{
+  "shotId": "shot_154",
+  "choreographyId": "contentLaneWorkflowSweep",
+  "purpose": "Reusable bright editorial workflow step-flow shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot154-atomic-motions.ts",
+    "runtime/choreography/contentLaneWorkflowSweep.tsx",
+    "runtime/catalog-entry/content-lane-workflow-sweep.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "laneGridReveal",
+    "contentCardCascade",
+    "actionRailFocus",
+    "pointerSweep",
+    "contentArcConverge",
+    "builderHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

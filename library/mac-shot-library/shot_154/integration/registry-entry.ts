@@ -1,0 +1,15 @@
+export const shot154RegistryEntry = {
+  id: "contentLaneWorkflowSweep",
+  libraryId: "content-lane-workflow-sweep",
+  sourceShotId: "shot_154",
+  sceneType: "stepFlow",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 173,
+  actionBreakdownPath: "src/motion/shot_154/shot154-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_154/shot154-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_154/shot154-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/content-lane-workflow-sweep.library-entry.ts",
+};

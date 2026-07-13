@@ -912,6 +912,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_152/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_154",
+      "choreographyId": "contentLaneWorkflowSweep",
+      "displayName": "Content Lane Workflow Sweep",
+      "sceneType": "stepFlow",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_154",
+      "selectionContractPath": "library/mac-shot-library/shot_154/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }
