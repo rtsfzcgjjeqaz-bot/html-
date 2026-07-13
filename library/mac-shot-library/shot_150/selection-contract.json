@@ -1,0 +1,19 @@
+{
+  "shotId": "shot_150",
+  "choreographyId": "promptCommandBarMacro",
+  "libraryId": "prompt-command-bar-macro",
+  "selectionType": "portable_approved_shot_package",
+  "sourceReferencePath": "references/extracted-shots/new-reference-ui-brand-story/shot_150_searchDemo_18p43-24p70.mp4",
+  "previewIncluded": false,
+  "contactSheetIncluded": false,
+  "runtimeFiles": [
+    "runtime/atomic/shot150-atomic-motions.ts",
+    "runtime/choreography/promptCommandBarMacro.tsx",
+    "runtime/catalog-entry/prompt-command-bar-macro.library-entry.ts"
+  ],
+  "docsFiles": [
+    "docs/action-breakdown.md",
+    "integration/registry-entry.ts"
+  ],
+  "reviewStatus": "github_published_candidate"
+}

@@ -854,18 +854,6 @@
       "latestPackagePath": "library/mac-shot-library/shot_144"
     },
     {
-      "shotId": "shot_146",
-      "choreographyId": "darkWordmarkOrbitHero",
-      "purpose": "Reusable premium dark website hero shot.",
-      "status": "github_published",
-      "sourceProject": "jewelry-video",
-      "publishedAt": "2026-07-13",
-      "localPreviewApproved": true,
-      "windowsReviewStatus": "pending",
-      "runtimeIntegrationStatus": "not_integrated",
-      "latestPackagePath": "library/mac-shot-library/shot_146"
-    },
-    {
       "shotId": "shot_145",
       "choreographyId": "discoveryTileWallHook",
       "purpose": "Reusable discovery-wall cover hook shot.",
@@ -878,6 +866,18 @@
       "latestPackagePath": "library/mac-shot-library/shot_145"
     },
     {
+      "shotId": "shot_146",
+      "choreographyId": "darkWordmarkOrbitHero",
+      "purpose": "Reusable premium dark website hero shot.",
+      "status": "github_published",
+      "sourceProject": "jewelry-video",
+      "publishedAt": "2026-07-13",
+      "localPreviewApproved": true,
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated",
+      "latestPackagePath": "library/mac-shot-library/shot_146"
+    },
+    {
       "shotId": "shot_147",
       "choreographyId": "quadrantGalleryGridReveal",
       "purpose": "Reusable quadrant gallery app-grid shot.",
@@ -888,6 +888,18 @@
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated",
       "latestPackagePath": "library/mac-shot-library/shot_147"
+    },
+    {
+      "shotId": "shot_150",
+      "choreographyId": "promptCommandBarMacro",
+      "displayName": "Prompt Command Bar Macro",
+      "sceneType": "searchDemo",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_150",
+      "selectionContractPath": "library/mac-shot-library/shot_150/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "shotId": "shot_150",
+  "choreographyId": "promptCommandBarMacro",
+  "purpose": "Reusable prompt command bar search-demo shot.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot150-atomic-motions.ts",
+    "runtime/choreography/promptCommandBarMacro.tsx",
+    "runtime/catalog-entry/prompt-command-bar-macro.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "commandBarReveal",
+    "caretPulse",
+    "iconSnapSequence",
+    "macroSurfaceDrift",
+    "inputHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

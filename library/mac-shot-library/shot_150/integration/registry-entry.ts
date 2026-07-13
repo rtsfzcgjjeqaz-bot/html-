@@ -1,0 +1,15 @@
+export const shot150RegistryEntry = {
+  id: "promptCommandBarMacro",
+  libraryId: "prompt-command-bar-macro",
+  sourceShotId: "shot_150",
+  sceneType: "searchDemo",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 150,
+  actionBreakdownPath: "src/motion/shot_150/shot150-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_150/shot150-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_150/shot150-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/prompt-command-bar-macro.library-entry.ts",
+};
