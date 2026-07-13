@@ -1,0 +1,22 @@
+{
+  "shotId": "shot_169",
+  "sceneType": "resultComparison",
+  "choreographyId": "roughToRefinedTranscriptMorph",
+  "libraryId": "rough-to-refined-transcript-morph",
+  "sourceReferencePath": "references/extracted-shots/new-reference-remotion-code-promo/shot_169_resultComparison_11p80-18p50.mp4",
+  "previewPath": "outputs/motion-catalog/review/shot_169/roughToRefinedTranscriptMorph.preview.mp4",
+  "contactSheetPath": "outputs/motion-catalog/review/shot_169/roughToRefinedTranscriptMorph.contact-sheet.jpg",
+  "status": "approved_and_github_published",
+  "visualApproved": true,
+  "implementationVerified": true,
+  "approved": true,
+  "allowedInFactory": true,
+  "githubPublished": true,
+  "createdAt": "2026-07-13",
+  "previewVerified": true,
+  "renderVerified": true,
+  "contactSheetVerified": true,
+  "probe": {"width": 1280, "height": 720, "fps": "30/1", "frames": 201, "duration": "6.762667"},
+  "localPreviewApproved": true,
+  "manualApprovedAt": "2026-07-13"
+}

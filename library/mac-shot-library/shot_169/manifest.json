@@ -1,0 +1,6 @@
+{
+  "shotId":"shot_169","choreographyId":"roughToRefinedTranscriptMorph","purpose":"Reusable in-place rough-to-refined transcript correction and result-comparison template.",
+  "requiredFiles":["docs/action-breakdown.md","runtime/atomic/shot169-atomic-motions.ts","runtime/choreography/roughToRefinedTranscriptMorph.tsx","runtime/catalog-entry/rough-to-refined-transcript-morph.library-entry.ts","integration/registry-entry.ts","metadata/metadata.json","metadata/qa.json","selection-contract.json"],
+  "requiredPresets":["editorSurfaceLift","roughTranscriptType","correctionTargetSweep","refinedCopyMorph","refinedResultHold"],"requiredTokens":[],"requiredProps":["headline","sourceLabel","resultLabel"],
+  "verificationStatus":"local_preview_approved","localPreviewApproved":true,"sourceProject":"jewelry-video","publishedAt":"2026-07-13","windowsReviewStatus":"pending","runtimeIntegrationStatus":"not_integrated"
+}

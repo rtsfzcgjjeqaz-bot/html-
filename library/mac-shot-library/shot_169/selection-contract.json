@@ -1,0 +1,6 @@
+{
+  "shotId":"shot_169","choreographyId":"roughToRefinedTranscriptMorph","libraryId":"rough-to-refined-transcript-morph","selectionType":"portable_approved_shot_package",
+  "sourceReferencePath":"references/extracted-shots/new-reference-remotion-code-promo/shot_169_resultComparison_11p80-18p50.mp4","previewIncluded":false,"contactSheetIncluded":false,
+  "runtimeFiles":["runtime/atomic/shot169-atomic-motions.ts","runtime/choreography/roughToRefinedTranscriptMorph.tsx","runtime/catalog-entry/rough-to-refined-transcript-morph.library-entry.ts"],
+  "docsFiles":["docs/action-breakdown.md","integration/registry-entry.ts"],"reviewStatus":"github_published_candidate"
+}

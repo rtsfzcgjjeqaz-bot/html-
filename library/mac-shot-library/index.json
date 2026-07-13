@@ -984,6 +984,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_167/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_169",
+      "choreographyId": "roughToRefinedTranscriptMorph",
+      "displayName": "Rough To Refined Transcript Morph",
+      "sceneType": "resultComparison",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_169",
+      "selectionContractPath": "library/mac-shot-library/shot_169/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "shotId": "shot_169",
+  "choreographyId": "roughToRefinedTranscriptMorph",
+  "status": "approved_and_github_published",
+  "checks": {"build":"passed","registryResolve":"passed","catalogLookup":"passed","previewRender":"passed","contactSheet":"passed","firstFrameVisible":"passed","semanticTargetBinding":"passed","copyMorphContinuity":"passed","overflow":"passed","dimensions":"1280x720","fps":"30/1","frames":201,"manualReview":"passed","githubPublish":"passed"},
+  "approved": true,
+  "allowedInFactory": true
+}
