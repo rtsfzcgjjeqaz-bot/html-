@@ -1,0 +1,15 @@
+export const shot159RegistryEntry = {
+  id: "emailContextAssistPanel",
+  libraryId: "email-context-assist-panel",
+  sourceShotId: "shot_159",
+  sceneType: "aiRecommendation",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 180,
+  actionBreakdownPath: "src/motion/shot_159/shot159-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_159/shot159-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_159/shot159-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/email-context-assist-panel.library-entry.ts",
+};

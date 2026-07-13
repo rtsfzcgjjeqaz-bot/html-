@@ -1,0 +1,31 @@
+{
+  "shotId": "shot_159",
+  "choreographyId": "emailContextAssistPanel",
+  "purpose": "Reusable context-to-assistance panel for email summaries, recommendations, and follow-up actions.",
+  "requiredFiles": [
+    "docs/action-breakdown.md",
+    "runtime/atomic/shot159-atomic-motions.ts",
+    "runtime/choreography/emailContextAssistPanel.tsx",
+    "runtime/catalog-entry/email-context-assist-panel.library-entry.ts",
+    "integration/registry-entry.ts",
+    "metadata/metadata.json",
+    "metadata/qa.json",
+    "selection-contract.json"
+  ],
+  "requiredPresets": [
+    "contextSurfaceReveal",
+    "sourceContextDock",
+    "assistChipResolve",
+    "summaryCardLift",
+    "insightRowsCascade",
+    "explanationHold"
+  ],
+  "requiredTokens": [],
+  "requiredProps": [],
+  "verificationStatus": "local_preview_approved",
+  "localPreviewApproved": true,
+  "sourceProject": "jewelry-video",
+  "publishedAt": "2026-07-13",
+  "windowsReviewStatus": "pending",
+  "runtimeIntegrationStatus": "not_integrated"
+}

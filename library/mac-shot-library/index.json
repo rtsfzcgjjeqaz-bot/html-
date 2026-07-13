@@ -948,6 +948,18 @@
       "selectionContractPath": "library/mac-shot-library/shot_156/selection-contract.json",
       "windowsReviewStatus": "pending",
       "runtimeIntegrationStatus": "not_integrated"
+    },
+    {
+      "shotId": "shot_159",
+      "choreographyId": "emailContextAssistPanel",
+      "displayName": "Email Context Assist Panel",
+      "sceneType": "aiRecommendation",
+      "status": "github_published",
+      "selectionAllowed": true,
+      "packagePath": "library/mac-shot-library/shot_159",
+      "selectionContractPath": "library/mac-shot-library/shot_159/selection-contract.json",
+      "windowsReviewStatus": "pending",
+      "runtimeIntegrationStatus": "not_integrated"
     }
   ]
 }
