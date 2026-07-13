@@ -1,0 +1,17 @@
+{
+  "shotId": "shot_145",
+  "choreographyId": "discoveryTileWallHook",
+  "status": "github_published",
+  "checks": {
+    "build": "passed",
+    "previewRender": "passed",
+    "contactSheet": "passed",
+    "dimensions": "1280x720",
+    "fps": 30,
+    "frames": 108,
+    "manualReview": "passed",
+    "githubPublish": "passed_on_publish_branch"
+  },
+  "approved": true,
+  "allowedInFactory": true
+}

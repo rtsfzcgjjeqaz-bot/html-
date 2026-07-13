@@ -1,0 +1,15 @@
+export const shot145RegistryEntry = {
+  id: "discoveryTileWallHook",
+  libraryId: "discovery-tile-wall-hook",
+  sourceShotId: "shot_145",
+  sceneType: "coverHook",
+  visualApproved: true,
+  implementationVerified: true,
+  approved: true,
+  allowedInFactory: true,
+  durationInFrames: 108,
+  actionBreakdownPath: "src/motion/shot_145/shot145-action-breakdown.md",
+  atomicMotionsPath: "src/motion/shot_145/shot145-atomic-motions.ts",
+  choreographyPath: "src/motion/shot_145/shot145-choreography.tsx",
+  catalogEntryPath: "src/motion/catalog/discovery-tile-wall-hook.library-entry.ts",
+};
